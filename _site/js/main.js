@@ -2,10 +2,6 @@
 
 $("document").ready(function() {
 
-	console.log('READY');
-
-	//var gistID = 6950974;
-
 	if (document.URL.indexOf('#') >=0 ) {
 		var gistID = document.URL.split('#')[1];
 		displayGist(gistID);
