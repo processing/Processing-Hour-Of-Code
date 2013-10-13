@@ -1,5 +1,9 @@
 "use strict";
 
+$(document).ready(function() {
+	if (page != null && eval(page) !== null) eval(page).init();
+});
+
 /**
  * Singleton for splash page
  * @type {Object}
@@ -87,7 +91,8 @@ var helloEditor = {
 	 */
 	init: function () {
   		this.editor = ace.edit("editor");
-  		this.editor.getSession().setMode("ace/mode/java");
+  		this.editor.getSession().setMode("ace/mode/processing");
+  		this.editor.setTheme("ace/theme/clouds");
 
   		$("#runButton").click(function() {
       		helloEditor.displayGist();
