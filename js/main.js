@@ -1,7 +1,34 @@
 "use strict";
 
 /**
- * Singleton for display page functionality
+ * Singleton for splash page
+ * @type {Object}
+ */
+var helloSplash = {
+	/**
+	 * Initialize splash page
+	 * @return {[type]}
+	 */
+	init: function() {
+
+	// Center Splash
+
+    $("#splashDiv").css("margin-left",$("#splashDiv").width() /-2);
+    $("#splashDiv").css("margin-top",$("#splashDiv").height() /-2);
+    
+    // Animate In
+
+    $("#splash").css({'opacity': 0, 'marginTop': 24})
+    .animate(
+      { opacity: 1, marginTop: 0 },
+      { queue: false, duration: 'slow' }
+    );
+
+	}
+}
+
+/**
+ * Singleton for display page
  *
  * @type {Object}
  */
