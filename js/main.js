@@ -1,38 +1,115 @@
 "use strict";
 
-$("document").ready(function() {
+/**
+ * Singleton for display page functionality
+ *
+ * @type {Object}
+ */
+var helloDisplay = {
+	/**
+	 * Initialize display page
+	 * @return {[type]}
+	 */
+	init: function() {
 
-	if (document.URL.indexOf('#') >=0 ) {
-		var gistID = document.URL.split('#')[1];
-		displayGist(gistID);
+		if (document.URL.indexOf('#') >=0 ) {
+			var gistID = document.URL.split('#')[1];
+			this.displayGist(gistID);
+		}
+
+		$.ajax({
+			type:'DELETE',
+			url: "https://api.github.com/gists/6956778",
+			complete: function(data) {
+				console.log("data");
+			}
+		});
+
+	},
+	/**
+	 * Fetch Gist code from GitHub and feed it to Processing.js
+	 * @param  {[type]} gistID
+	 * @return {[type]}
+	 */
+	displayGist: function(gistID) {
+	
+		var apiURL = "https://api.github.com/gists/"
+		var gistURL = apiURL + gistID;
+		
+		$.ajax({
+			'url': gistURL,
+			'complete': function(data) {
+
+				var gistFiles = data.responseJSON.files;
+				var gistFile = gistFiles[Object.keys(gistFiles)[0]];
+				var gistSource = gistFile.content;
+
+	    		try {			
+					var processingCanvas = document.getElementById("processingCanvas");    			
+					var processingInstance = new Processing(processingCanvas, gistSource);
+
+			    } catch (e) {
+			      	console.log("ERROR! " + e.toString());
+			    }			
+			}
+		});
 	}
-});
-
+}
 
 /**
- * Grabs Gist data and feeds it to a new Processing instance.
+ * Singleton for the editor page
+ * @type {Object}
  */
+var helloEditor = {
+	editor: null,
+	/**
+	 * Initialize Ace editor and UI elements
+	 * @return {[type]}
+	 */
+	init: function () {
+  		this.editor = ace.edit("editor");
+  		this.editor.getSession().setMode("ace/mode/java");
 
-function displayGist(gistID) {
-	
-	var apiURL = "https://api.github.com/gists/"
-	var gistURL = apiURL + gistID;
-	
-	$.ajax({
-		'url': gistURL,
-		'complete': function(data) {
+  		$("#runButton").click(function() {
+      		helloEditor.displayGist();
+    	});
 
-			var gistFiles = data.responseJSON.files;
-			var gistFile = gistFiles[Object.keys(gistFiles)[0]];
-			var gistSource = gistFile.content;
+  		$("#shareButton").click(function() {
+      		helloEditor.createGist();
+    	});    	
 
-    		try {			
-				var processingCanvas = document.getElementById("processingCanvas");    			
-				var processingInstance = new Processing(processingCanvas, gistSource);
+	},
+	/**
+	 * Run current code in Ace
+	 * @return {[type]}
+	 */
+	displayGist: function() {
 
-		    } catch (e) {
-		      	console.log("ERROR! " + e.toString());
-		    }			
+		var processingSource = this.editor.getValue();
+		var processingCanvas = document.getElementById("processingCanvas");         
+		var processingInstance = new Processing(processingCanvas, processingSource);
+
+	},
+	createGist: function() {
+
+		var processingSource = this.editor.getValue();
+
+		var postData = {
+			"description": "Save for Processing Hour of Code",
+			"public": true,
+			"files": {
+				"demo.pde": {
+					"content": processingSource
+				}
+			}
 		}
-	});
+
+		var postURL = "https://api.github.com/gists";
+
+		$.post(postURL, JSON.stringify(postData))
+			.done(function( data ) {
+				console.log( data );
+			});
+
+	}
 }

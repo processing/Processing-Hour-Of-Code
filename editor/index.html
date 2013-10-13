@@ -4,47 +4,37 @@ title: Editor
 ---
 
 <style type="text/css" media="screen">
-    #editor { 
-        width:600px;
-        height:600px;
-    }
+  #editor { 
+    width:600px;
+    height:600px;
+    border: 1px solid #efefef;
+  }
 </style>
 
 <div id="editor">
-size(600, 600);
+  size(600, 600);
 
-ellipse(300, 300, 400, 400);
-ellipse(200, 300, 200, 200);
-ellipse(400, 300, 200, 200);
+  ellipse(300, 300, 400, 400);
+  ellipse(200, 300, 200, 200);
+  ellipse(400, 300, 200, 200);
 
 </div>
 
-<button id="runButton" type="button" class="btn btn-default">Run</button><br/>
+<div>
+  <button id="runButton" type="button" class="btn btn-default">Run</button>
+  <button id="shareButton" type="button" class="btn btn-default">Share</button>
+</div>
+
 <canvas id="processingCanvas"></canvas>
-    
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>    
 
 <script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
 
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/monokai");
-      editor.getSession().setMode("ace/mode/javascript");
+  $("document").ready(function() {
+    
+    helloEditor.init();
 
-    $("document").ready(function() {
-
-      $("#runButton").click(function() {
-
-        var processingSource = editor.getValue();
-        console.log(processingSource);
-
-        var processingCanvas = document.getElementById("processingCanvas");         
-        var processingInstance = new Processing(processingCanvas, processingSource);
-
-      })
-
-    });
+  });
 
 </script>
 

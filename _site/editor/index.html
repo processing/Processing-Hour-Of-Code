@@ -11,12 +11,6 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <style>
-    body {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-  </style>
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/css/main.css">
 
@@ -28,97 +22,49 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Processing Hour of Code</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/editor/">Editor Test</a></li>
-          <li><a href="/display/#6950974">Display Test</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
 
-      </div><!--/.navbar-collapse -->
-    </div>
-  </div>
-
-
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
   <style type="text/css" media="screen">
-    #editor { 
-        width:600px;
-        height:600px;
-    }
+  #editor { 
+    width:600px;
+    height:600px;
+    border: 1px solid #efefef;
+  }
 </style>
 
 <div id="editor">
-size(600, 600);
+  size(600, 600);
 
-ellipse(300, 300, 400, 400);
-ellipse(200, 300, 200, 200);
-ellipse(400, 300, 200, 200);
+  ellipse(300, 300, 400, 400);
+  ellipse(200, 300, 200, 200);
+  ellipse(400, 300, 200, 200);
 
 </div>
 
-<button id="runButton" type="button" class="btn btn-default">Run</button><br/>
+<div>
+  <button id="runButton" type="button" class="btn btn-default">Run</button>
+  <button id="shareButton" type="button" class="btn btn-default">Share</button>
+</div>
+
 <canvas id="processingCanvas"></canvas>
-    
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>    
 
 <script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
 
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/monokai");
-      editor.getSession().setMode("ace/mode/javascript");
+  $("document").ready(function() {
+    
+    helloEditor.init();
 
-    $("document").ready(function() {
-
-      $("#runButton").click(function() {
-
-        var processingSource = editor.getValue();
-        console.log(processingSource);
-
-        var processingCanvas = document.getElementById("processingCanvas");         
-        var processingInstance = new Processing(processingCanvas, processingSource);
-
-      })
-
-    });
+  });
 
 </script>
 
 
 
 
-
-
-  <footer>
-    <p>&copy; Company 2013</p>
-  </footer>
-
   <script src="/js/vendor/bootstrap.min.js"></script>
-
   <script src="/js/vendor/processing-1.4.1.js"></script>
 
   <script src="/js/plugins.js"></script>
