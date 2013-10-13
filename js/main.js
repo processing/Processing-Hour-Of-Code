@@ -85,6 +85,7 @@ var helloDisplay = {
  */
 var helloEditor = {
 	editor: null,
+	processingInstance: null,
 	lessons: [
 		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
 		'/assets/pde/hourofcode_2_color/hourofcode_2_color.pde',
@@ -100,16 +101,44 @@ var helloEditor = {
   		this.editor.getSession().setMode("ace/mode/processing");
   		this.editor.setTheme("ace/theme/clouds");
 
-  		$("#runButton").click(function() {
+  		this.setupUI();
+    	this.loadLesson(0);
+
+	},
+	/**
+	 * Initialize UI elements
+	 * @return {[type]}
+	 */
+	setupUI: function() {
+
+		$("#runButton").click(function() {
       		helloEditor.displayGist();
     	});
 
   		$("#shareButton").click(function() {
       		helloEditor.createGist();
-    	});    	
+    	});   
 
-    	this.loadLesson(1);
+    	$(".lessonButton").each( function (index, value) {
 
+    		$(value).click( function() {
+    			var lessonIndex = $(this).attr("data-index");
+    			helloEditor.loadLesson(lessonIndex);
+    		});
+
+    	});
+
+	},
+	/**
+	 * Reset the Processing.js instance
+	 * @return {[type]}
+	 */
+	resetInstance: function() {
+		if (this.processingInstance) {
+			this.processingInstance.exit();
+			this.processingInstance.background(255);
+			this.processingInstance = null;
+		}
 	},
 	/**
 	 * Loads a lesson into the editor by index
@@ -117,6 +146,8 @@ var helloEditor = {
 	 * @return {[type]}
 	 */
 	loadLesson: function(index) {
+		this.resetInstance();
+
 		$.get(this.lessons[index], function(data) {
 			helloEditor.editor.setValue(data, -1);
 		})
@@ -126,10 +157,11 @@ var helloEditor = {
 	 * @return {[type]}
 	 */
 	displayGist: function() {
+		this.resetInstance();
 
 		var processingSource = this.editor.getValue();
 		var processingCanvas = document.getElementById("processingCanvas");         
-		var processingInstance = new Processing(processingCanvas, processingSource);
+		this.processingInstance = new Processing(processingCanvas, processingSource);
 
 	},
 	/**
