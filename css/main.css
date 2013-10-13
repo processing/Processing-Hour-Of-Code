@@ -44,7 +44,13 @@
 
 canvas#processingCanvas {
 	border: 1px solid;
-	background: #ccc;
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -300px;
 }
 
 div#splashDiv {	

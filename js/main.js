@@ -100,7 +100,11 @@ var helloEditor = {
 
 		$.post(postURL, JSON.stringify(postData))
 			.done(function( data ) {
-				console.log( data );
+				var gistID = data.id;
+				var displayURL = "http://" + $(location).attr('hostname') + ( ($(location).attr('port') != 80) ?  ":" + $(location).attr('port') : "" ) + "/display/#" + gistID;
+
+				$('#shareModalText').html($("<a/>").attr('href',displayURL).html(displayURL));
+				$('#shareModal').modal('show');
 			});
 
 	}
