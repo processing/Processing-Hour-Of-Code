@@ -17,14 +17,6 @@ var helloDisplay = {
 			this.displayGist(gistID);
 		}
 
-		$.ajax({
-			type:'DELETE',
-			url: "https://api.github.com/gists/6956778",
-			complete: function(data) {
-				console.log("data");
-			}
-		});
-
 	},
 	/**
 	 * Fetch Gist code from GitHub and feed it to Processing.js
