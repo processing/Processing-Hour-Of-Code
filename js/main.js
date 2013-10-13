@@ -85,6 +85,12 @@ var helloDisplay = {
  */
 var helloEditor = {
 	editor: null,
+	lessons: [
+		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
+		'/assets/pde/hourofcode_2_color/hourofcode_2_color.pde',
+		'/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde',
+		'/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde',
+	],
 	/**
 	 * Initialize Ace editor and UI elements
 	 * @return {[type]}
@@ -102,6 +108,18 @@ var helloEditor = {
       		helloEditor.createGist();
     	});    	
 
+    	this.loadLesson(1);
+
+	},
+	/**
+	 * Loads a lesson into the editor by index
+	 * @param  {[type]} index
+	 * @return {[type]}
+	 */
+	loadLesson: function(index) {
+		$.get(this.lessons[index], function(data) {
+			helloEditor.editor.setValue(data, -1);
+		})
 	},
 	/**
 	 * Run current code in Ace
@@ -114,6 +132,10 @@ var helloEditor = {
 		var processingInstance = new Processing(processingCanvas, processingSource);
 
 	},
+	/**
+	 * Creates a new Gist with editor contents and shows share modal
+	 * @return {[type]}
+	 */
 	createGist: function() {
 
 		var processingSource = this.editor.getValue();
