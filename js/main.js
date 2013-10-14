@@ -22,11 +22,15 @@ var helloSplash = {
     
     // Animate In
 
-    $("#splash").css({'opacity': 0, 'marginTop': 24})
-    .animate(
+    $("#splash").css({'opacity': 0, 'marginTop': 24}).animate(
       { opacity: 1, marginTop: 0 },
-      { queue: false, duration: 'slow' }
+      { duration: 600}
     );
+
+    $("#splashFooter").css({'opacity': 0}).delay(600).animate(
+      { opacity: 1},
+      { duration: 'slow'}
+    );    
 
 	}
 }

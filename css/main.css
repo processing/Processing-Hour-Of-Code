@@ -44,6 +44,7 @@
 
 body {
 	background: #efefef;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Splash Page */
@@ -57,7 +58,6 @@ div#splashDiv {
 h1#splash {
 	font-family: 'theSerif', 'Enriqueta', georgia, times, serif; 
 	font-size: 10em;
-	color: #2c7bb5;	
 	margin: 0;
 	padding: 0;
 	opacity: 0;
@@ -65,7 +65,18 @@ h1#splash {
 
 h1#splash a {
 	text-decoration: none;
-	color: #2c7bb5;
+	color: rgb(0, 102, 153);
+	text-shadow: 4px 4px 0px rgba(0, 255, 204, .4);
+
+}
+
+footer#splashFooter {
+	position:absolute;
+	bottom: 2em;
+	text-align: center;
+	width: 100%;
+	color: #666;
+	opacity: 0;
 }
 
 /* Editor Page */
@@ -73,8 +84,12 @@ h1#splash a {
 #interface {
 	width: 1024px;
 	height: 600px;
-	position: relative;
-	margin: 12px auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -512px;
+	margin-top: -300px;
+	outline: 1px solid #999;
 }
 
 canvas#editorCanvas {
@@ -127,5 +142,5 @@ canvas#displayCanvas {
 	left: 50%;
 	margin-left: -300px;
 	margin-top: -300px;
-
+	outline: 1px solid #999;
 }
