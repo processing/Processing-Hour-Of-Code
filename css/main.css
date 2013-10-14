@@ -42,10 +42,10 @@
 	font-style: normal;
 }
 
-canvas#processingCanvas {
+canvas#displayCanvas {
 	border: 1px solid;
-	width: 600px;
-	height: 600px;
+	width: 512px;
+	height: 288px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -73,6 +73,10 @@ h1#splash a {
 	color: #2c7bb5;
 }
 
+#editor { 
+	height: 512px;
+	border: 1px solid #efefef;
+}
 
 
 

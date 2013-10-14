@@ -68,7 +68,7 @@ var helloDisplay = {
 				var gistSource = gistFile.content;
 
 	    		try {			
-					var processingCanvas = document.getElementById("processingCanvas");    			
+					var processingCanvas = document.getElementById("displayCanvas");    			
 					var processingInstance = new Processing(processingCanvas, gistSource);
 
 			    } catch (e) {
@@ -100,6 +100,12 @@ var helloEditor = {
   		this.editor = ace.edit("editor");
   		this.editor.getSession().setMode("ace/mode/processing");
   		this.editor.setTheme("ace/theme/clouds");
+  		this.editor.setShowFoldWidgets(false);
+
+  		var pop = Popcorn.vimeo(
+			'#video',
+			"https://vimeo.com/71766674"
+		);
 
   		this.setupUI();
     	this.loadLesson(0);
@@ -160,7 +166,7 @@ var helloEditor = {
 		this.resetInstance();
 
 		var processingSource = this.editor.getValue();
-		var processingCanvas = document.getElementById("processingCanvas");         
+		var processingCanvas = document.getElementById("editorCanvas");         
 		this.processingInstance = new Processing(processingCanvas, processingSource);
 
 	},
