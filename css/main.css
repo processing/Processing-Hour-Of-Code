@@ -42,16 +42,11 @@
 	font-style: normal;
 }
 
-canvas#displayCanvas {
-	border: 1px solid;
-	width: 512px;
-	height: 288px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -300px;
-	margin-top: -300px;
+body {
+	background: #efefef;
 }
+
+/* Splash Page */
 
 div#splashDiv {	
 	position: absolute;
@@ -73,12 +68,54 @@ h1#splash a {
 	color: #2c7bb5;
 }
 
+/* Editor Page */
+
+#interface {
+	width: 1024px;
+	height: 600px;
+	position: relative;
+	margin: 12px auto;
+}
+
+canvas#editorCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 600px;
+	background: white;
+
+	outline: none;
+}
+
+#video {
+	position: absolute;
+	top: 0;
+	left: 600px;
+	width: 424px;
+	height: 238px;
+}
+
 #editor { 
-	height: 512px;
-	border: 1px solid #efefef;
+	position: absolute;
+	top: 238px;
+	left: 600px;
+
+	width: 424px;
+	height: 362px;	
 }
 
 
+/* Display Page */
 
+canvas#displayCanvas {
+	border: 1px solid;
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -300px;
 
-
+}

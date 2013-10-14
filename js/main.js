@@ -142,7 +142,7 @@ var helloEditor = {
 	resetInstance: function() {
 		if (this.processingInstance) {
 			this.processingInstance.exit();
-			this.processingInstance.background(255);
+			this.processingInstance.background("#cfcfcf");
 			this.processingInstance = null;
 		}
 	},

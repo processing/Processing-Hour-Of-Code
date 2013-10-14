@@ -3,29 +3,22 @@ layout: default
 title: Editor
 ---
 
-<div class="container">
+<div id="container">
 
-  <div class="row">
-    <div class="col-md-6">
-      <div class="row">
-        <div id="editor"></div>
-      </div>
-      <div class="row">
-        <button id="runButton" type="button" class="btn btn-default">Run</button>
-        <button id="shareButton" type="button" class="btn btn-default">Share</button>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row">
-          <div id="video" style="width: 100%; height: 288px;" ></div>
-      </div>
-      <div class="row">
-        <canvas id="editorCanvas"></canvas>
-      </div>
-    </div>
+  <div id="interface">
+
+    <canvas id="editorCanvas"></canvas>
+    <div id="video" style="width: 424px; height: 238px;"></div>
+    <div id="editor"></div>
+
   </div>
 
-  <div class="row">
+  <div>
+    <button id="runButton" type="button" class="btn btn-default">Run</button>
+    <button id="shareButton" type="button" class="btn btn-default">Share</button>
+  </div>
+
+  <div>
     <div id="timeline" class="btn-group">
       <button type="button" class="lessonButton btn btn-primary" data-index="0">Lesson 1</span> 
       <button type="button" class="lessonButton btn btn-primary" data-index="1">Lesson 2</span> 
@@ -35,6 +28,7 @@ title: Editor
   </div>
 
 </div>  
+
 
 <!-- Modal Share Window -->
 
