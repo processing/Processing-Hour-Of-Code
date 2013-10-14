@@ -120,7 +120,6 @@ canvas#editorCanvas {
 /* Display Page */
 
 canvas#displayCanvas {
-	border: 1px solid;
 	width: 600px;
 	height: 600px;
 	position: absolute;
