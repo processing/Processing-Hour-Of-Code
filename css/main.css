@@ -105,6 +105,17 @@ canvas#editorCanvas {
 	height: 362px;	
 }
 
+#commands {
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
+}
+
+#timeline {
+	position: absolute;
+	width: 600px;
+	bottom: 12px;
+}
 
 /* Display Page */
 
