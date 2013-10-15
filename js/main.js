@@ -151,12 +151,12 @@ var helloEditor = {
 	resizeUI: function() {
 
 		var viewportWidth = $(window).width();
-		var viewportHeight = $(window).height();
+		var viewportHeight = $(window).height() - 48;
 
 		$("#interface")
 			.height(viewportHeight)
 			.width(viewportWidth)
-			.css({top: 0, left: 0, marginLeft: 0, marginTop: 0});
+			.css({top: 48, left: 0, marginLeft: 0, marginTop: 0});
 
 		var videoWidth = viewportWidth - viewportHeight;
 		var videoHeight = (viewportWidth - viewportHeight) / 16 * 9;
@@ -210,7 +210,7 @@ var helloEditor = {
 	displayGist: function() {
 		this.resetInstance();
 
-		var viewportHeight = $(window).height();
+		var viewportHeight = $(window).height() - 48;
 
 		var processingSource = this.editor.getValue();
 		var processingCanvas = document.getElementById("editorCanvas");         
