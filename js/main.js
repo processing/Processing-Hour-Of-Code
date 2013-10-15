@@ -223,7 +223,7 @@ var helloEditor = {
 		//processingSource = processingSource.replace(/size\(.*\)/g,"size(" + viewportHeight +"," + viewportHeight + ")");
 		var processingCanvas = document.getElementById("editorCanvas");         
 		this.processingInstance = new Processing(processingCanvas, processingSource);
-
+		this.processingInstance.smooth()
 	},
 	/**
 	 * Creates a new Gist with editor contents and shows share modal

@@ -8186,7 +8186,7 @@
     Drawing2D.prototype.$init = function() {
       p.size(p.width, p.height);
       curContext.lineCap = "round";
-      p.noSmooth();
+      //p.noSmooth();
       p.disableContextMenu()
     };
     Drawing3D.prototype.$init = function() {
