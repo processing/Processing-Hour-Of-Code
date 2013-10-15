@@ -96,14 +96,12 @@ canvas#editorCanvas {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 600px;
-	height: 600px;
 	background: white;
 
 	outline: none;
 }
 
-#video {
+#videoContainer {
 	position: absolute;
 	top: 0;
 	left: 600px;

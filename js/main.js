@@ -74,7 +74,8 @@ var helloDisplay = {
 	    		try {			
 					var processingCanvas = document.getElementById("displayCanvas");    			
 					var processingInstance = new Processing(processingCanvas, gistSource);
-
+					//processingInstance.size(300, 300);
+					//processingInstance.scale(.5);
 			    } catch (e) {
 			      	console.log("ERROR! " + e.toString());
 			    }			
@@ -114,6 +115,10 @@ var helloEditor = {
   		this.setupUI();
     	this.loadLesson(0);
 
+    	$( window ).resize(function() {
+    		helloEditor.resizeUI();
+		});
+
 	},
 	/**
 	 * Initialize UI elements
@@ -138,6 +143,49 @@ var helloEditor = {
 
     	});
 
+    	this.resizeUI();
+
+	},
+	/**
+	 * Try to keep a sane layout at any browser size.
+	 * @return {[type]}
+	 */
+	resizeUI: function() {
+
+		var viewportWidth = $(window).width();
+		var viewportHeight = $(window).height();
+
+		$("#interface")
+			.height(viewportHeight)
+			.width(viewportWidth)
+			.css({top: 0, left: 0, marginLeft: 0, marginTop: 0});
+
+		$("#editorCanvas")
+			.height(viewportHeight)
+			.width(viewportHeight);
+
+		var videoWidth = viewportWidth - viewportHeight;
+		var videoHeight = (viewportWidth - viewportHeight) / 16 * 9;
+
+		$("#videoContainer")
+			.width(videoWidth)
+			.height(videoHeight)
+			.css({
+				left: viewportHeight
+			});
+
+		$("#editor")
+			.width(videoWidth)
+			.height(viewportHeight - videoHeight)
+			.css({
+				top: videoHeight,
+				left: viewportHeight
+			});
+
+		$("#canvas")
+			.height(viewportHeight)
+			.width(viewportWidth)
+			.attr({width: viewportHeight, height: viewportHeight});
 	},
 	/**
 	 * Reset the Processing.js instance
@@ -169,7 +217,10 @@ var helloEditor = {
 	displayGist: function() {
 		this.resetInstance();
 
+		var viewportHeight = $(window).height();
+
 		var processingSource = this.editor.getValue();
+		//processingSource = processingSource.replace(/size\(.*\)/g,"size(" + viewportHeight +"," + viewportHeight + ")");
 		var processingCanvas = document.getElementById("editorCanvas");         
 		this.processingInstance = new Processing(processingCanvas, processingSource);
 
