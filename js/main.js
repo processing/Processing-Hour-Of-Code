@@ -74,8 +74,6 @@ var helloDisplay = {
 	    		try {			
 					var processingCanvas = document.getElementById("displayCanvas");    			
 					var processingInstance = new Processing(processingCanvas, gistSource);
-					//processingInstance.size(300, 300);
-					//processingInstance.scale(.5);
 			    } catch (e) {
 			      	console.log("ERROR! " + e.toString());
 			    }			
@@ -160,10 +158,6 @@ var helloEditor = {
 			.width(viewportWidth)
 			.css({top: 0, left: 0, marginLeft: 0, marginTop: 0});
 
-		$("#editorCanvas")
-			.height(viewportHeight)
-			.width(viewportHeight);
-
 		var videoWidth = viewportWidth - viewportHeight;
 		var videoHeight = (viewportWidth - viewportHeight) / 16 * 9;
 
@@ -182,10 +176,9 @@ var helloEditor = {
 				left: viewportHeight
 			});
 
-		$("#canvas")
+		$("#editorCanvas")
 			.height(viewportHeight)
-			.width(viewportWidth)
-			.attr({width: viewportHeight, height: viewportHeight});
+			.width(viewportHeight)
 	},
 	/**
 	 * Reset the Processing.js instance
@@ -220,10 +213,12 @@ var helloEditor = {
 		var viewportHeight = $(window).height();
 
 		var processingSource = this.editor.getValue();
-		//processingSource = processingSource.replace(/size\(.*\)/g,"size(" + viewportHeight +"," + viewportHeight + ")");
 		var processingCanvas = document.getElementById("editorCanvas");         
 		this.processingInstance = new Processing(processingCanvas, processingSource);
-		this.processingInstance.smooth()
+
+		$("#editorCanvas")
+			.height(viewportHeight)
+			.width(viewportHeight)
 	},
 	/**
 	 * Creates a new Gist with editor contents and shows share modal
