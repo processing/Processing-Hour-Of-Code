@@ -135,8 +135,10 @@ var helloEditor = {
     	$(".lessonButton").each( function (index, value) {
 
     		$(value).click( function() {
+    			$(".lessonButton").parent().removeClass("active");
+    			$(this).parent().addClass("active");
     			var lessonIndex = $(this).attr("data-index");
-    			helloEditor.loadLesson(lessonIndex);
+    			if (lessonIndex) helloEditor.loadLesson(lessonIndex);
     		});
 
     	});
@@ -165,7 +167,7 @@ var helloEditor = {
 			.width(videoWidth)
 			.height(videoHeight)
 			.css({
-				left: viewportHeight
+				left: 0
 			});
 
 		$("#editor")
@@ -173,12 +175,16 @@ var helloEditor = {
 			.height(viewportHeight - videoHeight)
 			.css({
 				top: videoHeight,
-				left: viewportHeight
+				left: 0
 			});
 
-		$("#editorCanvas")
+		$("#canvasContainer")
 			.height(viewportHeight)
 			.width(viewportHeight)
+			.css({
+				top: 0,
+				left: videoWidth
+			});			
 	},
 	/**
 	 * Reset the Processing.js instance
@@ -216,7 +222,7 @@ var helloEditor = {
 		var processingCanvas = document.getElementById("editorCanvas");         
 		this.processingInstance = new Processing(processingCanvas, processingSource);
 
-		$("#editorCanvas")
+		$("#canvasContainer")
 			.height(viewportHeight)
 			.width(viewportHeight)
 	},

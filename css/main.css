@@ -92,11 +92,20 @@ footer#splashFooter {
 	outline: 1px solid #999;
 }
 
-canvas#editorCanvas {
+div#canvasContainer {
 	position: absolute;
-	top: 0;
-	left: 0;
-	background: white;
+	background: #5CADD5;	
+}
+
+canvas#editorCanvas {
+	
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 600px;
+	margin-top: -300px;
+	margin-left: -300px;
 
 	outline: none;
 }
@@ -122,12 +131,6 @@ canvas#editorCanvas {
 	position: absolute;
 	bottom: 12px;
 	right: 12px;
-}
-
-#timeline {
-	position: absolute;
-	width: 600px;
-	bottom: 12px;
 }
 
 /* Display Page */

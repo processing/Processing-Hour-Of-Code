@@ -5,9 +5,31 @@ title: Editor
 
 <div id="container">
 
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Hello Processing!</a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#hello" class="lessonButton">1 Hello</a></li>
+            <li><a href="#shapes" class="lessonButton" data-index="0">2 Shapes</a></li>
+            <li><a href="#color" class="lessonButton" data-index="1">3 Color</a></li>
+            <li><a href="#interact" class="lessonButton" data-index="2">4 Interact</a></li>
+            <li><a href="#decisions" class="lessonButton" data-index="3">5 Decisions</a></li>
+            <li><a href="#goodbye" class="lessonButton">6 Goodbye</a></li>
+          </ul>
+
+    </div>
+  </div>
+
   <div id="interface">
 
-    <canvas id="editorCanvas"></canvas>
+    <div id="canvasContainer">
+      <canvas id="editorCanvas"></canvas>
+    </div>
+
     <div id="videoContainer">
       <div id="video" style="width: 100%; height: 100%;"></div>
     </div>
@@ -16,15 +38,6 @@ title: Editor
     <div id="commands" class="btn-group">
       <a id="runButton" type="button" class="btn btn-default btn-sm">Run</a>
       <a id="shareButton" type="button" class="btn btn-default btn-sm">Share</a>
-    </div>
-
-    <div id="timeline" class="text-center">
-      <div class="btn-group">
-        <a type="button" class="lessonButton btn btn-primary" data-index="0">Lesson 1</a> 
-        <a type="button" class="lessonButton btn btn-primary" data-index="1">Lesson 2</a> 
-        <a type="button" class="lessonButton btn btn-primary" data-index="2">Lesson 3</a> 
-        <a type="button" class="lessonButton btn btn-primary" data-index="3">Lesson 4</a> 
-      </div>
     </div>
 
   </div>
