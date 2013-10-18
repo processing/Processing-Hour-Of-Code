@@ -107,7 +107,7 @@ var helloEditor = {
 
   		var pop = Popcorn.vimeo(
 			'#video',
-			"https://vimeo.com/71766674"
+			"https://vimeo.com/77249859"
 		);
 
   		this.setupUI();
