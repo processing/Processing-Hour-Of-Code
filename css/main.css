@@ -90,11 +90,12 @@ footer#splashFooter {
 	margin-left: -512px;
 	margin-top: -300px;
 	outline: 1px solid #999;
+	background: #5CADD5;	
+	
 }
 
 div#canvasContainer {
 	position: absolute;
-	background: #5CADD5;	
 }
 
 canvas#editorCanvas {
@@ -108,6 +109,7 @@ canvas#editorCanvas {
 	margin-left: -300px;
 
 	outline: none;
+	background: #999;
 }
 
 #videoContainer {
@@ -118,13 +120,18 @@ canvas#editorCanvas {
 	height: 238px;
 }
 
-#editor { 
+#editorContainer { 
 	position: absolute;
 	top: 238px;
 	left: 600px;
 
 	width: 424px;
 	height: 362px;	
+}
+
+#editor { 
+	width: 100%;
+	height: 100%;
 }
 
 #commands {

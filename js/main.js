@@ -89,6 +89,7 @@ var helloDisplay = {
 var helloEditor = {
 	editor: null,
 	processingInstance: null,
+	videoMode: true,
 	lessons: [
 		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
 		'/assets/pde/hourofcode_2_color/hourofcode_2_color.pde',
@@ -108,7 +109,9 @@ var helloEditor = {
   		var pop = Popcorn.vimeo(
 			'#video',
 			"https://vimeo.com/77249859"
-		);
+		);	
+
+		loadScript(pop);		
 
   		this.setupUI();
     	this.loadLesson(0);
@@ -125,7 +128,7 @@ var helloEditor = {
 	setupUI: function() {
 
 		$("#runButton").click(function() {
-      		helloEditor.displayGist();
+      		helloEditor.runCode();
     	});
 
   		$("#shareButton").click(function() {
@@ -160,31 +163,61 @@ var helloEditor = {
 			.width(viewportWidth)
 			.css({top: 48, left: 0, marginLeft: 0, marginTop: 0});
 
-		var videoWidth = viewportWidth - viewportHeight;
-		var videoHeight = (viewportWidth - viewportHeight) / 16 * 9;
+		if (this.videoMode) {
 
-		$("#videoContainer")
-			.width(videoWidth)
-			.height(videoHeight)
-			.css({
-				left: 0
-			});
+			console.log("Video Mode");
 
-		$("#editor")
-			.width(videoWidth)
-			.height(viewportHeight - videoHeight)
-			.css({
-				top: videoHeight,
-				left: 0
-			});
+			var videoWidth = viewportWidth * .80;
+			var videoHeight = videoWidth / 16 * 9;
 
-		$("#canvasContainer")
-			.height(viewportHeight)
-			.width(viewportHeight)
-			.css({
-				top: 0,
-				left: videoWidth
-			});			
+			$("#videoContainer")
+				.css({
+					width: videoWidth,
+					height: videoHeight,
+					left: "50%",
+					top: "50%",
+					marginTop: videoHeight/-2,
+					marginLeft: videoWidth/-2
+				});
+
+			$("#editorContainer").css({display:"none"});
+			$("#canvasContainer").hide();
+			//$("#commands").hide();
+
+		} else {
+
+			console.log("Editor Mode");
+
+			var videoWidth = viewportWidth - viewportHeight;
+			var videoHeight = videoWidth / 16 * 9;
+
+			$("#videoContainer")
+				.css({
+					width: videoWidth,
+					height: videoHeight,
+					left: 0,
+					top: 0,
+					marginTop: 0,
+					marginLeft: 0
+				});
+
+			$("#editorContainer")
+				.css({
+					width:videoWidth,
+					height: viewportHeight - videoHeight,
+					top: videoHeight,
+					left: 0
+				});
+
+			$("#canvasContainer")
+				.height(viewportHeight)
+				.width(viewportHeight)
+				.css({
+					top: 0,
+					left: videoWidth
+				});		
+				
+		}	
 	},
 	/**
 	 * Reset the Processing.js instance
@@ -213,7 +246,7 @@ var helloEditor = {
 	 * Run current code in Ace
 	 * @return {[type]}
 	 */
-	displayGist: function() {
+	runCode: function() {
 		this.resetInstance();
 
 		var viewportHeight = $(window).height() - 48;
