@@ -91,11 +91,15 @@ footer#splashFooter {
 	margin-top: -300px;
 	outline: 1px solid #999;
 	background: #5CADD5;	
-	
+
 }
 
 div#canvasContainer {
 	position: absolute;
+	top:0;
+	left:0;
+	width: 600px;
+	height: 600px;
 }
 
 canvas#editorCanvas {

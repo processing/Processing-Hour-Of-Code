@@ -141,7 +141,21 @@ var helloEditor = {
     			$(".lessonButton").parent().removeClass("active");
     			$(this).parent().addClass("active");
     			var lessonIndex = $(this).attr("data-index");
-    			if (lessonIndex) helloEditor.loadLesson(lessonIndex);
+    			if (lessonIndex) {
+    				helloEditor.loadLesson(lessonIndex);
+    				helloEditor.videoMode = false;
+    				helloEditor.resizeUI();    		
+
+    				$("#editorContainer").show();
+					helloEditor.editor.setValue();
+					$("#canvasContainer").show();
+    			} else {
+    				helloEditor.videoMode = true;
+    				helloEditor.resizeUI();
+
+					$("#editorContainer").hide();
+					$("#canvasContainer").hide();    				
+    			}
     		});
 
     	});
