@@ -56,7 +56,7 @@ div#splashDiv {
 }
 
 h1#splash {
-	font-family: 'theSerif', 'Enriqueta', georgia, times, serif; 
+	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 10em;
 	margin: 0;
 	padding: 0;
@@ -77,6 +77,35 @@ footer#splashFooter {
 	width: 100%;
 	color: #666;
 	opacity: 0;
+}
+
+/* Header */
+
+.navbar-brand {
+	font-family: 'theSerif', georgia, times, serif;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: #417A95 !important;
+}
+
+.lessonButton:hover {
+	color: #417A95 !important;
+} 
+
+li.active .lessonButton, li.active .lessonButton:hover {
+	color: #E67AC2 !important;
+	background: transparent !important;
+}
+.lessonButton {
+	font-size: 1.2em;
+	font-weight: bold;
+	font-family: 'theSerif', georgia, times, serif; 
+	color: #5CADD5 !important;
+}
+
+
+.lessonButton sub {
+	font-size: 1em;
 }
 
 /* Editor Page */
@@ -113,7 +142,7 @@ canvas#editorCanvas {
 	margin-left: -300px;
 
 	outline: none;
-	background: #999;
+	background: #fff;
 }
 
 #videoContainer {

@@ -88,6 +88,7 @@ var helloDisplay = {
  */
 var helloEditor = {
 	editor: null,
+	popcorn: null,
 	processingInstance: null,
 	videoMode: true,
 	lessons: [
@@ -106,12 +107,12 @@ var helloEditor = {
   		this.editor.setTheme("ace/theme/clouds");
   		this.editor.setShowFoldWidgets(false);
 
-  		var pop = Popcorn.vimeo(
+  		editor.popcorn = Popcorn.vimeo(
 			'#video',
 			"https://vimeo.com/77249859"
 		);	
 
-		loadScript(pop);		
+		loadScript(editor.popcorn);		
 
   		this.setupUI();
     	this.loadLesson(0);
@@ -140,22 +141,33 @@ var helloEditor = {
     		$(value).click( function() {
     			$(".lessonButton").parent().removeClass("active");
     			$(this).parent().addClass("active");
-    			var lessonIndex = $(this).attr("data-index");
-    			if (lessonIndex) {
-    				helloEditor.loadLesson(lessonIndex);
-    				helloEditor.videoMode = false;
-    				helloEditor.resizeUI();    		
+    			
+    			var lessonIndex = parseInt($(this).attr("data-index"));
+    			switch(lessonIndex) {    				
+    				case 1: // Hello
+						helloEditor.videoMode = true;
+						helloEditor.resizeUI();    				
+						
+						editor.popcorn.play("0:00");
+					break;
+    				case 2:
 
-    				$("#editorContainer").show();
-					helloEditor.editor.setValue();
-					$("#canvasContainer").show();
-    			} else {
-    				helloEditor.videoMode = true;
-    				helloEditor.resizeUI();
-
-					$("#editorContainer").hide();
-					$("#canvasContainer").hide();    				
+						editor.popcorn.play("1:15");
+					break; 
+    				case 3:
+    					editor.popcorn.play("1:15");
+					break;
+    				case 4:
+    					editor.popcorn.play("1:15");
+					break;
+    				case 5:
+    					editor.popcorn.play("1:15");
+					break;
+					case 6: //Goodbye
+						editor.popcorn.play("3:16");
+					break;
     			}
+
     		});
 
     	});
