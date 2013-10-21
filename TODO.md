@@ -4,6 +4,7 @@ Critical For Launch
 * Video content
 * Popcorn based triggers for lesson events
 * Full menu bar for play, reset, etc.
+* Timeline styling
 
 High Priority
 =============
