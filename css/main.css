@@ -81,31 +81,62 @@ footer#splashFooter {
 
 /* Header */
 
-.navbar-brand {
+#headerContainer {
+	position: relative;
+	width: 100%;
+	background: #F9F9FC;
+	z-index: 1000;		
+	height: 48px;	
+}
+
+#header {
+	position: relative;
+	margin: auto;
+	width: 80%;
+	max-width: 1024px;
+	min-width: 800px;
+	height: 48px;
+}
+
+div#title {
+	display: inline-block;
 	font-family: 'theSerif', georgia, times, serif;
 	font-size: 1.6em;
 	font-weight: bold;
-	color: #417A95 !important;
+	margin-top:8px;
+	color: rgb(0, 102, 153);
 }
 
-.lessonButton:hover {
-	color: #417A95 !important;
-} 
-
-li.active .lessonButton, li.active .lessonButton:hover {
-	color: #E67AC2 !important;
-	background: transparent !important;
+div#title a:hover {
+	text-decoration: none;
 }
+
+nav {
+	position:absolute;
+	top:13px; 
+	right:0;
+}
+
 .lessonButton {
 	font-size: 1.2em;
 	font-weight: bold;
 	font-family: 'theSerif', georgia, times, serif; 
-	color: #5CADD5 !important;
+	color: #5CADD5;
+	padding: 15px;
 }
-
 
 .lessonButton sub {
 	font-size: 1em;
+}
+
+.lessonButton:hover {
+	color: #417A95;
+	text-decoration: none;
+} 
+
+a.active, a.active:hover {
+	color: #E67AC2;
+	background: transparent;
 }
 
 /* Editor Page */

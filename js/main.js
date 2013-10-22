@@ -139,8 +139,8 @@ var helloEditor = {
     	$(".lessonButton").each( function (index, value) {
 
     		$(value).click( function() {
-    			$(".lessonButton").parent().removeClass("active");
-    			$(this).parent().addClass("active");
+    			$(".lessonButton").removeClass("active");
+    			$(this).addClass("active");
     			
     			var lessonIndex = parseInt($(this).attr("data-index"));
     			switch(lessonIndex) {    				
@@ -181,7 +181,7 @@ var helloEditor = {
 	 */
 	resizeUI: function() {
 
-		var viewportWidth = $(window).width();
+		var viewportWidth = ($(window).width() > 800) ? $(window).width() : 800;
 		var viewportHeight = $(window).height() - 48;
 
 		$("#interface")
