@@ -112,6 +112,10 @@ var helloEditor = {
 			"https://vimeo.com/77249859"
 		);	
 
+		editor.popcorn.on("seeked", function() {  
+		    console.log("Popcorn seek complete.");   
+		});
+
 		loadScript(editor.popcorn);		
 
   		this.setupUI();
@@ -191,7 +195,7 @@ var helloEditor = {
 
 		if (this.videoMode) {
 
-			console.log("Video Mode");
+			//console.log("Video Mode");
 
 			var videoWidth = viewportWidth * .80;
 			var videoHeight = videoWidth / 16 * 9;
@@ -212,7 +216,7 @@ var helloEditor = {
 
 		} else {
 
-			console.log("Editor Mode");
+			//console.log("Editor Mode");
 
 			var videoWidth = viewportWidth - viewportHeight;
 			var videoHeight = videoWidth / 16 * 9;
@@ -275,15 +279,18 @@ var helloEditor = {
 	runCode: function() {
 		this.resetInstance();
 
-		var viewportHeight = $(window).height() - 48;
+		try {
+			var processingSource = this.editor.getValue();
+			var processingCanvas = document.getElementById("editorCanvas");         
+			this.processingInstance = new Processing(processingCanvas, processingSource);
+		}
+		catch(e) {
+			console.log ("Error: " + e.message);
 
-		var processingSource = this.editor.getValue();
-		var processingCanvas = document.getElementById("editorCanvas");         
-		this.processingInstance = new Processing(processingCanvas, processingSource);
+				$('#errorModalText').html(e.message);
+				$('#errorModal').modal('show');			
+		}
 
-		$("#canvasContainer")
-			.height(viewportHeight)
-			.width(viewportHeight)
 	},
 	/**
 	 * Creates a new Gist with editor contents and shows share modal

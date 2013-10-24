@@ -2,16 +2,13 @@ function loadScript (popcorn) {
 
 	popcorn
 		.code({
-			start: "0:00",
-			onStart: function( options ) {
-				helloEditor.videoMode = true;
-				helloEditor.resizeUI();
-			}			
-		})	
-		.code({
 			start: "01:15",
 			onStart: function( options ) {
 				helloEditor.videoMode = false;
+				helloEditor.resizeUI();
+			},
+			onEnd: function (options) {
+				helloEditor.videoMode = true;
 				helloEditor.resizeUI();
 			}
 		})
@@ -58,7 +55,7 @@ function loadScript (popcorn) {
 				helloEditor.runCode();
 			},
 			onEnd: function( options ) {
-				resetInstance();
+				helloEditor.resetInstance();
 			}			
 		})
 		.code({
