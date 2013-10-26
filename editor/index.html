@@ -26,10 +26,16 @@ title: Editor
   <div id="interface">
 
     <div id="canvasContainer">
-      <canvas id="editorCanvas"></canvas>
+      <div id="canvasBox">
+        <img id="horizontalRuler" src="/assets/images/horizontal.svg" width="700" height="50"/>
+        <img id="verticalRuler" src="/assets/images/vertical.svg" width="50" height="700"/>        
+        <canvas id="editorCanvas"></canvas>
+        <div id="toggleRulers">Toggle Rulers</div>
+      </div>
     </div>
 
     <div id="videoContainer">
+      <div id="hints">Hints will appear here.</div>
       <div id="video" style="width: 100%; height: 100%;"></div>
     </div>
 

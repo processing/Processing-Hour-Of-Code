@@ -107,19 +107,8 @@ var helloEditor = {
   		this.editor.setTheme("ace/theme/clouds");
   		this.editor.setShowFoldWidgets(false);
 
-  		editor.popcorn = Popcorn.vimeo(
-			'#video',
-			"https://vimeo.com/77249859"
-		);	
-
-		editor.popcorn.on("seeked", function() {  
-		    console.log("Popcorn seek complete.");   
-		});
-
-		loadScript(editor.popcorn);		
-
   		this.setupUI();
-    	this.loadLesson(0);
+  		this.loadLesson(1);
 
     	$( window ).resize(function() {
     		helloEditor.resizeUI();
@@ -140,6 +129,12 @@ var helloEditor = {
       		helloEditor.createGist();
     	});   
 
+    	$("#toggleRulers").click(function() {
+
+    		$("#horizontalRuler").toggle();
+    		$("#verticalRuler").toggle();
+    	});
+
     	$(".lessonButton").each( function (index, value) {
 
     		$(value).click( function() {
@@ -147,30 +142,7 @@ var helloEditor = {
     			$(this).addClass("active");
     			
     			var lessonIndex = parseInt($(this).attr("data-index"));
-    			switch(lessonIndex) {    				
-    				case 1: // Hello
-						helloEditor.videoMode = true;
-						helloEditor.resizeUI();    				
-						
-						editor.popcorn.play("0:00");
-					break;
-    				case 2:
-
-						editor.popcorn.play("1:15");
-					break; 
-    				case 3:
-    					editor.popcorn.play("1:15");
-					break;
-    				case 4:
-    					editor.popcorn.play("1:15");
-					break;
-    				case 5:
-    					editor.popcorn.play("1:15");
-					break;
-					case 6: //Goodbye
-						editor.popcorn.play("3:16");
-					break;
-    			}
+    			helloEditor.loadLesson(lessonIndex);
 
     		});
 
@@ -265,12 +237,37 @@ var helloEditor = {
 	 * @param  {[type]} index
 	 * @return {[type]}
 	 */
-	loadLesson: function(index) {
+	loadCode: function(index) {
 		this.resetInstance();
 
 		$.get(this.lessons[index], function(data) {
 			helloEditor.editor.setValue(data, -1);
 		})
+	},
+	loadLesson: function(index) {
+
+		$("#video").html("");
+		switch(index) {    				
+			case 1: // Hello
+				loadScriptOne();
+			break;
+			case 2: 			
+				loadScriptTwo();
+			break; 
+			case 3:
+				loadSciptThree();		
+			break;
+			case 4:
+  				loadScriptFour();			
+			break;
+			case 5:
+  				loadScriptFive();
+			break;
+			case 6: //Goodbye
+  				loadScriptSix();
+			break;
+		}
+
 	},
 	/**
 	 * Run current code in Ace

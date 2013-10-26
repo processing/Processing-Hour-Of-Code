@@ -162,7 +162,37 @@ div#canvasContainer {
 	height: 600px;
 }
 
-canvas#editorCanvas {
+#horizontalRuler {
+	position: absolute;
+	left: 0;
+	top: -50px;
+	display:none;
+}
+
+#verticalRuler {
+	position: absolute;
+	left: -50px;
+	top: 0;
+	display: none;
+}
+
+#toggleRulers {
+	position: absolute;
+	right: 0;
+	bottom: -1.4em;
+	font-size: .9em;
+	color: white;
+	cursor: pointer;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#canvasBox {
 	
 	position:absolute;
 	top: 50%;
@@ -182,6 +212,15 @@ canvas#editorCanvas {
 	left: 600px;
 	width: 424px;
 	height: 238px;
+}
+
+#hints {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 1000;
+	display: none;	
 }
 
 #editorContainer { 
