@@ -4,7 +4,7 @@
 
 function loadScriptOne () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77249859"
 	);	
@@ -20,7 +20,7 @@ function loadScriptOne () {
 
 	// Popcorn Events
 
-	editor.popcorn
+	helloEditor.popcorn
 		.code({
 			start: "01:15",
 			onStart: function( options ) {
@@ -92,9 +92,9 @@ function loadScriptOne () {
 
 		// End Event
 		
-		editor.popcorn.on("ended", function() {  
+		helloEditor.popcorn.on("ended", function() {  
 		    
-		    helloEditor.loadLesson(2);
+		    
 
 		});
 }
@@ -105,7 +105,7 @@ function loadScriptOne () {
 
 function loadScriptTwo () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716815"
 	);
@@ -123,7 +123,7 @@ function loadScriptTwo () {
 
 	// Popcorn Events
 
-	editor.popcorn
+	helloEditor.popcorn
 		.code({
 			start: "06:18",
 			onStart: function( options ) {
@@ -256,7 +256,7 @@ function loadScriptTwo () {
 
 		// End Event
 		
-		editor.popcorn.on("ended", function() {  
+		helloEditor.popcorn.on("ended", function() {  
 		    
 		    $("#hints").show();
 
@@ -269,7 +269,7 @@ function loadScriptTwo () {
 
 function loadScriptThree () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716817"
 	);	
@@ -291,7 +291,7 @@ function loadScriptThree () {
 
 function loadScriptFour () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716816"
 	);	
@@ -313,7 +313,7 @@ function loadScriptFour () {
 
 function loadScriptFive () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716818"
 	);
@@ -335,7 +335,7 @@ function loadScriptFive () {
 
 function loadScriptSix () {
 
-	editor.popcorn = Popcorn.vimeo(
+	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77249859"
 	);

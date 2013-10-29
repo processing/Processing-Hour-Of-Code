@@ -91,6 +91,8 @@ var helloEditor = {
 	popcorn: null,
 	processingInstance: null,
 	videoMode: true,
+	runCache: "",
+	lessonIndex: 1,
 	lessons: [
 		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
 		'/assets/pde/hourofcode_2_color/hourofcode_2_color.pde',
@@ -121,6 +123,29 @@ var helloEditor = {
 	 */
 	setupUI: function() {
 
+		$("#restartButton").click(function(e) {
+      		helloEditor.popcorn.play(0);
+    	});
+
+		$("#resetButton").click(function(e) {
+      		helloEditor.editor.setValue(helloEditor.runCache, -1);
+    	});    	
+
+		$("#pauseButton").click(function(e) {
+			if (helloEditor.popcorn.paused()) {
+      			helloEditor.popcorn.play();
+      			$("#pauseButton").html("Pause");
+      		} else {
+      			helloEditor.popcorn.pause();
+      			$("#pauseButton").html("Play");
+      		}
+    	});
+
+  		$("#nextButton").click(function() {
+      		helloEditor.lessonIndex++;
+      		helloEditor.loadLesson(helloEditor.lessonIndex);
+    	}); 
+
 		$("#runButton").click(function(e) {
       		helloEditor.runCode();
       		helloEditor.editor.focus();
@@ -139,11 +164,10 @@ var helloEditor = {
     	$(".lessonButton").each( function (index, value) {
 
     		$(value).click( function() {
-    			$(".lessonButton").removeClass("active");
-    			$(this).addClass("active");
     			
     			var lessonIndex = parseInt($(this).attr("data-index"));
     			helloEditor.loadLesson(lessonIndex);
+    			helloEditor.lessonIndex = lessonIndex;
 
     		});
 
@@ -247,6 +271,9 @@ var helloEditor = {
 	},
 	loadLesson: function(index) {
 
+    	$(".lessonButton").removeClass("active");
+    	$("a[data-index='"+index+"']").addClass("active");
+
 		$("#video").html("");
 		switch(index) {    				
 			case 1: // Hello
@@ -281,6 +308,8 @@ var helloEditor = {
 			var processingSource = this.editor.getValue();
 			var processingCanvas = document.getElementById("editorCanvas");         
 			this.processingInstance = new Processing(processingCanvas, processingSource);
+
+			helloEditor.runCache = processingSource;
 		}
 		catch(e) {
 			console.log ("Error: " + e.message);
