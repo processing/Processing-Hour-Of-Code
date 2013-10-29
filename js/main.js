@@ -255,7 +255,7 @@ var helloEditor = {
 				loadScriptTwo();
 			break; 
 			case 3:
-				loadSciptThree();		
+				loadScriptThree();		
 			break;
 			case 4:
   				loadScriptFour();			

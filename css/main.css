@@ -197,10 +197,10 @@ div#canvasContainer {
 	position:absolute;
 	top: 50%;
 	left: 50%;
-	width: 600px;
-	height: 600px;
-	margin-top: -300px;
-	margin-left: -300px;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
 
 	outline: none;
 	background: #fff;
@@ -246,12 +246,12 @@ div#canvasContainer {
 /* Display Page */
 
 canvas#displayCanvas {
-	width: 600px;
-	height: 600px;
+	width: 400px;
+	height: 400px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-left: -300px;
-	margin-top: -300px;
+	margin-left: -200px;
+	margin-top: -200px;
 	outline: 1px solid #999;
 }
