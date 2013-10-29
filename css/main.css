@@ -139,6 +139,11 @@ a.active, a.active:hover {
 	background: transparent;
 }
 
+#runButton:hover {
+	opacity: .80;
+	cursor: pointer;
+}
+
 /* Editor Page */
 
 #interface {

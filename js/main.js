@@ -121,8 +121,9 @@ var helloEditor = {
 	 */
 	setupUI: function() {
 
-		$("#runButton").click(function() {
+		$("#runButton").click(function(e) {
       		helloEditor.runCode();
+      		helloEditor.editor.focus();
     	});
 
   		$("#shareButton").click(function() {
