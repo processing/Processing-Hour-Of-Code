@@ -12,14 +12,5 @@
 <line fill="none" stroke="#F1F2F2" stroke-miterlimit="10" x1="46" y1="299.5" x2="31" y2="299.5"/>
 <line fill="none" stroke="#F1F2F2" stroke-miterlimit="10" x1="46" y1="349.368" x2="36" y2="349.368"/>
 <line fill="none" stroke="#F1F2F2" stroke-miterlimit="10" x1="46" y1="399.382" x2="31" y2="399.382"/>
-<text transform="matrix(1 0 0 1 25 15)" font-family="'Geogrotesque-Regular'" font-size="12">0</text>
 <text transform="matrix(1 0 0 1 25 15)" fill="none" stroke="#F1F2F2" font-family="'Geogrotesque-Regular'" font-size="12">0</text>
-<text transform="matrix(1 0 0 1 14 115)" font-family="'Geogrotesque-Regular'" font-size="12">100</text>
-<text transform="matrix(1 0 0 1 14 115)" fill="none" stroke="#F1F2F2" font-family="'Geogrotesque-Regular'" font-size="12">100</text>
-<text transform="matrix(1 0 0 1 14 213)" font-family="'Geogrotesque-Regular'" font-size="12">200</text>
-<text transform="matrix(1 0 0 1 14 213)" fill="none" stroke="#F1F2F2" font-family="'Geogrotesque-Regular'" font-size="12">200</text>
-<text transform="matrix(1 0 0 1 14 313)" font-family="'Geogrotesque-Regular'" font-size="12">300</text>
-<text transform="matrix(1 0 0 1 14 313)" fill="none" stroke="#F1F2F2" font-family="'Geogrotesque-Regular'" font-size="12">300</text>
-<text transform="matrix(1 0 0 1 14 414)" font-family="'Geogrotesque-Regular'" font-size="12">400</text>
-<text transform="matrix(1 0 0 1 14 414)" fill="none" stroke="#F1F2F2" font-family="'Geogrotesque-Regular'" font-size="12">400</text>
 </svg>
