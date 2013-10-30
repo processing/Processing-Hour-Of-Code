@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="450px" height="50px" viewBox="0 0 450 50" enable-background="new 0 0 450 50" xml:space="preserve">
+	 width="550px" height="50px" viewBox="0 0 550 50" enable-background="new 0 0 550 50" xml:space="preserve">
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="1" y1="32" x2="1" y2="47"/>
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="400.382" y1="47" x2="400.382" y2="32"/>
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="350.368" y1="47" x2="350.368" y2="37"/>
@@ -12,14 +12,13 @@
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="150.75" y1="47" x2="150.75" y2="37"/>
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="100.882" y1="47" x2="100.882" y2="32"/>
 <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="50.868" y1="47" x2="50.868" y2="37"/>
-<text transform="matrix(1 0 0 1 6 32)" font-family="'Geogrotesque-Regular'" font-size="12">0</text>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="500.264" y1="47" x2="500.264" y2="32"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="450.25" y1="47" x2="450.25" y2="37"/>
+<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M400.382,32"/>
 <text transform="matrix(1 0 0 1 6 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">0</text>
-<text transform="matrix(1 0 0 1 106.0488 32)" font-family="'Geogrotesque-Regular'" font-size="12">100</text>
 <text transform="matrix(1 0 0 1 106.0488 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">100</text>
-<text transform="matrix(1 0 0 1 205.9512 32)" font-family="'Geogrotesque-Regular'" font-size="12">200</text>
 <text transform="matrix(1 0 0 1 205.9512 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">200</text>
-<text transform="matrix(1 0 0 1 306 32)" font-family="'Geogrotesque-Regular'" font-size="12">300</text>
 <text transform="matrix(1 0 0 1 306 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">300</text>
-<text transform="matrix(1 0 0 1 406.0488 32)" font-family="'Geogrotesque-Regular'" font-size="12">400</text>
 <text transform="matrix(1 0 0 1 406.0488 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">400</text>
+<text transform="matrix(1 0 0 1 505.9307 32)" fill="none" stroke="#FFFFFF" font-family="'Geogrotesque-Regular'" font-size="12">500</text>
 </svg>
