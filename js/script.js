@@ -45,7 +45,7 @@ function loadScriptOne () {
 		.code({
 			start: "01:27",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(400, 400)\n\nellipse(200, 200, 400, 400);");
+				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 400, 400);");
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -157,7 +157,7 @@ function loadScriptTwo () {
 		}).code({
 			start: "06:48",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(400, 400)\n\nellipse(200, 200, 150, 150);");
+				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 150, 150);");
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -204,7 +204,7 @@ function loadScriptTwo () {
 				$("#editorContainer").show();
 				$("#canvasContainer").show();				
 
-				helloEditor.editor.setValue("size(400, 400)\n\nrect(200, 200, 150, 150);");
+				helloEditor.editor.setValue("size(500, 400)\n\nrect(250, 200, 150, 150);");
 				helloEditor.resetInstance();
 			},
 			onEnd: function( options ) {
