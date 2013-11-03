@@ -14,7 +14,7 @@ function loadScriptOne () {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 
@@ -105,6 +105,8 @@ function loadScriptOne () {
 
 function loadScriptTwo () {
 
+	// Reinitialize popcorn instance
+
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716815"
@@ -115,7 +117,9 @@ function loadScriptTwo () {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	// Hide these elements so Dan can introduce them
+
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 	$("#toggleRulers").hide();
@@ -124,10 +128,10 @@ function loadScriptTwo () {
 	// Popcorn Events
 
 	helloEditor.popcorn
+		// Leave video mode to introduce other UI elements
 		.code({
 			start: "06:18",
 			onStart: function( options ) {
-				console.log("SUP");
 				helloEditor.videoMode = false;
 				helloEditor.resizeUI();
 			},
@@ -136,6 +140,7 @@ function loadScriptTwo () {
 				helloEditor.resizeUI();
 			}
 		})
+		// Show the editor, set the value to nothing
 		.code({
 			start: "06:20",
 			onStart: function( options ) {
@@ -146,6 +151,7 @@ function loadScriptTwo () {
 				$("#editorContainer").hide();
 			}
 		})
+		// Show the canvas container
 		.code({
 			start: "06:33",
 			onStart: function( options ) {
@@ -154,7 +160,9 @@ function loadScriptTwo () {
 			onEnd: function( options ) {
 				$("#canvasContainer").hide();
 			}			
-		}).code({
+		})
+		// Manually set editor contents. This could come from a Gist or something.
+		.code({
 			start: "06:48",
 			onStart: function( options ) {
 				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 150, 150);");
@@ -163,6 +171,7 @@ function loadScriptTwo () {
 				helloEditor.editor.setValue("");
 			}
 		})
+		// Run whatever is in the editor
 		.code({
 			start: "06:58",
 			onStart: function( options ) {
@@ -172,6 +181,7 @@ function loadScriptTwo () {
 				helloEditor.resetInstance();
 			}			
 		})
+		// Show the run button (and currently others)
 		.code({
 			start: "07:06",
 			onStart: function( options ) {
@@ -181,6 +191,7 @@ function loadScriptTwo () {
 				$("#commands").hide();
 			}			
 		})
+		// Jump back to video mode for more explainations
 		.code({
 			start: "07:50",
 			onStart: function( options ) {
@@ -195,6 +206,7 @@ function loadScriptTwo () {
 				$("#canvasContainer").show();					
 			}			
 		})
+		// Show the editor and canvas again and insert code
 		.code({
 			start: "09:36",
 			onStart: function( options ) {
@@ -212,7 +224,9 @@ function loadScriptTwo () {
 				helloEditor.resizeUI();
 
 			}			
-		}).code({
+		})
+		// Run the code in the editor
+		.code({
 			start: "09:51",
 			onStart: function( options ) {
 				helloEditor.runCode();
@@ -220,7 +234,9 @@ function loadScriptTwo () {
 			onEnd: function( options ) {
 				helloEditor.resetInstance();
 			}			
-		}).code({
+		})
+		// Show the rulers
+		.code({
 			start: "11:13",
 			onStart: function( options ) {
 				$("#horizontalRuler").show();
@@ -230,7 +246,9 @@ function loadScriptTwo () {
 				$("#horizontalRuler").hide();
 				$("#verticalRuler").hide();
 			}			
-		}).code({
+		})
+		// Hide the rulers, show the toggle button
+		.code({
 			start: "11:17",
 			onStart: function( options ) {
 				$("#horizontalRuler").hide();
@@ -242,7 +260,9 @@ function loadScriptTwo () {
 				$("#verticalRuler").show();
 				$("#toggleRulers").hide();
 			}			
-		}).code({
+		})
+		// Show the rulers again
+		.code({
 			start: "11:22",
 			onStart: function( options ) {
 				$("#horizontalRuler").show();
@@ -258,7 +278,12 @@ function loadScriptTwo () {
 		
 		helloEditor.popcorn.on("ended", function() {  
 		    
-		    $("#hints").show();
+		    // Show the proper hint over the video
+
+		    var hintHTML = $("#hints div[data-index='2']").html();
+
+		    $("#hint").html(hintHTML);
+		    $("#hint").show();
 
 		});
 }

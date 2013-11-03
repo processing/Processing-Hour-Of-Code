@@ -1,16 +1,13 @@
 Critical For Launch
 ===================
 
-* Video content
-* Popcorn based triggers for lesson events
-* Full menu bar for play, reset, etc.
-* Timeline styling
+* Hint screens
+
 
 High Priority
 =============
 
-* Design refinements
-* Basic error checking
+* Basic error checking and code reset
 
 Medium Priority
 ===============

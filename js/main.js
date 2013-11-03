@@ -6,46 +6,44 @@ $(document).ready(function() {
 
 /**
  * Singleton for splash page
- * @type {Object}
  */
 var helloSplash = {
 	/**
 	 * Initialize splash page
-	 * @return {[type]}
 	 */
 	init: function() {
 
-	// Center Splash
+		// Center Splash
 
-    $("#splashDiv").css("margin-left",$("#splashDiv").width() /-2);
-    $("#splashDiv").css("margin-top",$("#splashDiv").height() /-2);
-    
-    // Animate In
+	    $("#splashDiv").css("margin-left",$("#splashDiv").width() /-2);
+	    $("#splashDiv").css("margin-top",$("#splashDiv").height() /-2);
+	    
+	    // Animate In
 
-    $("#splash").css({'opacity': 0, 'marginTop': 24}).animate(
-      { opacity: 1, marginTop: 0 },
-      { duration: 600}
-    );
+	    $("#splash").css({'opacity': 0, 'marginTop': 24}).animate(
+	      { opacity: 1, marginTop: 0 },
+	      { duration: 600}
+	    );
 
-    $("#splashFooter").css({'opacity': 0}).delay(600).animate(
-      { opacity: 1},
-      { duration: 'slow'}
-    );    
+	    // Show Footer
 
+	    $("#splashFooter").css({'opacity': 0}).delay(600).animate(
+	      { opacity: 1},
+	      { duration: 'slow'}
+	    );    
 	}
 }
 
 /**
  * Singleton for display page
- *
- * @type {Object}
  */
 var helloDisplay = {
 	/**
 	 * Initialize display page
-	 * @return {[type]}
 	 */
 	init: function() {
+
+		// Get the gistID from the URL and display it
 
 		if (document.URL.indexOf('#') >=0 ) {
 			var gistID = document.URL.split('#')[1];
@@ -55,8 +53,6 @@ var helloDisplay = {
 	},
 	/**
 	 * Fetch Gist code from GitHub and feed it to Processing.js
-	 * @param  {[type]} gistID
-	 * @return {[type]}
 	 */
 	displayGist: function(gistID) {
 	
@@ -84,7 +80,6 @@ var helloDisplay = {
 
 /**
  * Singleton for the editor page
- * @type {Object}
  */
 var helloEditor = {
 	editor: null,
@@ -101,27 +96,37 @@ var helloEditor = {
 	],
 	/**
 	 * Initialize Ace editor and UI elements
-	 * @return {[type]}
 	 */
 	init: function () {
+
+		// Configure Editor
+		
   		this.editor = ace.edit("editor");
   		this.editor.getSession().setMode("ace/mode/processing");
   		this.editor.setTheme("ace/theme/clouds");
   		this.editor.setShowFoldWidgets(false);
 
+  		// Configure UI
+
   		this.setupUI();
   		this.loadLesson(1);
 
+  		// Resize callback
+
     	$( window ).resize(function() {
     		helloEditor.resizeUI();
-		});
+		});	    
 
 	},
 	/**
 	 * Initialize UI elements
-	 * @return {[type]}
 	 */
 	setupUI: function() {
+
+		$("#modalResetCode").click(function(e) {
+			helloEditor.editor.setValue(helloEditor.runCache, -1);
+			$('#errorModal').modal('hide');
+		});
 
 		$("#restartButton").click(function(e) {
       		helloEditor.popcorn.play(0);
@@ -248,7 +253,6 @@ var helloEditor = {
 	},
 	/**
 	 * Reset the Processing.js instance
-	 * @return {[type]}
 	 */
 	resetInstance: function() {
 		if (this.processingInstance) {
@@ -259,8 +263,6 @@ var helloEditor = {
 	},
 	/**
 	 * Loads a lesson into the editor by index
-	 * @param  {[type]} index
-	 * @return {[type]}
 	 */
 	loadCode: function(index) {
 		this.resetInstance();
@@ -269,6 +271,9 @@ var helloEditor = {
 			helloEditor.editor.setValue(data, -1);
 		})
 	},
+	/**
+	 * Load the indicated lesson
+	 */
 	loadLesson: function(index) {
 
     	$(".lessonButton").removeClass("active");
@@ -299,7 +304,6 @@ var helloEditor = {
 	},
 	/**
 	 * Run current code in Ace
-	 * @return {[type]}
 	 */
 	runCode: function() {
 		this.resetInstance();
@@ -312,16 +316,28 @@ var helloEditor = {
 			helloEditor.runCache = processingSource;
 		}
 		catch(e) {
-			console.log ("Error: " + e.message);
-
-				$('#errorModalText').html(e.message);
-				$('#errorModal').modal('show');			
+			helloEditor.displayError(e);		
 		}
 
 	},
 	/**
+	 * Show the error modal and try to parse the error into something helpful.
+	 */
+	displayError: function (e) {
+
+		var outputMessage = e.message;
+
+		var search = /Can't find variable: (\w+)/.exec(e.message);
+		if (search.length) {
+			outputMessage = "I'm not sure what '" + search[1] + "' means. Maybe it's a typo?"
+		}
+
+		$('#errorModalText').html(outputMessage);
+		$('#errorModal').modal('show');	
+
+	},
+	/**
 	 * Creates a new Gist with editor contents and shows share modal
-	 * @return {[type]}
 	 */
 	createGist: function() {
 
