@@ -14,9 +14,13 @@ Hour of Code Script Outline
     * a pixel in the middle
 * "Commands" and basic syntax
 * Drawing a circle
-	* quick example, viewer makes changes
+    * Look, a code editor!
+    * Look, a canvas!
+    * rulers!
+    * Viewer asked to make some small changes
+    * Look, run button!
 * Drawing a rectangle
-	* quick example, viewer makes changes
+    * quick example, viewer makes changes
 * End leaving viewer with premade example
 
 ## Color
