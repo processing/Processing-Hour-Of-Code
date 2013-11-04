@@ -313,6 +313,9 @@ var helloEditor = {
 			var processingCanvas = document.getElementById("editorCanvas");         
 			this.processingInstance = new Processing(processingCanvas, processingSource);
 
+			if (typeof this.processingInstance.draw === 'function')
+				this.processingInstance.draw();
+
 			helloEditor.runCache = processingSource;
 		}
 		catch(e) {
@@ -328,7 +331,7 @@ var helloEditor = {
 		var outputMessage = e.message;
 
 		var search = /Can't find variable: (\w+)/.exec(e.message);
-		if (search.length) {
+		if (search) {
 			outputMessage = "I'm not sure what '" + search[1] + "' means. Maybe it's a typo?"
 		}
 
