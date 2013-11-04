@@ -253,6 +253,19 @@ div#editorContainer {
 	right: 12px;
 }
 
+#colorPicker {
+	display: none;
+}
+
+.ace_color {
+	pointer-events:auto;
+	cursor: pointer;
+}
+
+.ace_color:hover {
+	text-decoration: underline;
+}
+
 /* Display Page */
 
 canvas#displayCanvas {

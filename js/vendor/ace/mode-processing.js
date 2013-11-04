@@ -65,7 +65,10 @@ var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
 var ProcessingHighlightRules = function() {
 
     this.$rules = { start: 
-       [ { token: 'support.function.java-processing',
+       [
+        { token: 'support.function.color.java-processing',
+          regex: '\\b(stroke|fill|background)\\b' },
+        { token: 'support.function.java-processing',
            regex: '\\b(abs|acos|alpha|alpha|ambient|ambientLight|append|applyMatrix|arc|asin|atan2|atan|background|beginCamera|beginShape|bezier|bezierDetail|bezierPoint|bezierTangent|bezierVertex|binary|blend|blend|blue|boolean|box|brightness|byte|cache|camera|ceil|char|charAt|color|colorMode|concat|constrain|contract|copy|copy|cos|createFont|cursor|curve|curveDetail|curvePoint|curveSegments|curveTightness|curveVertex|day|degrees|delay|directionalLight|dist|duration|ellipse|ellipseMode|emissive|endCamera|endShape|equals|exp|expand|fill|filter|filter|float|floor|framerate|frustum|get|get|green|hex|hint|hour|hue|image|imageMode|indexOf|int|join|keyPressed|keyReleased|length|lerp|lightFalloff|lightSpecular|lights|line|link|list|loadBytes|loadFont|loadImage|loadPixels|loadSound|loadStrings|log|lookat|loop|loop|mag|mask|max|millis|min|minute|modelX|modelY|modelZ|month|mouseDragged|mouseMoved|mousePressed|mouseReleased|nf|nfc|nfp|nfs|noCursor|noFill|noLoop|noLoop|noSmooth|noStroke|noTint|noise|noiseDetail|noiseSeed|normal|open|openStream|ortho|param|pause|perspective|play|point|pointLight|popMatrix|pow|print|printCamera|printMatrix|printProjection|println|pushMatrix|quad|radians|random|randomSeed|rect|rectMode|red|redraw|resetMatrix|reverse|rotate|rotateX|rotateY|rotateZ|round|saturation|save|saveBytes|saveFrame|saveStrings|scale|screenX|screenY|screenZ|second|set|set|shininess|shorten|sin|size|smooth|sort|specular|sphere|sphereDetail|splice|split|spotLight|sq|sqrt|status|stop|str|stroke|strokeCap|strokeJoin|strokeWeight|subset|substring|switch|tan|text|textAlign|textAscent|textDescent|textFont|textLeading|textMode|textSize|textWidth|texture|textureMode|time|tint|toLowerCase|toUpperCase|translate|triangle|trim|unHint|unbinary|unhex|updatePixels|vertex|volume|year|draw|setup)\\b' },
          { token: 'punctuation.definition.comment.java-processing',
            regex: '/\\*\\*/' },

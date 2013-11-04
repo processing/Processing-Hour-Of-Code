@@ -4,6 +4,8 @@ $(document).ready(function() {
 	if (page != null && eval(page) !== null) eval(page).init();
 });
 
+var Range = require("ace/range").Range;
+
 /**
  * Singleton for splash page
  */
@@ -117,6 +119,31 @@ var helloEditor = {
     		helloEditor.resizeUI();
 		});	    
 
+		// Color Picker
+
+		$('#colorPicker').spectrum({
+			flat: true,
+    		showInput: false,
+		}); 
+
+		$("#colorPicker").spectrum("container").hide();
+
+		$(".sp-cancel").click(function(){		
+			$("#colorPicker").spectrum("container").hide();
+		});
+
+		$(".sp-choose").click(function(){
+			var color = $("#colorPicker").spectrum("get").toRgb();
+
+			var range = $("#colorPicker").spectrum.range;
+			var token = $("#colorPicker").spectrum.token;
+
+			helloEditor.editor.session.replace(range,token.value + "("+color.r+","+color.g+","+color.b+");");
+
+			$("#colorPicker").spectrum("container").hide();
+			helloEditor.editor.focus();
+		});
+
 	},
 	/**
 	 * Initialize UI elements
@@ -175,6 +202,41 @@ var helloEditor = {
     			helloEditor.lessonIndex = lessonIndex;
 
     		});
+
+    	});
+
+    	// Color Picker
+
+    	$(helloEditor.editor).on("change", function(e) {
+    		console.log("CHANGE");
+    	});
+
+    	$(helloEditor.editor).on("click", function(e) {
+
+    		$("#colorPicker").spectrum("container").hide();
+
+    		var editor = helloEditor.editor;
+    		var position = editor.getCursorPosition();
+    		var token = editor.session.getTokenAt(position.row, position.column);
+
+			 if (/\bcolor\b/.test(token.type)) {
+
+    			var line = editor.session.getLine(position.row);			
+				var range = new Range(position.row,0,position.row,line.length);			
+
+				var pixelPosition = editor.renderer.$cursorLayer.getPixelPosition(position, true);
+
+				$("#colorPicker").spectrum.token = token;
+				$("#colorPicker").spectrum.range = range;
+
+				$("#colorPicker").spectrum("container").show();;
+				$("#colorPicker").spectrum("container").css( {
+					position: "absolute",
+					top: pixelPosition.top,
+					left: pixelPosition.left
+				});
+
+			 }
 
     	});
 
