@@ -30,9 +30,9 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 
 ## Interact
-* static vs. dynamic
-* flow
+* static vs. dynamic, flow
 * setup and draw
+* size()
 * variation, mouseX and mousesY
    * viewer adds another mouseX, mouseY shape
 * a little extra math, mouseX + ____ , mouseyY / ____ etc
