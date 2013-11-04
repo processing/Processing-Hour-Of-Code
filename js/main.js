@@ -4,8 +4,6 @@ $(document).ready(function() {
 	if (page != null && eval(page) !== null) eval(page).init();
 });
 
-var Range = require("ace/range").Range;
-
 /**
  * Singleton for splash page
  */
@@ -206,10 +204,6 @@ var helloEditor = {
     	});
 
     	// Color Picker
-
-    	$(helloEditor.editor).on("change", function(e) {
-    		console.log("CHANGE");
-    	});
 
     	$(helloEditor.editor).on("click", function(e) {
 
