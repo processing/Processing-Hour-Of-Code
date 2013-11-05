@@ -9,7 +9,7 @@ function loadScriptOne (time) {
 		"https://vimeo.com/77249859"
 	);	
 
-	if (time != 0) helloEditor.popcorn.play(time);
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -114,7 +114,7 @@ function loadScriptTwo (time) {
 		"https://vimeo.com/77716815"
 	);
 
-	if (time != 0) helloEditor.popcorn.play(time);	
+	helloEditor.popcorn.play(time);	
 
 	// Set initial State
 
@@ -148,7 +148,7 @@ function loadScriptTwo (time) {
 		.code({
 			start: "06:20",
 			onStart: function( options ) {
-				$("#editorContainer").show();
+				$("#editorContainer").fadeIn("fast");
 				helloEditor.editor.setValue();
 			},
 			onEnd: function( options ) {
@@ -159,7 +159,7 @@ function loadScriptTwo (time) {
 		.code({
 			start: "06:33",
 			onStart: function( options ) {
-				$("#canvasContainer").show();
+				$("#canvasContainer").fadeIn("fast");
 			},
 			onEnd: function( options ) {
 				$("#canvasContainer").hide();
@@ -189,7 +189,7 @@ function loadScriptTwo (time) {
 		.code({
 			start: "07:06",
 			onStart: function( options ) {
-				$("#editorCommands").show();
+				$("#editorCommands").fadeIn("fast");
 			},
 			onEnd: function( options ) {
 				$("#editorCommands").hide();
@@ -217,8 +217,8 @@ function loadScriptTwo (time) {
 				helloEditor.videoMode = false;
 				helloEditor.resizeUI();
 
-				$("#editorContainer").show();
-				$("#canvasContainer").show();				
+				$("#editorContainer").fadeIn("fast");
+				$("#canvasContainer").fadeIn("fast");				
 
 				helloEditor.editor.setValue("size(500, 400)\n\nrect(250, 200, 150, 150);",-1);
 				helloEditor.resetInstance();
@@ -243,8 +243,8 @@ function loadScriptTwo (time) {
 		.code({
 			start: "11:13",
 			onStart: function( options ) {
-				$("#horizontalRuler").show();
-				$("#verticalRuler").show();
+				$("#horizontalRuler").fadeIn("fast");
+				$("#verticalRuler").fadeIn("fast");
 			},
 			onEnd: function( options ) {
 				$("#horizontalRuler").hide();
@@ -255,9 +255,9 @@ function loadScriptTwo (time) {
 		.code({
 			start: "11:17",
 			onStart: function( options ) {
-				$("#horizontalRuler").hide();
-				$("#verticalRuler").hide();
-				$("#toggleRulers").show();
+				$("#horizontalRuler").fadeOut("fast");
+				$("#verticalRuler").fadeOut("fast");
+				$("#toggleRulers").fadeIn("fast");
 			},
 			onEnd: function( options ) {
 				$("#horizontalRuler").show();
@@ -269,8 +269,8 @@ function loadScriptTwo (time) {
 		.code({
 			start: "11:22",
 			onStart: function( options ) {
-				$("#horizontalRuler").show();
-				$("#verticalRuler").show();
+				$("#horizontalRuler").fadeIn("fast");
+				$("#verticalRuler").fadeIn("fast");
 			},
 			onEnd: function( options ) {
 				$("#horizontalRuler").hide();
@@ -303,7 +303,7 @@ function loadScriptThree (time) {
 		"https://vimeo.com/77716817"
 	);	
 
-	if (time != 0) helloEditor.popcorn.play(time);
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -327,7 +327,7 @@ function loadScriptFour (time) {
 		"https://vimeo.com/77716816"
 	);	
 
-	if (time != 0) helloEditor.popcorn.play(time);
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -351,7 +351,7 @@ function loadScriptFive (time) {
 		"https://vimeo.com/77716818"
 	);
 
-	if (time != 0) helloEditor.popcorn.play(time);
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -375,7 +375,7 @@ function loadScriptSix (time) {
 		"https://vimeo.com/77249859"
 	);
 
-	if (time != 0) helloEditor.popcorn.play(time);
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 

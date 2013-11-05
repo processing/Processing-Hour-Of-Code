@@ -47,6 +47,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+a {
+	color: #5CADD5;
+}
+
 /* Splash Page */
 
 div#splashDiv {	
@@ -86,7 +90,8 @@ footer#splashFooter {
 	width: 100%;
 	background: #F9F9FC;
 	z-index: 1000;		
-	height: 48px;	
+	height: 48px;
+	box-shadow: 0px 4px 1px rgba(0,0,0,.25);		
 }
 
 #header {
@@ -104,7 +109,6 @@ div#title {
 	font-size: 1.6em;
 	font-weight: bold;
 	margin-top:8px;
-	color: rgb(0, 102, 153);
 }
 
 div#title a:hover {
@@ -147,8 +151,8 @@ a.active, a.active:hover {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #5CADD5;	
 
+background: #5cadd5;
 }
 
 div#canvasContainer {
@@ -177,7 +181,7 @@ div#canvasContainer {
 #toggleRulers {
 	position: absolute;
 	right: 0;
-	bottom: -3em;
+	bottom: -3.5em;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -199,14 +203,18 @@ div#canvasContainer {
 
 	outline: none;
 	background: #fff;
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
 }
 
 div#videoContainer {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 424px;
 	height: 238px;
+	background: rgba(0,0,0,.25);
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 }
 
 div#videoCommandsContainer {
@@ -244,6 +252,8 @@ div#editorContainer {
 	width: 424px;
 	height: 362px;	
 	background: #F9F9FC;
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
+
 }
 
 #editor { 

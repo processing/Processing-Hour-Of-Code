@@ -104,7 +104,8 @@ var helloEditor = {
   		this.editor = ace.edit("editor");
   		this.editor.getSession().setMode("ace/mode/processing");
   		this.editor.setTheme("ace/theme/processing");
-  		this.editor.renderer.setShowGutter(false); 
+  		//this.editor.renderer.setShowGutter(false); 
+  		this.editor.setShowFoldWidgets(false);
   		this.editor.setHighlightActiveLine(false);
   		this.editor.renderer.setShowPrintMargin(false);
 
@@ -114,12 +115,12 @@ var helloEditor = {
 
   		// Load proper lesson
   		
-  		var lessonIndex = 0;
+  		var lessonIndex = 1;
+  		var lessonTime = 0;
   		var hash = top.location.hash.replace('#', '');;
 
   		if (hash.length > 0) {
   			var lessonName = hash.split("-")[0];
-  			var lessonTime = hash.split("-")[1];	
   			
   			switch(lessonName) {
   				case "hello":
@@ -142,7 +143,7 @@ var helloEditor = {
   				break;
   			}	
 
-  			if (lessonTime == undefined) lessonTime = 0;
+  			if (hash.split("-")[1] != undefined) lessonTime = hash.split("-")[1];
   			
   		}
 
@@ -315,7 +316,7 @@ var helloEditor = {
 
 			$("#editorContainer").hide();
 			$("#canvasContainer").hide();
-			//$("#editorCommands").hide();
+			$("#videoContainer").show();
 
 		} else {
 
@@ -328,8 +329,8 @@ var helloEditor = {
 				.css({
 					width: videoWidth,
 					height: videoHeight,
-					left: 0,
-					top: 0,
+					left: 8,
+					top: 8,
 					marginTop: 0,
 					marginLeft: 0
 				});
@@ -337,9 +338,9 @@ var helloEditor = {
 			$("#editorContainer")
 				.css({
 					width:videoWidth,
-					height: viewportHeight - videoHeight,
-					top: videoHeight,
-					left: 0
+					height: viewportHeight - videoHeight - 32,
+					top: videoHeight + 20,
+					left: 8
 				});
 
 			$("#canvasContainer")
