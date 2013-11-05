@@ -103,13 +103,50 @@ var helloEditor = {
 		
   		this.editor = ace.edit("editor");
   		this.editor.getSession().setMode("ace/mode/processing");
-  		this.editor.setTheme("ace/theme/clouds");
-  		this.editor.setShowFoldWidgets(false);
+  		this.editor.setTheme("ace/theme/processing");
+  		this.editor.renderer.setShowGutter(false); 
+  		this.editor.setHighlightActiveLine(false);
+  		this.editor.renderer.setShowPrintMargin(false);
 
   		// Configure UI
 
   		this.setupUI();
-  		this.loadLesson(1);
+
+  		// Load proper lesson
+  		
+  		var lessonIndex = 0;
+  		var hash = top.location.hash.replace('#', '');;
+
+  		if (hash.length > 0) {
+  			var lessonName = hash.split("-")[0];
+  			var lessonTime = hash.split("-")[1];	
+  			
+  			switch(lessonName) {
+  				case "hello":
+  					lessonIndex = 1;
+  				break;
+  				case "shapes":
+  					lessonIndex = 2;
+  				break;
+  				case "color":
+  					lessonIndex = 3;
+  				break;
+  				case "interact":
+  					lessonIndex = 4;
+  				break;
+  				case "decisions":
+  					lessonIndex = 5;
+  				break;
+  				case "goodbye":
+  					lessonIndex = 6;
+  				break;
+  			}	
+
+  			if (lessonTime == undefined) time = 0;
+  			
+  		}
+
+  		this.loadLesson(lessonIndex, lessonTime);
 
   		// Resize callback
 
@@ -154,6 +191,7 @@ var helloEditor = {
 		});
 
 		$("#restartButton").click(function(e) {
+			$("#hint").hide();
       		helloEditor.popcorn.play(0);
     	});
 
@@ -173,7 +211,7 @@ var helloEditor = {
 
   		$("#nextButton").click(function() {
       		helloEditor.lessonIndex++;
-      		helloEditor.loadLesson(helloEditor.lessonIndex);
+      		helloEditor.loadLesson(helloEditor.lessonIndex, 0);
     	}); 
 
 		$("#runButton").click(function(e) {
@@ -196,7 +234,7 @@ var helloEditor = {
     		$(value).click( function() {
     			
     			var lessonIndex = parseInt($(this).attr("data-index"));
-    			helloEditor.loadLesson(lessonIndex);
+    			helloEditor.loadLesson(lessonIndex, 0);
     			helloEditor.lessonIndex = lessonIndex;
 
     		});
@@ -330,7 +368,7 @@ var helloEditor = {
 	/**
 	 * Load the indicated lesson
 	 */
-	loadLesson: function(index) {
+	loadLesson: function(index, time) {
 
     	$(".lessonButton").removeClass("active");
     	$("a[data-index='"+index+"']").addClass("active");
@@ -338,22 +376,22 @@ var helloEditor = {
 		$("#video").html("");
 		switch(index) {    				
 			case 1: // Hello
-				loadScriptOne();
+				loadScriptOne(time);
 			break;
 			case 2: 			
-				loadScriptTwo();
+				loadScriptTwo(time);
 			break; 
 			case 3:
-				loadScriptThree();		
+				loadScriptThree(time);		
 			break;
 			case 4:
-  				loadScriptFour();			
+  				loadScriptFour(time);			
 			break;
 			case 5:
-  				loadScriptFive();
+  				loadScriptFive(time);
 			break;
 			case 6: //Goodbye
-  				loadScriptSix();
+  				loadScriptSix(time);
 			break;
 		}
 

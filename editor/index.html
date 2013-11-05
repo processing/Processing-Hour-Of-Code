@@ -31,7 +31,11 @@ title: Editor
         <img id="horizontalRuler" src="/assets/images/horizontal.svg" width="550" height="50"/>
         <img id="verticalRuler" src="/assets/images/vertical.svg" width="50" height="450"/>        
         <canvas id="editorCanvas"></canvas>
-        <div id="toggleRulers">Toggle Rulers</div>
+
+        <a id="toggleRulers" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
+        </a>
+
       </div>
     </div>
 
@@ -43,15 +47,26 @@ title: Editor
     <div id="editorContainer">
       <div id="editor"></div>
       <input type='text' id="colorPicker" />
+
       <div id="commands" class="btn-group">
-        <img id="runButton" src="/assets/images/play.svg" width="50" height="50"/>
-
-        <a id="restartButton" type="button" class="btn btn-default btn-sm">Restart</a>
-        <a id="pauseButton" type="button" class="btn btn-default btn-sm">Pause</a>
-        <a id="nextButton" type="button" class="btn btn-default btn-sm">Next</a>
-        <a id="resetButton" type="button" class="btn btn-default btn-sm">Reset</a>
-        <a id="shareButton" type="button" class="btn btn-default btn-sm">Share</a> 
-
+        <a id="restartButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-refresh"></span> Restart
+        </a>
+        <a id="pauseButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-pause"></span> Pause
+        </a>
+        <a id="nextButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-forward"></span> Next Lesson
+        </a>
+        <a id="resetButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-flash"></span> Reset Code
+        </a>
+        <a id="shareButton" type="button" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-share-alt"></span> Share
+        </a> 
+        <a id="runButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-play"></span> Run Code
+        </a> 
       </div>      
     </div>
 
@@ -74,8 +89,12 @@ title: Editor
       <div class="modal-body" id="errorModalText">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="modalResetCode">Reset Code</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">I'll Fix It</button>      
+        <button type="button" class="btn btn-default" id="modalResetCode">
+          <span class="glyphicon glyphicon-flash"></span> Reset Code
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <span class="glyphicon glyphicon-ok"></span> Continue
+        </button>      
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -97,7 +116,9 @@ title: Editor
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <span class="glyphicon glyphicon-ok"></span> Close
+        </button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

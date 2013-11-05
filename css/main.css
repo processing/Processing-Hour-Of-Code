@@ -139,11 +139,6 @@ a.active, a.active:hover {
 	background: transparent;
 }
 
-#runButton:hover {
-	opacity: .80;
-	cursor: pointer;
-}
-
 /* Editor Page */
 
 #interface {
@@ -184,10 +179,7 @@ div#canvasContainer {
 #toggleRulers {
 	position: absolute;
 	right: 0;
-	bottom: -1.4em;
-	font-size: .9em;
-	color: white;
-	cursor: pointer;
+	bottom: -3em;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -217,6 +209,7 @@ div#videoContainer {
 	left: 0;
 	width: 424px;
 	height: 238px;
+	background: #white;
 }
 
 #hints {
@@ -237,9 +230,11 @@ div#editorContainer {
 	position: absolute;
 	top: 238px;
 	left: 0px;
+	padding: 8px;
 
 	width: 424px;
 	height: 362px;	
+	background: #F9F9FC;
 }
 
 #editor { 

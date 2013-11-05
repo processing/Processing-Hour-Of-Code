@@ -4,21 +4,21 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="550px" height="50px" viewBox="0 0 550 50" enable-background="new 0 0 550 50" xml:space="preserve">
 <line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="1" y1="32" x2="1" y2="47"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="400.382" y1="47" x2="400.382" y2="32"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="350.368" y1="47" x2="350.368" y2="37"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="300.5" y1="47" x2="300.5" y2="32"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="250.632" y1="47" x2="250.632" y2="37"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="200.618" y1="47" x2="200.618" y2="32"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="150.75" y1="47" x2="150.75" y2="37"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="100.882" y1="47" x2="100.882" y2="32"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="50.868" y1="47" x2="50.868" y2="37"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="500.264" y1="47" x2="500.264" y2="32"/>
-<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="450.25" y1="47" x2="450.25" y2="37"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="400" y1="47" x2="400" y2="32"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="350" y1="47" x2="350" y2="37"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="300" y1="47" x2="300" y2="32"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="250" y1="47" x2="250" y2="37"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="200" y1="47" x2="200" y2="32"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="150" y1="47" x2="150" y2="37"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="100" y1="47" x2="100" y2="32"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="50" y1="47" x2="50" y2="37"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="500" y1="47" x2="500" y2="32"/>
+<line fill="none" stroke="#F2F2F2" stroke-miterlimit="10" x1="450" y1="47" x2="450" y2="37"/>
 <path fill="none" stroke="#F2F2F2" stroke-miterlimit="10" d="M400.382,32"/>
-<text transform="matrix(1 0 0 1 6 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">0</text>
-<text transform="matrix(1 0 0 1 106.0488 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">100</text>
-<text transform="matrix(1 0 0 1 205.9512 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">200</text>
-<text transform="matrix(1 0 0 1 306 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">300</text>
-<text transform="matrix(1 0 0 1 406.0488 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">400</text>
-<text transform="matrix(1 0 0 1 505.9307 32)" fill="none" stroke="#F2F2F2" font-family="'Geogrotesque-Regular'" font-size="12">500</text>
+<text transform="matrix(1 0 0 1 6 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">0</text>
+<text transform="matrix(1 0 0 1 106.0488 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">100</text>
+<text transform="matrix(1 0 0 1 205.9512 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">200</text>
+<text transform="matrix(1 0 0 1 306 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">300</text>
+<text transform="matrix(1 0 0 1 406.0488 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">400</text>
+<text transform="matrix(1 0 0 1 505.9307 32)" fill="#F2F2F2" font-family="'Geogrotesque-Light'" font-size="12">500</text>
 </svg>

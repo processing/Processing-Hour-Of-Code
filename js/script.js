@@ -2,12 +2,14 @@
  * Script for Video One
  */
 
-function loadScriptOne () {
+function loadScriptOne (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77249859"
 	);	
+
+	if (time != 0) helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -45,7 +47,7 @@ function loadScriptOne () {
 		.code({
 			start: "01:27",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 400, 400);");
+				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 400, 400);",-1);
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -103,7 +105,7 @@ function loadScriptOne () {
  * Script for Video Two
  */
 
-function loadScriptTwo () {
+function loadScriptTwo (time) {
 
 	// Reinitialize popcorn instance
 
@@ -111,6 +113,8 @@ function loadScriptTwo () {
 		'#video',
 		"https://vimeo.com/77716815"
 	);
+
+	if (time != 0) helloEditor.popcorn.play(time);	
 
 	// Set initial State
 
@@ -165,7 +169,7 @@ function loadScriptTwo () {
 		.code({
 			start: "06:48",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 150, 150);");
+				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 150, 150);",-1);
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -216,7 +220,7 @@ function loadScriptTwo () {
 				$("#editorContainer").show();
 				$("#canvasContainer").show();				
 
-				helloEditor.editor.setValue("size(500, 400)\n\nrect(250, 200, 150, 150);");
+				helloEditor.editor.setValue("size(500, 400)\n\nrect(250, 200, 150, 150);",-1);
 				helloEditor.resetInstance();
 			},
 			onEnd: function( options ) {
@@ -292,12 +296,14 @@ function loadScriptTwo () {
  * Script for Video Three
  */
 
-function loadScriptThree () {
+function loadScriptThree (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716817"
 	);	
+
+	if (time != 0) helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -314,12 +320,14 @@ function loadScriptThree () {
  * Script for Video Four
  */
 
-function loadScriptFour () {
+function loadScriptFour (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716816"
 	);	
+
+	if (time != 0) helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -336,12 +344,14 @@ function loadScriptFour () {
  * Script for Video Five
  */
 
-function loadScriptFive () {
+function loadScriptFive (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716818"
 	);
+
+	if (time != 0) helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -358,12 +368,14 @@ function loadScriptFive () {
  * Script for Video Six
  */
 
-function loadScriptSix () {
+function loadScriptSix (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77249859"
 	);
+
+	if (time != 0) helloEditor.popcorn.play(time);
 
 	// Set initial State
 
