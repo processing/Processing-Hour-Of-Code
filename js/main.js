@@ -142,7 +142,7 @@ var helloEditor = {
   				break;
   			}	
 
-  			if (lessonTime == undefined) time = 0;
+  			if (lessonTime == undefined) lessonTime = 0;
   			
   		}
 
@@ -306,9 +306,9 @@ var helloEditor = {
 					marginLeft: videoWidth/-2
 				});
 
-			$("#editorContainer").css({display:"none"});
+			$("#editorContainer").hide();
 			$("#canvasContainer").hide();
-			//$("#commands").hide();
+			//$("#editorCommands").hide();
 
 		} else {
 

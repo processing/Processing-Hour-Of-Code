@@ -56,10 +56,10 @@ function loadScriptOne (time) {
 		.code({
 			start: "02:14",
 			onStart: function( options ) {
-				$("#commands").show();
+				$("#editorCommands").show();
 			},
 			onEnd: function( options ) {
-				$("#commands").hide();
+				$("#editorCommands").hide();
 			}			
 		})
 		.code({
@@ -127,7 +127,7 @@ function loadScriptTwo (time) {
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 	$("#toggleRulers").hide();
-	$("#commands").hide();
+	$("#editorCommands").hide();
 
 	// Popcorn Events
 
@@ -189,10 +189,10 @@ function loadScriptTwo (time) {
 		.code({
 			start: "07:06",
 			onStart: function( options ) {
-				$("#commands").show();
+				$("#editorCommands").show();
 			},
 			onEnd: function( options ) {
-				$("#commands").hide();
+				$("#editorCommands").hide();
 			}			
 		})
 		// Jump back to video mode for more explainations
@@ -310,7 +310,7 @@ function loadScriptThree (time) {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 
@@ -334,7 +334,7 @@ function loadScriptFour (time) {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 
@@ -358,7 +358,7 @@ function loadScriptFive (time) {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 
@@ -382,7 +382,7 @@ function loadScriptSix (time) {
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	$("#hints").hide();
+	$("#hint").hide();
 	$("#editorContainer").hide();
 	$("#canvasContainer").hide();
 

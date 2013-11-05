@@ -42,22 +42,28 @@ title: Editor
     <div id="videoContainer">
       <div id="hint">Hints will appear here.</div>
       <div id="video" style="width: 100%; height: 100%;"></div>
+
+      <div id="videoCommandsContainer">
+        <div id="videoCommands" class="btn-group">
+          <a id="restartButton" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-refresh"></span> Restart
+          </a>
+          <a id="pauseButton" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-pause"></span> Pause
+          </a>
+          <a id="nextButton" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-forward"></span> Next Lesson
+          </a>     
+        </div> 
+      </div>
+
     </div>
 
     <div id="editorContainer">
       <div id="editor"></div>
       <input type='text' id="colorPicker" />
 
-      <div id="commands" class="btn-group">
-        <a id="restartButton" type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-refresh"></span> Restart
-        </a>
-        <a id="pauseButton" type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-pause"></span> Pause
-        </a>
-        <a id="nextButton" type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-forward"></span> Next Lesson
-        </a>
+      <div id="editorCommands" class="btn-group">
         <a id="resetButton" type="button" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-flash"></span> Reset Code
         </a>

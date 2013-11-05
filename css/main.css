@@ -209,7 +209,18 @@ div#videoContainer {
 	left: 0;
 	width: 424px;
 	height: 238px;
-	background: #white;
+	background: white;
+}
+
+div#videoCommandsContainer {
+	position:absolute;
+	bottom:32px;
+	width: 100%;
+	text-align:center;
+}
+
+div#videoCommands {
+	margin: auto;
 }
 
 #hints {
@@ -242,7 +253,7 @@ div#editorContainer {
 	height: 100%;
 }
 
-#commands {
+#editorCommands {
 	position: absolute;
 	bottom: 12px;
 	right: 12px;
