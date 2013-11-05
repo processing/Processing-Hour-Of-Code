@@ -159,6 +159,7 @@ var helloEditor = {
 		$('#colorPicker').spectrum({
 			flat: true,
     		showInput: false,
+    		showInitial: true
 		}); 
 
 		$("#colorPicker").spectrum("container").hide();
@@ -184,6 +185,12 @@ var helloEditor = {
 	 * Initialize UI elements
 	 */
 	setupUI: function() {
+
+		$("#videoContainer").hover(function(e) {
+			$("#videoCommandsContainer").fadeIn();
+		},function(e) {
+			$("#videoCommandsContainer").fadeOut();
+		} );
 
 		$("#modalResetCode").click(function(e) {
 			helloEditor.editor.setValue(helloEditor.runCache, -1);

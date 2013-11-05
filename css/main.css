@@ -142,13 +142,11 @@ a.active, a.active:hover {
 /* Editor Page */
 
 #interface {
-	width: 1024px;
-	height: 600px;
+	width: 100%;
+	height: 100%;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -512px;
-	margin-top: -300px;
+	top: 0;
+	left: 0;
 	background: #5CADD5;	
 
 }
@@ -209,7 +207,6 @@ div#videoContainer {
 	left: 0;
 	width: 424px;
 	height: 238px;
-	background: white;
 }
 
 div#videoCommandsContainer {
@@ -217,6 +214,7 @@ div#videoCommandsContainer {
 	bottom:32px;
 	width: 100%;
 	text-align:center;
+	display:none;
 }
 
 div#videoCommands {
@@ -266,9 +264,6 @@ div#editorContainer {
 .ace_color {
 	pointer-events:auto;
 	cursor: pointer;
-}
-
-.ace_color:hover {
 	text-decoration: underline;
 }
 
