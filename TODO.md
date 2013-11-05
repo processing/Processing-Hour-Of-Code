@@ -2,22 +2,21 @@ Critical For Launch
 ===================
 
 * Hint screens
-
+* Design for shared display page
+* Proper sharing functionality
 
 High Priority
 =============
 
-* Basic error checking and code reset
+* More robust error codes
 
 Medium Priority
 ===============
 
-* Color browser
+* Color browser with updating display
 * Tablet testing
 
 Low Priority
 ============
 
-* In-line color picker
-* Robust error suggestions
 * Match highlighting to P5 colors
