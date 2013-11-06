@@ -161,18 +161,19 @@ div#canvasContainer {
 	left:424px;
 	width: 600px;
 	height: 600px;
+	z-index: 500;
 }
 
 #horizontalRuler {
 	position: absolute;
 	left: 0;
-	top: -50px;
+	top: -20px;
 	display:none;
 }
 
 #verticalRuler {
 	position: absolute;
-	left: -50px;
+	left: -20px;
 	top: 0;
 	display: none;
 }
@@ -200,9 +201,14 @@ div#canvasContainer {
 	margin-top: -200px;
 	margin-left: -250px;
 
-	outline: none;
 	background: #fff;
+
+}
+
+canvas#editorCanvas {
+	position: relative;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	z-index: 1000;
 }
 
 div#videoContainer {
@@ -238,6 +244,7 @@ div#videoCommands {
 	height: 100%;
 	background: white;
 	z-index: 1000;
+	padding: 12px;
 	display: none;	
 }
 

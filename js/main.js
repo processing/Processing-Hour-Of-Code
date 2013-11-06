@@ -232,9 +232,14 @@ var helloEditor = {
     	});   
 
     	$("#toggleRulers").click(function() {
-
-    		$("#horizontalRuler").toggle();
-    		$("#verticalRuler").toggle();
+    		$("#horizontalRuler").toggle({
+    			effect: 'slide',
+            	direction: 'down',
+        	});
+    		$("#verticalRuler").toggle({
+    			effect: 'slide',
+            	direction: 'right',
+        	});
     	});
 
     	$(".lessonButton").each( function (index, value) {
@@ -468,6 +473,32 @@ var helloEditor = {
 				$('#shareModalText').html($("<a/>").attr('href',displayURL).html(displayURL));
 				$('#shareModal').modal('show');
 			});
+
+	},
+	showRulers: function() {
+		$("#horizontalRuler").show({
+			effect: 'slide',
+			direction: 'down',
+			duration: "fast"
+		});
+		$("#verticalRuler").show({
+			effect: 'slide',
+			direction: 'right',
+			duration: "fast"
+		});
+	},
+	hideRulers: function() {
+
+		$("#horizontalRuler").hide({
+			effect: 'slide',
+			direction: 'down',
+			duration: "fast"
+		});
+		$("#verticalRuler").hide({
+			effect: 'slide',
+			direction: 'right',
+			duration: "fast"
+		});
 
 	}
 }

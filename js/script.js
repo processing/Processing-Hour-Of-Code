@@ -243,25 +243,21 @@ function loadScriptTwo (time) {
 		.code({
 			start: "11:13",
 			onStart: function( options ) {
-				$("#horizontalRuler").fadeIn("fast");
-				$("#verticalRuler").fadeIn("fast");
+				helloEditor.showRulers();
 			},
 			onEnd: function( options ) {
-				$("#horizontalRuler").hide();
-				$("#verticalRuler").hide();
+				helloEditor.hideRulers();
 			}			
 		})
 		// Hide the rulers, show the toggle button
 		.code({
 			start: "11:17",
 			onStart: function( options ) {
-				$("#horizontalRuler").fadeOut("fast");
-				$("#verticalRuler").fadeOut("fast");
+				helloEditor.hideRulers();
 				$("#toggleRulers").fadeIn("fast");
 			},
 			onEnd: function( options ) {
-				$("#horizontalRuler").show();
-				$("#verticalRuler").show();
+				helloEditor.showRulers();
 				$("#toggleRulers").hide();
 			}			
 		})
@@ -269,12 +265,10 @@ function loadScriptTwo (time) {
 		.code({
 			start: "11:22",
 			onStart: function( options ) {
-				$("#horizontalRuler").fadeIn("fast");
-				$("#verticalRuler").fadeIn("fast");
+				helloEditor.showRulers();
 			},
 			onEnd: function( options ) {
-				$("#horizontalRuler").hide();
-				$("#verticalRuler").hide();
+				helloEditor.hideRulers();
 			}			
 		});		
 
