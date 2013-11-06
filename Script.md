@@ -53,4 +53,6 @@ Hour of Code Script Outline
 
 ## Goodbye
 * Go forth and multiply
+* Share your creations
+* Where to learn more (Processing.org, forums, more tutorials, books, etc.)
 * Thank you
