@@ -86,7 +86,7 @@ var helloEditor = {
 	popcorn: null,
 	processingInstance: null,
 	videoMode: true,
-	runCache: "",
+	runCache: [],
 	lessonIndex: 1,
 	lessons: [
 		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
@@ -194,7 +194,7 @@ var helloEditor = {
 		} );
 
 		$("#modalResetCode").click(function(e) {
-			helloEditor.editor.setValue(helloEditor.runCache, -1);
+			helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
 			$('#errorModal').modal('hide');
 		});
 
@@ -204,8 +204,8 @@ var helloEditor = {
     	});
 
 		$("#resetButton").click(function(e) {
-      		helloEditor.editor.setValue(helloEditor.runCache, -1);
-    	});    	
+      		helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
+    	}).tooltip({container: 'body'});  	
 
 		$("#pauseButton").click(function(e) {
 			if (helloEditor.popcorn.paused()) {
@@ -225,22 +225,39 @@ var helloEditor = {
 		$("#runButton").click(function(e) {
       		helloEditor.runCode();
       		helloEditor.editor.focus();
-    	});
+    	}).tooltip({container: 'body'});;
 
   		$("#shareButton").click(function() {
       		helloEditor.createGist();
-    	});   
+    	}).tooltip({container: 'body'});;  
+
+  		$("#modalTweet").click(function() {
+  			var intentURL = "https://twitter.com/intent/tweet"
+      		var shareURL = $(this).attr('data-url');
+      		var shareText = "Check out my first program!";
+      		var shareVia = "ProcessingOrg";
+      		var shareHashtags = "hourofcode";
+
+      		var tweetURL = intentURL
+      			+ "?url=" + encodeURIComponent(shareURL)
+      			+ "&text=" + encodeURIComponent(shareText)
+      			+ "&via=" + shareVia
+      			+ "&hashtags=" + shareHashtags;
+
+      		window.open(tweetURL);
+
+    	});  
 
     	$("#toggleRulers").click(function() {
     		$("#horizontalRuler").toggle({
-    			effect: 'slide',
+    			effect: 'slide',fshare
             	direction: 'down',
         	});
     		$("#verticalRuler").toggle({
     			effect: 'slide',
             	direction: 'right',
         	});
-    	});
+    	}).tooltip({placement:'bottom'});
 
     	$(".lessonButton").each( function (index, value) {
 
@@ -423,7 +440,7 @@ var helloEditor = {
 			if (typeof this.processingInstance.draw === 'function')
 				this.processingInstance.draw();
 
-			helloEditor.runCache = processingSource;
+			helloEditor.runCache[helloEditor.lessonIndex] = processingSource;
 		}
 		catch(e) {
 			helloEditor.displayError(e);		
@@ -469,6 +486,8 @@ var helloEditor = {
 			.done(function( data ) {
 				var gistID = data.id;
 				var displayURL = "http://" + $(location).attr('hostname') + ( ($(location).attr('port') != "") ?  ":" + $(location).attr('port') : "" ) + "/display/#" + gistID;
+
+				$('#modalTweet').attr('data-url', displayURL);
 
 				$('#shareModalText').html($("<a/>").attr('href',displayURL).html(displayURL));
 				$('#shareModal').modal('show');

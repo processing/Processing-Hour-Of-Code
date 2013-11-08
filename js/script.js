@@ -6,9 +6,8 @@ function loadScriptOne (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
-		"https://vimeo.com/77249859"
+		"https://vimeo.com/77249859" 
 	);	
-
 	helloEditor.popcorn.play(time);
 
 	// Set initial State
@@ -112,9 +111,8 @@ function loadScriptTwo (time) {
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
 		"https://vimeo.com/77716815"
-	);
-
-	helloEditor.popcorn.play(time);	
+	);	
+	helloEditor.popcorn.play(time);
 
 	// Set initial State
 
@@ -294,9 +292,8 @@ function loadScriptThree (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
-		"https://vimeo.com/77716817"
+		"https://vimeo.com/77716817" 
 	);	
-
 	helloEditor.popcorn.play(time);
 
 	// Set initial State
@@ -318,9 +315,8 @@ function loadScriptFour (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
-		"https://vimeo.com/77716816"
+		"https://vimeo.com/77716816" 
 	);	
-
 	helloEditor.popcorn.play(time);
 
 	// Set initial State
@@ -342,9 +338,8 @@ function loadScriptFive (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
-		"https://vimeo.com/77716818"
-	);
-
+		"https://vimeo.com/77716818" 
+	);	
 	helloEditor.popcorn.play(time);
 
 	// Set initial State
@@ -366,8 +361,8 @@ function loadScriptSix (time) {
 
 	helloEditor.popcorn = Popcorn.vimeo(
 		'#video',
-		"https://vimeo.com/77249859"
-	);
+		"https://vimeo.com/77249859" 
+	);	
 
 	helloEditor.popcorn.play(time);
 

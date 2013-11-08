@@ -34,7 +34,7 @@ title: Editor
         <img id="horizontalRuler" src="/assets/images/horizontal.svg" width="500" height="20"/>
         <img id="verticalRuler" src="/assets/images/vertical.svg" width="20" height="400"/>        
 
-        <a id="toggleRulers" type="button" class="btn btn-default btn-sm">
+        <a id="toggleRulers" type="button" class="btn btn-default btn-sm" title="Display or hide canvas rulers.">
           <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
         </a>
 
@@ -66,13 +66,13 @@ title: Editor
       <input type='text' id="colorPicker" />
 
       <div id="editorCommands" class="btn-group">
-        <a id="resetButton" type="button" class="btn btn-default btn-sm">
+        <a id="resetButton" type="button" class="btn btn-default btn-sm" title="Reset to the last working code.">
           <span class="glyphicon glyphicon-flash"></span> Reset Code
         </a>
-        <a id="shareButton" type="button" class="btn btn-default btn-sm">
+        <a id="shareButton" type="button" class="btn btn-default btn-sm" title="Share your work with the world!">
         <span class="glyphicon glyphicon-share-alt"></span> Share
         </a> 
-        <a id="runButton" type="button" class="btn btn-default btn-sm">
+        <a id="runButton" type="button" class="btn btn-default btn-sm" title="Run the editor code in the canvas.">
           <span class="glyphicon glyphicon-play"></span> Run Code
         </a> 
       </div>      
@@ -111,6 +111,14 @@ title: Editor
 <!-- End Modal Error Window -->
 
 
+<!-- 
+
+Link format:
+
+http://www.sharelinkgenerator.com
+
+-->
+
 <!-- Modal Share Window -->
 
 <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -124,6 +132,9 @@ title: Editor
         ...
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="modalTweet">
+         Tweet
+        </button>      
         <button type="button" class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
         </button>
