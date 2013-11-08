@@ -36,9 +36,9 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 * What is next?  Video stops, hints appear, take 10 minutes (?) to make a design out of rectangles and ellipses -- face, creature, logo, alien, building, etc.
 
-1. **Question: I switched to rectangle first the ellipse, how does that seem?**
-2. **Question: should I say "command" for ellipse(), rect() -- should I say "function"?**
-3. **Question: what are some other ideas for exercise suggestions?**
+1. **Question: I switched to introducting rect() first then ellipse(), how does that seem?**
+2. **Question: Is the language "command" ok ellipse(), rect() -- should I say also say "function"?**
+3. **Question: what are some other ideas for exercise suggestions?  Design a face, alien, logo, building,. . . ?**
 4. **Question: should I suggest a specific amount of time for the exercise?**
 
 ## Color
@@ -60,7 +60,7 @@ Hour of Code Script Outline
 * Exercise this time is to add color to your design.
 
 1. **Question: I think we should skip transparency, this feels like plenty? we can always add it to the hints???**
-2. **Question: @scottgarner, this will be possible right?  Use our premade example or start with where you left off.**
+2. **Question: @scottgarner, the following is possible right? "I'm going to put an example below that you could use to begin this exercise or you can revert back to your shapes exercise (that you completed after watching video #1).**
 
 ## Interact
 * What is different about what we have done so far and the example artworks we saw at the beginning?
@@ -84,7 +84,9 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 * Exercise: animate your design.  add setup() and draw(), put mouseX and mouseY anywhere you can think of, move background() to setup() for a painting program.
 
-1. **Question: I now think that we should add size() when we introduce setup() and allow the user to change**
+1. **Question: I still can't decide about size.  I think we should either:**
+    * **never show it and leave setup() blank until I move background() there**
+    * **show it and allow them to change the canvas size() but warn that it may no longer fit into the tutorial site if they make it too big**
 
 ## Questions
 * We're going to look at how a program can ask a question and choose to do something based on the answer to that question.
