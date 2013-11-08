@@ -36,10 +36,10 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 * What is next?  Video stops, hints appear, take 10 minutes (?) to make a design out of rectangles and ellipses -- face, creature, logo, alien, building, etc.
 
-**Question: I switched to rectangle first the ellipse, how does that seem?**
-**Question: should I say "command" for ellipse(), rect() -- should I say "function"?**
-**Question: what are some other ideas for exercise suggestions?**
-**Question: should I suggest a specific amount of time for the exercise?**
+1. **Question: I switched to rectangle first the ellipse, how does that seem?**
+2. **Question: should I say "command" for ellipse(), rect() -- should I say "function"?**
+3. **Question: what are some other ideas for exercise suggestions?**
+4. **Question: should I suggest a specific amount of time for the exercise?**
 
 ## Color
 * outline (stroke)
@@ -59,8 +59,8 @@ Hour of Code Script Outline
 * End leaving viewer with premade example, you can start from there or revert back to your previous work
 * Exercise this time is to add color to your design.
 
-** Question: I think we should skip transparency, this feels like plenty? we can always add it to the hints???***
-** Question: @scottgarner, this will be possible right?  Use our premade example or start with where you left off.***
+1. **Question: I think we should skip transparency, this feels like plenty? we can always add it to the hints???**
+2. **Question: @scottgarner, this will be possible right?  Use our premade example or start with where you left off.**
 
 ## Interact
 * What is different about what we have done so far and the example artworks we saw at the beginning?
@@ -84,7 +84,7 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 * Exercise: animate your design.  add setup() and draw(), put mouseX and mouseY anywhere you can think of, move background() to setup() for a painting program.
 
-** Question: I now think that we should add size() when we introduce setup() and allow the user to change**
+1. **Question: I now think that we should add size() when we introduce setup() and allow the user to change**
 
 ## Questions
 * We're going to look at how a program can ask a question and choose to do something based on the answer to that question.
