@@ -84,7 +84,7 @@ Hour of Code Script Outline
 * End leaving viewer with premade example
 * Exercise: animate your design.  add setup() and draw(), put mouseX and mouseY anywhere you can think of, move background() to setup() for a painting program.
 
-1. **Question: I still can't decide about size.  I think we should either:**
+* **Question: I still can't decide about size.  I think we should either:**
     * **never show it and leave setup() blank until I move background() there**
     * **show it and allow them to change the canvas size() but warn that it may no longer fit into the tutorial site if they make it too big**
 
