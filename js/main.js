@@ -250,7 +250,7 @@ var helloEditor = {
 
     	$("#toggleRulers").click(function() {
     		$("#horizontalRuler").toggle({
-    			effect: 'slide',fshare
+    			effect: 'slide',
             	direction: 'down',
         	});
     		$("#verticalRuler").toggle({
