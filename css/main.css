@@ -63,25 +63,30 @@ div#splashDiv {
 
 #splashCanvas {
 	display: block; 
+	background: transparent;
 	outline: 0px; 
 	width: 700px;
 	height: 700px;
 }
 
 h1#splash {
+	display: none;
 	position: absolute;
 	font-family: 'theSerif', georgia, times, serif; 
-	font-size: 10em;
+	font-size: 6em;
 	margin: 0;
 	padding: 0;
-	opacity: 0;
+
+	text-decoration: none;
+	color: #5E86A3;
+
+	pointer-events:none;
+
 }
 
-h1#splash a {
-	text-decoration: none;
-	color: rgb(0, 102, 153);
-	text-shadow: 4px 4px 0px rgba(0, 255, 204, .4);
-
+a#splashButton {
+	display: none;
+	position: absolute;
 }
 
 footer#splashFooter {
@@ -90,7 +95,7 @@ footer#splashFooter {
 	text-align: center;
 	width: 100%;
 	color: #666;
-	opacity: 0;
+	display: none;
 }
 
 /* Header */
