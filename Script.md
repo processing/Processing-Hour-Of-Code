@@ -2,127 +2,91 @@ Hour of Code Script Outline
 ===========================
 
 ## Hello
-* Programming and the visual arts
-    * Examples projects made with Processing
-    * Examples from Processing
-* What is Programming
-    * writing a set of instructions for your computer to follow
-    * like telling your friend how to cook an omlette or walk from one place to another
-    * only the computer has its own special language, highly specific and with odd-looking syntax.  what may look strange now can become second nature just like speaking in your native tongue.
-    * programming is used for everything from solving scientific problems to building web sites to creating art
-    * here we are going to learn the basics of programming -- what is that syntax? how do we write these instructions? -- in the context of drawing, animation, and interactivity.
-    * Even though we're just going to be drawing and manipulating simple shapes on the screen, the fundamental concepts we'll learn are the same concepts used by programmers all over the world to build every piece of software you've ever used or seen.  and once you learn these fundamentals, anything you can imagine, you can program.
-    * let's begin. . . .
+
+Hello Processing Introduction
+Draft #1
+5 November, 2013
 
 
-## Shapes
-* We are going to draw an ellipse
-* We are going to draw a rectangle
-* What is a Coordinate system?
-    * a window / canvas
-    * width and height
-        * what are the units? inches? centimeters? miles? Pixels!
-    * origin
-    * a pixel in the middle
-* Let's put a rectangle in our canvas
-    * where is it?
-    * how do we define how big is it?  x, y, width, height
-* "Commands" and basic syntax
-    * rect(250,200,150,100);
-    * a line of code!!
-* Code editor + Canvas
-    * Look, a code editor!
-    * Look, a canvas!
-    * Look, run button!
-    * Look, rulers!
-    * Change the rectangle, make it wider for example. 
-* What about ellipses?
-    * quick example, viewer makes changes
-* Layering
-    * order of shapes, they are on top of each other
-    * foreshadow color
-* End leaving viewer with premade example
-* What is next?  Video stops, hints appear, take 10 minutes (?) to make a design out of rectangles and ellipses -- face, creature, logo, alien, building, etc.
+[Camera on Dan]
 
-1. **Question: I switched to introducting rect() first then ellipse(), how does that seem?**
-2. **Question: Is the language "command" ok ellipse(), rect() -- should I say also say "function"?**
-3. **Question: what are some other ideas for exercise suggestions?  Design a face, alien, logo, building,. . . ?**
-4. **Question: should I suggest a specific amount of time for the exercise?**
-
-## Color
-* outline (stroke)
-* interior (fill)
-* background (background)
-* set the background first
-* set the stroke() and fill() with commands *before* you draw the shape
-* x,y,width,height define rectangle, what define a color?
-* Let's start simple -- brightness, also known as greyscale --> one value
-    * 0 --> black, 255 --> white, everything else in between
-* Color
-    * 3 values - R, G, B
-    * Mixing colors, how much red, how much green.  Like shining colored flashlights
-* Quick example, viewer makes changes
-    * Your code went away, you can revert back
-    * Notice how you can click on stroke() and fill() and a color picker will appear -- now try that.
-* End leaving viewer with premade example, you can start from there or revert back to your previous work
-* Exercise this time is to add color to your design.
-
-1. **Question: I think we should skip transparency, this feels like plenty? we can always add it to the hints???**
-2. **Question: @scottgarner, the following is possible right? "I'm going to put an example below that you could use to begin this exercise or you can revert back to your shapes exercise (that you completed after watching video #1).**
-
-## Interact
-* What is different about what we have done so far and the example artworks we saw at the beginning?
-* programs that animate run over time, they continously draw to the screen
-* static vs. dynamic
-* setup -- things that happen when the program begins and draw -- things that happen forever and ever until you quit
-* why is it called draw?  What do we put in setup?  Introduce size() -- change at your own risk.
-* What is the syntax for setup() and draw()
-     * curly brackets are important b/c they indicate the beginning and end of sections of code
-     * void is something you will learn later
-* What goes where?
-     * put it all together below and run it
-     * it's still static! why?
-* Introduce variation, 
-   * mouseX and mousesY -- VARAIBLES!
-   * viewer adds another mouseX, mouseY shape
-   * a little extra math, mouseX + ____ , mouseyY / ____ etc
-   * try your own math, try using mouseY for x and mouseX for y!
-* mouseX and mouseY for color etc.
-* move background() to setup
-* End leaving viewer with premade example
-* Exercise: animate your design.  add setup() and draw(), put mouseX and mouseY anywhere you can think of, move background() to setup() for a painting program.
-
-* **Question: I still can't decide about size.  I think we should either:**
-    * **never show it and leave setup() blank until I move background() there**
-    * **show it and allow them to change the canvas size() but warn that it may no longer fit into the tutorial site if they make it too big**
-
-## Questions
-* We're going to look at how a program can ask a question and choose to do something based on the answer to that question.
-* How do our programs work?  Intructions in sequence, one at a time and never skip a line of code.
-* What if a program sometimes should draw a square and sometimes a circle?
-* What if you draw a square and then when you hold down the mouse it turns into a circle and when you let go it goes back to being a square.
-* We need to learn about a CONDITIONAL statment --> it's a true or false test.
-* How do we say this.
-    * if
-    * if (?????????)  -- yes or no? (true or false)
-    * then curly brackets again, the code we execute if we answer the question yes
-    * if (mousePressed)
-    * Look at the code below.  It only draws an ellipse when you click the mouse.  Try it.
-* If we click the mouse a circle OTHERWISE draw a rectangle
-    * else
-    * now we'll add it to the program below
-    * try flipping it so the square appears when you click the mouse
-* Let's go back to the painting program, we'll put it in below
-    * paint something
-    * what if you want to erase the painting when you click the mouse?
-    * if (mousePressed) { background(___); }
-* This is the last tutorial. What have we learned?  The funadmentals! Graphics, coordinate systems, color shapes, variables and coditionals.  and we've made things that are animated and interactive.  
-* I'll leave you with a premade example below that you can revise or you can click back to start from where you left off.  
-* Exercise: have your painting program paint differently when you click the mouse. Different colors?  Different shapes?
+When we think of computer programming, we might think of engineering, mathematics, and science. Programming did emerge from these fields, but, for over fifty years, people have been making art by writing computer programs. Fifty years is a long time, a lot of history. Amazing things have been made by artists and designers who write their own code. Let's take a look at a wide range of things that were made recently.
 
 
-## Goodbye
-* Go forth and multiply
-* Share your creations
-* Where to learn more (Processing.org, forums, more tutorials, books, etc.)
-* Thank you
+[Cut to project video montage]
+
+
+[1. Strata #3 – Quayola (Video)]
+
+This is Strata Number 3 by Quayola. Quayola is an artist working in London.
+This animation combines computer-generated images with video of a cathedral in Rome to create a fantastic new reality. In his own words, he is “investigating improbable relationships between contemporary digital aesthetics and icons of classical art and architecture.”
+
+[2. Oasis - Yunsil Heo (Video)]
+
+This is Oasis by Yunsil Heo. She is a media artist working in Seoul. Oasis is an interactive installation. By moving around the sand, small pools are created where new software creatures are born and live. 
+
+[2.5. Replica – Alex Vessels, Jeff Howard (Video and pan scan – Note, we can't use the sound)]
+
+This is Replica by Alex Vessels and Jeff Howard. Alex and Jeff are interactive artists and designers working in New York. Replica is an interactive dance performance that uses live image processing to explore how the awareness of time and captured images affects self-perception. It was projected onto a 120 foot video wall in New York. 
+
+(Download movie here: https://vimeo.com/19216324) 
+
+
+[3. Unnamed Sound Sculpture - Daniel Franke & Cedric Kiefer (Video)]
+
+This is Unnamed Sound Sculpture by Daniel Franke and Cedric Kiefer. Daniel and Cedric are media artists working in Berlin. This animation is a moving sculpture created from the recorded motion data of a live dancer. 
+
+
+[Cut to Dan]
+
+
+These animation and installation projects are just one way that visual artists are working with code. More traditional design area such as map design, brand identity and logo design, and illustration are also transformed through designers writing their own code.
+
+
+[Cut back to project video montage]
+
+
+[4. Dencity - Fathom Information Design (Pan/scan image)]
+
+This is the Dencity map by Fathom Information design. Fathom is a design studio in Boston. This map uses circles of different sizes and colors to visualize population density in a unique way. Larger, darker circles show areas with fewer people, while smaller, brighter circles highlight crowded cities. By glancing at this map, we quickly get a sense of how some cities and countries are more densely populated than others.
+
+[Eels???] 
+
+[6. MIT Media Lab - The Green Eyl (Video)]
+
+This is the logo for the MIT Media lab, created by the The Green Eyl. The Green Eyl is a studio based in Berlin. The identity system can be used in different way in many contexts including the lab's website, business cards and in any other media. It forms a mutable identity that is synonymous with the Media Lab’s approach to the ever-changing nature of technology.
+
+
+[Cut to Dan]
+
+
+Think of the wide range of the visual arts. In addition to the kind of work we've looked at already, there's sculpture, fashion design, architecture, products, jewelry, pottery, and much more. What does writing software have to do with these physical objects? Everything! It's an area of exciting and emerging possibility. New technologies make it possible to print objects. For example, it's now possible to design a ring in software and to print it in plastic or metal. Let's look at three final examples before starting to learn how to code. 
+
+
+[Cut to project video montage]
+
+
+[7. D.dress - Mary Huang (Video, also Pan/scan image)]
+
+This is the D.dress software by Mary Huang. Mary is an entrepreneur and designer working in New York. D.dress is a program written by Mary that allows a woman to sketch a dress she wants to wear and then automates the pattern creation. It re-imagines the classic “little black dress” by changing the relationships between manufacturing, the designer, and the wearer.
+
+
+[8. Textile Room – P-A-T-T-E-R-N-S (Video)]
+
+The Textile room was created by the architecture studio P-A-T-T-E-R-N-S, founded by Georgina Huljich And Marcel Spina. Georgina and Marcelo are architects working in Los Angeles. The Textile Room is an experimental media space where carbon-fiber textiles are augmented with a video collage.
+
+
+[9. Nervous System - Cell Cycle (Video)]
+
+This is Cell Cycle by Nervous System, a design studio founded by Jessica Rosenkrantz and Jesse Louis-Rosenberg. Jessica and Jesse are entrepreneurs and designers living in Boston. Cell Cycle is a program that allows people to design their own jewelry and then 3D print it.
+
+
+[Cut to Dan]
+
+
+All of the projects we just looked at were created with a software environment called Processing. Processing is a way to program invented by artists and designers to be used by artists and designers. Processing is for making visual media. It focuses on writing programs to draw, create animation, and to to build interactive experiences like video games.
+
+Before we start writing our own programs, let's first try to answer this question: "What is programming?"
+
+
+[To be continued...]
