@@ -90,3 +90,6 @@ Before we start writing our own programs, let's first try to answer this questio
 
 
 [To be continued...]
+
+See [Tutorials Script](https://github.com/scottgarner/Processing-Hour-Of-Code/blob/gh-pages/Script-tutorials.md)
+

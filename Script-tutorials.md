@@ -3,8 +3,7 @@ Hour of Code Script Outline
 
 ## Hello
 * Programming and the visual arts
-    * Examples projects made with Processing
-    * Examples from Processing
+    * See [Hello Intro Script](https://github.com/scottgarner/Processing-Hour-Of-Code/blob/gh-pages/Script-Hello-Intro.md)
 * What is Programming
     * writing a set of instructions for your computer to follow
     * like telling your friend how to cook an omlette or walk from one place to another
