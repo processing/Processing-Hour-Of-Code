@@ -57,9 +57,19 @@ div#splashDiv {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	margin-left: -350px;
+	margin-top:-350px;
+}
+
+#splashCanvas {
+	display: block; 
+	outline: 0px; 
+	width: 700px;
+	height: 700px;
 }
 
 h1#splash {
+	position: absolute;
 	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 10em;
 	margin: 0;

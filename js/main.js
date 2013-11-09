@@ -15,13 +15,18 @@ var helloSplash = {
 
 		// Center Splash
 
-	    $("#splashDiv").css("margin-left",$("#splashDiv").width() /-2);
-	    $("#splashDiv").css("margin-top",$("#splashDiv").height() /-2);
+	    $("#splash").css(
+	    	{
+	    		"top": "50%",
+	    		"left": "50%",
+	    		"margin-top": $("#splash").height() /-2,
+	    		"margin-left": $("#splash").width() /-2	    		
+			});
 	    
 	    // Animate In
 
-	    $("#splash").css({'opacity': 0, 'marginTop': 24}).animate(
-	      { opacity: 1, marginTop: 0 },
+	    $("#splash").css({'opacity': 0}).animate(
+	      { opacity: 1},
 	      { duration: 600}
 	    );
 

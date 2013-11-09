@@ -4,8 +4,28 @@ title: Home
 ---
 
 <div id="splashDiv">
+
   <h1 id="splash"><a href="/editor/">Hello</a></h1>
+
+	<canvas id="splashCanvas" data-processing-sources="/assets/pde/splash/hello_processing.pde" 
+			width="700" height="700">
+		<p>Your browser does not support the canvas tag.</p>
+		<!-- Note: you can put any alternative content here. -->
+	</canvas>
+	<noscript>
+		<p>JavaScript is required to view the contents of this page.</p>
+	</noscript>
+
 </div>
+
+
+<script src="/js/vendor/processing-1.4.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+// convenience function to get the id attribute of generated sketch html element
+function getProcessingSketchId () { return 'helloprocessing'; }
+</script>
+
+
 
 <footer id="splashFooter">
 Processing Hour of Code // Computer Science Education Week // Code.org
