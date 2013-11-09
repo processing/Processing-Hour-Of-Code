@@ -16,7 +16,7 @@ When we think of computer programming, we might think of engineering, mathematic
 [Cut to project video montage]
 
 
-[1. Strata #3 – Quayola (Video)]
+[1. Strata #3 – Quayola (Video)] pronunciation: kway-oh-la
 
 This is Strata Number 3 by Quayola. Quayola is an artist working in London.
 This animation combines computer-generated images with video of a cathedral in Rome to create a fantastic new reality. In his own words, he is “investigating improbable relationships between contemporary digital aesthetics and icons of classical art and architecture.”
@@ -32,7 +32,7 @@ This is Replica by Alex Vessels and Jeff Howard. Alex and Jeff are interactive a
 (Download movie here: https://vimeo.com/19216324) 
 
 
-[3. Unnamed Sound Sculpture - Daniel Franke & Cedric Kiefer (Video)]
+[3. Unnamed Sound Sculpture - Daniel Franke & Cedric Kiefer (Video)]  Pronunciation:  Frahnk-eh, Keefer
 
 This is Unnamed Sound Sculpture by Daniel Franke and Cedric Kiefer. Daniel and Cedric are media artists working in Berlin. This animation is a moving sculpture created from the recorded motion data of a live dancer. 
 
@@ -52,7 +52,7 @@ This is the Dencity map by Fathom Information design. Fathom is a design studio 
 
 [Eels???] 
 
-[6. MIT Media Lab - The Green Eyl (Video)]
+[6. MIT Media Lab - The Green Eyl (Video)]  Pronunciation: Isle
 
 This is the logo for the MIT Media lab, created by the The Green Eyl. The Green Eyl is a studio based in Berlin. The identity system can be used in different way in many contexts including the lab's website, business cards and in any other media. It forms a mutable identity that is synonymous with the Media Lab’s approach to the ever-changing nature of technology.
 
@@ -66,12 +66,12 @@ Think of the wide range of the visual arts. In addition to the kind of work we'v
 [Cut to project video montage]
 
 
-[7. D.dress - Mary Huang (Video, also Pan/scan image)]
+[7. D.dress - Mary Huang (Video, also Pan/scan image)], pronunciation: mary whaang
 
 This is the D.dress software by Mary Huang. Mary is an entrepreneur and designer working in New York. D.dress is a program written by Mary that allows a woman to sketch a dress she wants to wear and then automates the pattern creation. It re-imagines the classic “little black dress” by changing the relationships between manufacturing, the designer, and the wearer.
 
 
-[8. Textile Room – P-A-T-T-E-R-N-S (Video)]
+[8. Textile Room – P-A-T-T-E-R-N-S (Video)] pronunciation: Uhl-hich, speena
 
 The Textile room was created by the architecture studio P-A-T-T-E-R-N-S, founded by Georgina Huljich And Marcel Spina. Georgina and Marcelo are architects working in Los Angeles. The Textile Room is an experimental media space where carbon-fiber textiles are augmented with a video collage.
 
