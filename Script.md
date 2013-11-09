@@ -6,6 +6,14 @@ Hour of Code Script Outline
     * Examples projects made with Processing
     * Examples from Processing
 * What is Programming
+    * writing a set of instructions for your computer to follow
+    * like telling your friend how to cook an omlette or walk from one place to another
+    * only the computer has its own special language, highly specific and with odd-looking syntax.  what may look strange now can become second nature just like speaking in your native tongue.
+    * programming is used for everything from solving scientific problems to building web sites to creating art
+    * here we are going to learn the basics of programming -- what is that syntax? how do we write these instructions? -- in the context of drawing, animation, and interactivity.
+    * Even though we're just going to be drawing and manipulating simple shapes on the screen, the fundamental concepts we'll learn are the same concepts used by programmers all over the world to build every piece of software you've ever used or seen.  and once you learn these fundamentals, anything you can imagine, you can program.
+    * let's begin. . . .
+
 
 ## Shapes
 * We are going to draw an ellipse
