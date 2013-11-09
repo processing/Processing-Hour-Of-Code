@@ -68,12 +68,12 @@ Think of the wide range of the visual arts. In addition to the kind of work we'v
 
 [7. D.dress - Mary Huang (Video, also Pan/scan image)], pronunciation: mary whaang
 
-This is the D.dress software by Mary Huang. Mary is an entrepreneur and designer working in New York. D.dress is a program written by Mary that allows a woman to sketch a dress she wants to wear and then automates the pattern creation. It re-imagines the classic “little black dress” by changing the relationships between manufacturing, the designer, and the wearer.
+This is the D.dress software by Mary Huang. Mary is an entrepreneur and designer working in New York. D.dress is a program written by Mary that allows a user to sketch a dress and then automates the pattern creation. It re-imagines the classic “little black dress” by changing the relationships between manufacturing, the designer, and the wearer.
 
 
 [8. Textile Room – P-A-T-T-E-R-N-S (Video)] pronunciation: Uhl-hich, speena
 
-The Textile room was created by the architecture studio P-A-T-T-E-R-N-S, founded by Georgina Huljich And Marcel Spina. Georgina and Marcelo are architects working in Los Angeles. The Textile Room is an experimental media space where carbon-fiber textiles are augmented with a video collage.
+The Textile room was created by the architecture studio P-A-T-T-E-R-N-S, founded by Georgina Huljich And Marcelo Spina. Georgina and Marcelo are architects working in Los Angeles. The Textile Room is an experimental media space where carbon-fiber textiles are augmented with a video collage.
 
 
 [9. Nervous System - Cell Cycle (Video)]
