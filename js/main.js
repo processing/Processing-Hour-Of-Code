@@ -93,12 +93,6 @@ var helloEditor = {
 	videoMode: true,
 	runCache: [],
 	lessonIndex: 1,
-	lessons: [
-		'/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde',
-		'/assets/pde/hourofcode_2_color/hourofcode_2_color.pde',
-		'/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde',
-		'/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde',
-	],
 	/**
 	 * Initialize Ace editor and UI elements
 	 */
@@ -208,9 +202,9 @@ var helloEditor = {
       		helloEditor.popcorn.play(0);
     	});
 
-		$("#resetButton").click(function(e) {
-      		helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
-    	}).tooltip({container: 'body'});  	
+		// $("#resetButton").click(function(e) {
+  //     		helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
+  //   	}).tooltip({container: 'body'});  	
 
 		$("#pauseButton").click(function(e) {
 			if (helloEditor.popcorn.paused()) {
@@ -393,10 +387,10 @@ var helloEditor = {
 	/**
 	 * Loads a lesson into the editor by index
 	 */
-	loadCode: function(index) {
+	loadCode: function(url) {
 		this.resetInstance();
 
-		$.get(this.lessons[index], function(data) {
+		$.get(url, function(data) {
 			helloEditor.editor.setValue(data, -1);
 		})
 	},

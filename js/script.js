@@ -4,16 +4,16 @@
 
 function loadScriptOne (time) {
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77249859" 
-	);	
-	helloEditor.popcorn.play(time);
+	var vimeoURL = "https://vimeo.com/77249859";
+	var exampleURL = null;
 
-	// Set initial State
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
+	helloEditor.popcorn.play(time);
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
+
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();
@@ -106,20 +106,16 @@ function loadScriptOne (time) {
 
 function loadScriptTwo (time) {
 
-	// Reinitialize popcorn instance
+	var vimeoURL = "https://vimeo.com/77716815";
+	var exampleURL = "/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde";
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77716815"
-	);	
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
 	helloEditor.popcorn.play(time);
-
-	// Set initial State
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
 
-	// Hide these elements so Dan can introduce them
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();
@@ -290,16 +286,16 @@ function loadScriptTwo (time) {
 
 function loadScriptThree (time) {
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77716817" 
-	);	
-	helloEditor.popcorn.play(time);
+	var vimeoURL = "https://vimeo.com/77716817";
+	var exampleURL = "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde";
 
-	// Set initial State
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
+	helloEditor.popcorn.play(time);
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
+
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();
@@ -313,16 +309,16 @@ function loadScriptThree (time) {
 
 function loadScriptFour (time) {
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77716816" 
-	);	
-	helloEditor.popcorn.play(time);
+	var vimeoURL = "https://vimeo.com/77716816";
+	var exampleURL = "/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde";
 
-	// Set initial State
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
+	helloEditor.popcorn.play(time);
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
+
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();
@@ -336,16 +332,16 @@ function loadScriptFour (time) {
 
 function loadScriptFive (time) {
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77716818" 
-	);	
-	helloEditor.popcorn.play(time);
+	var vimeoURL = "https://vimeo.com/77716818";
+	var exampleURL = "/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde";
 
-	// Set initial State
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
+	helloEditor.popcorn.play(time);
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
+
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();
@@ -359,17 +355,16 @@ function loadScriptFive (time) {
 
 function loadScriptSix (time) {
 
-	helloEditor.popcorn = Popcorn.vimeo(
-		'#video',
-		"https://vimeo.com/77249859" 
-	);	
+	var vimeoURL = "https://vimeo.com/77249859";
+	var exampleURL = null;
 
+	helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);	
 	helloEditor.popcorn.play(time);
-
-	// Set initial State
 
 	helloEditor.videoMode = true;
 	helloEditor.resizeUI(); 
+
+	// Set initial State
 
 	$("#hint").hide();
 	$("#editorContainer").hide();

@@ -24,63 +24,73 @@ title: Editor
 </div>
 
 
-  <div id="interface">
+<div id="interface">
 
-    <div id="canvasContainer">
-      <div id="canvasBox">
+  <div id="canvasContainer">
+    <div id="canvasBox">
 
-        <canvas id="editorCanvas"></canvas>
+      <canvas id="editorCanvas"></canvas>
 
-        <img id="horizontalRuler" src="/assets/images/horizontal.svg" width="500" height="20"/>
-        <img id="verticalRuler" src="/assets/images/vertical.svg" width="20" height="400"/>        
+      <img id="horizontalRuler" src="/assets/images/horizontal.svg" width="500" height="20"/>
+      <img id="verticalRuler" src="/assets/images/vertical.svg" width="20" height="400"/>        
 
-        <a id="toggleRulers" type="button" class="btn btn-default btn-sm" title="Display or hide canvas rulers.">
-          <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
+      <a id="toggleRulers" type="button" class="btn btn-default btn-sm" title="Display or hide canvas rulers.">
+        <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
+      </a>
+
+    </div>
+  </div>
+
+  <div id="videoContainer">
+    <div id="hint">Hints will appear here.</div>
+    <div id="video" style="width: 100%; height: 100%;"></div>
+
+    <div id="videoCommandsContainer">
+      <div id="videoCommands" class="btn-group">
+        <a id="restartButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-refresh"></span> Restart
         </a>
-
-      </div>
+        <a id="pauseButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-pause"></span> Pause
+        </a>
+        <a id="nextButton" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-forward"></span> Next Lesson
+        </a>     
+      </div> 
     </div>
 
-    <div id="videoContainer">
-      <div id="hint">Hints will appear here.</div>
-      <div id="video" style="width: 100%; height: 100%;"></div>
+  </div>
 
-      <div id="videoCommandsContainer">
-        <div id="videoCommands" class="btn-group">
-          <a id="restartButton" type="button" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-refresh"></span> Restart
-          </a>
-          <a id="pauseButton" type="button" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-pause"></span> Pause
-          </a>
-          <a id="nextButton" type="button" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-forward"></span> Next Lesson
-          </a>     
-        </div> 
-      </div>
+  <div id="editorContainer">
+    <div id="editor"></div>
+    <input type='text' id="colorPicker" />
 
-    </div>
+    <div id="editorCommands" class="btn-group">
 
-    <div id="editorContainer">
-      <div id="editor"></div>
-      <input type='text' id="colorPicker" />
-
-      <div id="editorCommands" class="btn-group">
-        <a id="resetButton" type="button" class="btn btn-default btn-sm" title="Reset to the last working code.">
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
           <span class="glyphicon glyphicon-flash"></span> Reset Code
-        </a>
-        <a id="shareButton" type="button" class="btn btn-default btn-sm" title="Share your work with the world!">
-        <span class="glyphicon glyphicon-share-alt"></span> Share
-        </a> 
-        <a id="runButton" type="button" class="btn btn-default btn-sm" title="Run the editor code in the canvas.">
-          <span class="glyphicon glyphicon-play"></span> Run Code
-        </a> 
-      </div>      
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dan's Example Code</a></li>
+          <li><a href="#">My Code From Last Lesson</a></li>
+          <li><a href="#">Last Good Run</a></li>
+         </ul>
+      </div>
+
+      <button id="shareButton" type="button" class="btn btn-default btn-sm" title="Share your work!">
+        <span class="glyphicon glyphicon-share-alt"></span>
+        Share
+      </button>
+      <button id="runButton" type="button" class="btn btn-default btn-sm" title="Run the current code.">
+        <span class="glyphicon glyphicon-play"></span>
+        Run Code
+      </button>
+
     </div>
 
-  </div>
+</div>
 
-  </div>
 
 <!-- Modal Error Window -->
 
