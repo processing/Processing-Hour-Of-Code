@@ -32,7 +32,7 @@ var helloEditor = {
   		// Load proper lesson
   		
   		var lessonIndex = 1;
-  		var lessonTime = 0;
+  		var lessonTime = null;
   		var hash = top.location.hash.replace('#', '');;
 
   		if (hash.length > 0) {
@@ -135,7 +135,7 @@ var helloEditor = {
 
   		$("#nextButton").click(function() {
       		helloEditor.lessonIndex++;
-      		helloEditor.loadLesson(helloEditor.lessonIndex, 0);
+      		helloEditor.loadLesson(helloEditor.lessonIndex, null);
     	}); 
 
 		$("#runButton").click(function(e) {
@@ -180,7 +180,7 @@ var helloEditor = {
     		$(value).click( function() {
     			
     			var lessonIndex = parseInt($(this).attr("data-index"));
-    			helloEditor.loadLesson(lessonIndex, 0);
+    			helloEditor.loadLesson(lessonIndex, null);
     			helloEditor.lessonIndex = lessonIndex;
 
     		});
