@@ -8,9 +8,6 @@ Critical For Launch
 		* Credits
 		* Processing Link
 		* Forum link
-* Design for shared display page
-	* Code view
-	* PDE download
 * Proper sharing functionality
 	* Twitter
 	* Facebook
