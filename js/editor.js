@@ -197,7 +197,7 @@ var helloEditor = {
     		var position = editor.getCursorPosition();
     		var token = editor.session.getTokenAt(position.row, position.column);
 
-			 if (/\bcolor\b/.test(token.type)) {
+			 if ( token && /\bcolor\b/.test(token.type)) {
 
     			var line = editor.session.getLine(position.row);			
 				var range = new Range(position.row,0,position.row,line.length);			
@@ -350,7 +350,12 @@ var helloEditor = {
 
 		try {
 			var processingSource = this.editor.getValue();
-			var processingCanvas = document.getElementById("editorCanvas");         
+			var processingCanvas = document.getElementById("editorCanvas");  
+
+			if (!(/size(\s*\d+\s*,\s*\d+\s*)/.test(processingSource))) {
+				processingSource = "size(500,400);\n\n" + processingSource;
+			}
+
 			this.processingInstance = new Processing(processingCanvas, processingSource);
 
 			if (typeof this.processingInstance.draw === 'function')

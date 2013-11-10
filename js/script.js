@@ -46,7 +46,7 @@ function loadScriptOne (time) {
 		.code({
 			start: "01:27",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 400, 400);",-1);
+				helloEditor.editor.setValue("ellipse(250, 200, 400, 400);",-1);
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -163,7 +163,7 @@ function loadScriptTwo (time) {
 		.code({
 			start: "06:48",
 			onStart: function( options ) {
-				helloEditor.editor.setValue("size(500, 400)\n\nellipse(250, 200, 150, 150);",-1);
+				helloEditor.editor.setValue("ellipse(250, 200, 150, 150);",-1);
 			},
 			onEnd: function( options ) {
 				helloEditor.editor.setValue("");
@@ -214,7 +214,7 @@ function loadScriptTwo (time) {
 				$("#editorContainer").fadeIn("fast");
 				$("#canvasContainer").fadeIn("fast");				
 
-				helloEditor.editor.setValue("size(500, 400)\n\nrect(250, 200, 150, 150);",-1);
+				helloEditor.editor.setValue("rect(250, 200, 150, 150);",-1);
 				helloEditor.resetInstance();
 			},
 			onEnd: function( options ) {
