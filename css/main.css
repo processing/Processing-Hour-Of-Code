@@ -59,6 +59,7 @@ div#splashDiv {
 	left: 50%;
 	margin-left: -350px;
 	margin-top:-350px;
+	z-index: 500;
 }
 
 #splashCanvas {
@@ -69,24 +70,25 @@ div#splashDiv {
 	height: 700px;
 }
 
-h1#splash {
-	display: none;
+header#splashHeader {
 	position: absolute;
+	width: 700px;
+	text-align: center;
+	z-index: 1000;
+}
+
+h1#splashTitle {
+	display: none;	
 	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 6em;
-	margin: 0;
+	margin: 0 0 96px 0;
 	padding: 0;
-
-	text-decoration: none;
 	color: #5E86A3;
-
 	pointer-events:none;
-
 }
 
 a#splashButton {
 	display: none;
-	position: absolute;
 }
 
 footer#splashFooter {

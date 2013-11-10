@@ -3,11 +3,14 @@ layout: default
 title: Home
 ---
 
-<div id="splashDiv">
-
-	<h1 id="splash">Hello Processing</h1>
+<header id="splashHeader">
+	<h1 id="splashTitle">Hello Processing</h1>
+	<div>
 	<a id="splashButton" type="button" class="btn btn-primary btn-sm"  href="/editor/">Click To Begin</a>
+	</div>
+</header>
 
+<div id="splashDiv">
 	<canvas id="splashCanvas" data-processing-sources="/assets/pde/hello_processing/hello_processing.pde" 
 	width="700" height="700">
 		<p>Your browser does not support the canvas tag.</p>
@@ -15,7 +18,6 @@ title: Home
 	<noscript>
 		<p>JavaScript is required to view the contents of this page.</p>
 	</noscript>
-
 </div>
 
 <footer id="splashFooter">

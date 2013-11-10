@@ -361,7 +361,7 @@ var helloEditor = {
 			if (typeof this.processingInstance.draw === 'function')
 				this.processingInstance.draw();
 
-			helloEditor.runCache[helloEditor.lessonIndex] = processingSource;
+			helloEditor.runCache[helloEditor.lessonIndex] = pthis.editor.getValue();
 		}
 		catch(e) {
 			helloEditor.displayError(e);		
