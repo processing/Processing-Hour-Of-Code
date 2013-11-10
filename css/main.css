@@ -88,7 +88,15 @@ h1#splashTitle {
 }
 
 a#splashButton {
+	font-family: 'theSerif', georgia, times, serif;
+	font-size: 1.5em;
+	font-weight: bold;
 	display: none;
+}
+
+a#splashButton:hover {
+	display: none;
+	text-decoration:none;
 }
 
 footer#splashFooter {
