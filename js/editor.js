@@ -373,11 +373,36 @@ var helloEditor = {
 	 */
 	displayError: function (e) {
 
+		// This table is an array of pairs consisting of a regular
+		// expression and a friendly replacement string which can
+		// include values matched in the regex. Pair one example:
+		//
+		// Input Javascript Error:
+		// Can't find variable: rectt
+		// Output Friendly Error: 
+		// I'm not sure what 'rect' means. Maybe it's a typo?
+
+		var errorTable = [
+			[
+				/Can't find variable: (\w+)/,
+				"I'm not sure what '$1' means. Maybe it's a typo?"
+			],
+			[
+				/(Une|E)xpected token '(\)|\()'/,
+				"Looks like your parentheses don't match up. Remember, you need a right parenthesis for every left parenthesis."
+			]		
+		];
+
 		var outputMessage = e.message;
 
-		var search = /Can't find variable: (\w+)/.exec(e.message);
-		if (search) {
-			outputMessage = "I'm not sure what '" + search[1] + "' means. Maybe it's a typo?"
+		for (var i = 0; i < errorTable.length; i++) {
+			var regex = errorTable[i][0];
+			var string = errorTable[i][1];
+
+			if (regex.test(outputMessage)) {
+				outputMessage = outputMessage.replace(regex,string);
+				break;
+			}
 		}
 
 		$('#errorModalText').html(outputMessage);
