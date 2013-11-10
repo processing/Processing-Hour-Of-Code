@@ -44,6 +44,7 @@ void setup() {
   // Stroke/line/border thickness
   strokeWeight(1);
   
+  background(255,255,255,0);
   
   textSize(150);
   textAlign(CENTER);

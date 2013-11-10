@@ -48,7 +48,7 @@ body {
 }
 
 a {
-	color: #5CADD5;
+	color: #5F86A3;
 }
 
 /* Splash Page */
@@ -140,7 +140,7 @@ nav {
 	font-size: 1.2em;
 	font-weight: bold;
 	font-family: 'theSerif', georgia, times, serif; 
-	color: #5CADD5;
+	color: #5F86A3;
 	padding: 15px;
 }
 
@@ -166,7 +166,7 @@ a.active, a.active:hover {
 	top: 0;
 	left: 0;
 
-background: #5cadd5;
+	background: #5F86A3;
 }
 
 div#canvasContainer {
