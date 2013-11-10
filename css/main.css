@@ -75,6 +75,7 @@ header#splashHeader {
 	width: 700px;
 	text-align: center;
 	z-index: 1000;
+	pointer-events:none;
 }
 
 h1#splashTitle {
@@ -84,7 +85,7 @@ h1#splashTitle {
 	margin: 0 0 72px 0;
 	padding: 0;
 	color: #5E86A3;
-	pointer-events:none;
+	
 }
 
 a#splashButton {
@@ -92,6 +93,7 @@ a#splashButton {
 	font-size: 1.4em;
 	font-weight: bold;
 	display: none;
+	pointer-events:auto;
 }
 
 a#splashButton:hover {
