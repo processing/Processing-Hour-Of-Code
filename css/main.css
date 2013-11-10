@@ -285,6 +285,10 @@ div#editorContainer {
 	right: 12px;
 }
 
+#errorModalText {
+	border-top: 1px solid #efefef;
+}
+
 #colorPicker {
 	display: none;
 }
