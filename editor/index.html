@@ -34,7 +34,7 @@ title: Editor
       <div id="horizontalRuler"></div>
       <div id="verticalRuler"></div>       
 
-      <a id="toggleRulers" type="button" class="btn btn-default btn-sm" title="Display or hide rulers.">
+      <a id="toggleRulers" class="btn btn-default btn-sm" title="Display or hide rulers.">
         <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
       </a>
 
@@ -47,13 +47,13 @@ title: Editor
 
     <div id="videoCommandsContainer">
       <div id="videoCommands" class="btn-group">
-        <a id="restartButton" type="button" class="btn btn-default btn-sm">
+        <a id="restartButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-refresh"></span> Restart
         </a>
-        <a id="pauseButton" type="button" class="btn btn-default btn-sm">
+        <a id="pauseButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-pause"></span> Pause
         </a>
-        <a id="nextButton" type="button" class="btn btn-default btn-sm">
+        <a id="nextButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-forward"></span> Next Lesson
         </a>     
       </div> 
@@ -68,7 +68,7 @@ title: Editor
     <div id="editorCommands" class="btn-group">
 
       <div class="btn-group dropup">
-        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+        <button class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
           <span class="glyphicon glyphicon-flash"></span> Reset Code
         </button>
         <ul class="dropdown-menu">
@@ -78,11 +78,11 @@ title: Editor
          </ul>
       </div>
 
-      <button id="shareButton" type="button" class="btn btn-default btn-sm" title="Share your work!">
+      <button id="shareButton" class="btn btn-default btn-sm" title="Share your work!">
         <span class="glyphicon glyphicon-share-alt"></span>
         Share
       </button>
-      <button id="runButton" type="button" class="btn btn-default btn-sm" title="Run the current code.">
+      <button id="runButton" class="btn btn-default btn-sm" title="Run the current code.">
         <span class="glyphicon glyphicon-play"></span>
         Run Code
       </button>
@@ -98,7 +98,7 @@ title: Editor
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Don't Panic!</h4>
       </div>
       <div class="modal-body">
@@ -107,10 +107,10 @@ title: Editor
       <div class="modal-body" id="errorModalText">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="modalResetCode">
+        <button class="btn btn-default" id="modalResetCode">
           <span class="glyphicon glyphicon-flash"></span> Reset Code
         </button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">
+        <button class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Continue
         </button>      
       </div>
@@ -127,7 +127,7 @@ title: Editor
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Share</h4>
       </div>
       <div class="modal-body">
@@ -137,16 +137,16 @@ title: Editor
         <a href="http://hello.processing.org" target="_blank">http://hello.processing.org/</a>
       </div>      
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="modalFacebookButton">
+        <button class="btn btn-default" id="modalFacebookButton">
          <span class="glyphicon glyphicon-share-alt"></span> Facebook
         </button> 
-        <button type="button" class="btn btn-default" id="modalGoogleButton">
+        <button class="btn btn-default" id="modalGoogleButton">
          <span class="glyphicon glyphicon-share-alt"></span> Google+
         </button>               
-        <button type="button" class="btn btn-default" id="modalTwitterButton">
+        <button class="btn btn-default" id="modalTwitterButton">
          <span class="glyphicon glyphicon-share-alt"></span> Twitter
         </button>      
-        <button type="button" class="btn btn-default" data-dismiss="modal">
+        <button class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
         </button>
       </div>
