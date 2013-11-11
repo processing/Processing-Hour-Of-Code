@@ -361,7 +361,22 @@ var helloEditor = {
 			if (typeof this.processingInstance.draw === 'function')
 				this.processingInstance.draw();
 
+			// Store successful code in cache
+
 			helloEditor.runCache[helloEditor.lessonIndex] = this.editor.getValue();
+
+			// Resize Canvas Container
+			
+			$("#canvasBox").css({
+				width: this.processingInstance.width,
+				height: this.processingInstance.height,
+				marginTop: this.processingInstance.height / -2,
+				marginLeft: this.processingInstance.width / -2,
+			});
+
+			$("#horizontalRuler").css({width: this.processingInstance.width});
+			$("#verticalRuler").css({height: this.processingInstance.height});
+
 		}
 		catch(e) {
 			helloEditor.displayError(e);		

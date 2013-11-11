@@ -2,25 +2,93 @@
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
-	 height="400px" viewBox="30 0 20 400" enable-background="new 30 0 20 400" xml:space="preserve">
-<g id="Layer_2">
-	<rect x="30" fill="#F9F9FC" width="20" height="400"/>
+	 height="2000px" viewBox="0 0 20 2000" enable-background="new 0 0 20 2000" xml:space="preserve">
+<g id="Background">
+	<g id="Layer_2">
+		<rect fill="#F9F9FC" width="20" height="2000"/>
+	</g>
 </g>
-<g id="Layer_1">
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="50.5" x2="39.5" y2="50.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="100.5" x2="34.5" y2="100.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="150.5" x2="39.5" y2="150.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="200.5" x2="34.5" y2="200.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="250.5" x2="39.5" y2="250.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="300.5" x2="34.5" y2="300.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="350.5" x2="39.5" y2="350.5"/>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 44.5801 97)" fill="#5CADD5" font-family="'Courier'" font-size="12">100</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 44.5801 195)" fill="#5CADD5" font-family="'Courier'" font-size="12">200</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 44.5801 295)" fill="#5CADD5" font-family="'Courier'" font-size="12">300</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 44.5801 396)" fill="#5CADD5" font-family="'Courier'" font-size="12">400</text>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="25.5" x2="44.5" y2="25.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="125.5" x2="44.5" y2="125.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="225.5" x2="44.5" y2="225.5"/>
-	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="49.5" y1="325.5" x2="44.5" y2="325.5"/>
+<g id="Rules">
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="50.5" x2="10" y2="50.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="100.5" x2="5" y2="100.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="150.5" x2="10" y2="150.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="200.5" x2="5" y2="200.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="250.5" x2="10" y2="250.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="300.5" x2="5" y2="300.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="350.5" x2="10" y2="350.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="25.5" x2="15" y2="25.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="125.5" x2="15" y2="125.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="225.5" x2="15" y2="225.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="325.5" x2="15" y2="325.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="400.5" x2="5" y2="400.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="450.5" x2="10" y2="450.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="500.5" x2="5" y2="500.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="550.5" x2="10" y2="550.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="600.5" x2="5" y2="600.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="650.5" x2="10" y2="650.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="425.5" x2="15" y2="425.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="525.5" x2="15" y2="525.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="625.5" x2="15" y2="625.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="700.5" x2="5" y2="700.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="750.5" x2="10" y2="750.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="800.5" x2="5" y2="800.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="850.5" x2="10" y2="850.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="900.5" x2="5" y2="900.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="950.5" x2="10" y2="950.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="725.5" x2="15" y2="725.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="825.5" x2="15" y2="825.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="925.5" x2="15" y2="925.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1000.5" x2="5" y2="1000.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1050.5" x2="10" y2="1050.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1100.5" x2="5" y2="1100.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1150.5" x2="10" y2="1150.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1200.5" x2="5" y2="1200.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1250.5" x2="10" y2="1250.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1025.5" x2="15" y2="1025.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1125.5" x2="15" y2="1125.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1225.5" x2="15" y2="1225.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1300.5" x2="5" y2="1300.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1350.5" x2="10" y2="1350.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1400.5" x2="5" y2="1400.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1450.5" x2="10" y2="1450.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1500.5" x2="5" y2="1500.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1550.5" x2="10" y2="1550.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1325.5" x2="15" y2="1325.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1425.5" x2="15" y2="1425.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1525.5" x2="15" y2="1525.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1600.5" x2="5" y2="1600.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1650.5" x2="10" y2="1650.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1700.5" x2="5" y2="1700.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1750.5" x2="10" y2="1750.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1800.5" x2="5" y2="1800.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1850.5" x2="10" y2="1850.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1625.5" x2="15" y2="1625.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1725.5" x2="15" y2="1725.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1825.5" x2="15" y2="1825.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1900.5" x2="5" y2="1900.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1950.5" x2="10" y2="1950.5"/>
+	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1925.5" x2="15" y2="1925.5"/>
+</g>
+<g id="Text">
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 90)" fill="#5CADD5" font-family="'Courier'" font-size="12">100</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 190)" fill="#5CADD5" font-family="'Courier'" font-size="12">200</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 290)" fill="#5CADD5" font-family="'Courier'" font-size="12">300</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 390)" fill="#5CADD5" font-family="'Courier'" font-size="12">400</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 490)" fill="#5CADD5" font-family="'Courier'" font-size="12">500</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 590)" fill="#5CADD5" font-family="'Courier'" font-size="12">600</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 690)" fill="#5CADD5" font-family="'Courier'" font-size="12">700</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 790)" fill="#5CADD5" font-family="'Courier'" font-size="12">800</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 890)" fill="#5CADD5" font-family="'Courier'" font-size="12">900</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 990)" fill="#5CADD5" font-family="'Courier'" font-size="12">1000</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1090)" fill="#5CADD5" font-family="'Courier'" font-size="12">1100</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1190)" fill="#5CADD5" font-family="'Courier'" font-size="12">1200</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1290)" fill="#5CADD5" font-family="'Courier'" font-size="12">1300</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1390)" fill="#5CADD5" font-family="'Courier'" font-size="12">1400</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1490)" fill="#5CADD5" font-family="'Courier'" font-size="12">1500</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1590)" fill="#5CADD5" font-family="'Courier'" font-size="12">1600</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1690)" fill="#5CADD5" font-family="'Courier'" font-size="12">1700</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1790)" fill="#5CADD5" font-family="'Courier'" font-size="12">1800</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1890)" fill="#5CADD5" font-family="'Courier'" font-size="12">1900</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1990)" fill="#5CADD5" font-family="'Courier'" font-size="12">2000</text>
 </g>
 </svg>
