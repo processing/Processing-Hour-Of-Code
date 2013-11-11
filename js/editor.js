@@ -320,26 +320,10 @@ var helloEditor = {
     	$("a[data-index='"+index+"']").addClass("active");
 
 		$("#video").html("");
-		switch(index) {    				
-			case 1: // Hello
-				loadScriptOne(time);
-			break;
-			case 2: 			
-				loadScriptTwo(time);
-			break; 
-			case 3:
-				loadScriptThree(time);		
-			break;
-			case 4:
-  				loadScriptFour(time);			
-			break;
-			case 5:
-  				loadScriptFive(time);
-			break;
-			case 6: //Goodbye
-  				loadScriptSix(time);
-			break;
-		}
+		helloEditor.videoMode = true;
+		helloEditor.resizeUI(); 		
+
+		scripts[index-1].init(time);
 
 	},
 	/**
