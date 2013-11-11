@@ -147,19 +147,52 @@ var helloEditor = {
       		helloEditor.createGist();
     	}).tooltip({container: 'body'});;  
 
-  		$("#modalTweet").click(function() {
+ 		$("#modalGoogleButton").click(function() {
+
+ 			var shareURL = "https://plus.google.com/share";
+ 			var displayURL = $("#shareModal").attr('data-url');
+ 			
+ 			var googleURL = shareURL
+				+ "?url=" + displayURL;
+
+			console.log(googleURL);
+      		window.open(googleURL);
+
+    	}); 
+
+ 		$("#modalFacebookButton").click(function() {
+
+ 			var shareURL = "http://www.facebook.com/sharer/sharer.php";
+ 			var displayURL = $("#shareModal").attr('data-url');
+ 			var shareTitle = "Hello, Processing";
+ 			var shareSummary = "Check out my first program!"
+
+			var facebookURL = shareURL
+				+ "?s=100"
+				+ "&p[url]=" + displayURL
+				+ "&p[images][0]="
+				+ "&p[title]=" + encodeURIComponent(shareTitle)
+				+ "&p[summary]=" + encodeURIComponent(shareSummary);
+
+			console.log(facebookURL);
+      		window.open(facebookURL);
+
+    	});  
+
+  		$("#modalTwitterButton").click(function() {
   			var intentURL = "https://twitter.com/intent/tweet"
-      		var shareURL = $(this).attr('data-url');
+      		var displayURL = $("#shareModal").attr('data-url');
       		var shareText = "Check out my first program!";
       		var shareVia = "ProcessingOrg";
       		var shareHashtags = "hourofcode";
 
       		var tweetURL = intentURL
-      			+ "?url=" + encodeURIComponent(shareURL)
+      			+ "?url=" + encodeURIComponent(displayURL)
       			+ "&text=" + encodeURIComponent(shareText)
       			+ "&via=" + shareVia
       			+ "&hashtags=" + shareHashtags;
 
+      		console.log(tweetURL);
       		window.open(tweetURL);
 
     	});  
@@ -432,9 +465,9 @@ var helloEditor = {
 				var gistID = data.id;
 				var displayURL = "http://" + $(location).attr('hostname') + ( ($(location).attr('port') != "") ?  ":" + $(location).attr('port') : "" ) + "/display/#" + gistID;
 
-				$('#modalTweet').attr('data-url', displayURL);
+				$('#shareModal').attr('data-url', displayURL);
 
-				$('#shareModalText').html($("<a/>").attr('href',displayURL).html(displayURL));
+				$('#shareModalLink').html($("<a/>").attr('href',displayURL).html(displayURL));
 				$('#shareModal').modal('show');
 			});
 
