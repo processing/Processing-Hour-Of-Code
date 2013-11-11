@@ -373,7 +373,8 @@ var helloEditor = {
             var processingSource = this.editor.getValue(),
                 processingCanvas = document.getElementById("editorCanvas");
 
-            if (!(/size(\s*\d+\s*,\s*\d+\s*)/.test(processingSource))) {
+            if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
+                console.log("NO SIZE");
                 processingSource = "size(500,400);\n\n" + processingSource;
             }
 
@@ -451,8 +452,13 @@ var helloEditor = {
      */
     createGist: function () {
 
-        var processingSource = this.editor.getValue(),
-            postURL = "https://api.github.com/gists",
+        var processingSource = this.editor.getValue();
+
+        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
+            processingSource = "size(500,400);\n\n" + processingSource;
+        }
+
+        var postURL = "https://api.github.com/gists",
             postData = {
                 "description": "Save for Processing Hour of Code",
                 "public": true,
@@ -470,7 +476,7 @@ var helloEditor = {
 
                 $('#shareModal').attr('data-url', displayURL);
 
-                $('#shareModalLink').html($("<a/>").attr('href', displayURL).html(displayURL));
+                $('#shareModalLink').html($("<a/>").attr({'href': displayURL, target: "_blank"}).html(displayURL));
                 $('#shareModal').modal('show');
             });
 
