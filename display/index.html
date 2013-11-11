@@ -3,8 +3,54 @@ layout: default
 title: Display
 ---
 
-<div id="interface">
-<canvas id="displayCanvas"></canvas>
+<div id="displayHeader">
+	<h1 id="displayTitle">hello.processing.org</h1>
 </div>
+
+<div id="interface">
+
+	<div id="displayCanvasBox">
+		<canvas id="displayCanvas"></canvas>
+
+		<button id="displayCode" type="button" class="btn btn-default btn-sm" title="Display code.">
+			<span class="glyphicon glyphicon-question-sign"></span> What's This?
+		</button>
+
+	</div>
+
+</div>
+
+<!-- Modal Code Window -->
+
+<div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-url="http://hello.processing.org/">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Processing Code</h4>
+      </div>
+      <div class="modal-body">
+        This project was created as part of the Hello Processing tutorial.
+      </div>
+      <div class="modal-body" id="shareModalLink">
+
+		<div id="displayEditor"></div>
+
+      </div>      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="modalDownloadButton">
+         <span class="glyphicon glyphicon-share-alt"></span> Download
+        </button> 
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <span class="glyphicon glyphicon-ok"></span> Close
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- End Modal Code Window -->
+<script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/vendor/FileSaver.js" type="text/javascript"></script>
 
 <script src="/js/display.js" type="text/javascript"></script>

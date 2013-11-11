@@ -38,26 +38,17 @@ var helloEditor = {
   		if (hash.length > 0) {
   			var lessonName = hash.split("-")[0];
   			
-  			switch(lessonName) {
-  				case "hello":
-  					lessonIndex = 1;
-  				break;
-  				case "shapes":
-  					lessonIndex = 2;
-  				break;
-  				case "color":
-  					lessonIndex = 3;
-  				break;
-  				case "interact":
-  					lessonIndex = 4;
-  				break;
-  				case "decisions":
-  					lessonIndex = 5;
-  				break;
-  				case "goodbye":
-  					lessonIndex = 6;
-  				break;
-  			}	
+  			var lessonTable {
+  				"hello":1,
+  				"shapes":2,
+  				"color":3,
+  				"interact":4,
+  				"decisions":5,
+  				"goodbye":6,
+  			};
+
+  			if (lessonTable[lessonName] != null)
+  				lessonIndex = lessonTable[lessonName];
 
   			if (hash.split("-")[1] != undefined) lessonTime = hash.split("-")[1];
   			
@@ -384,7 +375,7 @@ var helloEditor = {
 
 			// Resize Canvas Container
 			
-			$("#canvasBox").css({
+			$("#editorCanvasBox").css({
 				width: this.processingInstance.width,
 				height: this.processingInstance.height,
 				marginTop: this.processingInstance.height / -2,
