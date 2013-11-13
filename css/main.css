@@ -328,7 +328,7 @@ div#editorContainer {
 	display: none;
 }
 
-.ace_color {
+#editor .ace_color {
 	pointer-events:auto;
 	cursor: pointer;
 	text-decoration: underline;
