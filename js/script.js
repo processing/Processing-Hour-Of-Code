@@ -97,11 +97,8 @@ var scriptOne = {
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
-
-            var hintHTML = $("#hints div[data-index='2']").html();
-
-            $("#hint").html(hintHTML);
-            $("#hint").show();
+            
+            helloEditor.showHint(1);
 
         });
     }
@@ -276,10 +273,7 @@ var scriptTwo = {
 
             // Show the proper hint over the video
 
-            var hintHTML = $("#hints div[data-index='2']").html();
-
-            $("#hint").html(hintHTML);
-            $("#hint").show();
+            helloEditor.showHint(2);
 
         });
     }

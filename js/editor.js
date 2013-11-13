@@ -374,7 +374,6 @@ var helloEditor = {
                 processingCanvas = document.getElementById("editorCanvas");
 
             if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
-                console.log("NO SIZE");
                 processingSource = "size(500,400);\n\n" + processingSource;
             }
 
@@ -505,6 +504,16 @@ var helloEditor = {
             direction: 'right',
             duration: "fast"
         });
+
+    },
+    showHint: function (index) {
+
+        var hintHTML = $("#hints div[data-index='" + index + "']").html();
+
+        $("#hint").html(hintHTML);
+        $("#hint").find("a").attr("target","_blank");
+        console.log($("#hint").html());
+        $("#hint").show();
 
     }
 };

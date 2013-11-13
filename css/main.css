@@ -286,6 +286,15 @@ div#videoCommands {
 	overflow: auto;
 }
 
+.hintPreview {
+	width: 512px;
+	background: white;
+	overflow: auto;
+	margin: 12px;
+	padding: 12px;
+	outline: 1px solid #ccc	;
+}
+
 div#editorContainer { 
 	display: none;
 	position: absolute;
