@@ -283,6 +283,7 @@ div#videoCommands {
 	z-index: 1000;
 	padding: 12px;
 	display: none;	
+	overflow: auto;
 }
 
 div#editorContainer { 
