@@ -129,7 +129,7 @@ footer#splashFooter {
 div#title {
 	display: inline-block;
 	font-family: 'theSerif', georgia, times, serif;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	font-weight: bold;
 	margin-top:8px;
 }
@@ -145,11 +145,11 @@ nav {
 }
 
 .lessonButton {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-weight: bold;
 	font-family: 'theSerif', georgia, times, serif; 
 	color: #5F86A3;
-	padding: 15px;
+	padding: 15px 8px;
 }
 
 .lessonButton sub {
