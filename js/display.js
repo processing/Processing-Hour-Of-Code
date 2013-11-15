@@ -73,11 +73,19 @@ var helloDisplay = {
                     processingCanvas = document.getElementById("displayCanvas");
                     processingInstance = new Processing(processingCanvas, gistSource);
 
+                    var displayHeight = 400;
+                    var displayWidth = (processingInstance.width / processingInstance.height) * displayHeight;
+
+                    $("#displayCanvas").css({
+                        width: displayWidth,
+                        height: displayHeight
+                    });
+
                     $("#displayCanvasBox").css({
-                        width: processingInstance.width,
-                        height: processingInstance.height,
-                        marginTop: processingInstance.height / -2,
-                        marginLeft: processingInstance.width / -2
+                        width: displayWidth + ( $("#displayInfo").outerWidth() + 10),
+                        height: displayHeight,
+                        marginTop: displayHeight / -2,
+                        marginLeft: (displayWidth + $("#displayInfo").outerWidth() + 10) / -2
                     });
                 } catch (e) {
                     console.log("ERROR! " + e.toString());

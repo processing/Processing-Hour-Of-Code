@@ -140,13 +140,14 @@ div#title a:hover {
 
 nav#pageNav {
 	position:absolute;
-	top:16px; 
+	top:15px; 
 	right:0;
 	font-size: .9em;
 }
 
 nav#pageNav a {
 	margin-left: 6px;
+	font-weight: bold;
 }
 
 div#lessonNavContainer {
@@ -340,17 +341,31 @@ div#editorContainer {
 
 /* Display Page */
 
-div#displayHeader {
+div#displayInfo {
 	position: absolute;
-	top: 24px;
-	left: 24px;
-	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 240px;
+	z-index: 2000;
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	background: #fff;
+	padding: 8px;
+}
+
+footer#displayFooter {
+	position:absolute;
+	bottom: 1em;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	z-index: 500;
 }
 
 h1#displayTitle {
 	font-family: 'theSerif', georgia, times, serif; 
-	color: white;
-	margin: 0;
+	font-size: 1.6em;
+	color: #5E86A3;
+	margin: 0 0 12px 0;
 	padding: 0;
 }
 
@@ -359,22 +374,23 @@ div#displayCanvasBox {
 	position:absolute;
 	top: 50%;
 	left: 50%;
-	width: 500px;
+	width: 750px;
 	height: 400px;
 	margin-top: -200px;
-	margin-left: -250px;
-
-	background: #fff;
-
+	margin-left: -375px;
+	z-index: 1000;
 }
 
 canvas#displayCanvas {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 250px;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
-	z-index: 500;
 	outline: 0px;
-	width: 100%;
-	height: 100%;
+	width: 500px;
+	height: 400px;
+	background: white;
+	z-index: 1000;
 }
 
 button#displayCode {

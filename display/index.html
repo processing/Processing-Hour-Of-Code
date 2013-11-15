@@ -3,20 +3,32 @@ layout: default
 title: Display
 ---
 
-<div id="displayHeader">
-	<h1 id="displayTitle">hello.processing.org</h1>
-</div>
-
 <div id="interface">
 
+
+
 	<div id="displayCanvasBox">
+
+    <div id="displayInfo">
+      <h1 id="displayTitle">Hello, Processing</h1>
+      <p>
+        This project was created as part of the Hello Processing tutorial. To learn more and explore the tutorial yourself, <a herf="/">click here</a>.
+      </p>
+
+      <p>To view the code that created this sketch, click the "view code" button</p>
+    </div>
+
 		<canvas id="displayCanvas"></canvas>
 
 		<button id="displayCode" class="btn btn-default btn-sm" title="Display code.">
-			<span class="glyphicon glyphicon-question-sign"></span> What's This?
+			<span class="glyphicon glyphicon-question-sign"></span> View Code
 		</button>
 
 	</div>
+
+  <footer id="displayFooter">
+    Processing Hour of Code // Computer Science Education Week // Code.org
+  </footer>
 
 </div>
 
@@ -30,9 +42,9 @@ title: Display
         <h4 class="modal-title" id="codeModalTitle">Processing Code</h4>
       </div>
       <div class="modal-body">
-        This project was created as part of the Hello Processing tutorial.
+        You can download the code below to experiment with it in the <a href="https://processing.org/download/">Processing IDE</a>.
       </div>
-      <div class="modal-body" id="shareModalLink">
+      <div class="modal-body">
 
 		<div id="displayEditor"></div>
 
