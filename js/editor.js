@@ -20,8 +20,7 @@ var helloEditor = {
     popcorn: null,
     processingInstance: null,
     videoMode: true,
-    runCache: [],
-    lessonIndex: 1,
+    lessonIndex: 0,
     /**
      * Initialize Ace editor and UI elements
      */
@@ -43,32 +42,30 @@ var helloEditor = {
 
         // Load proper lesson
 
-        var lessonIndex = 1,
-            lessonTime = null,
+        var lessonTime = null,
             lessonName,
             lessonTable,
             hash = top.location.hash.replace('#', '');
-
 
         if (hash.length > 0) {
             lessonName = hash.split("-")[0];
 
             lessonTable = {
-                "hello": 1,
-                "shapes": 2,
-                "color": 3,
-                "interact": 4,
-                "decisions": 5,
-                "goodbye": 6
+                "hello": 0,
+                "shapes": 1,
+                "color": 2,
+                "interact": 3,
+                "decisions": 4,
+                "goodbye": 5
             };
 
-            if (lessonTable[lessonName]) { lessonIndex = lessonTable[lessonName]; }
+            if (lessonTable[lessonName]) { this.lessonIndex = lessonTable[lessonName]; }
 
             if (hash.split("-")[1] !== undefined) { lessonTime = hash.split("-")[1]; }
 
         }
 
-        this.loadLesson(lessonIndex, lessonTime);
+        this.loadLesson(this.lessonIndex, lessonTime);
 
         // Resize callback
 
@@ -107,25 +104,18 @@ var helloEditor = {
      */
     setupUI: function () {
 
+        /* Video UI */  
+
         $("#videoContainer").hover(function () {
             $("#videoCommandsContainer").fadeIn();
         }, function () {
             $("#videoCommandsContainer").fadeOut();
         });
 
-        $("#modalResetCode").click(function () {
-            helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
-            $('#errorModal').modal('hide');
-        });
-
         $("#restartButton").click(function () {
             $("#hint").hide();
             helloEditor.popcorn.play(0);
-        });
-
-        // $("#resetButton").click(function (e) {
-  //            helloEditor.editor.setValue(helloEditor.runCache[helloEditor.lessonIndex], -1);
-  //    }).tooltip({container: 'body'});    
+        }); 
 
         $("#pauseButton").click(function () {
             if (helloEditor.popcorn.paused()) {
@@ -142,6 +132,8 @@ var helloEditor = {
             helloEditor.loadLesson(helloEditor.lessonIndex, null);
         });
 
+        /* Editor UI */
+
         $("#runButton").click(function () {
             helloEditor.runCode();
             helloEditor.editor.focus();
@@ -151,6 +143,30 @@ var helloEditor = {
             helloEditor.createGist();
         }).tooltip({container: 'body'});
 
+        $("#resetExample").click(function () {
+            helloEditor.loadCode(scripts[helloEditor.lessonIndex].exampleURL);
+            return false;
+        }).tooltip({container: 'body', placement: 'right'});
+
+        $("#resetLastLesson").click(function () {
+            helloEditor.setCode(scripts[helloEditor.lessonIndex - 1].runCache);
+            return false;
+        }).tooltip({container: 'body', placement: 'right'});
+
+        $("#resetLastGood").click(function () {
+            helloEditor.setCode(scripts[helloEditor.lessonIndex].runCache);
+            return false;
+        }).tooltip({container: 'body', placement: 'right'});                      
+
+        /* Error UI */
+
+        $("#modalResetCode").click(function () {
+            helloEditor.editor.setValue(scripts[this.lessonIndex].runCache, -1);
+            $('#errorModal').modal('hide');
+        });       
+
+        /* Share UI */
+
         $("#modalGoogleButton").click(function () {
 
             var shareURL = "https://plus.google.com/share",
@@ -158,7 +174,6 @@ var helloEditor = {
                 googleURL = shareURL +
                     "?url=" + encodeURIComponent(displayURL);
 
-            console.log(googleURL);
             window.open(googleURL);
 
         });
@@ -176,7 +191,6 @@ var helloEditor = {
                     "&p[title]=" + encodeURIComponent(shareTitle) +
                     "&p[summary]=" + encodeURIComponent(shareSummary);
 
-            console.log(facebookURL);
             window.open(facebookURL);
 
         });
@@ -193,10 +207,11 @@ var helloEditor = {
                     "&via=" + shareVia +
                     "&hashtags=" + shareHashtags;
 
-            console.log(tweetURL);
             window.open(tweetURL);
 
         });
+
+        /* Canvas UI */
 
         $("#toggleRulers").click(function () {
             $("#horizontalRuler").toggle({
@@ -208,6 +223,8 @@ var helloEditor = {
                 direction: 'right'
             });
         }).tooltip({placement: 'bottom'});
+
+        /* Nav Menu */
 
         $(".lessonButton").each(function (key, value) {
 
@@ -221,7 +238,7 @@ var helloEditor = {
 
         });
 
-        // Color Picker
+        /* Color Picker */
 
         $(helloEditor.editor).on("click", function () {
 
@@ -339,7 +356,13 @@ var helloEditor = {
         }
     },
     /**
-     * Loads a lesson into the editor by index
+     * Populates the editor with a string
+     */
+    setCode: function (code) {
+        helloEditor.editor.setValue(code, -1);
+    },
+    /**
+     * Populates the editor from a URL
      */
     loadCode: function (url) {
         this.resetInstance();
@@ -360,7 +383,7 @@ var helloEditor = {
         helloEditor.videoMode = true;
         helloEditor.resizeUI();
 
-        scripts[index - 1].init(time);
+        scripts[index].init(time);
 
     },
     /**
@@ -385,7 +408,7 @@ var helloEditor = {
 
             // Store successful code in cache
 
-            helloEditor.runCache[helloEditor.lessonIndex] = this.editor.getValue();
+            scripts[this.lessonIndex].runCache = this.editor.getValue();
 
             // Resize Canvas Container
 
@@ -512,7 +535,6 @@ var helloEditor = {
 
         $("#hint").html(hintHTML);
         $("#hint").find("a").attr("target","_blank");
-        console.log($("#hint").html());
         $("#hint").show();
 
     }

@@ -11,6 +11,7 @@
 var scriptOne = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
+    runCache: null,
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -40,7 +41,7 @@ var scriptOne = {
                 start: "01:22",
                 onStart: function () {
                     $("#editorContainer").show();
-                    helloEditor.editor.setValue();
+                    helloEditor.setCode("");
                 },
                 onEnd: function () {
                     $("#editorContainer").hide();
@@ -49,10 +50,10 @@ var scriptOne = {
             .code({
                 start: "01:27",
                 onStart: function () {
-                    helloEditor.editor.setValue("ellipse(250, 200, 400, 400);", -1);
+                    helloEditor.setCode("ellipse(250, 200, 400, 400);");
                 },
                 onEnd: function () {
-                    helloEditor.editor.setValue("");
+                    helloEditor.setCode("");
                 }
             })
             .code({
@@ -111,6 +112,7 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/77716815",
     exampleURL: "/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde",
+    runCache: null,    
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -144,7 +146,7 @@ var scriptTwo = {
                 start: "06:20",
                 onStart: function () {
                     $("#editorContainer").fadeIn("fast");
-                    helloEditor.editor.setValue();
+                    helloEditor.setCode("");
                 },
                 onEnd: function () {
                     $("#editorContainer").hide();
@@ -164,10 +166,10 @@ var scriptTwo = {
             .code({
                 start: "06:48",
                 onStart: function () {
-                    helloEditor.editor.setValue("ellipse(250, 200, 150, 150);", -1);
+                    helloEditor.setCode("ellipse(250, 200, 150, 150);");
                 },
                 onEnd: function () {
-                    helloEditor.editor.setValue("");
+                    helloEditor.setCode("");
                 }
             })
             // Run whatever is in the editor
@@ -215,7 +217,7 @@ var scriptTwo = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.editor.setValue("rect(250, 200, 150, 150);", -1);
+                    helloEditor.setCode("rect(250, 200, 150, 150);");
                     helloEditor.resetInstance();
                 },
                 onEnd: function () {
@@ -286,6 +288,7 @@ var scriptTwo = {
 var scriptThree = {
     vimeoURL: "https://vimeo.com/77716817",
     exampleURL: "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde",
+    runCache: null,    
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -307,6 +310,7 @@ var scriptThree = {
 var scriptFour = {
     vimeoURL: "https://vimeo.com/77716816",
     exampleURL: "/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde",
+    runCache: null,    
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -327,6 +331,7 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/77716818",
     exampleURL: "/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde",
+    runCache: null,    
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -347,6 +352,7 @@ var scriptFive = {
 var scriptSix = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
+    runCache: null,
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
