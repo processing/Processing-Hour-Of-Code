@@ -407,11 +407,12 @@ var helloEditor = {
     /**
      * Populates the editor from a URL
      */
-    loadCode: function (url) {
+    loadCode: function (url, callback) {
         this.resetInstance();
 
         $.get(url, function (data) {
             helloEditor.editor.setValue(data, -1);
+            callback();
         });
     },
     /**

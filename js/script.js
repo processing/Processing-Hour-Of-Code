@@ -391,9 +391,14 @@ var scriptThree = {
             .code({
                 start: "06:15",
                 onStart: function () {
-
-                    helloEditor.loadCode(scriptThree.exampleURL);
-                    helloEditor.runCode();
+                    // Load example asynchronously with callback to run it
+                    helloEditor.loadCode(
+                        scriptThree.exampleURL,
+                        function () {
+                            helloEditor.runCode();
+                        }
+                    );
+                    
                 }
             });
 
