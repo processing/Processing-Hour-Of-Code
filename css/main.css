@@ -173,7 +173,7 @@ div#lessonNavContainer {
 	text-decoration: none;
 } 
 
-a.active, a.active:hover {
+a.active span, a.active:hover span {
 	color: #E67AC2;
 	background: transparent;
 }
@@ -270,7 +270,7 @@ div#videoContainer {
 
 div#videoCommandsContainer {
 	position:absolute;
-	bottom:32px;
+	top:48px;
 	width: 100%;
 	text-align:center;
 	display:none;

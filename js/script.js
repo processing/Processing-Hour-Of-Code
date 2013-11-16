@@ -286,7 +286,7 @@ var scriptTwo = {
  */
 
 var scriptThree = {
-    vimeoURL: "https://vimeo.com/77716817",
+    vimeoURL: "https://vimeo.com/79534024",
     exampleURL: "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde",
     runCache: null,    
     init: function (time) {
@@ -300,6 +300,115 @@ var scriptThree = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
 
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+        $("#runButton").show();
+
+        // Popcorn Events
+
+        helloEditor.popcorn
+            // Show the editor
+            .code({
+                start: "02:44",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("stroke(0);\n\nfill(128);\n\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // Back to video explaination
+            .code({
+                start: "3:00",  
+                onStart: function () {
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide();
+
+                    helloEditor.setCode("");
+                    helloEditor.resetInstance();                     
+
+                }
+            })
+            // RGB Demo
+            .code({
+                start: "04:24",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("stroke(250,0,0);\n\nfill(0,0,255);\n\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })            
+            // Show Color Picker
+            .code({
+                start: "04:56",
+                onStart: function () {
+
+                    $("#colorPicker").spectrum("container").show();
+                    $("#colorPicker").spectrum("container").css({
+                        position: "absolute",
+                        top: 32,
+                        left: 20
+                    });                
+                }
+            }) 
+            // Hide color Picker
+            .code({
+                start: "05:05",
+                onStart: function () {
+                    $("#colorPicker").spectrum("container").hide();
+                }
+            })  
+            // Background Code
+            .code({
+                start: "05:34",
+                onStart: function () {
+
+                    helloEditor.setCode("background(216,225,149);\n\nstroke(250,0,0);\n\nfill(0,0,255);\n\nrect(250,200,100,75);");
+                }
+            })    
+            // Background Run
+            .code({
+                start: "05:40",
+                onStart: function () {
+
+                    helloEditor.runCode();
+                }
+            })   
+            // Example
+            .code({
+                start: "06:15",
+                onStart: function () {
+
+                    helloEditor.loadCode(scriptThree.exampleURL);
+                    helloEditor.runCode();
+                }
+            });
+
+        // End Event
+
+        helloEditor.popcorn.on("ended", function () {
+
+            // Show the proper hint over the video
+
+            helloEditor.showHint(3);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+
+        });               
     }
 };
 

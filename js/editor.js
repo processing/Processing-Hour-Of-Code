@@ -257,6 +257,8 @@ var helloEditor = {
                 range = new Range(position.row, 0, position.row, line.length);
                 pixelPosition = editor.renderer.$cursorLayer.getPixelPosition(position, true);
 
+                console.log(pixelPosition);
+
                 $("#colorPicker").spectrum.token = token;
                 $("#colorPicker").spectrum.range = range;
 
