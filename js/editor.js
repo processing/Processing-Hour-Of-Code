@@ -280,15 +280,18 @@ var helloEditor = {
      */
     resizeUI: function () {
 
-        var viewportWidth = ($(window).width() > 800) ? $(window).width() : 800,
-            viewportHeight = $(window).height() - 48,
+        var minVideoWidth = 320, viewportTopOffset = 48,
+            viewportWidth = ($(window).width() > 768) ? $(window).width() : 768,
+            viewportHeight = ($(window).height() > 640) ? $(window).height() : 640,
             videoWidth,
             videoHeight;
+
+        viewportHeight -= viewportTopOffset;
 
         $("#interface")
             .height(viewportHeight)
             .width(viewportWidth)
-            .css({top: 48, left: 0, marginLeft: 0, marginTop: 0});
+            .css({top: viewportTopOffset, left: 0});
 
         if (this.videoMode) {
 
@@ -305,44 +308,82 @@ var helloEditor = {
                     top: "50%",
                     marginTop: videoHeight / -2,
                     marginLeft: videoWidth / -2
-                });
+                }).show();
 
             $("#editorContainer").hide();
             $("#canvasContainer").hide();
-            $("#videoContainer").show();
 
         } else {
 
             //console.log("Editor Mode");
 
-            videoWidth = viewportWidth - viewportHeight;
-            videoHeight = videoWidth / 16 * 9;
+            if (viewportWidth > viewportHeight) {
 
-            $("#videoContainer")
-                .css({
-                    width: videoWidth,
-                    height: videoHeight,
-                    left: 8,
-                    top: 8,
-                    marginTop: 0,
-                    marginLeft: 0
-                });
+                // Landscape
 
-            $("#editorContainer")
-                .css({
-                    width: videoWidth,
-                    height: viewportHeight - videoHeight - 32,
-                    top: videoHeight + 20,
-                    left: 8
-                });
+                videoWidth = (viewportWidth - viewportHeight > minVideoWidth) ? (viewportWidth - viewportHeight) : minVideoWidth;
+                videoHeight = videoWidth / 16 * 9;            
 
-            $("#canvasContainer")
-                .height(viewportHeight)
-                .width(viewportHeight)
-                .css({
-                    top: 0,
-                    left: videoWidth
-                });
+                $("#videoContainer")
+                    .css({
+                        width: videoWidth,
+                        height: videoHeight,
+                        left: 8,
+                        top: 8,
+                        marginTop: 0,
+                        marginLeft: 0
+                    });
+
+                $("#editorContainer")
+                    .css({
+                        width: videoWidth,
+                        height: viewportHeight - videoHeight - 32,
+                        top: videoHeight + 20,
+                        left: 8
+                    });
+
+                $("#canvasContainer")
+                    .height(viewportHeight)
+                    .width(viewportHeight)
+                    .css({
+                        top: 0,
+                        left: videoWidth
+                    });
+
+            } else {
+                // Portrait
+
+                videoWidth = viewportWidth/2;
+                videoHeight = videoWidth / 16 * 9;            
+
+                $("#videoContainer")
+                    .css({
+                        width: videoWidth,
+                        height: videoHeight,
+                        left: 8,
+                        top: 8,
+                        marginTop: 0,
+                        marginLeft: 0
+                    });
+
+                $("#editorContainer")
+                        .css({
+                            width: viewportWidth - videoWidth - 24,
+                            height: videoHeight,
+                            top: 8,
+                            left: videoWidth + 16
+                        });
+
+                    $("#canvasContainer")
+                        .height(viewportHeight - videoHeight)
+                        .width(viewportWidth)
+                        .css({
+                            top: videoHeight,
+                            left: 0
+                        });
+
+            }                
+
         }
     },
     /**

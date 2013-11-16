@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Editor
+class: editor
 ---
 
 <div id="headerContainer">
@@ -57,10 +58,7 @@ title: Editor
         </a>
         <a id="pauseButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-pause"></span> Pause
-        </a>
-        <a id="nextButton" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-forward"></span> Next Lesson
-        </a>     
+        </a>  
       </div> 
     </div>
 
@@ -74,7 +72,7 @@ title: Editor
 
       <div class="btn-group dropup">
         <button class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-          <span class="glyphicon glyphicon-flash"></span> Reset Code
+          <span class="glyphicon glyphicon-flash"></span> Code
         </button>
         <ul class="dropdown-menu">
           <li><a href="#" id="resetExample" title="Reset to Dan's example">Dan's Example Code</a></li>
@@ -83,6 +81,9 @@ title: Editor
          </ul>
       </div>
 
+      <button id="nextButton" class="btn btn-default btn-sm" title="Move to the next lesson.">
+        <span class="glyphicon glyphicon-forward"></span> Next Lesson
+      </button>         
       <button id="shareButton" class="btn btn-default btn-sm" title="Share your work!">
         <span class="glyphicon glyphicon-share-alt"></span>
         Share

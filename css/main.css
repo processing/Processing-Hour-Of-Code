@@ -26,7 +26,7 @@
 	font-style: normal;
 }
 
-html {
+html, body {
 	width: 100%;
 	height: 100%;
 }
@@ -34,12 +34,10 @@ html {
 body {
 	background: #efefef;
 	-webkit-font-smoothing: antialiased;
+}
 
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+body.editor, body.display {
+	background: #5F86A3;
 }
 
 a {
@@ -121,17 +119,18 @@ footer#splashFooter {
 	position: relative;
 	margin: auto;
 	width: 80%;
-	max-width: 1024px;
-	min-width: 800px;
+	min-width: 768px;
 	height: 48px;
 }
 
 div#title {
+	position:absolute;
 	display: inline-block;
 	font-family: 'theSerif', georgia, times, serif;
 	font-size: 1.4em;
 	font-weight: bold;
-	margin-top:8px;
+	top:8px;
+	left:4px;
 }
 
 div#title a:hover {
@@ -141,7 +140,7 @@ div#title a:hover {
 nav#pageNav {
 	position:absolute;
 	top:15px; 
-	right:0;
+	right:4px;
 	font-size: .9em;
 }
 
@@ -153,8 +152,8 @@ nav#pageNav a {
 div#lessonNavContainer {
 	position:absolute;
 	top:13px; 
-	left: 0;
-	right:0;
+	left: 156px;
+	right:84px;
 	text-align: center;	
 }
 
@@ -182,14 +181,10 @@ a.active, a.active:hover {
 /* Editor Page */
 
 #interface {
-
-	position: fixed;
-	top: 0;
+	position: absolute;
+	top: 48;
 	left: 0;
-	bottom: 0;
-	right: 0;
-
-	background: #5F86A3;
+	width: 100%;
 }
 
 div#canvasContainer {
@@ -311,18 +306,20 @@ div#editorContainer {
 	height: 362px;	
 	background: #F9F9FC;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
-
 }
 
 #editor { 
+	position: relative;
 	width: 100%;
 	height: 100%;
+	z-index: 500;
 }
 
-#editorCommands {
+div#editorCommands {
 	position: absolute;
 	bottom: 12px;
 	right: 12px;
+	z-index: 1000;	
 }
 
 #errorModalText {
@@ -346,10 +343,11 @@ div#displayInfo {
 	top: 0;
 	left: 0;
 	width: 240px;
+	height: 400px;
 	z-index: 2000;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
 	background: #fff;
-	padding: 8px;
+	padding: 12px;
 }
 
 footer#displayFooter {
@@ -365,7 +363,7 @@ h1#displayTitle {
 	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 1.6em;
 	color: #5E86A3;
-	margin: 0 0 12px 0;
+	margin: 0 0 8px 0;
 	padding: 0;
 }
 
@@ -391,12 +389,6 @@ canvas#displayCanvas {
 	height: 400px;
 	background: white;
 	z-index: 1000;
-}
-
-button#displayCode {
-	position: absolute;
-	right: 0;
-	bottom: -3.5em;
 }
 
 div#displayEditor {
