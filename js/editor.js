@@ -302,6 +302,8 @@ var helloEditor = {
             videoWidth = viewportWidth * 0.80;
             videoHeight = videoWidth / 16 * 9;
 
+            $("#header").css("width",videoWidth + 16);
+
             $("#videoContainer")
                 .css({
                     width: videoWidth,
@@ -325,6 +327,8 @@ var helloEditor = {
 
                 videoWidth = (viewportWidth - viewportHeight > minVideoWidth) ? (viewportWidth - viewportHeight) : minVideoWidth;
                 videoHeight = videoWidth / 16 * 9;            
+
+                $("#header").width("95%");
 
                 $("#videoContainer")
                     .css({

@@ -296,9 +296,12 @@ var scriptThree = {
 
         // Set initial State
 
+        helloEditor.videoMode = false;
+        helloEditor.resizeUI();
+
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
+        $("#editorContainer").show();
+        $("#canvasContainer").show();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -308,6 +311,17 @@ var scriptThree = {
         // Popcorn Events
 
         helloEditor.popcorn
+            // Back to full screen
+            .code({
+                start: "00:19",
+                onStart: function () {   
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide(); 
+                }
+            })
             // Show the editor
             .code({
                 start: "02:44",
@@ -330,11 +344,7 @@ var scriptThree = {
                     helloEditor.resizeUI();
 
                     $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
-
-                    helloEditor.setCode("");
-                    helloEditor.resetInstance();                     
-
+                    $("#canvasContainer").hide();                  
                 }
             })
             // RGB Demo

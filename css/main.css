@@ -37,7 +37,7 @@ body {
 }
 
 body.editor, body.display {
-	background: #5F86A3;
+	background: #5E86A3;
 }
 
 a {
@@ -118,7 +118,7 @@ footer#splashFooter {
 #header {
 	position: relative;
 	margin: auto;
-	width: 80%;
+	width: 100%;
 	min-width: 768px;
 	height: 48px;
 }
@@ -130,7 +130,7 @@ div#title {
 	font-size: 1.4em;
 	font-weight: bold;
 	top:8px;
-	left:4px;
+	left:8px;
 }
 
 div#title a:hover {
@@ -140,13 +140,18 @@ div#title a:hover {
 nav#pageNav {
 	position:absolute;
 	top:15px; 
-	right:4px;
+	right:8px;
 	font-size: .9em;
 }
 
 nav#pageNav a {
 	margin-left: 6px;
 	font-weight: bold;
+}
+
+nav#pageNav a:hover {
+	text-decoration: none;
+	border-bottom: 3px solid #E67AC2;
 }
 
 div#lessonNavContainer {
@@ -169,6 +174,10 @@ div#lessonNavContainer {
 	font-size: .9em;
 }
 
+.lessonButton:hover span {
+	border-bottom: 3px solid #E67AC2;
+}
+
 .lessonButton:hover {
 	text-decoration: none;
 } 
@@ -176,6 +185,8 @@ div#lessonNavContainer {
 a.active span, a.active:hover span {
 	color: #E67AC2;
 	background: transparent;
+	border-bottom: 3px solid #E67AC2;
+	
 }
 
 /* Editor Page */
@@ -362,7 +373,7 @@ footer#displayFooter {
 h1#displayTitle {
 	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 1.6em;
-	color: #5E86A3;
+	color: #428BCA;
 	margin: 0 0 8px 0;
 	padding: 0;
 }
