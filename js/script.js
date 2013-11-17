@@ -288,12 +288,8 @@ var scriptTwo = {
 var scriptThree = {
     vimeoURL: "https://vimeo.com/79534024",
     exampleURL: "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null,
+    reset: function () {
         // Set initial State
 
         helloEditor.videoMode = false;
@@ -307,6 +303,13 @@ var scriptThree = {
         $("#shareButton").hide();
         $("#nextButton").hide();
         $("#runButton").show();
+    },
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
+
+        this.reset();
 
         // Popcorn Events
 

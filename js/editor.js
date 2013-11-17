@@ -113,7 +113,7 @@ var helloEditor = {
         });
 
         $("#restartButton").click(function () {
-            $("#hint").hide();
+            scripts[helloEditor.lessonIndex].reset();
             helloEditor.popcorn.play(0);
         }); 
 
