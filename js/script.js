@@ -354,7 +354,7 @@ var scriptThree = {
                     helloEditor.setCode("stroke(0);\nfill(128)\nrect(250,200,100,75);");
                     helloEditor.runCode();
                 }
-            }
+            })
             // Back to video explanation
             .code({
                 start: "3:00",  
