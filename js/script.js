@@ -366,7 +366,7 @@ var scriptThree = {
                     $("#canvasContainer").hide();                  
                 }
             })
-            // RGB Demo
+            // RGB Demo -- back to code editor
             .code({
                 start: "04:24",
                 onStart: function () {
@@ -375,11 +375,24 @@ var scriptThree = {
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
-
-                    helloEditor.setCode("stroke(250,0,0);\n\nfill(0,0,255);\n\nrect(250,200,100,75);");
-                    helloEditor.runCode();
                 }
             })            
+            // Now add red stroke
+            .code({
+                start: "04:34",
+                onStart: function () {
+                    helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // Now add red stroke
+            .code({
+                start: "04:42",
+                onStart: function () {
+                    helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
             // Show Color Picker
             .code({
                 start: "04:56",
@@ -388,7 +401,7 @@ var scriptThree = {
                     $("#colorPicker").spectrum("container").show();
                     $("#colorPicker").spectrum("container").css({
                         position: "absolute",
-                        top: 32,
+                        top: 28,
                         left: 20
                     });                
                 }
@@ -405,7 +418,7 @@ var scriptThree = {
                 start: "05:34",
                 onStart: function () {
 
-                    helloEditor.setCode("background(216,225,149);\n\nstroke(250,0,0);\n\nfill(0,0,255);\n\nrect(250,200,100,75);");
+                    helloEditor.setCode("background(216,225,149);\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
                 }
             })    
             // Background Run
