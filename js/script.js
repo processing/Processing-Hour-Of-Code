@@ -335,11 +335,27 @@ var scriptThree = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("stroke(0);\n\nfill(128);\n\nrect(250,200,100,75);");
+                    helloEditor.setCode("rect(250,200,100,75);");
                     helloEditor.runCode();
                 }
             })
-            // Back to video explaination
+            // add stroke()
+            .code({
+                start: "02:48",
+                onStart: function () {
+                    helloEditor.setCode("stroke(0);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // add fill()
+            .code({
+                start: "02:50",
+                onStart: function () {
+                    helloEditor.setCode("stroke(0);\nfill(128)\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            }
+            // Back to video explanation
             .code({
                 start: "3:00",  
                 onStart: function () {
