@@ -12,16 +12,17 @@ var scriptOne = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
     runCache: null,
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
-        $("#canvasContainer").hide();
+        $("#canvasContainer").hide();        
+    },    
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
 
         // Popcorn Events
 
@@ -112,19 +113,20 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/77716815",
     exampleURL: "/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null, 
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
-        $("#editorCommands").hide();
+        $("#editorCommands").hide();   
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
 
         // Popcorn Events
 
@@ -466,17 +468,18 @@ var scriptThree = {
 var scriptFour = {
     vimeoURL: "https://vimeo.com/77716816",
     exampleURL: "/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null,   
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
     }
 };
 
@@ -487,17 +490,19 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/77716818",
     exampleURL: "/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null,   
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
+
     }
 };
 
@@ -509,16 +514,17 @@ var scriptSix = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
     runCache: null,
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },     
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
     }
 };
 
