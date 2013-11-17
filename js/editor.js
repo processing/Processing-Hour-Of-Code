@@ -234,6 +234,7 @@ var helloEditor = {
                 helloEditor.loadLesson(lessonIndex, null);
                 helloEditor.lessonIndex = lessonIndex;
 
+                return false;
             });
 
         });

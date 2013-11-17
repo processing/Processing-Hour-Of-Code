@@ -424,3 +424,20 @@ div#displayEditor {
 	outline: 1px solid #ccc	;
 }
 
+/* Page template */
+
+div#page {
+
+	margin: 48px auto;
+	width: 640px;
+	z-index: 2000;
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	background: #fff;
+	padding: 12px;
+
+}
+
+div#page h2, div#page h3 {
+	font-family: 'theSerif', georgia, times, serif; 
+	color: #5E86A3;	
+}
