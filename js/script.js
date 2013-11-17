@@ -351,7 +351,7 @@ var scriptThree = {
             .code({
                 start: "02:50",
                 onStart: function () {
-                    helloEditor.setCode("stroke(0);\nfill(128)\nrect(250,200,100,75);");
+                    helloEditor.setCode("stroke(0);\nfill(128);\nrect(250,200,100,75);");
                     helloEditor.runCode();
                 }
             })
