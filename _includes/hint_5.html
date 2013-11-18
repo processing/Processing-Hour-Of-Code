@@ -2,7 +2,7 @@
 
 <p>You can work on your own pace, but we recommend approximately ten minutes on this assignment before moving on.</p>
 
-<p>Here is an example of drawing something different ba</p>
+<p>Here is an example of drawing a different color depending on whether the mouse is pressed.</p>
 
 <pre>
 void setup() {
@@ -10,12 +10,28 @@ void setup() {
 }
 
 void draw() {
-  background(0,0,0);
-  fill(255,255,255);
+  background(0);
+  if (mousePressed) {
+    fill(0,255,0);
+  } else {
+    fill(255,0,0);
+  }
   ellipse(mouseX,mouseY,60,60);
 }
 </pre>
 
-<p>We recommend a maximum canvas size of 500 by 400 pixels for this tutorial, but feel free to experiment your window skinnier or shorter!</p>
+You could also consider drawing the background only when the mouse is pressed.  For example:
 
-<p>For more, check out the <a href="http://processing.org/reference/mouseX.html" target="_blank">mouseX</a> and <a href="http://processing.org/reference/mouseY.html" target="_blank">mouseY</a> pages on processing.org.</p>
+<pre>
+void setup() {
+  size(500,400);
+  background(0);
+}
+
+void draw() {
+  if (mousePressed) {
+    background(0);
+  }
+  ellipse(mouseX,mouseY,60,60);
+}
+</pre>
