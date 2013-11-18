@@ -231,7 +231,7 @@ var helloEditor = {
 
                 var lessonIndex = $(this).attr("data-index");
                 helloEditor.loadLesson(lessonIndex, null);
-                helloEditor.lessonIndex = lessonIndex;
+                helloEditor.lessonIndex = Number(lessonIndex);
 
                 return false;
             });

@@ -480,6 +480,8 @@ var scriptFour = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+
+        this.reset();
     }
 };
 
@@ -503,6 +505,7 @@ var scriptFive = {
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
+        this.reset();
     }
 };
 
@@ -525,6 +528,8 @@ var scriptSix = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+
+        this.reset();
     }
 };
 
