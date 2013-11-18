@@ -76,26 +76,25 @@ var helloEditor = {
         // Color Picker
 
         $('#colorPicker').spectrum({
-            flat: true,
-            showInput: false
-            //showInitial: true
-        });
+            showInput: false,
+            showInitial: true,
+            className: "colorPicker",
+            chooseText: "Select",
+            cancelText: "Cancel",            
+            show: function () {
+                //console.log("SHOWING");
+            },
+            hide: function () {
+                helloEditor.editor.focus();
+            },
+            change: function(color) {
+                var color = $("#colorPicker").spectrum("get").toRgb(),
+                    range = $("#colorPicker").spectrum.range,
+                    token = $("#colorPicker").spectrum.token;
+                
+                helloEditor.editor.session.replace(range, token.value + "(" + color.r + "," + color.g + "," + color.b + ");");
 
-        $("#colorPicker").spectrum("container").hide();
-
-        $(".sp-cancel").click(function () {
-            $("#colorPicker").spectrum("container").hide();
-        });
-
-        $(".sp-choose").click(function () {
-            var color = $("#colorPicker").spectrum("get").toRgb(),
-                range = $("#colorPicker").spectrum.range,
-                token = $("#colorPicker").spectrum.token;
-
-            helloEditor.editor.session.replace(range, token.value + "(" + color.r + "," + color.g + "," + color.b + ");");
-
-            $("#colorPicker").spectrum("container").hide();
-            helloEditor.editor.focus();
+            }            
         });
 
     },
@@ -243,7 +242,7 @@ var helloEditor = {
 
         $(helloEditor.editor).on("click", function () {
 
-            $("#colorPicker").spectrum("container").hide();
+            $("#colorPicker").spectrum("hide");;
 
             var editor = helloEditor.editor,
                 position = editor.getCursorPosition(),
@@ -258,18 +257,25 @@ var helloEditor = {
                 range = new Range(position.row, 0, position.row, line.length);
                 pixelPosition = editor.renderer.$cursorLayer.getPixelPosition(position, true);
 
-                console.log(pixelPosition);
+                var currentValue = /\w*\s?\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)/.exec(line);
+
+                if (currentValue) {
+                    $("#colorPicker").spectrum('set','rgb(' + currentValue[1] + ', ' + currentValue[2] + ', ' + currentValue[3] + ')');                
+                } else {
+                    $("#colorPicker").spectrum('set','black');
+                }
 
                 $("#colorPicker").spectrum.token = token;
                 $("#colorPicker").spectrum.range = range;
 
-                $("#colorPicker").spectrum("container").show();
-                $("#colorPicker").spectrum("container").css({
-                    position: "absolute",
+                $("#colorPicker").css({
                     top: pixelPosition.top,
                     left: pixelPosition.left
                 });
 
+                $("#colorPicker").spectrum("show");
+
+                return false;
             }
 
         });

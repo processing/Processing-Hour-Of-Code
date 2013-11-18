@@ -400,19 +400,19 @@ var scriptThree = {
                 start: "04:56",
                 onStart: function () {
 
-                    $("#colorPicker").spectrum("container").show();
                     $("#colorPicker").spectrum("container").css({
-                        position: "absolute",
                         top: 28,
                         left: 20
-                    });                
+                    });          
+                    $("#colorPicker").spectrum("show");
+
                 }
             }) 
             // Hide color Picker
             .code({
                 start: "05:05",
                 onStart: function () {
-                    $("#colorPicker").spectrum("container").hide();
+                    $("#colorPicker").spectrum("hide");
                 }
             })  
             // Background Code

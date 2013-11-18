@@ -337,14 +337,55 @@ div#editorCommands {
 	border-top: 1px solid #efefef;
 }
 
-#colorPicker {
-	display: none;
-}
-
 #editor .ace_color {
 	pointer-events:auto;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+#colorPicker {
+	position: absolute;
+	pointer-events:none;	
+}
+
+.colorPicker {
+	background: #fff;
+	border: 1px solid #cfcfcf;
+}
+
+.colorPicker * {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.colorPicker button {
+	background: #fff;
+	border: 1px solid #cfcfcf;	
+
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-size: 14px;
+	text-shadow: none;	
+}
+
+.colorPicker button:hover {
+	background: #efefef;
+
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-size: 14px;
+	text-shadow: none;		
+}
+
+.colorPicker button:active {
+	background: #efefef;
+
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-size: 14px;
+	text-shadow: none;		
 }
 
 /* Display Page */
