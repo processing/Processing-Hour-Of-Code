@@ -1,36 +1,50 @@
 ---
 layout: default
 title: Display
+class: display
 ---
 
-<div id="interface">
+<div id="displayCanvasBox">
 
+  <div id="displayInfo">
+    <h1 id="displayTitle">Look What I Made!</h1>
 
+    <hr/>
 
-	<div id="displayCanvasBox">
+    <p>
+      This image was created as part of the Hello, Processing tutorial. To learn more and explore the tutorial yourself, click the button below.
+    </p>
 
-    <div id="displayInfo">
-      <h1 id="displayTitle">Hello, Processing</h1>
-      <p>
-        This project was created as part of the Hello Processing tutorial. To learn more and explore the tutorial yourself, <a herf="/">click here</a>.
-      </p>
+    <p>You can also use the buttons below to view or download the code used to create this image.</p>
 
-      <p>To view the code that created this sketch, click the "view code" button</p>
+    <hr/>
+
+    <div id="displayCommands" class="btn-group-vertical btn-block">
+    
+      <a id="visitSite" class="btn btn-default btn-primary" href="/">
+        <span class="glyphicon glyphicon-bell"></span> Visit Tutorial 
+      </a>
+
+      <a id="displayCode" class="btn btn-default btn-primary" href="#">
+        <span class="glyphicon glyphicon-cog"></span> View Sketch Code
+      </a>
+
+      <a id="downloadCode" class="btn btn-default btn-primary" href="#">
+       <span class="glyphicon glyphicon-download"></span> Download Code
+      </a> 
     </div>
 
-		<canvas id="displayCanvas"></canvas>
 
-		<button id="displayCode" class="btn btn-default btn-sm" title="Display code.">
-			<span class="glyphicon glyphicon-question-sign"></span> View Code
-		</button>
+  </div>
 
-	</div>
+	<canvas id="displayCanvas"></canvas>
+
+</div>
 
   <footer id="displayFooter">
     Processing Hour of Code // Computer Science Education Week // Code.org
   </footer>
 
-</div>
 
 <!-- Modal Code Window -->
 
@@ -42,17 +56,11 @@ title: Display
         <h4 class="modal-title" id="codeModalTitle">Processing Code</h4>
       </div>
       <div class="modal-body">
-        You can download the code below to experiment with it in the <a href="https://processing.org/download/">Processing IDE</a>.
-      </div>
-      <div class="modal-body">
 
 		<div id="displayEditor"></div>
 
       </div>      
       <div class="modal-footer">
-        <button class="btn btn-default" id="modalDownloadButton">
-         <span class="glyphicon glyphicon-share-alt"></span> Download
-        </button> 
         <button class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
         </button>

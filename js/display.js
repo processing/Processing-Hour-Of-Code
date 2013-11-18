@@ -27,12 +27,16 @@ var helloDisplay = {
 
         $("#displayCode").click(function () {
             $('#codeModal').modal('show');
+
+            return false;
         });
 
-        $("#modalDownloadButton").click(function () {
+        $("#downloadCode").click(function () {
 
             var blob = new Blob([helloDisplay.processingSource], {type: "text/processing;charset=utf-8"});
             saveAs(blob, "sketch.pde");
+
+            return false;
 
         });
 

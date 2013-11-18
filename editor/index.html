@@ -1,33 +1,10 @@
 ---
 layout: default
 title: Editor
+class: editor
 ---
 
-<div id="headerContainer">
-  <div id="header">
-        <div id="title">
-          <a href="/">Hello Processing!</a>
-        </div>
-
-        <div id="lessonNavContainer">
-          <nav id = "lessonNav">
-            <a href="#hello" class="lessonButton" data-index="0"><sub>1</sub> Hello</a>
-            <a href="#shapes" class="lessonButton" data-index="1"><sub>2</sub> Shapes</a>
-            <a href="#color" class="lessonButton" data-index="2"><sub>3</sub> Color</a>
-            <a href="#interact" class="lessonButton" data-index="3"><sub>4</sub> Interact</a>
-            <a href="#decisions" class="lessonButton" data-index="4"><sub>5</sub> Decisions</a>
-            <a href="#goodbye" class="lessonButton" data-index="5"><sub>6</sub> Goodbye</a>
-          </nav>
-        </div>
-
-        <nav id = "pageNav">
-          <a href="/about/" target="_blank">About</a>
-          <a href="/guide/" target="_blank">Guide</a> 
-        </nav>         
-
-  </div>
-</div>
-
+{% include header.html %}
 
 <div id="interface">
 
@@ -57,10 +34,7 @@ title: Editor
         </a>
         <a id="pauseButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-pause"></span> Pause
-        </a>
-        <a id="nextButton" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-forward"></span> Next Lesson
-        </a>     
+        </a>  
       </div> 
     </div>
 
@@ -72,9 +46,9 @@ title: Editor
 
     <div id="editorCommands" class="btn-group">
 
-      <div class="btn-group dropup">
+      <div class="btn-group dropup" id="resetButton">
         <button class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-          <span class="glyphicon glyphicon-flash"></span> Reset Code
+          <span class="glyphicon glyphicon-flash"></span> Code
         </button>
         <ul class="dropdown-menu">
           <li><a href="#" id="resetExample" title="Reset to Dan's example">Dan's Example Code</a></li>
@@ -83,6 +57,9 @@ title: Editor
          </ul>
       </div>
 
+      <button id="nextButton" class="btn btn-default btn-sm" title="Move to the next lesson.">
+        <span class="glyphicon glyphicon-forward"></span> Next Lesson
+      </button>         
       <button id="shareButton" class="btn btn-default btn-sm" title="Share your work!">
         <span class="glyphicon glyphicon-share-alt"></span>
         Share

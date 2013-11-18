@@ -12,16 +12,17 @@ var scriptOne = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
     runCache: null,
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
-        $("#canvasContainer").hide();
+        $("#canvasContainer").hide();        
+    },    
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
 
         // Popcorn Events
 
@@ -112,19 +113,20 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/77716815",
     exampleURL: "/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null, 
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
-        $("#editorCommands").hide();
+        $("#editorCommands").hide();   
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
 
         // Popcorn Events
 
@@ -286,20 +288,176 @@ var scriptTwo = {
  */
 
 var scriptThree = {
-    vimeoURL: "https://vimeo.com/77716817",
+    vimeoURL: "https://vimeo.com/79534024",
     exampleURL: "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde",
-    runCache: null,    
+    runCache: null,
+    reset: function () {
+        // Set initial State
+
+        helloEditor.videoMode = false;
+        helloEditor.resizeUI();
+
+        $("#hint").hide();
+        $("#editorContainer").show();
+        $("#canvasContainer").show();
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+        $("#runButton").show();
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
-        // Set initial State
+        this.reset();
 
-        $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
+        // Popcorn Events
 
+        helloEditor.popcorn
+            // Back to full screen
+            .code({
+                start: "00:19",
+                onStart: function () {   
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide(); 
+                }
+            })
+            // Show the editor
+            .code({
+                start: "02:44",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("rect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // add stroke()
+            .code({
+                start: "02:48",
+                onStart: function () {
+                    helloEditor.setCode("stroke(0);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // add fill()
+            .code({
+                start: "02:50",
+                onStart: function () {
+                    helloEditor.setCode("stroke(0);\nfill(128);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // Back to video explanation
+            .code({
+                start: "3:00",  
+                onStart: function () {
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide();                  
+                }
+            })
+            // RGB Demo -- back to code editor
+            .code({
+                start: "04:24",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+                }
+            })            
+            // Now add red stroke
+            .code({
+                start: "04:34",
+                onStart: function () {
+                    helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // Now add red stroke
+            .code({
+                start: "04:42",
+                onStart: function () {
+                    helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    helloEditor.runCode();
+                }
+            })
+            // Show Color Picker
+            .code({
+                start: "04:56",
+                onStart: function () {
+
+                    $("#colorPicker").spectrum("container").show();
+                    $("#colorPicker").spectrum("container").css({
+                        position: "absolute",
+                        top: 28,
+                        left: 20
+                    });                
+                }
+            }) 
+            // Hide color Picker
+            .code({
+                start: "05:05",
+                onStart: function () {
+                    $("#colorPicker").spectrum("container").hide();
+                }
+            })  
+            // Background Code
+            .code({
+                start: "05:34",
+                onStart: function () {
+
+                    helloEditor.setCode("background(216,225,149);\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                }
+            })    
+            // Background Run
+            .code({
+                start: "05:40",
+                onStart: function () {
+
+                    helloEditor.runCode();
+                }
+            })   
+            // Example
+            .code({
+                start: "06:15",
+                onStart: function () {
+                    // Load example asynchronously with callback to run it
+                    helloEditor.loadCode(
+                        scriptThree.exampleURL,
+                        function () {
+                            helloEditor.runCode();
+                        }
+                    );
+                    
+                }
+            });
+
+        // End Event
+
+        helloEditor.popcorn.on("ended", function () {
+
+            // Show the proper hint over the video
+
+            helloEditor.showHint(3);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+
+        });               
     }
 };
 
@@ -310,17 +468,18 @@ var scriptThree = {
 var scriptFour = {
     vimeoURL: "https://vimeo.com/77716816",
     exampleURL: "/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null,   
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
     }
 };
 
@@ -331,17 +490,19 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/77716818",
     exampleURL: "/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde",
-    runCache: null,    
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    runCache: null,   
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },  
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
+
     }
 };
 
@@ -353,16 +514,17 @@ var scriptSix = {
     vimeoURL: "https://vimeo.com/77249859",
     exampleURL: null,
     runCache: null,
-    init: function (time) {
-
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-
+    reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+    },     
+    init: function (time) {
+
+        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
+        helloEditor.popcorn.play(time);
     }
 };
 
