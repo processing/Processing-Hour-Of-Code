@@ -12,7 +12,7 @@ class: display
 	<h2> "Hello Processing" Guide </h2>
 
 	<p>
-		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be more structured for a classroom environment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The screen is divided into three section: video tutorial, code editor, code display window.
+		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be more structured for a classroom envionment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The screen is divided into three section: video tutorial, code editor, code display window.
 	</p>
 
 	<p>
@@ -21,40 +21,28 @@ class: display
 
 	</p>
 
-	<h5> Hello </h5>
-
 	<p>
-		What is computer programming and why is it interesting? A series of examples demonstrate how code is used within the visual arts in areas including animation, cartography, performance, architecture, and fashion design.
+		<strong>1. Hello:</strong> What is computer programming and why is it interesting? A series of examples demonstrate how code is used within the visual arts in areas including animation, cartography, performance, architecture, and fashion design.
 	</p>
 
-	<h5> Shapes </h5>
-
 	<p>
-		Shapes are drawn to the screen with the <tt>ellipse()</tt> and <tt>rect()</tt> programming <em>functions</em>. A series of parameter values are used to define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
+		<strong>2. Shapes:</strong> Shapes are drawn to the screen with the <tt>ellipse()</tt> and <tt>rect()</tt> code <em>functions</em>. A series of parameters define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
 	</p>
 
-	<h5> Color </h5>
-
 	<p>
-		Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. Click on the <tt>fill()</tt> and <tt>stroke()</tt> function names to open the color selector tool in the code editor.
+		<strong>3. Color:</strong> Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. For example, the code <tt>fill(0, 0, 255)</tt> will define 100% blue and 0% red and green. Click on the <tt>fill()</tt> and <tt>stroke()</tt> function names to open the color selector tool in the code editor.
 	</p>
 
-	<h5> Interact </h5>
-
 	<p>
-		Input is used to move animate shapes. The location of the cursor on screen controlled with a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> <tt>variable</tt> in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
+		<strong>4. Interact:</strong> Input is used to animate shapes. The location of the cursor on screen controlled by a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> <tt>variable</tt> in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
 	</p>
 
-	<h5> Decisions </h5>
-
 	<p>
-		Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse or square draw? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the '{' and '}' symbols, runs.  
+		<strong>5. Decisions:</strong> Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse or square draw? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the '{' and '}' symbols, runs.  
 	</p>
 
-	<h5> Goodbye </h5>
-
 	<p>
-		Congratualations! The tutorial is finished. Participants can share their work with others. 
+		<strong>6. Goodbye:</strong> Congratualations! The tutorial is finished. Participants can share their work with others. 
 	</p>
 
 
@@ -65,15 +53,15 @@ class: display
 	To learn more about programming and Processing, we suggest the following links:
 
 		<ul>
-		<li><a href="">Processing.org</a></li>
-		<li><a href="">Processing Reference</a>: Guide to the Processing language</li>
-		<li><a href="">Processing Tutorials</a>: Introductions to a range of programming topics</li>
-		<li><a href="">Processing Examples</a>: Example code across a range of topics</li>
+		<li><a href="http://processing.org">Processing.org</a></li>
+		<li><a href="http://processing.org/reference/">Processing Reference</a>: Guide to the Processing language</li>
+		<li><a href="http://processing.org/tutorials/">Processing Tutorials</a>: Introductions to a range of programming topics</li>
+		<li><a href="http://processing.org/examples/">Processing Examples</a>: Example code across a range of topics</li>
 		</ul>
 
 		<ul>
-		<li><a href="">Code.org</a></li>
-		<li><a href="">Hour of Code</a>: Additional one-hour programming tutorials</li>
+		<li><a href="http://code.org/">Code.org</a></li>
+		<li><a href="http://csedweek.org/">Hour of Code</a>: Additional one-hour programming tutorials</li>
 		</ul>
 
 	</p>
@@ -84,38 +72,71 @@ class: display
 
 	<p>
 		<tt>rect(a, b, c, d)</tt> <br />
-		<tt>a</tt> -- the X (horizontal) location of the shape<br/>
-		<tt>b</tt> -- the Y (vertical) location of the shape<br/>
-		<tt>c</tt> -- the width of the shape<br/>
-		<tt>d</tt> -- the height of the shape
+		Draw a rectangle to the screen. A rectangle with the same width and height is a square. The parameters follow:<br/>
+		<tt>a</tt> - X (horizontal) location of the shape's upper-left corner<br/>
+		<tt>b</tt> - Y (vertical) location of the shape's uppper-left corner<br/>
+		<tt>c</tt> - width of the shape<br/>
+		<tt>d</tt> - height of the shape
 	</p>
 
 	<p>
-		ellipse(a, b, c, d) 
+		<tt>ellipse(a, b, c, d)</tt> <br />
+		Draw an ellipse to the screen. An ellipse with the same width and height is a circle. The parameters follow:<br/>
+		<tt>a</tt> - X (horizontal) location of the shape's center<br/>
+		<tt>b</tt> - Y (vertical) location of the shape's center<br/>
+		<tt>c</tt> - width of the shape<br/>
+		<tt>d</tt> - height of the shape 
 	</p>
 
 	<p>
-		fill(r, g, b)
+		<tt>fill(r, g, b)</tt><br />
+		Defines the interior color of shapes. The parameters follow:<br/>
+		<tt>r</tt> - amount of red, from 0 (none) to 255 (maximum)<br/>
+		<tt>g</tt> - amount of green, from 0 (none) to 255 (maximum)<br/>
+		<tt>b</tt> - amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
-		stroke(r, g, b)
+		<tt>stroke(r, g, b)</tt><br />
+		Defined the outline color of shapes. The parameters follow:<br/>
+		<tt>r</tt> - amount of red, from 0 (none) to 255 (maximum)<br/>
+		<tt>g</tt> - amount of green, from 0 (none) to 255 (maximum)<br/>
+		<tt>b</tt> - amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
-		mouseX
+		<tt>setup()</tt><br />
+		The code inside the <tt>setup()</tt> block runs once when the program starts.
 	</p>
 
 	<p>
-		mouseY
+		<tt>draw()</tt><br />
+		The code inside the <tt>draw()</tt> block runs continuously while the program is running.
 	</p>
 
 	<p>
-		mousePressed
+		<tt>void</tt><br />
+		This keyword is required to be written in front of <tt>setup()</tt> and <tt>draw()</tt>. It means that the <tt>setup()</tt> and <tt>draw()</tt> functions do not "return a value."
 	</p>
 
 	<p>
-		if
+		<tt>mouseX</tt><br />
+		This variable stores the x-coordinate of the cursor.
+	</p>
+
+	<p>
+		<tt>mouseY</tt><br />
+		This variable stores the y-coordinate of the cursor.
+	</p>
+
+	<p>
+		<tt>mousePressed</tt><br />
+		This variable is <tt>true</tt> if the a mouse button is pressed and it is <tt>false</tt> if a button is not pressed.
+	</p>
+
+	<p>
+		<tt>if</tt><br />
+		The <tt>if</tt> structure allows a program to make a decision to run the code inside the block. When the relational expression associated with the <tt>if</tt> is <tt>true</tt>, the code inside the '{' and '}' will run. 
 	</p>
 
 
