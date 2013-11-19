@@ -289,11 +289,11 @@ var helloEditor = {
      */
     resizeUI: function () {
 
-        var minVideoWidth = 320, viewportTopOffset = 48,
+        var viewportTopOffset = 48,
             viewportWidth = ($(window).width() > 768) ? $(window).width() : 768,
             viewportHeight = ($(window).height() > 640) ? $(window).height() : 640,
-            videoWidth,
-            videoHeight;
+            minVideoWidth = 320, maxVideoWidth = viewportWidth /2,
+            videoWidth, videoHeight;
 
         viewportHeight -= viewportTopOffset;
 
@@ -332,8 +332,15 @@ var helloEditor = {
 
                 // Landscape
 
-                videoWidth = (viewportWidth - viewportHeight > minVideoWidth) ? (viewportWidth - viewportHeight) : minVideoWidth;
-                videoHeight = videoWidth / 16 * 9;            
+                if (viewportWidth - viewportHeight < minVideoWidth) {
+                    videoWidth = minVideoWidth;
+                } else if (viewportWidth - viewportHeight > maxVideoWidth) {    
+                    videoWidth = maxVideoWidth;
+                } else {
+                    videoWidth = viewportWidth - viewportHeight;
+                }
+
+               videoHeight = videoWidth / 16 * 9;            
 
                 $("#header").width("95%");
 

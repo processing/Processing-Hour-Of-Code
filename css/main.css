@@ -306,6 +306,13 @@ div#videoCommands {
 	overflow: auto;
 }
 
+div.hint h2{
+	font-family: 'theSerif', georgia, times, serif; 
+	color: #5E86A3;	
+	font-size: 1.3em;
+	margin-top: 0;
+}
+
 div#editorContainer { 
 	display: none;
 	position: absolute;
