@@ -9,10 +9,16 @@ class: display
 
 <div id="page">
 
-	<h2> Teacher's Guide </h2>
+	<h2> "Hello Processing" Guide </h2>
 
 	<p>
-		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be more structured for a classroom envionment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The primary material for each section is described below. For discussion or questions about this tutorial, please visit the <a href="http://forum.processing.org/two/categories/hello-processing">Processing Forum</a>.
+		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be more structured for a classroom envionment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The screen is divided into three section: video tutorial, code editor, code display window.
+	</p>
+
+	<p>
+		The primary material for each section is described below. For discussion or questions about this tutorial, please visit the <a href="http://forum.processing.org/two/categories/hello-processing">Processing Forum</a>.
+	</p>
+
 	</p>
 
 	<h5> Hello </h5>
@@ -24,19 +30,19 @@ class: display
 	<h5> Shapes </h5>
 
 	<p>
-		Shapes are drawn to the screen with the <tt>ellipse()</tt> and <tt>rect()</tt> programming <em>functions</em>. A series of parameter values are used to define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
+		Shapes are drawn to the screen with the <pre>ellipse()</pre> and <pre>rect()</pre> programming <em>functions</em>. A series of parameter values are used to define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
 	</p>
 
 	<h5> Color </h5>
 
 	<p>
-		Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions.
+		Shapes are colored with the <pre>fill()</pre> and <pre>stroke()</pre> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. Click on the <pre>fill()</pre> and <pre>stroke()</pre> function names to open the color selector tool in the code editor.
 	</p>
 
 	<h5> Interact </h5>
 
 	<p>
-		Input is used to move animate shapes. The location of the cursor on screen controlled with a mouse or finger is used to set the position of ellipses and rectangles on the screen. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> variable in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
+		Input is used to move animate shapes. The location of the cursor on screen controlled with a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <pre>mouseX</pre> <pre>variable</pre> in the program and the y-coordinate of the cursor is the <pre>mouseY</pre> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
 	</p>
 
 	<h5> Decisions </h5>
@@ -48,8 +54,10 @@ class: display
 	<h5> Goodbye </h5>
 
 	<p>
-		TC
+		Congratualations!. The turorial is finished. Participants can share their work with others. 
 	</p>
+
+
 
 	<h3> Further learning </h3>
 
@@ -71,10 +79,15 @@ class: display
 	</p>
 
 
+
 	<h3> Quick Reference (in order of appearance) </h3>
 
 	<p>
-		rect(a, b, c, d) 
+		<pre>rect(a, b, c, d)<pre> <br />
+		a -- the X (horizontal) location of the shape<br/>
+		b -- the Y (vertical) location of the shape<br/>
+		c -- the width of the shape<br/>
+		d -- the height of the shape
 	</p>
 
 	<p>
@@ -110,23 +123,31 @@ class: display
 	<h3> Glossary </h3>
 
 	<p>
-		block: 
+		block: A list of code statements enclosed within braces, the '{' and '}' characters. 
 	</p>
 
 	<p>
-		expression: 
+		coordinate system: A system of numbers that define the location of positions on screen. The Processing coordinate system uses the upper-left corner as the origin (0,0) with the x-coordinates increasing to the right and y-coordintes increasing down the screen. Positions within the coordinate system are defined in units of pixels. For example (100, 20) is 100 pixels from the uppper-left corner of the display window and 20 pixels to the right.
 	</p>
 
 	<p>
-		false: 
+		false: The opposite of 'true', which means an expression has evaluated to false. For example, 1 > 5 is false.
 	</p>
 
 	<p>
-		function: 
+		function: A program element with a specific purpose and often has parameters to define its behavior. For example, the <pre>rect()</pre> function draws a rectangle to the screen. The parameters placed within the function's parentheses define the location and dimensions of the shape. In other programming tutorials, functions are sometimes called subroutines, commands, or procedures.
 	</p>
 
 	<p>
-		true: 
+		relational expression: A code expression that compares two values with a relational operator. For example, greater than (>) or less than (<). 
+	</p>
+
+	<p>
+		true: The opposite of 'false', which means an expression has evaluated to true. For example, 5 > 1 is true.
+	</p>
+
+	<p>
+		variable: A container to store data with a name and value. For example, the <pre>mouseX</pre> variable will have a value of 200 when the cursor is 200 pixels from the left edge of the display window.
 	</p>
 
 </div>
