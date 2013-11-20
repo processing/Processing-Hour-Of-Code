@@ -32,12 +32,12 @@ html, body {
 }
 
 body {
-	background: #efefef;
+	background: #5E86A3;
 	-webkit-font-smoothing: antialiased;
 }
 
-body.editor, body.display {
-	background: #5E86A3;
+body.splash {
+	background: #efefef;
 }
 
 a {
@@ -474,11 +474,22 @@ div#displayEditor {
 
 /* Page template */
 
+body.about #header, body.guide #header {
+	width: 768px;
+}
+
+body.about .aboutButton,  body.guide .guideButton{
+	text-decoration: none;
+	border-bottom: 3px solid #E67AC2;
+}
+
 div#page {
 
-	margin: 48px auto;
-	width: 640px;
+	margin: auto;
+	width: 768px;
 	z-index: 2000;
+	border-bottom: 8px solid #E67AC2;
+
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
 	background: #fff;
 	padding: 12px;
