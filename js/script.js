@@ -112,7 +112,7 @@ var scriptOne = {
 
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/77716815",
-    exampleURL: "/assets/pde/hourofcode_1_ellipses/hourofcode_1_ellipses.pde",
+    exampleURL: "/assets/pde/hello_1_drawing/hello_1_drawing.pde",
     runCache: null, 
     reset: function () {
         // Set initial State
@@ -289,7 +289,7 @@ var scriptTwo = {
 
 var scriptThree = {
     vimeoURL: "https://vimeo.com/79534024",
-    exampleURL: "/assets/pde/hourofcode_2_color/hourofcode_2_color.pde",
+    exampleURL: "/assets/pde/hello_2_color/hello_2_color.pde",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -467,7 +467,7 @@ var scriptThree = {
 
 var scriptFour = {
     vimeoURL: "https://vimeo.com/77716816",
-    exampleURL: "/assets/pde/houseofcode_3_mouse_a/houseofcode_3_mouse_a.pde",
+    exampleURL: "/assets/pde/hello_3_interact/hello_3_interact.pde",
     runCache: null,   
     reset: function () {
         // Set initial State
@@ -491,7 +491,7 @@ var scriptFour = {
 
 var scriptFive = {
     vimeoURL: "https://vimeo.com/77716818",
-    exampleURL: "/assets/pde/houseofcode_4_mousepressed_a/houseofcode_4_mousepressed_a.pde",
+    exampleURL: "/assets/pde/hello_4_questions/hello_4_questions.pde",
     runCache: null,   
     reset: function () {
         // Set initial State
