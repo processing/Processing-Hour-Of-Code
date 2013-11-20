@@ -238,6 +238,8 @@ var helloEditor = {
 
         });
 
+        $("#pageNav").find('a').attr('target',"_blank");
+
         /* Color Picker */
 
         $(helloEditor.editor).on("click", function () {
