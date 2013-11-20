@@ -12,7 +12,7 @@ class: guide
 	<h2> Guide to "Hello Processing"</h2>
 
 	<p>
-		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be more structured for a classroom envionment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The screen is divided into three section: video tutorial, code editor, code display window.
+		The primary goals of the tutorial are to provide an introduction to computer programming within the context of visual media in a way that encourages future exploration and creates enthusiasm for coding. This tutorial was created to allow people to make their way through at their own pace, but it can also be used in a structured classroom envionment. This set of tutorials will take about an hour. Each section is a video introduction followed by time to write and modify a program. The screen is divided into three sections: video tutorial, code editor, code display window.
 	</p>
 
 	<p>
@@ -33,22 +33,22 @@ class: guide
 
 	<p>
 		<strong>3. Color</strong> <br />
-		Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. For example, the code <tt>fill(0, 0, 255)</tt> will define 100% blue and 0% red and green. Click on the <tt>fill()</tt> and <tt>stroke()</tt> function names to open the color selector tool in the code editor.
+		Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. For example, the code <tt>fill(0, 0, 255)</tt> will define 0% red, 0% green, and 100% blue. In the code editor, click on the <tt>fill()</tt> and <tt>stroke()</tt> function names to open the color selector tool.
 	</p>
 
 	<p>
 		<strong>4. Interact</strong> <br />
-		Input is used to animate shapes. Ulike the previous programs that run the code once and then stop, the code in this section runs continuously. The <tt>setup()</tt> and <tt>draw()</tt> functions are introduced to make this happen. The location of the cursor on screen controlled by a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> <tt>variable</tt> in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
+		Input is used to animate shapes. Unlike the earlier examples that execute once and then stop, the code in this section runs continuously. The <tt>setup()</tt> and <tt>draw()</tt> functions are introduced to enable continuous execution. The location of the cursor on screen controlled by a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> variable in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
 	</p>
 
 	<p>
 		<strong>5. Decisions</strong> <br />
-		Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse or square draw? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the '{' and '}' symbols, runs.  
+		Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse be drawn, or a square? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the <tt>{</tt> and <tt>}</tt> symbols, runs.  
 	</p>
 
 	<p>
 		<strong>6. Goodbye:</strong> <br />
-		Congratualations! The tutorial is finished. Participants can share their work with others. 
+		Congratulations! The tutorial is finished. Participants can share their work with others. 
 	</p>
 
 
@@ -56,7 +56,7 @@ class: guide
 	<h3> Further learning </h3>
 
 	<p>
-	To learn more about programming and Processing, we suggest the following links:
+	To learn more about programming and Processing, we suggest the following resources:
 
 		<ul>
 		<li><a href="http://processing.org">Processing.org</a></li>
@@ -79,35 +79,35 @@ class: guide
 	<p>
 		<tt>rect(a, b, c, d)</tt> <br />
 		Draw a rectangle to the screen. The parameters follow:<br/>
-		<tt>a</tt> - X (horizontal) location of the shape's upper-left corner<br/>
-		<tt>b</tt> - Y (vertical) location of the shape's uppper-left corner<br/>
-		<tt>c</tt> - width of the shape<br/>
-		<tt>d</tt> - height of the shape
+		<tt>a</tt> — X (horizontal) location of the shape's upper-left corner<br/>
+		<tt>b</tt> — Y (vertical) location of the shape's uppper-left corner<br/>
+		<tt>c</tt> — width of the shape<br/>
+		<tt>d</tt> — height of the shape
 	</p>
 
 	<p>
 		<tt>ellipse(a, b, c, d)</tt> <br />
 		Draw an ellipse to the screen. The parameters follow:<br/>
-		<tt>a</tt> - X (horizontal) location of the shape's center<br/>
-		<tt>b</tt> - Y (vertical) location of the shape's center<br/>
-		<tt>c</tt> - width of the shape<br/>
-		<tt>d</tt> - height of the shape 
+		<tt>a</tt> — X (horizontal) location of the shape's center<br/>
+		<tt>b</tt> — Y (vertical) location of the shape's center<br/>
+		<tt>c</tt> — width of the shape<br/>
+		<tt>d</tt> — height of the shape 
 	</p>
 
 	<p>
 		<tt>fill(r, g, b)</tt><br />
 		Defines the interior color of shapes. The parameters follow:<br/>
-		<tt>r</tt> - amount of red, from 0 (none) to 255 (maximum)<br/>
-		<tt>g</tt> - amount of green, from 0 (none) to 255 (maximum)<br/>
-		<tt>b</tt> - amount of blue, from 0 (none) to 255 (maximum)<br/>
+		<tt>r</tt> — amount of red, from 0 (none) to 255 (maximum)<br/>
+		<tt>g</tt> — amount of green, from 0 (none) to 255 (maximum)<br/>
+		<tt>b</tt> — amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
 		<tt>stroke(r, g, b)</tt><br />
 		Defines the outline color of shapes. The parameters follow:<br/>
-		<tt>r</tt> - amount of red, from 0 (none) to 255 (maximum)<br/>
-		<tt>g</tt> - amount of green, from 0 (none) to 255 (maximum)<br/>
-		<tt>b</tt> - amount of blue, from 0 (none) to 255 (maximum)<br/>
+		<tt>r</tt> — amount of red, from 0 (none) to 255 (maximum)<br/>
+		<tt>g</tt> — amount of green, from 0 (none) to 255 (maximum)<br/>
+		<tt>b</tt> — amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
@@ -142,7 +142,7 @@ class: guide
 
 	<p>
 		<tt>if</tt><br />
-		The <tt>if</tt> structure allows a program to make a decision to run the code inside the block. When the <em>relational expression</em> associated with the <tt>if</tt> is <tt>true</tt>, the code inside the '{' and '}' will run. 
+		The <tt>if</tt> structure allows a program to make a decision to run the code inside the block. When the <em>relational expression</em> associated with the <tt>if</tt> is <tt>true</tt>, the code inside the <tt>{</tt> and <tt>}</tt> will run. 
 	</p>
 
 
@@ -151,12 +151,12 @@ class: guide
 
 	<p>
 		<strong>block</strong> <br />
-		A list of code statements enclosed within braces, the '{' and '}' characters. 
+		A list of code statements enclosed within braces, the <tt>{</tt> and <tt>}</tt> characters. 
 	</p>
 
 	<p>
 		<strong>coordinate system</strong> <br />
-		A system of numbers that define the location of positions on screen. The Processing coordinate system uses the upper-left corner as the origin (0,0) with the x-coordinates increasing to the right and y-coordintes increasing down the screen. Positions within the coordinate system are defined in units of pixels. For example (100, 20) is 100 pixels from the uppper-left corner of the display window and 20 pixels to the right.
+		A system of numbers that define the location of positions on screen. The Processing coordinate system uses the upper-left corner as the origin (0,0) with the x-coordinates increasing to the right and y-coordintes increasing down the screen. Positions within the coordinate system are defined in units of pixels. For example, <tt>(100, 20)</tt> is 100 pixels from the uppper-left corner of the display window and 20 pixels to the right.
 	</p>
 
 	<p>
@@ -166,7 +166,7 @@ class: guide
 
 	<p>
 		<strong>function</strong> <br />
-		A program element with a specific purpose and often has parameters to define its behavior. For example, the <tt>rect()</tt> function draws a rectangle to the screen. The parameters placed within the function's parentheses define the location and dimensions of the shape. In other programming tutorials, functions are sometimes called subroutines, commands, or procedures.
+		A program element with a specific purpose, a function often has parameters to define its behavior. For example, the <tt>rect()</tt> function draws a rectangle to the screen. The parameters placed within the function's parentheses define the location and dimensions of the shape. In other programming tutorials, functions are sometimes called methods, subroutines, commands, or procedures.
 	</p>
 
 	<p>
