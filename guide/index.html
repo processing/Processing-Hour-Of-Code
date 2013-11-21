@@ -28,22 +28,22 @@ class: guide
 
 	<p>
 		<strong>2. Shapes</strong> <br />
-		Shapes are drawn to the screen with the <tt>ellipse()</tt> and <tt>rect()</tt> code <em>functions</em>. A series of parameters define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
+		Shapes are drawn to the screen with the <code>ellipse()</code> and <code>rect()</code> code <em>functions</em>. A series of parameters define the position and size of the shapes. These numerical parameters relate to the <em>coordinate system</em>.  
 	</p>
 
 	<p>
 		<strong>3. Color</strong> <br />
-		Shapes are colored with the <tt>fill()</tt> and <tt>stroke()</tt> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. For example, the code <tt>fill(0, 0, 255)</tt> will define 0% red, 0% green, and 100% blue. In the code editor, click on the <tt>fill()</tt> and <tt>stroke()</tt> function names to open the color selector tool.
+		Shapes are colored with the <code>fill()</code> and <code>stroke()</code> functions. The three parameters for these functions define how much red, green, and blue light to use to fill and outline the shapes that follow. The numbers for the parameters range from 0 (0%) to 255 (100%) of each light color. For example, the code <code>fill(0, 0, 255)</code> will define 0% red, 0% green, and 100% blue. In the code editor, click on the <code>fill()</code> and <code>stroke()</code> function names to open the color selector tool.
 	</p>
 
 	<p>
 		<strong>4. Interact</strong> <br />
-		Input is used to animate shapes. Unlike the earlier examples that execute once and then stop, the code in this section runs continuously. The <tt>setup()</tt> and <tt>draw()</tt> functions are introduced to enable continuous execution. The location of the cursor on screen controlled by a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <tt>mouseX</tt> variable in the program and the y-coordinate of the cursor is the <tt>mouseY</tt> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
+		Input is used to animate shapes. Unlike the earlier examples that execute once and then stop, the code in this section runs continuously. The <code>setup()</code> and <code>draw()</code> functions are introduced to enable continuous execution. The location of the cursor on screen controlled by a mouse or finger is used to set the position of ellipses and rectangles. The x-coordinate of the cursor is captured as the <code>mouseX</code> variable in the program and the y-coordinate of the cursor is the <code>mouseY</code> variable. These positional values are used to define the location of shapes on screen. As the cursor moves, the shapes respond.
 	</p>
 
 	<p>
 		<strong>5. Decisions</strong> <br />
-		Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse be drawn, or a square? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the <tt>{</tt> and <tt>}</tt> symbols, runs.  
+		Touch and/or mouse click events decide if the code does one thing or another. For example, will the color be green or blue; will an ellipse be drawn, or a square? The program asks a question through a short <em>relational expression</em> and if the answer is <em>true</em>, the code inside the <em>block</em>, the line(s) of code between the <code>{</code> and <code>}</code> symbols, runs.  
 	</p>
 
 	<p>
@@ -77,72 +77,72 @@ class: guide
 	<h3> Quick Reference (in order of appearance) </h3>
 
 	<p>
-		<tt>rect(a, b, c, d)</tt> <br />
+		<code>rect(a, b, c, d)</code> <br />
 		Draw a rectangle to the screen. The parameters follow:<br/>
-		<tt>a</tt> — X (horizontal) location of the shape's upper-left corner<br/>
-		<tt>b</tt> — Y (vertical) location of the shape's uppper-left corner<br/>
-		<tt>c</tt> — width of the shape<br/>
-		<tt>d</tt> — height of the shape
+		<code>a</code> — X (horizontal) location of the shape's upper-left corner<br/>
+		<code>b</code> — Y (vertical) location of the shape's uppper-left corner<br/>
+		<code>c</code> — width of the shape<br/>
+		<code>d</code> — height of the shape
 	</p>
 
 	<p>
-		<tt>ellipse(a, b, c, d)</tt> <br />
+		<code>ellipse(a, b, c, d)</code> <br />
 		Draw an ellipse to the screen. The parameters follow:<br/>
-		<tt>a</tt> — X (horizontal) location of the shape's center<br/>
-		<tt>b</tt> — Y (vertical) location of the shape's center<br/>
-		<tt>c</tt> — width of the shape<br/>
-		<tt>d</tt> — height of the shape 
+		<code>a</code> — X (horizontal) location of the shape's center<br/>
+		<code>b</code> — Y (vertical) location of the shape's center<br/>
+		<code>c</code> — width of the shape<br/>
+		<code>d</code> — height of the shape 
 	</p>
 
 	<p>
-		<tt>fill(r, g, b)</tt><br />
+		<code>fill(r, g, b)</code><br />
 		Defines the interior color of shapes. The parameters follow:<br/>
-		<tt>r</tt> — amount of red, from 0 (none) to 255 (maximum)<br/>
-		<tt>g</tt> — amount of green, from 0 (none) to 255 (maximum)<br/>
-		<tt>b</tt> — amount of blue, from 0 (none) to 255 (maximum)<br/>
+		<code>r</code> — amount of red, from 0 (none) to 255 (maximum)<br/>
+		<code>g</code> — amount of green, from 0 (none) to 255 (maximum)<br/>
+		<code>b</code> — amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
-		<tt>stroke(r, g, b)</tt><br />
+		<code>stroke(r, g, b)</code><br />
 		Defines the outline color of shapes. The parameters follow:<br/>
-		<tt>r</tt> — amount of red, from 0 (none) to 255 (maximum)<br/>
-		<tt>g</tt> — amount of green, from 0 (none) to 255 (maximum)<br/>
-		<tt>b</tt> — amount of blue, from 0 (none) to 255 (maximum)<br/>
+		<code>r</code> — amount of red, from 0 (none) to 255 (maximum)<br/>
+		<code>g</code> — amount of green, from 0 (none) to 255 (maximum)<br/>
+		<code>b</code> — amount of blue, from 0 (none) to 255 (maximum)<br/>
 	</p>
 
 	<p>
-		<tt>setup()</tt><br />
-		The code inside the <tt>setup()</tt> block runs once when the program starts.
+		<code>setup()</code><br />
+		The code inside the <code>setup()</code> block runs once when the program starts.
 	</p>
 
 	<p>
-		<tt>draw()</tt><br />
-		The code inside the <tt>draw()</tt> block runs continuously while the program is running.
+		<code>draw()</code><br />
+		The code inside the <code>draw()</code> block runs continuously while the program is running.
 	</p>
 
 	<p>
-		<tt>void</tt><br />
-		This keyword is required to be written in front of <tt>setup()</tt> and <tt>draw()</tt>. It means that the <tt>setup()</tt> and <tt>draw()</tt> functions do not "return a value."
+		<code>void</code><br />
+		This keyword is required to be written in front of <code>setup()</code> and <code>draw()</code>. It means that the <code>setup()</code> and <code>draw()</code> functions do not "return a value."
 	</p>
 
 	<p>
-		<tt>mouseX</tt><br />
+		<code>mouseX</code><br />
 		This variable stores the x-coordinate of the cursor.
 	</p>
 
 	<p>
-		<tt>mouseY</tt><br />
+		<code>mouseY</code><br />
 		This variable stores the y-coordinate of the cursor.
 	</p>
 
 	<p>
-		<tt>mousePressed</tt><br />
-		This variable is <tt>true</tt> if a mouse button is pressed and it is <tt>false</tt> if a button is not pressed.
+		<code>mousePressed</code><br />
+		This variable is <code>true</code> if a mouse button is pressed and it is <code>false</code> if a button is not pressed.
 	</p>
 
 	<p>
-		<tt>if</tt><br />
-		The <tt>if</tt> structure allows a program to make a decision to run the code inside the block. When the <em>relational expression</em> associated with the <tt>if</tt> is <tt>true</tt>, the code inside the <tt>{</tt> and <tt>}</tt> will run. 
+		<code>if</code><br />
+		The <code>if</code> structure allows a program to make a decision to run the code inside the block. When the <em>relational expression</em> associated with the <code>if</code> is <code>true</code>, the code inside the <code>{</code> and <code>}</code> will run. 
 	</p>
 
 
@@ -151,22 +151,22 @@ class: guide
 
 	<p>
 		<strong>block</strong> <br />
-		A list of code statements enclosed within braces, the <tt>{</tt> and <tt>}</tt> characters. 
+		A list of code statements enclosed within braces, the <code>{</code> and <code>}</code> characters. 
 	</p>
 
 	<p>
 		<strong>coordinate system</strong> <br />
-		A system of numbers that define the location of positions on screen. The Processing coordinate system uses the upper-left corner as the origin (0,0) with the x-coordinates increasing to the right and y-coordintes increasing down the screen. Positions within the coordinate system are defined in units of pixels. For example, <tt>(100, 20)</tt> is 100 pixels from the uppper-left corner of the display window and 20 pixels to the right.
+		A system of numbers that define the location of positions on screen. The Processing coordinate system uses the upper-left corner as the origin (0,0) with the x-coordinates increasing to the right and y-coordintes increasing down the screen. Positions within the coordinate system are defined in units of pixels. For example, <code>(100, 20)</code> is 100 pixels from the uppper-left corner of the display window and 20 pixels to the right.
 	</p>
 
 	<p>
 		<strong>false</strong> <br />
-		The opposite of 'true', which means an expression has evaluated to false. For example, <tt>1 > 5</tt> is false.
+		The opposite of 'true', which means an expression has evaluated to false. For example, <code>1 > 5</code> is false.
 	</p>
 
 	<p>
 		<strong>function</strong> <br />
-		A program element with a specific purpose, a function often has parameters to define its behavior. For example, the <tt>rect()</tt> function draws a rectangle to the screen. The parameters placed within the function's parentheses define the location and dimensions of the shape. In other programming tutorials, functions are sometimes called methods, subroutines, commands, or procedures.
+		A program element with a specific purpose, a function often has parameters to define its behavior. For example, the <code>rect()</code> function draws a rectangle to the screen. The parameters placed within the function's parentheses define the location and dimensions of the shape. In other programming tutorials, functions are sometimes called methods, subroutines, commands, or procedures.
 	</p>
 
 	<p>
@@ -176,12 +176,12 @@ class: guide
 
 	<p>
 		<strong>true</strong> <br />
-		The opposite of 'false', which means an expression has evaluated to true. For example, <tt>5 > 1</tt> is true.
+		The opposite of 'false', which means an expression has evaluated to true. For example, <code>5 > 1</code> is true.
 	</p>
 
 	<p>
 		<strong>variable</strong> <br />
-		A container to store data that has a name and value. For example, the <tt>mouseX</tt> variable will have a value of 200 when the cursor is 200 pixels from the left edge of the display window.
+		A container to store data that has a name and value. For example, the <code>mouseX</code> variable will have a value of 200 when the cursor is 200 pixels from the left edge of the display window.
 	</p>
 
 </div>
