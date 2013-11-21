@@ -24,6 +24,8 @@ var scriptOne = {
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
+        this.reset();
+
         // Popcorn Events
 
         helloEditor.popcorn
@@ -111,7 +113,7 @@ var scriptOne = {
  */
 
 var scriptTwo = {
-    vimeoURL: "https://vimeo.com/77716815",
+    vimeoURL: "https://vimeo.com/79984989",
     exampleURL: "/assets/pde/hello_1_drawing/hello_1_drawing.pde",
     runCache: null,
     reset: function () {
@@ -121,97 +123,120 @@ var scriptTwo = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
-        $("#editorCommands").hide();
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+        $("#runButton").hide();
     },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
+        this.reset();
+
         // Popcorn Events
 
         helloEditor.popcorn
             // Leave video mode to introduce other UI elements
             .code({
-                start: "06:18",
+                start: "04:25",
                 onStart: function () {
                     helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
-                },
-                onEnd: function () {
-                    helloEditor.videoMode = true;
                     helloEditor.resizeUI();
                 }
             })
             // Show the editor, set the value to nothing
             .code({
-                start: "06:20",
+                start: "04:28",
                 onStart: function () {
                     $("#editorContainer").fadeIn("fast");
                     helloEditor.setCode("");
-                },
-                onEnd: function () {
-                    $("#editorContainer").hide();
-                }
-            })
-            // Show the canvas container
-            .code({
-                start: "06:33",
-                onStart: function () {
-                    $("#canvasContainer").fadeIn("fast");
-                },
-                onEnd: function () {
-                    $("#canvasContainer").hide();
                 }
             })
             // Manually set editor contents. This could come from a Gist or something.
             .code({
-                start: "06:48",
+                start: "04:42",
                 onStart: function () {
-                    helloEditor.setCode("ellipse(250, 200, 150, 150);");
-                },
-                onEnd: function () {
-                    helloEditor.setCode("");
+                    helloEditor.setCode("rect(250, 200, 150, 100);");
+                }
+            })
+            // Show the canvas container
+            .code({
+                start: "04:57",
+                onStart: function () {
+                    $("#canvasContainer").fadeIn("fast");
+                }
+            })    
+            // Show the rulers
+            .code({
+                start: "5:09",
+                onStart: function () {
+                    helloEditor.showRulers();
+                }
+            })        
+            // Show the toggle button
+            .code({
+                start: "5:18",
+                onStart: function () {
+                    $("#toggleRulers").fadeIn("fast");
+                }
+            })   
+            // Hide the rulers
+            .code({
+                start: "5:20",
+                onStart: function () {
+                    helloEditor.hideRulers();
+                }
+            })   
+            // Show the rulers
+            .code({
+                start: "5:21",
+                onStart: function () {
+                    helloEditor.showRulers();
+                }
+            })                                     
+            // Run whatever is in the editor
+            .code({
+                start: "05:29",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })
+            // Show the run runButton
+            .code({
+                start: "05:57",
+                onStart: function () {
+                    $("#runButton").show();
+                }
+            })
+            // Add more rectangels
+            .code({
+                start: "06:38",
+                onStart: function () {
+                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(250, 100, 150, 100);\n\nrect(250, 300, 150, 100);");
                 }
             })
             // Run whatever is in the editor
             .code({
-                start: "06:58",
+                start: "06:40",
                 onStart: function () {
                     helloEditor.runCode();
-                },
-                onEnd: function () {
-                    helloEditor.resetInstance();
                 }
-            })
-            // Show the run button (and currently others)
-            .code({
-                start: "07:06",
-                onStart: function () {
-                    $("#editorCommands").fadeIn("fast");
-                },
-                onEnd: function () {
-                    $("#editorCommands").hide();
-                }
-            })
+            })            
+
             // Jump back to video mode for more explainations
             .code({
-                start: "07:50",
+                start: "06:54",
                 onStart: function () {
                     helloEditor.videoMode = true;
                     helloEditor.resizeUI();
-                },
-                onEnd: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
-
-                    $("#editorContainer").show();
-                    $("#canvasContainer").show();
                 }
             })
             // Show the editor and canvas again and insert code
             .code({
-                start: "09:36",
+                start: "8:19",
                 onStart: function () {
                     helloEditor.videoMode = false;
                     helloEditor.resizeUI();
@@ -219,57 +244,39 @@ var scriptTwo = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("rect(250, 200, 150, 150);");
-                    helloEditor.resetInstance();
-                },
-                onEnd: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setCode("rect(250, 200, 150, 100);");
+                    helloEditor.runCode();
+                }
+            })
+            .code({
+                start: "08:29",
+                onStart: function () {
+                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
+                    helloEditor.runCode();
+                }
+            })  
+            .code({
+                start: "08:49",
+                onStart: function () {
+                    helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
+                    helloEditor.runCode();
+                }
+            }) 
+            // Example
+            .code({
+                start: "06:15",
+                onStart: function () {
+                    // Load example asynchronously with callback to run it
+                    helloEditor.loadCode(
+                        scriptTwo.exampleURL,
+                        function () {
+                            helloEditor.runCode();
+                        }
+                    );
 
                 }
-            })
-            // Run the code in the editor
-            .code({
-                start: "09:51",
-                onStart: function () {
-                    helloEditor.runCode();
-                },
-                onEnd: function () {
-                    helloEditor.resetInstance();
-                }
-            })
-            // Show the rulers
-            .code({
-                start: "11:13",
-                onStart: function () {
-                    helloEditor.showRulers();
-                },
-                onEnd: function () {
-                    helloEditor.hideRulers();
-                }
-            })
-            // Hide the rulers, show the toggle button
-            .code({
-                start: "11:17",
-                onStart: function () {
-                    helloEditor.hideRulers();
-                    $("#toggleRulers").fadeIn("fast");
-                },
-                onEnd: function () {
-                    helloEditor.showRulers();
-                    $("#toggleRulers").hide();
-                }
-            })
-            // Show the rulers again
-            .code({
-                start: "11:22",
-                onStart: function () {
-                    helloEditor.showRulers();
-                },
-                onEnd: function () {
-                    helloEditor.hideRulers();
-                }
-            });
+            });            
+
 
         // End Event
 
@@ -288,7 +295,7 @@ var scriptTwo = {
  */
 
 var scriptThree = {
-    vimeoURL: "https://vimeo.com/79534024",
+    vimeoURL: "https://vimeo.com/79984990",
     exampleURL: "/assets/pde/hello_2_color/hello_2_color.pde",
     runCache: null,
     reset: function () {
@@ -466,7 +473,7 @@ var scriptThree = {
  */
 
 var scriptFour = {
-    vimeoURL: "https://vimeo.com/77716816",
+    vimeoURL: "https://vimeo.com/79984988",
     exampleURL: "/assets/pde/hello_3_interact/hello_3_interact.pde",
     runCache: null,
     reset: function () {
@@ -490,7 +497,7 @@ var scriptFour = {
  */
 
 var scriptFive = {
-    vimeoURL: "https://vimeo.com/77716818",
+    vimeoURL: "https://vimeo.com/79984987",
     exampleURL: "/assets/pde/hello_4_questions/hello_4_questions.pde",
     runCache: null,
     reset: function () {
