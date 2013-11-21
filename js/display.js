@@ -68,7 +68,9 @@ var helloDisplay = {
                     gistFile = gistFiles[Object.keys(gistFiles)[0]],
                     gistSource = gistFile.content,
                     processingCanvas,
-                    processingInstance;
+                    processingInstance,
+                    displayHeight,
+                    displayWidth;
 
                 helloDisplay.processingSource = gistSource;
                 helloDisplay.editor.setValue(gistSource, -1);
@@ -77,8 +79,8 @@ var helloDisplay = {
                     processingCanvas = document.getElementById("displayCanvas");
                     processingInstance = new Processing(processingCanvas, gistSource);
 
-                    var displayHeight = 400;
-                    var displayWidth = (processingInstance.width / processingInstance.height) * displayHeight;
+                    displayHeight = 400;
+                    displayWidth = (processingInstance.width / processingInstance.height) * displayHeight;
 
                     $("#displayCanvas").css({
                         width: displayWidth,
@@ -86,7 +88,7 @@ var helloDisplay = {
                     });
 
                     $("#displayCanvasBox").css({
-                        width: displayWidth + ( $("#displayInfo").outerWidth() + 10),
+                        width: displayWidth + ($("#displayInfo").outerWidth() + 10),
                         height: displayHeight,
                         marginTop: displayHeight / -2,
                         marginLeft: (displayWidth + $("#displayInfo").outerWidth() + 10) / -2

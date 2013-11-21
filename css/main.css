@@ -495,6 +495,8 @@ div#page {
 	padding: 12px;
 	line-height: 1.5em;
 	font-size: 1.1em;
+	font-family: 'theSerif', georgia, times, serif; 
+
 }
 
 div#page h2, div#page h3 {

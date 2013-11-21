@@ -80,21 +80,21 @@ var helloEditor = {
             showInitial: true,
             className: "colorPicker",
             chooseText: "Select",
-            cancelText: "Cancel",            
+            cancelText: "Cancel",
             show: function () {
                 //console.log("SHOWING");
             },
             hide: function () {
                 helloEditor.editor.focus();
             },
-            change: function(color) {
+            change: function () {
                 var color = $("#colorPicker").spectrum("get").toRgb(),
                     range = $("#colorPicker").spectrum.range,
                     token = $("#colorPicker").spectrum.token;
-                
+
                 helloEditor.editor.session.replace(range, token.value + "(" + color.r + "," + color.g + "," + color.b + ");");
 
-            }            
+            }
         });
 
     },
@@ -103,7 +103,7 @@ var helloEditor = {
      */
     setupUI: function () {
 
-        /* Video UI */  
+        /* Video UI */
 
         $("#videoContainer").hover(function () {
             $("#videoCommandsContainer").fadeIn();
@@ -114,7 +114,7 @@ var helloEditor = {
         $("#restartButton").click(function () {
             scripts[helloEditor.lessonIndex].reset();
             helloEditor.popcorn.play(0);
-        }); 
+        });
 
         $("#pauseButton").click(function () {
             if (helloEditor.popcorn.paused()) {
@@ -155,14 +155,14 @@ var helloEditor = {
         $("#resetLastGood").click(function () {
             helloEditor.setCode(scripts[helloEditor.lessonIndex].runCache);
             return false;
-        }).tooltip({container: 'body', placement: 'right'});                      
+        }).tooltip({container: 'body', placement: 'right'});
 
         /* Error UI */
 
         $("#modalResetCode").click(function () {
             helloEditor.editor.setValue(scripts[this.lessonIndex].runCache, -1);
             $('#errorModal').modal('hide');
-        });       
+        });
 
         /* Share UI */
 
@@ -238,13 +238,13 @@ var helloEditor = {
 
         });
 
-        $("#pageNav").find('a').attr('target',"_blank");
+        $("#pageNav").find('a').attr('target', "_blank");
 
         /* Color Picker */
 
         $(helloEditor.editor).on("click", function () {
 
-            $("#colorPicker").spectrum("hide");;
+            $("#colorPicker").spectrum("hide");
 
             var editor = helloEditor.editor,
                 position = editor.getCursorPosition(),
@@ -262,9 +262,9 @@ var helloEditor = {
                 var currentValue = /\w*\s?\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)/.exec(line);
 
                 if (currentValue) {
-                    $("#colorPicker").spectrum('set','rgb(' + currentValue[1] + ', ' + currentValue[2] + ', ' + currentValue[3] + ')');                
+                    $("#colorPicker").spectrum('set', 'rgb(' + currentValue[1] + ', ' + currentValue[2] + ', ' + currentValue[3] + ')');
                 } else {
-                    $("#colorPicker").spectrum('set','black');
+                    $("#colorPicker").spectrum('set', 'black');
                 }
 
                 $("#colorPicker").spectrum.token = token;
@@ -294,8 +294,10 @@ var helloEditor = {
         var viewportTopOffset = 48,
             viewportWidth = ($(window).width() > 768) ? $(window).width() : 768,
             viewportHeight = ($(window).height() > 640) ? $(window).height() : 640,
-            minVideoWidth = 320, maxVideoWidth = viewportWidth /2,
-            videoWidth, videoHeight;
+            minVideoWidth = 320,
+            maxVideoWidth = viewportWidth / 2,
+            videoWidth,
+            videoHeight;
 
         viewportHeight -= viewportTopOffset;
 
@@ -311,7 +313,7 @@ var helloEditor = {
             videoWidth = viewportWidth * 0.80;
             videoHeight = videoWidth / 16 * 9;
 
-            $("#header").css("width",videoWidth + 16);
+            $("#header").css("width", videoWidth + 16);
 
             $("#videoContainer")
                 .css({
@@ -336,13 +338,13 @@ var helloEditor = {
 
                 if (viewportWidth - viewportHeight < minVideoWidth) {
                     videoWidth = minVideoWidth;
-                } else if (viewportWidth - viewportHeight > maxVideoWidth) {    
+                } else if (viewportWidth - viewportHeight > maxVideoWidth) {
                     videoWidth = maxVideoWidth;
                 } else {
                     videoWidth = viewportWidth - viewportHeight;
                 }
 
-               videoHeight = videoWidth / 16 * 9;            
+                videoHeight = videoWidth / 16 * 9;
 
                 $("#header").width("95%");
 
@@ -375,8 +377,8 @@ var helloEditor = {
             } else {
                 // Portrait
 
-                videoWidth = viewportWidth/2;
-                videoHeight = videoWidth / 16 * 9;            
+                videoWidth = viewportWidth / 2;
+                videoHeight = videoWidth / 16 * 9;
 
                 $("#videoContainer")
                     .css({
@@ -389,22 +391,22 @@ var helloEditor = {
                     });
 
                 $("#editorContainer")
-                        .css({
-                            width: viewportWidth - videoWidth - 24,
-                            height: videoHeight,
-                            top: 8,
-                            left: videoWidth + 16
-                        });
+                    .css({
+                        width: viewportWidth - videoWidth - 24,
+                        height: videoHeight,
+                        top: 8,
+                        left: videoWidth + 16
+                    });
 
-                    $("#canvasContainer")
-                        .height(viewportHeight - videoHeight)
-                        .width(viewportWidth)
-                        .css({
-                            top: videoHeight,
-                            left: 0
-                        });
+                $("#canvasContainer")
+                    .height(viewportHeight - videoHeight)
+                    .width(viewportWidth)
+                    .css({
+                        top: videoHeight,
+                        left: 0
+                    });
 
-            }                
+            }
 
         }
     },
@@ -480,7 +482,7 @@ var helloEditor = {
                 width: this.processingInstance.width,
                 height: this.processingInstance.height,
                 marginTop: this.processingInstance.height / -2,
-                marginLeft: this.processingInstance.width / -2,
+                marginLeft: this.processingInstance.width / -2
             });
 
             $("#horizontalRuler").css({width: this.processingInstance.width});
@@ -598,7 +600,7 @@ var helloEditor = {
         var hintHTML = $("#hints div[data-index='" + index + "']").html();
 
         $("#hint").html(hintHTML);
-        $("#hint").find("a").attr("target","_blank");
+        $("#hint").find("a").attr("target", "_blank");
         $("#hint").show();
 
     }

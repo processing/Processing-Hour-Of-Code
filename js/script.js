@@ -17,8 +17,8 @@ var scriptOne = {
 
         $("#hint").hide();
         $("#editorContainer").hide();
-        $("#canvasContainer").hide();        
-    },    
+        $("#canvasContainer").hide();
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -99,7 +99,7 @@ var scriptOne = {
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
-            
+
             helloEditor.showHint(1);
 
         });
@@ -113,7 +113,7 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/77716815",
     exampleURL: "/assets/pde/hello_1_drawing/hello_1_drawing.pde",
-    runCache: null, 
+    runCache: null,
     reset: function () {
         // Set initial State
 
@@ -121,8 +121,8 @@ var scriptTwo = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
-        $("#editorCommands").hide();   
-    },  
+        $("#editorCommands").hide();
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -319,12 +319,12 @@ var scriptThree = {
             // Back to full screen
             .code({
                 start: "00:19",
-                onStart: function () {   
+                onStart: function () {
                     helloEditor.videoMode = true;
                     helloEditor.resizeUI();
 
                     $("#editorContainer").hide();
-                    $("#canvasContainer").hide(); 
+                    $("#canvasContainer").hide();
                 }
             })
             // Show the editor
@@ -359,13 +359,13 @@ var scriptThree = {
             })
             // Back to video explanation
             .code({
-                start: "3:00",  
+                start: "3:00",
                 onStart: function () {
                     helloEditor.videoMode = true;
                     helloEditor.resizeUI();
 
                     $("#editorContainer").hide();
-                    $("#canvasContainer").hide();                  
+                    $("#canvasContainer").hide();
                 }
             })
             // RGB Demo -- back to code editor
@@ -378,7 +378,7 @@ var scriptThree = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
                 }
-            })            
+            })
             // Now add red stroke
             .code({
                 start: "04:34",
@@ -403,18 +403,18 @@ var scriptThree = {
                     $("#colorPicker").spectrum("container").css({
                         top: 28,
                         left: 20
-                    });          
+                    });
                     $("#colorPicker").spectrum("show");
 
                 }
-            }) 
+            })
             // Hide color Picker
             .code({
                 start: "05:05",
                 onStart: function () {
                     $("#colorPicker").spectrum("hide");
                 }
-            })  
+            })
             // Background Code
             .code({
                 start: "05:34",
@@ -422,7 +422,7 @@ var scriptThree = {
 
                     helloEditor.setCode("background(216,225,149);\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
                 }
-            })    
+            })
             // Background Run
             .code({
                 start: "05:40",
@@ -430,7 +430,7 @@ var scriptThree = {
 
                     helloEditor.runCode();
                 }
-            })   
+            })
             // Example
             .code({
                 start: "06:15",
@@ -442,7 +442,7 @@ var scriptThree = {
                             helloEditor.runCode();
                         }
                     );
-                    
+
                 }
             });
 
@@ -457,7 +457,7 @@ var scriptThree = {
             $("#nextButton").show();
             $("#resetButton").show();
 
-        });               
+        });
     }
 };
 
@@ -468,14 +468,14 @@ var scriptThree = {
 var scriptFour = {
     vimeoURL: "https://vimeo.com/77716816",
     exampleURL: "/assets/pde/hello_3_interact/hello_3_interact.pde",
-    runCache: null,   
+    runCache: null,
     reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-    },  
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -492,14 +492,14 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/77716818",
     exampleURL: "/assets/pde/hello_4_questions/hello_4_questions.pde",
-    runCache: null,   
+    runCache: null,
     reset: function () {
         // Set initial State
 
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-    },  
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -523,7 +523,7 @@ var scriptSix = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-    },     
+    },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
