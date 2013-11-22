@@ -664,6 +664,141 @@ var scriptFive = {
         helloEditor.popcorn.play(time);
 
         this.reset();
+
+        // Popcorn Events
+        helloEditor.popcorn
+            // Show the editor
+            .code({
+                start: "02:37",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("");
+                    helloEditor.runCode();
+                }
+            })
+            // add a circle
+            .code({
+                start: "02:40",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    helloEditor.runCode();
+               }
+            })
+            // add an if statement
+            .code({
+                start: "02:50",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    helloEditor.runCode();
+               }
+            })
+            // Back to video explanation
+            .code({
+                start: "3:13",
+                onStart: function () {
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide();
+                }
+            })
+            // And we're back
+            .code({
+                start: "04:00",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    helloEditor.runCode();
+                }
+            })
+            
+            // add an if statement
+            .code({
+                start: "04:05",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n  stroke(255);\n  fill(128);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  } else {\n     ellipse(250, 200, 100, 100);\n  }\n}");
+                    helloEditor.runCode();
+               }
+            })
+            
+
+            // back to interact painting program
+            .code({
+                start: "04:30",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.runCode();
+               }
+            })
+            // add if statement to this
+            .code({
+                start: "04:46",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  if (mousePressed) {\n    background(0);\n  }\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.runCode();
+               }
+            })
+            // Back to video explanation
+            .code({
+                start: "5:15",
+                onStart: function () {
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide();
+                }
+            })
+            // And we're back
+            .code({
+                start: "05:50",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.runCode();
+                }
+            })  
+            // Example
+            .code({
+                start: "5:58",
+                onStart: function () {
+                    // Load example asynchronously with callback to run it
+                    helloEditor.loadCode(
+                        scriptFive.exampleURL,
+                        function () {
+                            helloEditor.runCode();
+                        }
+                    );
+
+                }
+            });
+
+        helloEditor.popcorn.on("ended", function () {
+
+            // Show the proper hint over the video
+
+            helloEditor.showHint(5);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+
+        });
+        // End Event
     }
 };
 
