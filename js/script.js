@@ -211,11 +211,18 @@ var scriptTwo = {
                     $("#runButton").show();
                 }
             })
-            // Add more rectangels
+            // Add one rectangels
             .code({
                 start: "06:38",
                 onStart: function () {
-                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(250, 100, 150, 100);\n\nrect(250, 300, 150, 100);");
+                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);");
+                }
+            })
+            // Add another rectangels
+            .code({
+                start: "06:39",
+                onStart: function () {
+                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);\n\nrect(400, 10, 15, 100);");
                 }
             })
             // Run whatever is in the editor
@@ -249,7 +256,7 @@ var scriptTwo = {
                 }
             })
             .code({
-                start: "08:29",
+                start: "08:28",
                 onStart: function () {
                     helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
                     helloEditor.runCode();
@@ -259,6 +266,11 @@ var scriptTwo = {
                 start: "08:49",
                 onStart: function () {
                     helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
+                }
+            })
+            .code({
+                start: "08:51",
+                onStart: function () {
                     helloEditor.runCode();
                 }
             });          
@@ -372,7 +384,7 @@ var scriptThree = {
             })
             // RGB Demo -- back to code editor
             .code({
-                start: "04:24",
+                start: "04:25",
                 onStart: function () {
                     helloEditor.videoMode = false;
                     helloEditor.resizeUI();
@@ -386,7 +398,6 @@ var scriptThree = {
                 start: "04:34",
                 onStart: function () {
                     helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
-                    helloEditor.runCode();
                 }
             })
             // Now add red stroke
@@ -394,6 +405,12 @@ var scriptThree = {
                 start: "04:42",
                 onStart: function () {
                     helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                }
+            })
+            // Now add red stroke
+            .code({
+                start: "04:45",
+                onStart: function () {
                     helloEditor.runCode();
                 }
             })
@@ -422,12 +439,12 @@ var scriptThree = {
                 start: "05:34",
                 onStart: function () {
 
-                    helloEditor.setCode("background(216,225,149);\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    helloEditor.setCode("background(216,225,149);\n\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
                 }
             })
             // Background Run
             .code({
-                start: "05:40",
+                start: "05:41",
                 onStart: function () {
 
                     helloEditor.runCode();
