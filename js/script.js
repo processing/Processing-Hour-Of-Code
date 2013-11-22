@@ -261,26 +261,21 @@ var scriptTwo = {
                     helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
                     helloEditor.runCode();
                 }
-            }) 
-            // Example
-            .code({
-                start: "06:15",
-                onStart: function () {
-                    // Load example asynchronously with callback to run it
-                    helloEditor.loadCode(
-                        scriptTwo.exampleURL,
-                        function () {
-                            helloEditor.runCode();
-                        }
-                    );
-
-                }
-            });            
+            });          
 
 
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
+
+            // Load the example here?
+
+            helloEditor.loadCode(
+                scriptTwo.exampleURL,
+                function () {
+                    helloEditor.runCode();
+                }
+            );
 
             // Show the proper hint over the video
 
