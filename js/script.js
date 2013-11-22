@@ -550,7 +550,7 @@ var scriptFour = {
             .code({
                 start: "05:07",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n  rect(245, 40, 10, 240);\n}");
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n  rect(250, 200, 100, 75);\n}");
                 }
             })
             // run it!
@@ -603,7 +603,7 @@ var scriptFour = {
             .code({
                 start: "09:39",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);  background(0);\n\n\n}\n\nvoid draw() {\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
                 }
             })
             // run it!
@@ -619,7 +619,7 @@ var scriptFour = {
                 onStart: function () {
                     // Load example asynchronously with callback to run it
                     helloEditor.loadCode(
-                        scriptThree.exampleURL,
+                        scriptFour.exampleURL,
                         function () {
                             helloEditor.runCode();
                         }
@@ -634,7 +634,7 @@ var scriptFour = {
 
             // Show the proper hint over the video
 
-            helloEditor.showHint(3);
+            helloEditor.showHint(4);
 
             $("#nextButton").show();
             $("#resetButton").show();
