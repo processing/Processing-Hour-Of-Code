@@ -143,7 +143,7 @@ var helloEditor = {
         }).tooltip({container: 'body'});
 
         $("#resetExample").click(function () {
-            helloEditor.loadCode(scripts[helloEditor.lessonIndex].exampleURL);
+            helloEditor.loadExample(helloEditor.lessonIndex+1);
             return false;
         }).tooltip({container: 'body', placement: 'right'});
 
@@ -256,7 +256,7 @@ var helloEditor = {
             if (token && /\bcolor\b/.test(token.type)) {
 
                 line = editor.session.getLine(position.row);
-                range = new Range(position.row, 0, position.row, line.length);
+                range = new Range(position.row, token.start, position.row, line.length);
                 pixelPosition = editor.renderer.$cursorLayer.getPixelPosition(position, true);
 
                 var currentValue = /\w*\s?\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)/.exec(line);
