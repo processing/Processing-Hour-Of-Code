@@ -446,7 +446,6 @@ var scriptThree = {
             .code({
                 start: "05:41",
                 onStart: function () {
-
                     helloEditor.runCode();
                 }
             })
@@ -501,6 +500,146 @@ var scriptFour = {
         helloEditor.popcorn.play(time);
 
         this.reset();
+
+        // Popcorn Events
+
+        helloEditor.popcorn
+            // Show the editor
+            .code({
+                start: "04:44",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("");
+                    helloEditor.runCode();
+                }
+            })
+            // add setup
+            .code({
+                start: "04:47",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n\n}\n\n");
+                }
+            })
+            // add draw
+            .code({
+                start: "04:48",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n\n}\n\nvoid draw() {\n\n}");
+                }
+            })
+            // add size
+            .code({
+                start: "04:55",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n\n}");
+                }
+            })
+            // add size
+            .code({
+                start: "05:05",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n}");
+                }
+            })
+            // add size
+            .code({
+                start: "05:07",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n\n  rect(245, 40, 10, 240);\n}");
+                }
+            })
+            // Background Run
+            .code({
+                start: "05:17",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })
+            // Back to video explanation
+            .code({
+                start: "5:48",
+                onStart: function () {
+                    helloEditor.videoMode = true;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").hide();
+                    $("#canvasContainer").hide();
+                }
+            })
+            // Show the editor for mouseX mouseY demonstration
+            .code({
+                start: "07:31",
+                onStart: function () {
+                    helloEditor.videoMode = false;
+                    helloEditor.resizeUI();
+
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");
+
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    helloEditor.runCode();
+                }
+            })
+            // add mouseX and mouseY
+            .code({
+                start: "07:43",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                }
+            })
+            // run it!
+            .code({
+                start: "07:45",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })
+            // background moves to setup
+            .code({
+                start: "09:39",
+                onStart: function () {
+                    helloEditor.setCode("void setup() {\n  size(500,400);  background(0);\n\n\n}\n\nvoid draw() {\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                }
+            })
+            // run it!
+            .code({
+                start: "09:56",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })
+            // Example
+            .code({
+                start: "10:38",
+                onStart: function () {
+                    // Load example asynchronously with callback to run it
+                    helloEditor.loadCode(
+                        scriptThree.exampleURL,
+                        function () {
+                            helloEditor.runCode();
+                        }
+                    );
+
+                }
+            });
+
+        // End Event
+
+        helloEditor.popcorn.on("ended", function () {
+
+            // Show the proper hint over the video
+
+            helloEditor.showHint(3);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+
+        });
     }
 };
 
