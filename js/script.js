@@ -157,7 +157,8 @@ var scriptTwo = {
             .code({
                 start: "04:42",
                 onStart: function () {
-                    helloEditor.setCode("rect(250, 200, 150, 100);");
+                    //helloEditor.setCode("rect(250, 200, 150, 100);");
+                    helloEditor.loadSnippet("2-10");
                 }
             })
             // Show the canvas container
@@ -213,14 +214,16 @@ var scriptTwo = {
             .code({
                 start: "06:38",
                 onStart: function () {
-                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);");
+                    //helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);");
+                    helloEditor.loadSnippet("2-20");
                 }
             })
             // Add another rectangels
             .code({
                 start: "06:39",
                 onStart: function () {
-                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);\n\nrect(400, 10, 15, 100);");
+                    //helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);\n\nrect(400, 10, 15, 100);");
+                    helloEditor.loadSnippet("2-30");
                 }
             })
             // Run whatever is in the editor
@@ -249,21 +252,24 @@ var scriptTwo = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("rect(250, 200, 150, 100);");
+                    //helloEditor.setCode("rect(250, 200, 150, 100);");
+                    helloEditor.loadSnippet("2-40");
                     helloEditor.runCode();
                 }
             })
             .code({
                 start: "08:28",
                 onStart: function () {
-                    helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
+                    //helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
+                    helloEditor.loadSnippet("2-50");
                     helloEditor.runCode();
                 }
             })  
             .code({
                 start: "08:49",
                 onStart: function () {
-                    helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
+                    //helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
+                    helloEditor.loadSnippet("2-60");
                 }
             })
             .code({
@@ -343,7 +349,8 @@ var scriptThree = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("rect(250,200,100,75);");
+                    //helloEditor.setCode("rect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-10");
                     helloEditor.runCode();
                 }
             })
@@ -351,7 +358,8 @@ var scriptThree = {
             .code({
                 start: "02:48",
                 onStart: function () {
-                    helloEditor.setCode("stroke(0);\nrect(250,200,100,75);");
+                    //helloEditor.setCode("stroke(0);\nrect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-20");
                     helloEditor.runCode();
                 }
             })
@@ -359,7 +367,8 @@ var scriptThree = {
             .code({
                 start: "02:50",
                 onStart: function () {
-                    helloEditor.setCode("stroke(0);\nfill(128);\nrect(250,200,100,75);");
+                    //helloEditor.setCode("stroke(0);\nfill(128);\nrect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-30");
                     helloEditor.runCode();
                 }
             })
@@ -389,14 +398,16 @@ var scriptThree = {
             .code({
                 start: "04:34",
                 onStart: function () {
-                    helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
+                    //helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-40");
                 }
             })
             // Now add red stroke
             .code({
                 start: "04:42",
                 onStart: function () {
-                    helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    //helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-50");
                 }
             })
             // Now add red stroke
@@ -431,7 +442,8 @@ var scriptThree = {
                 start: "05:34",
                 onStart: function () {
 
-                    helloEditor.setCode("background(216,225,149);\n\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    //helloEditor.setCode("background(216,225,149);\n\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
+                    helloEditor.loadSnippet("3-60");
                 }
             })
             // Background Run
@@ -507,35 +519,40 @@ var scriptFour = {
             .code({
                 start: "04:47",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n\n}\n\n");
+                    //helloEditor.setCode("void setup() {\n\n}\n\n");
+                    helloEditor.loadSnippet("4-10");
                 }
             })
             // add draw
             .code({
                 start: "04:48",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n\n}\n\nvoid draw() {\n\n}");
+                    //helloEditor.setCode("void setup() {\n\n}\n\nvoid draw() {\n\n}");
+                    helloEditor.loadSnippet("4-20");
                 }
             })
             // add size
             .code({
                 start: "04:55",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n\n}");
+                    helloEditor.loadSnippet("4-30");
                 }
             })
             // add background
             .code({
                 start: "05:05",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n}");
+                    helloEditor.loadSnippet("4-40");
                 }
             })
             // add some shapes
             .code({
                 start: "05:07",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n  rect(250, 200, 100, 75);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n  rect(250, 200, 100, 75);\n}");
+                    helloEditor.loadSnippet("4-50");
                 }
             })
             // run it!
@@ -566,7 +583,8 @@ var scriptFour = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    helloEditor.loadSnippet("4-60");
                     helloEditor.runCode();
                 }
             })
@@ -574,7 +592,8 @@ var scriptFour = {
             .code({
                 start: "07:43",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.loadSnippet("4-70");
                 }
             })
             // run it!
@@ -588,7 +607,8 @@ var scriptFour = {
             .code({
                 start: "09:39",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.loadSnippet("4-80");
                 }
             })
             // run it!
@@ -663,7 +683,8 @@ var scriptFive = {
             .code({
                 start: "02:40",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n}");
+                    helloEditor.loadSnippet("5-10");
                     helloEditor.runCode();
                }
             })
@@ -671,7 +692,8 @@ var scriptFive = {
             .code({
                 start: "02:50",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    helloEditor.loadSnippet("5-20");
                     helloEditor.runCode();
                }
             })
@@ -696,7 +718,8 @@ var scriptFive = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255);\n  fill(128);\n  ellipse(250, 200, 100, 100);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  }\n\n}");
+                    helloEditor.loadSnippet("5-30");
                     helloEditor.runCode();
                 }
             })
@@ -705,7 +728,8 @@ var scriptFive = {
             .code({
                 start: "04:05",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n  stroke(255);\n  fill(128);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  } else {\n     ellipse(250, 200, 100, 100);\n  }\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n  stroke(255);\n  fill(128);\n\n  if (mousePressed) {\n    rect(250,200,100,100);\n  } else {\n     ellipse(250, 200, 100, 100);\n  }\n}");
+                    helloEditor.loadSnippet("5-40");
                     helloEditor.runCode();
                }
             })
@@ -715,7 +739,8 @@ var scriptFive = {
             .code({
                 start: "04:30",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.loadSnippet("5-50");
                     helloEditor.runCode();
                }
             })
@@ -723,7 +748,8 @@ var scriptFive = {
             .code({
                 start: "04:46",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  if (mousePressed) {\n    background(0);\n  }\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    //helloEditor.setCode("void setup() {\n  size(500,400);\n  background(0);\n}\n\nvoid draw() {\n\n  if (mousePressed) {\n    background(0);\n  }\n\n  stroke(255);\n  fill(128);\n  ellipse(mouseX, mouseY, 100, 100);\n}");
+                    helloEditor.loadSnippet("5-60");
                     helloEditor.runCode();
                }
             })

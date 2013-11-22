@@ -448,6 +448,16 @@ var helloEditor = {
 
     },
     /**
+     * Load the indicated lesson snippet
+     */   
+    loadSnippet: function (id) {
+
+        var data = $("#"+id).text();
+        data = $.trim(data);
+        helloEditor.editor.setValue(data, -1);
+
+    },    
+    /**
      * Load the indicated lesson
      */
     loadLesson: function (index, time) {

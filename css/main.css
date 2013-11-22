@@ -396,6 +396,10 @@ div#editorCommands {
 	text-shadow: none;		
 }
 
+#snippets {
+	display: none;
+}
+
 /* Display Page */
 
 div#displayInfo {
