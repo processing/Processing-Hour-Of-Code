@@ -539,21 +539,21 @@ var scriptFour = {
                     helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n\n}");
                 }
             })
-            // add size
+            // add background
             .code({
                 start: "05:05",
                 onStart: function () {
                     helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n}");
                 }
             })
-            // add size
+            // add some shapes
             .code({
                 start: "05:07",
                 onStart: function () {
-                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n\n  rect(245, 40, 10, 240);\n}");
+                    helloEditor.setCode("void setup() {\n  size(500,400);\n}\n\nvoid draw() {\n  background(0);\n\n  stroke(255, 255, 255);\n  fill(160, 220, 90);\n  ellipse(250, 200, 300, 300);\n\n  fill(160, 210, 230);\n  rect(245, 40, 10, 240);\n}");
                 }
             })
-            // Background Run
+            // run it!
             .code({
                 start: "05:17",
                 onStart: function () {
