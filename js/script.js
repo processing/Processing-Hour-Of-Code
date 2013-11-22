@@ -10,7 +10,6 @@
 
 var scriptOne = {
     vimeoURL: "https://vimeo.com/77249859",
-    exampleURL: null,
     runCache: null,
     reset: function () {
         // Set initial State
@@ -114,7 +113,6 @@ var scriptOne = {
 
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/79984989",
-    exampleURL: "/assets/pde/hello_1_drawing/hello_1_drawing.pde",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -282,12 +280,7 @@ var scriptTwo = {
 
             // Load the example here?
 
-            helloEditor.loadCode(
-                scriptTwo.exampleURL,
-                function () {
-                    helloEditor.runCode();
-                }
-            );
+            helloEditor.loadExample(2);
 
             // Show the proper hint over the video
 
@@ -303,7 +296,6 @@ var scriptTwo = {
 
 var scriptThree = {
     vimeoURL: "https://vimeo.com/79984990",
-    exampleURL: "/assets/pde/hello_2_color/hello_2_color.pde",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -453,13 +445,7 @@ var scriptThree = {
             .code({
                 start: "06:15",
                 onStart: function () {
-                    // Load example asynchronously with callback to run it
-                    helloEditor.loadCode(
-                        scriptThree.exampleURL,
-                        function () {
-                            helloEditor.runCode();
-                        }
-                    );
+                    helloEditor.loadExample(3);
 
                 }
             });
@@ -485,7 +471,6 @@ var scriptThree = {
 
 var scriptFour = {
     vimeoURL: "https://vimeo.com/79984988",
-    exampleURL: "/assets/pde/hello_3_interact/hello_3_interact.pde",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -617,13 +602,7 @@ var scriptFour = {
             .code({
                 start: "10:38",
                 onStart: function () {
-                    // Load example asynchronously with callback to run it
-                    helloEditor.loadCode(
-                        scriptFour.exampleURL,
-                        function () {
-                            helloEditor.runCode();
-                        }
-                    );
+                    helloEditor.loadExample(4);
 
                 }
             });
@@ -649,7 +628,6 @@ var scriptFour = {
 
 var scriptFive = {
     vimeoURL: "https://vimeo.com/79984987",
-    exampleURL: "/assets/pde/hello_4_questions/hello_4_questions.pde",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -777,13 +755,7 @@ var scriptFive = {
             .code({
                 start: "5:58",
                 onStart: function () {
-                    // Load example asynchronously with callback to run it
-                    helloEditor.loadCode(
-                        scriptFive.exampleURL,
-                        function () {
-                            helloEditor.runCode();
-                        }
-                    );
+                    helloEditor.loadExample(5);
 
                 }
             });
@@ -808,7 +780,6 @@ var scriptFive = {
 
 var scriptSix = {
     vimeoURL: "https://vimeo.com/77249859",
-    exampleURL: null,
     runCache: null,
     reset: function () {
         // Set initial State

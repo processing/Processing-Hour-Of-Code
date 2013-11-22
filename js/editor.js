@@ -438,6 +438,16 @@ var helloEditor = {
         });
     },
     /**
+     * Load the indicated lesson example
+     */   
+    loadExample: function (index) {
+
+        var data = $("script[data-index='" + index + "']").text();
+        data = $.trim(data);
+        helloEditor.editor.setValue(data, -1);
+
+    },
+    /**
      * Load the indicated lesson
      */
     loadLesson: function (index, time) {
