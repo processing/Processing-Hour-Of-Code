@@ -450,10 +450,17 @@ var scriptThree = {
                 start: "06:15",
                 onStart: function () {
                     helloEditor.loadExample(3);
+                    helloEditor.runCode();
+                }
+            })
+            // Show the reset button when I mention it
+            .code({
+                start: "06:25",
+                onStart: function () {
+                    $("#resetButton").show();
 
                 }
             });
-
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
@@ -463,7 +470,6 @@ var scriptThree = {
             helloEditor.showHint(3);
 
             $("#nextButton").show();
-            $("#resetButton").show();
 
         });
     }
