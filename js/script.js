@@ -9,7 +9,7 @@
  */
 
 var scriptOne = {
-    vimeoURL: "https://vimeo.com/77249859",
+    vimeoURL: "https://vimeo.com/80274630",
     runCache: null,
     reset: function () {
         // Set initial State
@@ -28,79 +28,40 @@ var scriptOne = {
         // Popcorn Events
 
         helloEditor.popcorn
+            // Show stuff below
             .code({
-                start: "01:15",
+                start: "00:22",
                 onStart: function () {
                     helloEditor.videoMode = false;
                     helloEditor.resizeUI();
-                },
-                onEnd: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
                 }
             })
+            // Quickly show editor
             .code({
-                start: "01:22",
+                start: "00:24",
                 onStart: function () {
-                    $("#editorContainer").show();
-                    helloEditor.setCode("");
-                },
-                onEnd: function () {
-                    $("#editorContainer").hide();
+                    $("#editorContainer").fadeIn("fast");
+                    helloEditor.loadExample(3);
                 }
             })
+            // Show the canvas container
             .code({
-                start: "01:27",
-                onStart: function () {
-                    helloEditor.setCode("ellipse(250, 200, 400, 400);");
-                },
-                onEnd: function () {
-                    helloEditor.setCode("");
-                }
-            })
-            .code({
-                start: "02:14",
-                onStart: function () {
-                    $("#editorCommands").show();
-                },
-                onEnd: function () {
-                    $("#editorCommands").hide();
-                }
-            })
-            .code({
-                start: "02:41",
-                onStart: function () {
-                    $("#canvasContainer").show();
-                },
-                onEnd: function () {
-                    $("#canvasContainer").hide();
-                }
-            })
-            .code({
-                start: "02:45",
+                start: "00:26",
                 onStart: function () {
                     helloEditor.runCode();
-                },
-                onEnd: function () {
-                    helloEditor.resetInstance();
+                    $("#canvasContainer").fadeIn("fast");
                 }
-            })
+            })    
+            // Back to full screen video
             .code({
-                start: "03:15",
+                start: "00:35",
                 onStart: function () {
                     helloEditor.videoMode = true;
                     helloEditor.resizeUI();
-                },
-                onEnd: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
                 }
-            });
-
-        // End Event
+            })
 
         helloEditor.popcorn.on("ended", function () {
-
             helloEditor.showHint(1);
 
         });
@@ -805,7 +766,7 @@ var scriptFive = {
  */
 
 var scriptSix = {
-    vimeoURL: "https://vimeo.com/77249859",
+    vimeoURL: "https://vimeo.com/80275178",
     runCache: null,
     reset: function () {
         // Set initial State
