@@ -258,7 +258,6 @@ var scriptTwo = {
                 start: "09:11",
                 onStart: function () {
                     helloEditor.loadExample(2);
-                    helloEditor.runCode();
                 }
             })   
             .code({
@@ -266,7 +265,13 @@ var scriptTwo = {
                 onStart: function () {
                     helloEditor.runCode();
                 }
-            });
+            })
+            .code({
+                start: "09:36",
+                onStart: function () {
+                    $("#nextButton").show();
+                }
+            });            
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
