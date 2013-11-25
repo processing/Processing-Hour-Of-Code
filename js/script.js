@@ -17,6 +17,14 @@ var scriptOne = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+        // Hide a bunch of buttons and the rulers stuff
+        $("#toggleRulers").hide();
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+        
+
     },
     init: function (time) {
 
@@ -112,6 +120,7 @@ var scriptTwo = {
                 onStart: function () {
                     $("#editorContainer").fadeIn("fast");
                     helloEditor.setCode("");
+                    helloEditor.runCode();
                 }
             })
             // Manually set editor contents. This could come from a Gist or something.
@@ -223,9 +232,14 @@ var scriptTwo = {
                 onStart: function () {
                     //helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
                     helloEditor.loadSnippet("2-50");
-                    helloEditor.runCode();
                 }
             })  
+            .code({
+                start: "08:30",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            });                 
             .code({
                 start: "08:49",
                 onStart: function () {
@@ -238,16 +252,27 @@ var scriptTwo = {
                 onStart: function () {
                     helloEditor.runCode();
                 }
-            });          
-
-
+            })       
+            .code({
+                start: "09:11",
+                onStart: function () {
+                    helloEditor.loadExample(2);
+                    helloEditor.runCode();
+                }
+            })   
+            .code({
+                start: "09:14",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            });
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
 
             // Load the example here?
-
-            helloEditor.loadExample(2);
+            // Actually no, letting it load while video is playing
+            // helloEditor.loadExample(2);
 
             // Show the proper hint over the video
 
