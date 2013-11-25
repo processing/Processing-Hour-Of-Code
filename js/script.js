@@ -54,7 +54,7 @@ var scriptOne = {
             })    
             // Back to full screen video
             .code({
-                start: "00:35",
+                start: "00:34",
                 onStart: function () {
                     helloEditor.videoMode = true;
                     helloEditor.resizeUI();
