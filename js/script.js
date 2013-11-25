@@ -90,6 +90,7 @@ var scriptTwo = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
+        helloEditor.hideRulers();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -304,6 +305,7 @@ var scriptThree = {
         $("#hint").hide();
         $("#editorContainer").show();
         $("#canvasContainer").show();
+        helloEditor.hideRulers();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -488,7 +490,7 @@ var scriptFour = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-    },
+     },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -621,7 +623,7 @@ var scriptFour = {
                 start: "10:38",
                 onStart: function () {
                     helloEditor.loadExample(4);
-
+                    helloEditor.runCode();
                 }
             });
 
@@ -653,6 +655,7 @@ var scriptFive = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
     },
     init: function (time) {
 
@@ -764,7 +767,7 @@ var scriptFive = {
             })
             // And we're back
             .code({
-                start: "05:50",
+                start: "05:55",
                 onStart: function () {
                     helloEditor.videoMode = false;
                     helloEditor.resizeUI();
@@ -772,15 +775,9 @@ var scriptFive = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.runCode();
-                }
-            })  
-            // Example
-            .code({
-                start: "5:58",
-                onStart: function () {
+                    // Example
                     helloEditor.loadExample(5);
-
+                    helloEditor.runCode();
                 }
             });
 
@@ -812,12 +809,31 @@ var scriptSix = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
     },
+
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
         this.reset();
+
+
+        helloEditor.popcorn.on("ended", function () {
+
+            helloEditor.videoMode = false;
+            helloEditor.resizeUI();
+
+            $("#editorContainer").fadeIn("fast");
+            $("#canvasContainer").fadeIn("fast");
+
+            helloEditor.showHint(6);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+            $("#shareButton").show();
+
+
+        });
     }
 };
 
