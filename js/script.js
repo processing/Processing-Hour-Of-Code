@@ -62,8 +62,8 @@ var scriptOne = {
             })
 
         helloEditor.popcorn.on("ended", function () {
-            helloEditor.showHint(1);
-
+            //helloEditor.showHint(1);
+            helloEditor.loadLesson(1,0);
         });
     }
 };
