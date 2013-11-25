@@ -214,6 +214,7 @@ var scriptTwo = {
             })
             // Show the editor and canvas again and insert code
             .code({
+                // TODO: This needs to be back about a half-second to align with cut
                 start: "8:19",
                 onStart: function () {
                     helloEditor.videoMode = false;
@@ -239,7 +240,7 @@ var scriptTwo = {
                 onStart: function () {
                     helloEditor.runCode();
                 }
-            });                 
+            })                 
             .code({
                 start: "08:49",
                 onStart: function () {
