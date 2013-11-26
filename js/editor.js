@@ -160,7 +160,7 @@ var helloEditor = {
         /* Error UI */
 
         $("#modalResetCode").click(function () {
-            helloEditor.editor.setValue(scripts[this.lessonIndex].runCache, -1);
+            helloEditor.setCode(scripts[helloEditor.lessonIndex].runCache);
             $('#errorModal').modal('hide');
         });
 
