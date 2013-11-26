@@ -490,6 +490,11 @@ var scriptFour = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+
      },
     init: function (time) {
 
@@ -656,6 +661,11 @@ var scriptFive = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
 
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();        
+
     },
     init: function (time) {
 
@@ -808,6 +818,9 @@ var scriptSix = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+    
+        
     },
 
     init: function (time) {
