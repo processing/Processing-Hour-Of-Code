@@ -55,7 +55,7 @@ var helloEditor = {
                 "shapes": 1,
                 "color": 2,
                 "interact": 3,
-                "decisions": 4,
+                "questions": 4,
                 "goodbye": 5
             };
 
