@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
-	 height="2000px" viewBox="0 0 20 2000" enable-background="new 0 0 20 2000" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="2000px" viewBox="0 0 20 2000" enable-background="new 0 0 20 2000" xml:space="preserve">
 <g id="Background">
 	<g id="Layer_2">
 		<rect fill="#F9F9FC" width="20" height="2000"/>
@@ -70,25 +70,25 @@
 	<line fill="none" stroke="#5CADD5" stroke-miterlimit="10" x1="20" y1="1925.5" x2="15" y2="1925.5"/>
 </g>
 <g id="Text">
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 90)" fill="#5CADD5" font-family="'Courier'" font-size="12">100</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 190)" fill="#5CADD5" font-family="'Courier'" font-size="12">200</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 290)" fill="#5CADD5" font-family="'Courier'" font-size="12">300</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 390)" fill="#5CADD5" font-family="'Courier'" font-size="12">400</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 490)" fill="#5CADD5" font-family="'Courier'" font-size="12">500</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 590)" fill="#5CADD5" font-family="'Courier'" font-size="12">600</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 690)" fill="#5CADD5" font-family="'Courier'" font-size="12">700</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 790)" fill="#5CADD5" font-family="'Courier'" font-size="12">800</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 890)" fill="#5CADD5" font-family="'Courier'" font-size="12">900</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 990)" fill="#5CADD5" font-family="'Courier'" font-size="12">1000</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1090)" fill="#5CADD5" font-family="'Courier'" font-size="12">1100</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1190)" fill="#5CADD5" font-family="'Courier'" font-size="12">1200</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1290)" fill="#5CADD5" font-family="'Courier'" font-size="12">1300</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1390)" fill="#5CADD5" font-family="'Courier'" font-size="12">1400</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1490)" fill="#5CADD5" font-family="'Courier'" font-size="12">1500</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1590)" fill="#5CADD5" font-family="'Courier'" font-size="12">1600</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1690)" fill="#5CADD5" font-family="'Courier'" font-size="12">1700</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1790)" fill="#5CADD5" font-family="'Courier'" font-size="12">1800</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1890)" fill="#5CADD5" font-family="'Courier'" font-size="12">1900</text>
-	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1990)" fill="#5CADD5" font-family="'Courier'" font-size="12">2000</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 96)" fill="#5CADD5" font-family="'Courier'" font-size="12">100</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 196)" fill="#5CADD5" font-family="'Courier'" font-size="12">200</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 296)" fill="#5CADD5" font-family="'Courier'" font-size="12">300</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 396)" fill="#5CADD5" font-family="'Courier'" font-size="12">400</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 496)" fill="#5CADD5" font-family="'Courier'" font-size="12">500</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 596)" fill="#5CADD5" font-family="'Courier'" font-size="12">600</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 696)" fill="#5CADD5" font-family="'Courier'" font-size="12">700</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 796)" fill="#5CADD5" font-family="'Courier'" font-size="12">800</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 896)" fill="#5CADD5" font-family="'Courier'" font-size="12">900</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 996)" fill="#5CADD5" font-family="'Courier'" font-size="12">1000</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1096)" fill="#5CADD5" font-family="'Courier'" font-size="12">1100</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1196)" fill="#5CADD5" font-family="'Courier'" font-size="12">1200</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1296)" fill="#5CADD5" font-family="'Courier'" font-size="12">1300</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1396)" fill="#5CADD5" font-family="'Courier'" font-size="12">1400</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1496)" fill="#5CADD5" font-family="'Courier'" font-size="12">1500</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1596)" fill="#5CADD5" font-family="'Courier'" font-size="12">1600</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1696)" fill="#5CADD5" font-family="'Courier'" font-size="12">1700</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1796)" fill="#5CADD5" font-family="'Courier'" font-size="12">1800</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1896)" fill="#5CADD5" font-family="'Courier'" font-size="12">1900</text>
+	<text transform="matrix(4.489659e-11 -1 1 4.489659e-11 15.0957 1996)" fill="#5CADD5" font-family="'Courier'" font-size="12">2000</text>
 </g>
 </svg>
