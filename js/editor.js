@@ -208,6 +208,13 @@ var helloEditor = {
 
             window.open(tweetURL);
 
+        });        
+
+        $("#modalHourButton").click(function () {
+            var intentURL = "http://code.org/api/hour/finish",
+                displayURL = $("#shareModal").attr('data-url');
+            window.open(intentURL);
+
         });
 
         /* Canvas UI */
