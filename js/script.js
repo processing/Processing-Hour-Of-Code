@@ -17,6 +17,14 @@ var scriptOne = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+        // Hide a bunch of buttons and the rulers stuff
+        $("#toggleRulers").hide();
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+        
+
     },
     init: function (time) {
 
@@ -82,6 +90,7 @@ var scriptTwo = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
         $("#toggleRulers").hide();
+        helloEditor.hideRulers();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -112,6 +121,7 @@ var scriptTwo = {
                 onStart: function () {
                     $("#editorContainer").fadeIn("fast");
                     helloEditor.setCode("");
+                    helloEditor.runCode();
                 }
             })
             // Manually set editor contents. This could come from a Gist or something.
@@ -205,6 +215,7 @@ var scriptTwo = {
             })
             // Show the editor and canvas again and insert code
             .code({
+                // TODO: This needs to be back about a half-second to align with cut
                 start: "8:19",
                 onStart: function () {
                     helloEditor.videoMode = false;
@@ -223,9 +234,14 @@ var scriptTwo = {
                 onStart: function () {
                     //helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
                     helloEditor.loadSnippet("2-50");
-                    helloEditor.runCode();
                 }
             })  
+            .code({
+                start: "08:30",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })                 
             .code({
                 start: "08:49",
                 onStart: function () {
@@ -238,16 +254,32 @@ var scriptTwo = {
                 onStart: function () {
                     helloEditor.runCode();
                 }
-            });          
-
-
+            })       
+            .code({
+                start: "09:11",
+                onStart: function () {
+                    helloEditor.loadExample(2);
+                }
+            })   
+            .code({
+                start: "09:14",
+                onStart: function () {
+                    helloEditor.runCode();
+                }
+            })
+            .code({
+                start: "09:36",
+                onStart: function () {
+                    $("#nextButton").show();
+                }
+            });            
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
 
             // Load the example here?
-
-            helloEditor.loadExample(2);
+            // Actually no, letting it load while video is playing
+            // helloEditor.loadExample(2);
 
             // Show the proper hint over the video
 
@@ -273,6 +305,7 @@ var scriptThree = {
         $("#hint").hide();
         $("#editorContainer").show();
         $("#canvasContainer").show();
+        helloEditor.hideRulers();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -419,10 +452,17 @@ var scriptThree = {
                 start: "06:15",
                 onStart: function () {
                     helloEditor.loadExample(3);
+                    helloEditor.runCode();
+                }
+            })
+            // Show the reset button when I mention it
+            .code({
+                start: "06:25",
+                onStart: function () {
+                    $("#resetButton").show();
 
                 }
             });
-
         // End Event
 
         helloEditor.popcorn.on("ended", function () {
@@ -432,7 +472,6 @@ var scriptThree = {
             helloEditor.showHint(3);
 
             $("#nextButton").show();
-            $("#resetButton").show();
 
         });
     }
@@ -451,7 +490,12 @@ var scriptFour = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-    },
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();
+
+     },
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
@@ -584,7 +628,7 @@ var scriptFour = {
                 start: "10:38",
                 onStart: function () {
                     helloEditor.loadExample(4);
-
+                    helloEditor.runCode();
                 }
             });
 
@@ -616,6 +660,12 @@ var scriptFive = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+
+        $("#resetButton").hide();
+        $("#shareButton").hide();
+        $("#nextButton").hide();        
+
     },
     init: function (time) {
 
@@ -727,7 +777,7 @@ var scriptFive = {
             })
             // And we're back
             .code({
-                start: "05:50",
+                start: "05:55",
                 onStart: function () {
                     helloEditor.videoMode = false;
                     helloEditor.resizeUI();
@@ -735,15 +785,9 @@ var scriptFive = {
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
 
-                    helloEditor.runCode();
-                }
-            })  
-            // Example
-            .code({
-                start: "5:58",
-                onStart: function () {
+                    // Example
                     helloEditor.loadExample(5);
-
+                    helloEditor.runCode();
                 }
             });
 
@@ -774,13 +818,35 @@ var scriptSix = {
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
+
+    
+        
     },
+
     init: function (time) {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
 
         this.reset();
+
+
+        helloEditor.popcorn.on("ended", function () {
+
+            helloEditor.videoMode = false;
+            helloEditor.resizeUI();
+
+            $("#editorContainer").fadeIn("fast");
+            $("#canvasContainer").fadeIn("fast");
+
+            helloEditor.showHint(6);
+
+            $("#nextButton").show();
+            $("#resetButton").show();
+            $("#shareButton").show();
+
+
+        });
     }
 };
 

@@ -55,7 +55,7 @@ var helloEditor = {
                 "shapes": 1,
                 "color": 2,
                 "interact": 3,
-                "decisions": 4,
+                "questions": 4,
                 "goodbye": 5
             };
 
@@ -207,6 +207,13 @@ var helloEditor = {
                     "&hashtags=" + shareHashtags;
 
             window.open(tweetURL);
+
+        });        
+
+        $("#modalHourButton").click(function () {
+            var intentURL = "http://code.org/api/hour/finish",
+                displayURL = $("#shareModal").attr('data-url');
+            window.open(intentURL);
 
         });
 
