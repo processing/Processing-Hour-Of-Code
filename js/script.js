@@ -495,6 +495,9 @@ var scriptFour = {
         $("#shareButton").hide();
         $("#nextButton").hide();
 
+        $("#runButton").show();
+
+
      },
     init: function (time) {
 
@@ -661,10 +664,11 @@ var scriptFive = {
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
 
-
         $("#resetButton").hide();
         $("#shareButton").hide();
         $("#nextButton").hide();        
+
+        $("#runButton").show();
 
     },
     init: function (time) {
