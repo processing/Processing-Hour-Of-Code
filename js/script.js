@@ -30,6 +30,8 @@ var scriptOne = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
@@ -101,6 +103,8 @@ var scriptTwo = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
@@ -316,6 +320,8 @@ var scriptThree = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
@@ -503,6 +509,8 @@ var scriptFour = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
@@ -675,6 +683,8 @@ var scriptFive = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
@@ -831,6 +841,8 @@ var scriptSix = {
 
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
 
         this.reset();
 
