@@ -281,7 +281,7 @@ div#videoContainer {
 
 div#videoCommandsContainer {
 	position:absolute;
-	top:48px;
+	bottom:48px;
 	width: 100%;
 	text-align:center;
 	display:none;

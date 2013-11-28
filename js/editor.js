@@ -111,6 +111,11 @@ var helloEditor = {
             $("#videoCommandsContainer").fadeOut();
         });
 
+        $("#jumpBack").click(function () {
+            var newTime = (helloEditor.popcorn.currentTime() < 10 ) ? 0 : helloEditor.popcorn.currentTime() - 10;
+            helloEditor.popcorn.play(newTime);
+        });
+
         $("#restartButton").click(function () {
             scripts[helloEditor.lessonIndex].reset();
             helloEditor.popcorn.play(0);
@@ -119,10 +124,10 @@ var helloEditor = {
         $("#pauseButton").click(function () {
             if (helloEditor.popcorn.paused()) {
                 helloEditor.popcorn.play();
-                $("#pauseButton").html("Pause");
+                $("#pauseButton").html('<span class="glyphicon glyphicon-pause"></span> Pause');
             } else {
                 helloEditor.popcorn.pause();
-                $("#pauseButton").html("Play");
+                $("#pauseButton").html('<span class="glyphicon glyphicon-play"></span> Play');
             }
         });
 
