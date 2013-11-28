@@ -15,6 +15,8 @@ var scriptOne = {
     reset: function () {
         // Set initial State
 
+        helloEditor.setMode(VIDEO_MODE);
+
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
@@ -31,6 +33,7 @@ var scriptOne = {
     },
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -45,8 +48,7 @@ var scriptOne = {
             .code({
                 start: "00:22",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
                 }
             })
             // Quickly show editor
@@ -69,8 +71,7 @@ var scriptOne = {
             .code({
                 start: "00:34",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
                 }
             })
 
@@ -92,6 +93,8 @@ var scriptTwo = {
     reset: function () {
         // Set initial State
 
+        helloEditor.setMode(VIDEO_MODE);
+
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
@@ -108,6 +111,7 @@ var scriptTwo = {
     },
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -122,8 +126,7 @@ var scriptTwo = {
             .code({
                 start: "04:25",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
                 }
             })
             // Show the editor, set the value to nothing
@@ -220,8 +223,7 @@ var scriptTwo = {
             .code({
                 start: "06:54",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
                 }
             })
             // Show the editor and canvas again and insert code
@@ -229,8 +231,7 @@ var scriptTwo = {
                 // TODO: This needs to be back about a half-second to align with cut
                 start: "8:19",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -311,8 +312,7 @@ var scriptThree = {
     reset: function () {
         // Set initial State
 
-        helloEditor.videoMode = false;
-        helloEditor.resizeUI();
+        helloEditor.setMode(EDITOR_MODE);
 
         $("#hint").hide();
         $("#editorContainer").show();
@@ -329,6 +329,7 @@ var scriptThree = {
     },
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -343,8 +344,7 @@ var scriptThree = {
             .code({
                 start: "00:19",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
 
                     $("#editorContainer").hide();
                     $("#canvasContainer").hide();
@@ -354,8 +354,7 @@ var scriptThree = {
             .code({
                 start: "02:44",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -387,8 +386,7 @@ var scriptThree = {
             .code({
                 start: "3:00",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
 
                     $("#editorContainer").hide();
                     $("#canvasContainer").hide();
@@ -398,8 +396,7 @@ var scriptThree = {
             .code({
                 start: "04:25",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -505,6 +502,8 @@ var scriptFour = {
     reset: function () {
         // Set initial State
 
+        helloEditor.setMode(VIDEO_MODE);
+
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
@@ -522,6 +521,7 @@ var scriptFour = {
      },
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -536,8 +536,7 @@ var scriptFour = {
             .code({
                 start: "04:44",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -597,8 +596,7 @@ var scriptFour = {
             .code({
                 start: "5:48",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
 
                     $("#editorContainer").hide();
                     $("#canvasContainer").hide();
@@ -608,8 +606,7 @@ var scriptFour = {
             .code({
                 start: "07:31",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -685,6 +682,8 @@ var scriptFive = {
     reset: function () {
         // Set initial State
 
+        helloEditor.setMode(VIDEO_MODE);
+
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
@@ -701,6 +700,7 @@ var scriptFive = {
     },
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -714,8 +714,7 @@ var scriptFive = {
             .code({
                 start: "02:37",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -746,8 +745,7 @@ var scriptFive = {
             .code({
                 start: "3:13",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
 
                     $("#editorContainer").hide();
                     $("#canvasContainer").hide();
@@ -757,8 +755,7 @@ var scriptFive = {
             .code({
                 start: "04:00",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -802,8 +799,7 @@ var scriptFive = {
             .code({
                 start: "5:15",
                 onStart: function () {
-                    helloEditor.videoMode = true;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(VIDEO_MODE);
 
                     $("#editorContainer").hide();
                     $("#canvasContainer").hide();
@@ -813,8 +809,7 @@ var scriptFive = {
             .code({
                 start: "05:55",
                 onStart: function () {
-                    helloEditor.videoMode = false;
-                    helloEditor.resizeUI();
+                    helloEditor.setMode(EDITOR_MODE);
 
                     $("#editorContainer").fadeIn("fast");
                     $("#canvasContainer").fadeIn("fast");
@@ -850,16 +845,17 @@ var scriptSix = {
     reset: function () {
         // Set initial State
 
+        helloEditor.setMode(VIDEO_MODE);
+
         $("#hint").hide();
         $("#editorContainer").hide();
         $("#canvasContainer").hide();
-
     
-        
     },
 
     init: function (time) {
 
+        $("#video").html("");
         helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
@@ -870,8 +866,7 @@ var scriptSix = {
 
         helloEditor.popcorn.on("ended", function () {
 
-            helloEditor.videoMode = false;
-            helloEditor.resizeUI();
+            helloEditor.setMode(EDITOR_MODE);
 
             $("#editorContainer").fadeIn("fast");
             $("#canvasContainer").fadeIn("fast");

@@ -13,13 +13,20 @@
 /*global location */
 
 /**
+ * Some Constants
+ */
+
+var VIDEO_MODE = 0;
+var EDITOR_MODE = 1;
+
+/**
  * Singleton for the editor page
  */
 var helloEditor = {
     editor: null,
     popcorn: null,
     processingInstance: null,
-    videoMode: true,
+    displayMode: VIDEO_MODE,
     lessonIndex: 0,
     /**
      * Initialize Ace editor and UI elements
@@ -113,13 +120,16 @@ var helloEditor = {
 
         $("#jumpBack").click(function () {
             var newTime = (helloEditor.popcorn.currentTime() < 10 ) ? 0 : helloEditor.popcorn.currentTime() - 10;
-            helloEditor.popcorn.play(newTime);
+            helloEditor.popcorn.pause();
+            scripts[helloEditor.lessonIndex].init(newTime);
         });
 
         $("#jumpExercise").click(function () {
             var newTime = scripts[helloEditor.lessonIndex].exerciseTime;
-            console.log(newTime);
-            if (newTime) helloEditor.popcorn.play(newTime);
+            if (newTime) {
+                helloEditor.popcorn.pause();
+                scripts[helloEditor.lessonIndex].init(newTime);
+            }
         });        
 
         $("#restartButton").click(function () {
@@ -308,27 +318,27 @@ var helloEditor = {
 
     },
     /**
+     * Change display mode
+     */
+    setMode: function(newMode) {
+        console.log(newMode);
+        this.displayMode = newMode;
+        this.resizeUI();
+    },
+    /**
      * Try to keep a sane layout at any browser size.
      * @return {[type]}
      */
     resizeUI: function () {
 
-        var viewportTopOffset = 48,
-            viewportWidth = ($(window).width() > 768) ? $(window).width() : 768,
-            viewportHeight = ($(window).height() > 640) ? $(window).height() : 640,
+        var viewportWidth = $("#interface").width(),
+            viewportHeight = $("#interface").height(),
             minVideoWidth = 320,
             maxVideoWidth = viewportWidth / 2,
             videoWidth,
-            videoHeight;
+            videoHeight;   
 
-        viewportHeight -= viewportTopOffset;
-
-        $("#interface")
-            .height(viewportHeight)
-            .width(viewportWidth)
-            .css({top: viewportTopOffset, left: 0});
-
-        if (this.videoMode) {
+        if (this.displayMode == VIDEO_MODE) {
 
             //console.log("Video Mode");
 
@@ -352,83 +362,43 @@ var helloEditor = {
 
         } else {
 
-            //console.log("Editor Mode");
-
-            if (viewportWidth > viewportHeight) {
-
-                // Landscape
-
-                if (viewportWidth - viewportHeight < minVideoWidth) {
-                    videoWidth = minVideoWidth;
-                } else if (viewportWidth - viewportHeight > maxVideoWidth) {
-                    videoWidth = maxVideoWidth;
-                } else {
-                    videoWidth = viewportWidth - viewportHeight;
-                }
-
-                videoHeight = videoWidth / 16 * 9;
-
-                $("#header").width("95%");
-
-                $("#videoContainer")
-                    .css({
-                        width: videoWidth,
-                        height: videoHeight,
-                        left: 8,
-                        top: 8,
-                        marginTop: 0,
-                        marginLeft: 0
-                    });
-
-                $("#editorContainer")
-                    .css({
-                        width: videoWidth,
-                        height: viewportHeight - videoHeight - 32,
-                        top: videoHeight + 20,
-                        left: 8
-                    });
-
-                $("#canvasContainer")
-                    .height(viewportHeight)
-                    .width(viewportHeight)
-                    .css({
-                        top: 0,
-                        left: videoWidth
-                    });
-
+            if (viewportWidth - viewportHeight < minVideoWidth) {
+                videoWidth = minVideoWidth;
+            } else if (viewportWidth - viewportHeight > maxVideoWidth) {
+                videoWidth = maxVideoWidth;
             } else {
-                // Portrait
-
-                videoWidth = viewportWidth / 2;
-                videoHeight = videoWidth / 16 * 9;
-
-                $("#videoContainer")
-                    .css({
-                        width: videoWidth,
-                        height: videoHeight,
-                        left: 8,
-                        top: 8,
-                        marginTop: 0,
-                        marginLeft: 0
-                    });
-
-                $("#editorContainer")
-                    .css({
-                        width: viewportWidth - videoWidth - 24,
-                        height: videoHeight,
-                        top: 8,
-                        left: videoWidth + 16
-                    });
-
-                $("#canvasContainer")
-                    .height(viewportHeight - videoHeight)
-                    .width(viewportWidth)
-                    .css({
-                        top: videoHeight,
-                        left: 0
-                    });
-
+                videoWidth = viewportWidth - viewportHeight;
             }
+
+            videoHeight = videoWidth / 16 * 9;
+
+            $("#header").width("95%");
+
+            $("#videoContainer")
+                .css({
+                    width: videoWidth,
+                    height: videoHeight,
+                    left: 8,
+                    top: 8,
+                    marginTop: 0,
+                    marginLeft: 0
+                });
+
+            $("#editorContainer")
+                .css({
+                    width: videoWidth,
+                    height: viewportHeight - videoHeight - 32,
+                    top: videoHeight + 20,
+                    left: 8
+                });
+
+            $("#canvasContainer")
+                .height(viewportHeight)
+                .width(viewportHeight)
+                .css({
+                    top: 0,
+                    left: videoWidth
+                });
 
         }
     },
@@ -486,10 +456,6 @@ var helloEditor = {
 
         $(".lessonButton").removeClass("active");
         $("a[data-index='" + index + "']").addClass("active");
-
-        $("#video").html("");
-        helloEditor.videoMode = true;
-        helloEditor.resizeUI();
 
         scripts[index].init(time);
 

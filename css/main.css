@@ -119,7 +119,7 @@ footer#splashFooter {
 	position: relative;
 	margin: auto;
 	width: 100%;
-	min-width: 836px;
+	min-width: 1024px;
 	height: 48px;
 }
 
@@ -192,10 +192,14 @@ a.active span, a.active:hover span {
 /* Editor Page */
 
 #interface {
-	position: absolute;
-	top: 48;
+	position: fixed;
+	top: 48px;
 	left: 0;
-	width: 100%;
+	bottom: 0;
+	right: 0;
+
+	min-width: 1024px;
+	min-height: 640px;
 }
 
 div#canvasContainer {
