@@ -77,7 +77,7 @@ var helloEditor = {
         // Resize callback
 
         $(window).resize(function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });
 
         // Color Picker
@@ -104,7 +104,7 @@ var helloEditor = {
             }
         });
 
-        helloEditor.resizeUI();
+        helloEditor.refreshUI();
 
     },
     /**
@@ -331,13 +331,13 @@ var helloEditor = {
      */
     setMode: function(newMode) {
         this.displayMode = newMode;
-        if (!helloEditor.popcorn.paused()) helloEditor.resizeUI();
+        if (!helloEditor.popcorn.paused()) helloEditor.refreshUI();
     },
     /**
      * Try to keep a sane layout at any browser size.
      * @return {[type]}
      */
-    resizeUI: function () {
+    refreshUI: function () {
 
         var viewportWidth = $("#interface").width(),
             viewportHeight = $("#interface").height(),

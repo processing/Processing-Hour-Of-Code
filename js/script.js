@@ -39,6 +39,7 @@ var scriptOne = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         // Popcorn Events
 
@@ -80,7 +81,7 @@ var scriptOne = {
         });
 
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });        
     }
 };
@@ -120,6 +121,7 @@ var scriptTwo = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         // Popcorn Events
 
@@ -302,7 +304,7 @@ var scriptTwo = {
         });
 
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });         
     }
 };
@@ -343,6 +345,7 @@ var scriptThree = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         // Popcorn Events
 
@@ -491,7 +494,7 @@ var scriptThree = {
         });
 
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });         
     }
 };
@@ -532,6 +535,7 @@ var scriptFour = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         // Popcorn Events
 
@@ -670,7 +674,7 @@ var scriptFour = {
         });
 
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });         
     }
 };
@@ -711,6 +715,7 @@ var scriptFive = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         // Popcorn Events
         helloEditor.popcorn
@@ -830,7 +835,7 @@ var scriptFive = {
         });
         
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         }); 
     }
 };
@@ -860,6 +865,7 @@ var scriptSix = {
         helloEditor.popcorn.volume(1.0);
 
         this.reset();
+        helloEditor.refreshUI();
 
         helloEditor.popcorn.on("ended", function () {
 
@@ -881,7 +887,7 @@ var scriptSix = {
         });
 
         helloEditor.popcorn.on("play", function () {
-            helloEditor.resizeUI();
+            helloEditor.refreshUI();
         });         
     }
 };
