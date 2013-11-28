@@ -78,6 +78,10 @@ var scriptOne = {
             //helloEditor.showHint(1);
             helloEditor.loadLesson(1,0);
         });
+
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        });        
     }
 };
 
@@ -296,6 +300,10 @@ var scriptTwo = {
             helloEditor.showHint(2);
 
         });
+
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        });         
     }
 };
 
@@ -481,6 +489,10 @@ var scriptThree = {
             $("#nextButton").show();
 
         });
+
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        });         
     }
 };
 
@@ -656,6 +668,10 @@ var scriptFour = {
             $("#resetButton").show();
 
         });
+
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        });         
     }
 };
 
@@ -812,7 +828,10 @@ var scriptFive = {
             $("#resetButton").show();
 
         });
-        // End Event
+        
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        }); 
     }
 };
 
@@ -842,7 +861,6 @@ var scriptSix = {
 
         this.reset();
 
-
         helloEditor.popcorn.on("ended", function () {
 
             helloEditor.setMode(EDITOR_MODE);
@@ -861,6 +879,10 @@ var scriptSix = {
             $("#jumpLesson").hide();
 
         });
+
+        helloEditor.popcorn.on("play", function () {
+            helloEditor.resizeUI();
+        });         
     }
 };
 

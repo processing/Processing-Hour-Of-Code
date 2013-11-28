@@ -44,6 +44,12 @@ a {
 	color: #5F86A3;
 }
 
+.btn {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
 /* Splash Page */
 
 div#splashDiv {	

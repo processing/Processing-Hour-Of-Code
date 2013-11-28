@@ -156,16 +156,16 @@ var helloEditor = {
             }
         });
 
-        $("#nextButton").click(function () {
-            helloEditor.lessonIndex += 1;
-            helloEditor.loadLesson(helloEditor.lessonIndex, null);
-        });
-
         /* Editor UI */
 
         $("#runButton").click(function () {
             helloEditor.runCode();
             helloEditor.editor.focus();
+        }).tooltip({container: 'body'});
+
+        $("#nextButton").click(function () {
+            helloEditor.lessonIndex += 1;
+            helloEditor.loadLesson(helloEditor.lessonIndex, null);
         }).tooltip({container: 'body'});
 
         $("#shareButton").click(function () {
@@ -328,9 +328,8 @@ var helloEditor = {
      * Change display mode
      */
     setMode: function(newMode) {
-        console.log(newMode);
         this.displayMode = newMode;
-        this.resizeUI();
+        if (!helloEditor.popcorn.paused()) helloEditor.resizeUI();
     },
     /**
      * Try to keep a sane layout at any browser size.
@@ -348,7 +347,7 @@ var helloEditor = {
         if (this.displayMode == VIDEO_MODE) {
 
             $("#interface").addClass("videoMode");
-            console.log("Video Mode");
+            //console.log("Video Mode");
 
             videoWidth = viewportWidth * 0.80;
             videoHeight = videoWidth / 16 * 9;
@@ -368,7 +367,7 @@ var helloEditor = {
         } else {
 
             $("#interface").removeClass("videoMode");
-            console.log("Editor Mode");
+            //console.log("Editor Mode");
 
             if (viewportWidth - viewportHeight < minVideoWidth) {
                 videoWidth = minVideoWidth;
