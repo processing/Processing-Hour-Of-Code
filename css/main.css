@@ -492,6 +492,7 @@ div#page {
 
 	margin: auto;
 	width: 80%;
+	min-width: 768px;
 	z-index: 2000;
 	border-bottom: 8px solid #E67AC2;
 
