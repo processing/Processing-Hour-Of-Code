@@ -125,7 +125,7 @@ footer#splashFooter {
 	position: relative;
 	margin: auto;
 	width: 100%;
-	min-width: 1024px;
+	min-width: 900px;
 	height: 48px;
 }
 
@@ -504,7 +504,7 @@ body.about .aboutButton,  body.guide .guideButton{
 
 div#page {
 
-	margin: auto;
+	margin: 24px auto;
 	width: 80%;
 	min-width: 768px;
 	z-index: 2000;
@@ -517,6 +517,10 @@ div#page {
 	font-size: 1.1em;
 	font-family: 'theSerif', georgia, times, serif; 
 
+}
+
+div#page h2 {
+	margin-top: 0;
 }
 
 div#page h2, div#page h3 {
