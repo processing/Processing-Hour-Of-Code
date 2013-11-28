@@ -104,6 +104,8 @@ var helloEditor = {
             }
         });
 
+        helloEditor.resizeUI();
+
     },
     /**
      * Initialize UI elements

@@ -50,6 +50,12 @@ a {
           border-radius: 0 !important;
 }
 
+a:focus, a:active, a::-moz-focus-inner {
+    border: 0;
+    outline : 0;
+    text-decoration: none;
+}
+
 /* Splash Page */
 
 div#splashDiv {	
@@ -92,7 +98,7 @@ a#splashButton {
 	font-size: 1.4em;
 	font-weight: bold;
 	display: none;
-	pointer-events:auto;
+	pointer-events: auto !important;
 }
 
 a#splashButton:hover {
