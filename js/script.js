@@ -18,8 +18,6 @@ var scriptOne = {
         helloEditor.setMode(VIDEO_MODE);
 
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
 
         // Hide a bunch of buttons and the rulers stuff
         $("#toggleRulers").hide();
@@ -96,8 +94,6 @@ var scriptTwo = {
         helloEditor.setMode(VIDEO_MODE);
 
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
         $("#toggleRulers").hide();
         helloEditor.hideRulers();
 
@@ -345,9 +341,6 @@ var scriptThree = {
                 start: "00:19",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
-
-                    $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
                 }
             })
             // Show the editor
@@ -387,9 +380,6 @@ var scriptThree = {
                 start: "3:00",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
-
-                    $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
                 }
             })
             // RGB Demo -- back to code editor
@@ -505,8 +495,6 @@ var scriptFour = {
         helloEditor.setMode(VIDEO_MODE);
 
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -597,9 +585,6 @@ var scriptFour = {
                 start: "5:48",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
-
-                    $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
                 }
             })
             // Show the editor for mouseX mouseY demonstration
@@ -685,8 +670,6 @@ var scriptFive = {
         helloEditor.setMode(VIDEO_MODE);
 
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -746,9 +729,6 @@ var scriptFive = {
                 start: "3:13",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
-
-                    $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
                 }
             })
             // And we're back
@@ -800,9 +780,6 @@ var scriptFive = {
                 start: "5:15",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
-
-                    $("#editorContainer").hide();
-                    $("#canvasContainer").hide();
                 }
             })
             // And we're back
@@ -846,10 +823,7 @@ var scriptSix = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
-
         $("#hint").hide();
-        $("#editorContainer").hide();
-        $("#canvasContainer").hide();
     
     },
 

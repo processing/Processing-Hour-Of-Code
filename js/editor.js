@@ -121,14 +121,18 @@ var helloEditor = {
         $("#jumpBack").click(function () {
             var newTime = (helloEditor.popcorn.currentTime() < 10 ) ? 0 : helloEditor.popcorn.currentTime() - 10;
             helloEditor.popcorn.pause();
-            scripts[helloEditor.lessonIndex].init(newTime);
+            scripts[helloEditor.lessonIndex].reset();
+            helloEditor.popcorn.currentTime(0);
+            helloEditor.popcorn.play(newTime);
         });
 
         $("#jumpExercise").click(function () {
             var newTime = scripts[helloEditor.lessonIndex].exerciseTime;
             if (newTime) {
                 helloEditor.popcorn.pause();
-                scripts[helloEditor.lessonIndex].init(newTime);
+                scripts[helloEditor.lessonIndex].reset();
+                helloEditor.popcorn.currentTime(0);
+                helloEditor.popcorn.play(newTime);
             }
         });        
 
@@ -314,8 +318,6 @@ var helloEditor = {
 
         });
 
-        this.resizeUI();
-
     },
     /**
      * Change display mode
@@ -340,7 +342,8 @@ var helloEditor = {
 
         if (this.displayMode == VIDEO_MODE) {
 
-            //console.log("Video Mode");
+            $("#interface").addClass("videoMode");
+            console.log("Video Mode");
 
             videoWidth = viewportWidth * 0.80;
             videoHeight = videoWidth / 16 * 9;
@@ -357,10 +360,10 @@ var helloEditor = {
                     marginLeft: videoWidth / -2
                 }).show();
 
-            $("#editorContainer").hide();
-            $("#canvasContainer").hide();
-
         } else {
+
+            $("#interface").removeClass("videoMode");
+            console.log("Editor Mode");
 
             if (viewportWidth - viewportHeight < minVideoWidth) {
                 videoWidth = minVideoWidth;
