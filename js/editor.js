@@ -116,6 +116,12 @@ var helloEditor = {
             helloEditor.popcorn.play(newTime);
         });
 
+        $("#jumpExercise").click(function () {
+            var newTime = scripts[helloEditor.lessonIndex].exerciseTime;
+            console.log(newTime);
+            if (newTime) helloEditor.popcorn.play(newTime);
+        });        
+
         $("#restartButton").click(function () {
             scripts[helloEditor.lessonIndex].reset();
             helloEditor.popcorn.play(0);

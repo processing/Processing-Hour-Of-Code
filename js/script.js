@@ -11,6 +11,7 @@
 var scriptOne = {
     vimeoURL: "https://vimeo.com/80274630",
     runCache: null,
+    exerciseTime: null,    
     reset: function () {
         // Set initial State
 
@@ -24,6 +25,8 @@ var scriptOne = {
         $("#shareButton").hide();
         $("#nextButton").hide();
         
+        // Video exercise button on lessons only
+        $("#jumpExercise").hide();
 
     },
     init: function (time) {
@@ -85,6 +88,7 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/79984989",
     runCache: null,
+    exerciseTime: "9:01",
     reset: function () {
         // Set initial State
 
@@ -98,6 +102,9 @@ var scriptTwo = {
         $("#shareButton").hide();
         $("#nextButton").hide();
         $("#runButton").hide();
+
+        // Video exercise button on lessons only
+        $("#jumpExercise").show();        
     },
     init: function (time) {
 
@@ -300,6 +307,7 @@ var scriptTwo = {
 var scriptThree = {
     vimeoURL: "https://vimeo.com/79984990",
     runCache: null,
+    exerciseTime: "5:57.20",    
     reset: function () {
         // Set initial State
 
@@ -315,6 +323,9 @@ var scriptThree = {
         $("#shareButton").hide();
         $("#nextButton").hide();
         $("#runButton").show();
+        
+        // Video exercise button on lessons only
+        $("#jumpExercise").show();        
     },
     init: function (time) {
 
@@ -490,6 +501,7 @@ var scriptThree = {
 var scriptFour = {
     vimeoURL: "https://vimeo.com/79984988",
     runCache: null,
+    exerciseTime: "10:21",    
     reset: function () {
         // Set initial State
 
@@ -502,6 +514,9 @@ var scriptFour = {
         $("#nextButton").hide();
 
         $("#runButton").show();
+        
+        // Video exercise button on lessons only
+        $("#jumpExercise").show();        
 
 
      },
@@ -665,6 +680,8 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/79984987",
     runCache: null,
+    exerciseTime: "5:35",    
+
     reset: function () {
         // Set initial State
 
@@ -677,6 +694,9 @@ var scriptFive = {
         $("#nextButton").hide();        
 
         $("#runButton").show();
+
+        // Video exercise button on lessons only
+        $("#jumpExercise").show();        
 
     },
     init: function (time) {
@@ -826,6 +846,7 @@ var scriptFive = {
 var scriptSix = {
     vimeoURL: "https://vimeo.com/80275178",
     runCache: null,
+    exerciseTime: null,    
     reset: function () {
         // Set initial State
 
@@ -861,6 +882,8 @@ var scriptSix = {
             $("#resetButton").show();
             $("#shareButton").show();
 
+            // Video exercise button on lessons only
+            $("#jumpExercise").hide(); 
 
         });
     }
