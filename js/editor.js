@@ -256,7 +256,11 @@ var helloEditor = {
 
         });
 
-        $("#pageNav").find('a').attr('target', "_blank");
+        $("#pageNav")
+            .find('a').attr('target', "_blank")
+            .click(function() {
+                helloEditor.popcorn.pause();
+            });
 
         /* Color Picker */
 
