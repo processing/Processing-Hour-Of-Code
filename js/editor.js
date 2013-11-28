@@ -134,7 +134,12 @@ var helloEditor = {
                 helloEditor.popcorn.currentTime(0);
                 helloEditor.popcorn.play(newTime);
             }
-        });        
+        });     
+
+        $("#jumpLesson").click(function () {
+            helloEditor.lessonIndex += 1;
+            helloEditor.loadLesson(helloEditor.lessonIndex, null);
+        });            
 
         $("#restartButton").click(function () {
             scripts[helloEditor.lessonIndex].reset();

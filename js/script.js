@@ -27,6 +27,7 @@ var scriptOne = {
         
         // Video exercise button on lessons only
         $("#jumpExercise").hide();
+        $("#jumpLesson").show();
 
     },
     init: function (time) {
@@ -103,7 +104,8 @@ var scriptTwo = {
         $("#runButton").hide();
 
         // Video exercise button on lessons only
-        $("#jumpExercise").show();        
+        $("#jumpExercise").show();
+        $("#jumpLesson").hide();        
     },
     init: function (time) {
 
@@ -321,7 +323,8 @@ var scriptThree = {
         $("#runButton").show();
         
         // Video exercise button on lessons only
-        $("#jumpExercise").show();        
+        $("#jumpExercise").show(); 
+        $("#jumpLesson").hide();       
     },
     init: function (time) {
 
@@ -503,7 +506,8 @@ var scriptFour = {
         $("#runButton").show();
         
         // Video exercise button on lessons only
-        $("#jumpExercise").show();        
+        $("#jumpExercise").show();
+        $("#jumpLesson").hide();        
 
 
      },
@@ -678,7 +682,8 @@ var scriptFive = {
         $("#runButton").show();
 
         // Video exercise button on lessons only
-        $("#jumpExercise").show();        
+        $("#jumpExercise").show();
+        $("#jumpLesson").hide();        
 
     },
     init: function (time) {
@@ -853,6 +858,7 @@ var scriptSix = {
 
             // Video exercise button on lessons only
             $("#jumpExercise").hide(); 
+            $("#jumpLesson").hide();
 
         });
     }
