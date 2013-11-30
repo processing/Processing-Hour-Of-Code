@@ -33,7 +33,7 @@ body {
 }
 
 body.splash {
-	background: #efefef;
+	background: #FcFcFf;
 }
 
 a {
@@ -118,7 +118,7 @@ footer#splashFooter {
 	position: relative;
 	width: 100%;
 	min-width: 1024px;
-	background: #F9F9FC;
+	background: #FcFcFf;
 	z-index: 1000;		
 	height: 48px;
 	box-shadow: 0px 4px 1px rgba(0,0,0,.25);		
@@ -274,7 +274,7 @@ div#editorCanvasBox {
 	margin-top: -200px;
 	margin-left: -250px;
 
-	background: #fff;
+	background: #FcFcFf;
 
 }
 
@@ -318,7 +318,7 @@ div#videoCommands {
 	position:absolute;
 	width: 100%;
 	height: 100%;
-	background: white;
+	background: #FcFcFf;
 	z-index: 1000;
 	padding: 12px;
 	display: none;	
@@ -344,7 +344,7 @@ div#editorContainer {
 
 	width: 424px;
 	height: 362px;	
-	background: #F9F9FC;
+	background: #FcFcFf;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 }
 
@@ -431,7 +431,7 @@ div#displayInfo {
 	height: 400px;
 	z-index: 2000;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
-	background: #fff;
+	background: #FcFcFf;
 	padding: 12px;
 }
 
@@ -491,7 +491,6 @@ div#displayEditor {
 
 .hintPreview {
 	width: 512px;
-	background: white;
 	overflow: auto;
 	margin: 12px;
 	padding: 12px;
@@ -518,7 +517,7 @@ div#page {
 	border-bottom: 8px solid #E67AC2;
 
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
-	background: #fff;
+	background: #FcFcFf;
 	padding: 12px;
 	line-height: 1.5em;
 	font-size: 1.1em;
