@@ -26,10 +26,6 @@
 	font-style: normal;
 }
 
-html, body {
-	width: 100%;
-	height: 100%;
-}
 
 body {
 	background: #5F86A3;
@@ -121,6 +117,7 @@ footer#splashFooter {
 #headerContainer {
 	position: relative;
 	width: 100%;
+	min-width: 1024px;
 	background: #F9F9FC;
 	z-index: 1000;		
 	height: 48px;
@@ -204,14 +201,16 @@ a.active span, a.active:hover span {
 /* Editor Page */
 
 #interface {
-	position: fixed;
-	top: 48px;
+	position: absolute;
+	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
+	width: 100%;
+	height: 100%;
+
+	overflow: scroll;
 
 	min-width: 1024px;
-	min-height: 640px;
+	min-height: 540px;
 }
 
 #interface.videoMode div#canvasContainer, #interface.videoMode div#editorContainer {

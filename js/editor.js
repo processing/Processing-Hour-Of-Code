@@ -340,7 +340,7 @@ var helloEditor = {
     refreshUI: function () {
 
         var viewportWidth = $("#interface").width(),
-            viewportHeight = $("#interface").height(),
+            viewportHeight = $("#interface").height() - $("#header").height(),
             minVideoWidth = 320,
             maxVideoWidth = viewportWidth / 2,
             videoWidth,
@@ -362,7 +362,7 @@ var helloEditor = {
                     height: videoHeight,
                     left: "50%",
                     top: "50%",
-                    marginTop: videoHeight / -2,
+                    marginTop: videoHeight / -2 + ($("#header").height()/2),
                     marginLeft: videoWidth / -2
                 }).show();
 
@@ -388,25 +388,26 @@ var helloEditor = {
                     width: videoWidth,
                     height: videoHeight,
                     left: 8,
-                    top: 8,
+                    top: 8 + $("#header").height(),
                     marginTop: 0,
                     marginLeft: 0
-                });
+                })
+                .show();
 
             $("#editorContainer")
                 .css({
                     width: videoWidth,
                     height: viewportHeight - videoHeight - 32,
-                    top: videoHeight + 20,
+                    top: videoHeight + 20 + $("#header").height(),
                     left: 8
                 });
 
             $("#canvasContainer")
                 .height(viewportHeight)
-                .width(viewportHeight)
+                .width(viewportWidth - videoWidth)
                 .css({
-                    top: 0,
-                    left: videoWidth
+                    top: 0 + $("#header").height(),
+                    left: videoWidth,
                 });
 
         }
