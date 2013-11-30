@@ -14,9 +14,7 @@ var helloSplash = {
         // Center Splash
         $("#splashHeader").css({
             "top": "50%",
-            "left": "50%",
             "margin-top": $("#splashTitle").height() / -2,
-            "margin-left": $("#splashHeader").width() / -2
         });
 
         // Animate In

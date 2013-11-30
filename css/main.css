@@ -73,7 +73,9 @@ div#splashDiv {
 
 header#splashHeader {
 	position: absolute;
-	width: 700px;
+	left: 0;
+	width: 100%;
+	min-width: 700px;
 	text-align: center;
 	z-index: 1000;
 	pointer-events:none;
@@ -108,6 +110,7 @@ footer#splashFooter {
 	bottom: 2em;
 	text-align: center;
 	width: 100%;
+	min-width: 700px;
 	color: #666;
 	display: none;
 }
