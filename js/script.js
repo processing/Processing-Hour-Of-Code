@@ -853,6 +853,10 @@ var scriptSix = {
 
         helloEditor.setMode(VIDEO_MODE);
         $("#hint").hide();
+
+        // Video exercise button on lessons only
+        $("#jumpExercise").hide(); 
+        $("#jumpLesson").hide();        
     
     },
 
@@ -870,6 +874,7 @@ var scriptSix = {
         helloEditor.popcorn.on("ended", function () {
 
             helloEditor.setMode(EDITOR_MODE);
+            helloEditor.refreshUI();
 
             $("#editorContainer").fadeIn("fast");
             $("#canvasContainer").fadeIn("fast");
@@ -879,10 +884,6 @@ var scriptSix = {
             $("#nextButton").show();
             $("#resetButton").show();
             $("#shareButton").show();
-
-            // Video exercise button on lessons only
-            $("#jumpExercise").hide(); 
-            $("#jumpLesson").hide();
 
         });
 
