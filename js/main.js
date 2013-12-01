@@ -10,6 +10,11 @@
 
 
 $(document).ready(function () {
+
+	if (!Modernizr.canvas || !Modernizr.video || !Modernizr.csstransforms3d) {
+		window.location("/unsupported/");
+	}
+
     if (window.hasOwnProperty("helloSplash")) { helloSplash.init(); }
     if (window.hasOwnProperty("helloDisplay")) { helloDisplay.init(); }
     if (window.hasOwnProperty("helloEditor")) { helloEditor.init(); }
