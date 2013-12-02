@@ -473,7 +473,7 @@ canvas#displayCanvas {
 	outline: 0px;
 	width: 500px;
 	height: 400px;
-	background: white;
+	background: #FcFcFf;
 	z-index: 1000;
 }
 
@@ -484,13 +484,8 @@ div#displayEditor {
 
 /* Hints Preview */
 
-#hintsPreview {
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-}
-
 .hintPreview {
+	background: #FcFcFf;
 	width: 512px;
 	overflow: auto;
 	margin: 12px;
