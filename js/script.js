@@ -860,6 +860,7 @@ var scriptSix = {
 
         helloEditor.setMode(VIDEO_MODE);
         $("#hint").hide();
+        $("#shareButton").hide();
 
         // Video exercise button on lessons only
         $("#jumpExercise").hide(); 
@@ -885,8 +886,35 @@ var scriptSix = {
             console.log("CODE API END");
         });
 
-        // End Event        
+        // Popcorn Events
+        // 
+        helloEditor.popcorn
+            // Show stuff below
+            .code({
+                start: "00:24",
+                onStart: function () {
+                    helloEditor.setMode(EDITOR_MODE);
+                    $("#editorContainer").fadeIn("fast");
+                    $("#canvasContainer").fadeIn("fast");                    
+                }
+            })
+            // Show share button
+            .code({
+                start: "00:30",
+                onStart: function () {
+                    $("#shareButton").show();
+                }
+            })
+            // Back to video
+            .code({
+                start: "00:35",
+                onStart: function () {
+                    helloEditor.setMode(VIDEO_MODE);
+                }
+            });
 
+        // End Event
+        
         helloEditor.popcorn.on("ended", function () {
 
             helloEditor.setMode(EDITOR_MODE);
