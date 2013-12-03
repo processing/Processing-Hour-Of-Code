@@ -11,6 +11,7 @@
 /*global document */
 /*global Processing */
 /*global location */
+/*global Modernizr */
 
 /**
  * Some Constants
@@ -89,10 +90,15 @@ var helloEditor = {
             chooseText: "Select",
             cancelText: "Cancel",
             show: function () {
-                //console.log("SHOWING");
+                if (Modernizr.touch) {
+                    document.activeElement.blur();
+                    window.focus();
+                }
             },
             hide: function () {
-                helloEditor.editor.focus();
+                if (!Modernizr.touch) {
+                    helloEditor.editor.focus();
+                }
             },
             change: function () {
                 var color = $("#colorPicker").spectrum("get").toRgb(),
@@ -113,15 +119,18 @@ var helloEditor = {
     setupUI: function () {
 
         /* Video UI */
-
-        $("#videoContainer").hover(function () {
-            $("#videoCommandsContainer").fadeIn();
-        }, function () {
-            $("#videoCommandsContainer").fadeOut();
-        });
+        if (Modernizr.touch) {
+            $("#videoCommandsContainer").show();
+        } else {
+            $("#videoContainer").hover(function () {
+                $("#videoCommandsContainer").fadeIn();
+            }, function () {
+                $("#videoCommandsContainer").fadeOut();
+            });
+        }
 
         $("#jumpBack").click(function () {
-            var newTime = (helloEditor.popcorn.currentTime() < 10 ) ? 0 : helloEditor.popcorn.currentTime() - 10;
+            var newTime = (helloEditor.popcorn.currentTime() < 10) ? 0 : helloEditor.popcorn.currentTime() - 10;
             helloEditor.popcorn.pause();
             scripts[helloEditor.lessonIndex].reset();
             helloEditor.popcorn.currentTime(0);
@@ -136,12 +145,12 @@ var helloEditor = {
                 helloEditor.popcorn.currentTime(0);
                 helloEditor.popcorn.play(newTime);
             }
-        });     
+        });
 
         $("#jumpLesson").click(function () {
             helloEditor.lessonIndex += 1;
             helloEditor.loadLesson(helloEditor.lessonIndex, null);
-        });            
+        });
 
         $("#restartButton").click(function () {
             scripts[helloEditor.lessonIndex].reset();
@@ -160,34 +169,45 @@ var helloEditor = {
 
         /* Editor UI */
 
-        $("#runButton").click(function () {
+        $("#runButton").click(function (event) {
             helloEditor.runCode();
-            helloEditor.editor.focus();
-        }).tooltip({container: 'body'});
+            if (!Modernizr.touch) {
+                helloEditor.editor.focus();
+            }
+        });
 
         $("#nextButton").click(function () {
             helloEditor.lessonIndex += 1;
             helloEditor.loadLesson(helloEditor.lessonIndex, null);
-        }).tooltip({container: 'body'});
+        });
 
         $("#shareButton").click(function () {
             helloEditor.createGist();
-        }).tooltip({container: 'body'});
+        });
 
         $("#resetExample").click(function () {
-            helloEditor.loadExample(helloEditor.lessonIndex+1);
+            helloEditor.loadExample(helloEditor.lessonIndex + 1);
             return false;
-        }).tooltip({container: 'body', placement: 'right'});
+        });
 
         $("#resetLastLesson").click(function () {
             helloEditor.setCode(scripts[helloEditor.lessonIndex - 1].runCache);
             return false;
-        }).tooltip({container: 'body', placement: 'right'});
+        });
 
         $("#resetLastGood").click(function () {
             helloEditor.setCode(scripts[helloEditor.lessonIndex].runCache);
             return false;
-        }).tooltip({container: 'body', placement: 'right'});
+        });
+
+        if (!Modernizr.touch) {
+            $("#runButton").tooltip({container: 'body'});
+            $("#nextButton").tooltip({container: 'body'});
+            $("#shareButton").tooltip({container: 'body'});
+            $("#resetExample").tooltip({container: 'body', placement: 'right'});
+            $("#resetLastLesson").tooltip({container: 'body', placement: 'right'});
+            $("#resetLastGood").tooltip({container: 'body', placement: 'right'});
+        }
 
         /* Error UI */
 
@@ -240,11 +260,10 @@ var helloEditor = {
 
             window.open(tweetURL);
 
-        });        
+        });
 
         $("#modalHourButton").click(function () {
-            var intentURL = "http://code.org/api/hour/finish",
-                displayURL = $("#shareModal").attr('data-url');
+            var intentURL = "http://code.org/api/hour/finish";
             window.open(intentURL);
 
         });
@@ -260,7 +279,11 @@ var helloEditor = {
                 effect: 'slide',
                 direction: 'right'
             });
-        }).tooltip({placement: 'bottom'});
+        });
+
+        if (!Modernizr.touch) {
+            $("#toggleRulers").tooltip({placement: 'bottom'});
+        }
 
         /* Nav Menu */
 
@@ -279,13 +302,13 @@ var helloEditor = {
 
         $("#pageNav")
             .find('a').attr('target', "_blank")
-            .click(function() {
+            .click(function () {
                 helloEditor.popcorn.pause();
             });
 
         /* Color Picker */
 
-        $(helloEditor.editor).on("click", function () {
+        $(helloEditor.editor).on("click", function (event) {
 
             $("#colorPicker").spectrum("hide");
 
@@ -294,7 +317,8 @@ var helloEditor = {
                 token = editor.session.getTokenAt(position.row, position.column),
                 line,
                 range,
-                pixelPosition;
+                pixelPosition,
+                currentValue;
 
             if (token && /\bcolor\b/.test(token.type)) {
 
@@ -302,7 +326,7 @@ var helloEditor = {
                 range = new Range(position.row, token.start, position.row, line.length);
                 pixelPosition = editor.renderer.$cursorLayer.getPixelPosition(position, true);
 
-                var currentValue = /\w*\s?\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)/.exec(line);
+                currentValue = /\w*\s?\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)/.exec(line);
 
                 if (currentValue) {
                     $("#colorPicker").spectrum('set', 'rgb(' + currentValue[1] + ', ' + currentValue[2] + ', ' + currentValue[3] + ')');
@@ -329,9 +353,11 @@ var helloEditor = {
     /**
      * Change display mode
      */
-    setMode: function(newMode) {
+    setMode: function (newMode) {
         this.displayMode = newMode;
-        if (!helloEditor.popcorn.paused()) helloEditor.refreshUI();
+        if (!helloEditor.popcorn.paused()) {
+            helloEditor.refreshUI();
+        }
     },
     /**
      * Try to keep a sane layout at any browser size.
@@ -344,9 +370,9 @@ var helloEditor = {
             minVideoWidth = 320,
             maxVideoWidth = viewportWidth / 2,
             videoWidth,
-            videoHeight;   
+            videoHeight;
 
-        if (this.displayMode == VIDEO_MODE) {
+        if (this.displayMode === VIDEO_MODE) {
 
             $("#interface").addClass("videoMode");
             //console.log("Video Mode");
@@ -362,7 +388,7 @@ var helloEditor = {
                     height: videoHeight,
                     left: "50%",
                     top: "50%",
-                    marginTop: videoHeight / -2 + ($("#header").height()/2),
+                    marginTop: videoHeight / -2 + ($("#header").height() / 2),
                     marginLeft: videoWidth / -2
                 }).show();
 
@@ -406,7 +432,7 @@ var helloEditor = {
                 .height(viewportHeight)
                 .width(viewportWidth - videoWidth)
                 .css({
-                    top: 0 + $("#header").height(),
+                    top: $("#header").height(),
                     left: videoWidth,
                 });
 
@@ -441,7 +467,7 @@ var helloEditor = {
     },
     /**
      * Load the indicated lesson example
-     */   
+     */
     loadExample: function (index) {
 
         var data = $("script[data-index='" + index + "']").text();
@@ -451,14 +477,14 @@ var helloEditor = {
     },
     /**
      * Load the indicated lesson snippet
-     */   
+     */
     loadSnippet: function (id) {
 
-        var data = $("#"+id).text();
+        var data = $("#" + id).text();
         data = $.trim(data);
         helloEditor.editor.setValue(data, -1);
 
-    },    
+    },
     /**
      * Load the indicated lesson
      */
@@ -558,13 +584,8 @@ var helloEditor = {
      */
     createGist: function () {
 
-        var processingSource = this.editor.getValue();
-
-        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
-            processingSource = "size(500,400);\n\n" + processingSource;
-        }
-
-        var postURL = "https://api.github.com/gists",
+        var processingSource = this.editor.getValue(),
+            postURL = "https://api.github.com/gists",
             postData = {
                 "description": "Save for Processing Hour of Code",
                 "public": true,
@@ -574,6 +595,10 @@ var helloEditor = {
                     }
                 }
             };
+
+        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
+            processingSource = "size(500,400);\n\n" + processingSource;
+        }
 
         $.post(postURL, JSON.stringify(postData))
             .done(function (data) {
