@@ -41,6 +41,13 @@ var scriptOne = {
         this.reset();
         helloEditor.refreshUI();
 
+        // Code.org API 
+        
+        var imagePath = "http://code.org/api/hour/begin_processing.png";
+        $('<img src="'+ imagePath +'">').load( function () {
+            console.log("CODE API BEGIN");
+        });
+
         // Popcorn Events
 
         helloEditor.popcorn
@@ -870,6 +877,15 @@ var scriptSix = {
 
         this.reset();
         helloEditor.refreshUI();
+
+        // Code.org API
+        
+        var imagePath = "http://code.org/api/hour/finish_processing.png";
+        $('<img src="'+ imagePath +'">').load( function () {
+            console.log("CODE API END");
+        });
+
+        // End Event        
 
         helloEditor.popcorn.on("ended", function () {
 
