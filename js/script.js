@@ -28,6 +28,7 @@ var scriptOne = {
         // Video exercise button on lessons only
         $("#jumpExercise").hide();
         $("#jumpLesson").show();
+        $("#jumpEnd").hide();
 
     },
     init: function (time) {
@@ -117,7 +118,8 @@ var scriptTwo = {
 
         // Video exercise button on lessons only
         $("#jumpExercise").show();
-        $("#jumpLesson").hide();        
+        $("#jumpLesson").hide();  
+        $("#jumpEnd").hide();      
     },
     init: function (time) {
 
@@ -341,7 +343,8 @@ var scriptThree = {
         
         // Video exercise button on lessons only
         $("#jumpExercise").show(); 
-        $("#jumpLesson").hide();       
+        $("#jumpLesson").hide(); 
+        $("#jumpEnd").hide();      
     },
     init: function (time) {
 
@@ -529,7 +532,8 @@ var scriptFour = {
         
         // Video exercise button on lessons only
         $("#jumpExercise").show();
-        $("#jumpLesson").hide();        
+        $("#jumpLesson").hide(); 
+        $("#jumpEnd").hide();       
 
 
      },
@@ -710,7 +714,8 @@ var scriptFive = {
 
         // Video exercise button on lessons only
         $("#jumpExercise").show();
-        $("#jumpLesson").hide();        
+        $("#jumpLesson").hide();
+        $("#jumpEnd").hide();        
 
     },
     init: function (time) {
@@ -854,7 +859,7 @@ var scriptFive = {
 var scriptSix = {
     vimeoURL: "https://vimeo.com/80275178",
     runCache: null,
-    exerciseTime: null,    
+    exerciseTime: "1:18",    
     reset: function () {
         // Set initial State
 
@@ -864,7 +869,8 @@ var scriptSix = {
 
         // Video exercise button on lessons only
         $("#jumpExercise").hide(); 
-        $("#jumpLesson").hide();        
+        $("#jumpLesson").hide();     
+        $("#jumpEnd").show();    
     
     },
 

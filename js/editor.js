@@ -147,6 +147,16 @@ var helloEditor = {
             }
         });
 
+        $("#jumpEnd").click(function () {
+            var newTime = scripts[helloEditor.lessonIndex].exerciseTime;
+            if (newTime) {
+                helloEditor.popcorn.pause();
+                scripts[helloEditor.lessonIndex].reset();
+                helloEditor.popcorn.currentTime(0);
+                helloEditor.popcorn.play(newTime);
+            }
+        });        
+
         $("#jumpLesson").click(function () {
             helloEditor.lessonIndex += 1;
             helloEditor.loadLesson(helloEditor.lessonIndex, null);
