@@ -934,6 +934,7 @@ var scriptSix = {
 
             $("#resetButton").show();
             $("#shareButton").show();
+            $("#runButton").show();
 
         });
 
