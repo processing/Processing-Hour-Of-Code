@@ -866,6 +866,7 @@ var scriptSix = {
         helloEditor.setMode(VIDEO_MODE);
         $("#hint").hide();
         $("#shareButton").hide();
+        $("#nextButton").hide();
 
         // Video exercise button on lessons only
         $("#jumpExercise").hide(); 
@@ -931,7 +932,6 @@ var scriptSix = {
 
             helloEditor.showHint(6);
 
-            $("#nextButton").show();
             $("#resetButton").show();
             $("#shareButton").show();
 
