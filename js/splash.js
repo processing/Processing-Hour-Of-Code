@@ -13,8 +13,14 @@ var helloSplash = {
 
         // Center Splash
         $("#splashHeader").css({
-            "top": "50%",
+            "display": "none",
             "margin-top": $("#splashTitle").height() / -2,
+        });
+
+        $("#splashNav").css({
+            "display": "none",
+            "margin-top":  118,
+            "margin-left":  $("#splashNav").width() / -2
         });
 
         // Animate In
