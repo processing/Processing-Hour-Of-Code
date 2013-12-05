@@ -13,20 +13,18 @@ var helloSplash = {
 
         // Center Splash
         $("#splashHeader").css({
-            "display": "none",
             "margin-top": $("#splashTitle").height() / -2,
         });
 
         $("#splashNav").css({
-            "display": "none",
             "margin-top":  118,
             "margin-left":  $("#splashNav").width() / -2
         });
 
         // Animate In
 
-        $("#splashTitle").delay(1400).fadeIn(1200);
-        $("#splashButton").delay(2600).fadeIn("slow");
+        $("#splashTitle").hide().delay(1400).fadeIn(1200);
+        $("#splashButton").hide().delay(2600).fadeIn("slow");
 
         // Show Footer
 
