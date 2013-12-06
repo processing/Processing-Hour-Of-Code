@@ -101,7 +101,7 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/79984989",
     runCache: null,
-    exerciseTime: "9:01",
+    exerciseTime: "9:01.5",
     reset: function () {
         // Set initial State
 
