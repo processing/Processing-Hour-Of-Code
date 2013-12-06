@@ -697,7 +697,7 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/79984987",
     runCache: null,
-    exerciseTime: "5:35",    
+    exerciseTime: "5:34",    
 
     reset: function () {
         // Set initial State
