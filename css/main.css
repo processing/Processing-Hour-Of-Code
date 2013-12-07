@@ -217,7 +217,7 @@ a.active span, a.active:hover span {
 	height: 100%;
 
 	min-width: 1024px;
-	min-height: 540px;
+	min-height: 492px;
 }
 
 #interface.videoMode div#canvasContainer, #interface.videoMode div#editorContainer {

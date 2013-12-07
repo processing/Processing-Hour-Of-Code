@@ -375,8 +375,8 @@ var helloEditor = {
      */
     refreshUI: function () {
 
-        var viewportWidth = $("#interface").width(),
-            viewportHeight = $("#interface").height() - $("#header").height(),
+        var viewportWidth = $("#interface").innerWidth(),
+            viewportHeight = $("#interface").innerHeight() - $("#header").height(),
             minVideoWidth = 320,
             maxVideoWidth = viewportWidth / 2,
             videoWidth,
