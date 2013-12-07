@@ -438,6 +438,8 @@ var helloEditor = {
                     left: 8
                 });
 
+            $("#editor").height( $("#editorContainer").height() - $("#editorCommands").height() - 8  );
+
             $("#canvasContainer")
                 .height(viewportHeight)
                 .width(viewportWidth - videoWidth)
