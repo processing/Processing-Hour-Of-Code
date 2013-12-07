@@ -77,7 +77,7 @@ var scriptOne = {
             })    
             // Back to full screen video
             .code({
-                start: "00:34",
+                start: "00:33.61",
                 onStart: function () {
                     helloEditor.setMode(VIDEO_MODE);
                 }
@@ -101,7 +101,7 @@ var scriptOne = {
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/79984989",
     runCache: null,
-    exerciseTime: "9:01",
+    exerciseTime: "9:01.5",
     reset: function () {
         // Set initial State
 
@@ -697,7 +697,7 @@ var scriptFour = {
 var scriptFive = {
     vimeoURL: "https://vimeo.com/79984987",
     runCache: null,
-    exerciseTime: "5:35",    
+    exerciseTime: "5:34",    
 
     reset: function () {
         // Set initial State
