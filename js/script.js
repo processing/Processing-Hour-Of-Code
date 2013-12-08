@@ -16,6 +16,7 @@ var scriptOne = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
+        helloEditor.confirmExit = false;
 
         $("#hint").hide();
 
@@ -106,6 +107,7 @@ var scriptTwo = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
+        helloEditor.confirmExit = false;
 
         $("#hint").hide();
         $("#toggleRulers").hide();
@@ -330,6 +332,7 @@ var scriptThree = {
         // Set initial State
 
         helloEditor.setMode(EDITOR_MODE);
+        helloEditor.confirmExit = false;
 
         $("#hint").hide();
         $("#editorContainer").show();
@@ -521,6 +524,7 @@ var scriptFour = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
+        helloEditor.confirmExit = false;
 
         $("#hint").hide();
 
@@ -703,6 +707,7 @@ var scriptFive = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
+        helloEditor.confirmExit = false;
 
         $("#hint").hide();
 
@@ -864,6 +869,8 @@ var scriptSix = {
         // Set initial State
 
         helloEditor.setMode(VIDEO_MODE);
+        helloEditor.confirmExit = false;
+
         $("#hint").hide();
         $("#shareButton").hide();
         $("#nextButton").hide();
@@ -927,6 +934,8 @@ var scriptSix = {
             helloEditor.setMode(EDITOR_MODE);
             helloEditor.refreshUI();
 
+            helloEditor.confirmExit = true;
+
             $("#editorContainer").fadeIn("fast");
             $("#canvasContainer").fadeIn("fast");
 
@@ -935,7 +944,6 @@ var scriptSix = {
             $("#resetButton").show();
             $("#shareButton").show();
             $("#runButton").show();
-
         });
 
         helloEditor.popcorn.on("play", function () {

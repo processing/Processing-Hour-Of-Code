@@ -29,6 +29,7 @@ var helloEditor = {
     processingInstance: null,
     displayMode: VIDEO_MODE,
     lessonIndex: 0,
+    confirmExit: false,
     /**
      * Initialize Ace editor and UI elements
      */
@@ -80,6 +81,15 @@ var helloEditor = {
         $(window).resize(function () {
             helloEditor.refreshUI();
         });
+
+        // Unload Callback
+
+        $(window).bind('beforeunload', function(){
+            if (helloEditor.confirmExit) {
+                return "Be sure you've copied your code to a safe place or used the share button.";
+            }
+        });
+
 
         // Color Picker
 
@@ -192,6 +202,7 @@ var helloEditor = {
         });
 
         $("#shareButton").click(function () {
+            helloEditor.confirmExit = false;
             helloEditor.createGist();
         });
 
@@ -621,6 +632,7 @@ var helloEditor = {
 
                 $('#shareModalLink').html($("<a/>").attr({'href': displayURL, target: "_blank"}).html(displayURL));
                 $('#shareModal').modal('show');
+
             });
 
     },
