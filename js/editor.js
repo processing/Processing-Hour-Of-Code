@@ -185,9 +185,9 @@ var helloEditor = {
             }
         });
 
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip({container: 'body'})
-        })
+        if (!Modernizr.touch) {
+          $('[data-toggle="tooltip"]').tooltip({container: 'body'});
+        }
 
         /* Editor UI */
 
