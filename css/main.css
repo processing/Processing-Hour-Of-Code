@@ -510,6 +510,20 @@ body.about .aboutButton,  body.guide .guideButton{
 	border-bottom: 3px solid #E67AC2;
 }
 
+body.about dl {
+	float: left;
+	min-width: 33%;
+	margin-top: 0;
+}
+
+body.about dl a {
+	color: #E67AC2;
+}
+
+body.about h3 {
+	clear: both;
+}
+
 div#page {
 
 	margin: 24px auto;
