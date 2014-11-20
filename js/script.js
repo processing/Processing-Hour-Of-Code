@@ -328,6 +328,8 @@ var scriptThree = {
         helloEditor.confirmExit = false;
 
         $("#hint").hide();
+        $("#toggleRulers").show();
+
         $("#editorContainer").show();
         $("#canvasContainer").show();
         helloEditor.hideRulers();
@@ -516,6 +518,7 @@ var scriptFour = {
         helloEditor.confirmExit = false;
 
         $("#hint").hide();
+        $("#toggleRulers").show();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -695,6 +698,7 @@ var scriptFive = {
         helloEditor.confirmExit = false;
 
         $("#hint").hide();
+        $("#toggleRulers").show();
 
         $("#resetButton").hide();
         $("#shareButton").hide();
@@ -853,6 +857,8 @@ var scriptSix = {
         helloEditor.confirmExit = false;
 
         $("#hint").hide();
+        $("#toggleRulers").show();
+        
         $("#shareButton").hide();
         $("#nextButton").hide();
 
