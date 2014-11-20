@@ -204,6 +204,7 @@ var helloEditor = {
         $("#shareButton").click(function () {
             helloEditor.confirmExit = false;
             helloEditor.createGist();
+            //helloEditor.addToGallery();
         });
 
         $("#resetExample").click(function () {
@@ -620,14 +621,69 @@ var helloEditor = {
         $('#errorModalText').html(outputMessage);
         $('#errorModal').modal('show');
     },
+
     /**
-     * Creates a new Gist with editor contents and shows share modal
+     * Adds to the gallery hosted on Parse
+     */
+    addToGallery: function() {
+
+        // Post to Parse
+
+        Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
+
+        var processingSource = this.editor.getValue();
+        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
+            processingSource = "size(500,400);\n\n" + processingSource;
+        }
+
+       var processingCanvas = document.getElementById("editorCanvas"),
+            uri = processingCanvas.toDataURL('image/jpeg'),
+            base64 = uri.slice(uri.indexOf(',') + 1),
+            processingImage = new Parse.File("sketch.jpg", { base64: base64 });               
+
+        var galleryData = {
+            source: processingSource
+        };
+
+        processingImage.save().then(function() {
+
+            var gallery = new Parse.Object("Gallery");
+            gallery.set("source", processingSource);
+            gallery.set("image", processingImage);
+            gallery.save(galleryData).then(function(object) {
+                var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#@" + object.id;                
+                helloEditor.showShare(displayURL);          
+            });
+
+
+        }, function(error) {
+            console.log("Error saving gallery image");
+        });        
+
+        // var GalleryObject = Parse.Object.extend("Gallery");
+        // var gallery = new GalleryObject();
+        // gallery.save(galleryData).then(function(object) {
+        //     var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#@" + object.id;                
+        //     helloEditor.showShare(displayURL);          
+        // });
+
+
+    },
+
+    /**
+     * Creates a new Gist with editor contents and shows the share modal
      */
     createGist: function () {
 
         var processingSource = this.editor.getValue(),
             postURL = "https://api.github.com/gists",
-            postData = {
+            postData;
+
+        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
+            processingSource = "size(500,400);\n\n" + processingSource;
+        }
+
+        postData = {
                 "description": "Save for Processing Hour of Code",
                 "public": true,
                 "files": {
@@ -635,23 +691,21 @@ var helloEditor = {
                         "content": processingSource
                     }
                 }
-            };
-
-        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
-            processingSource = "size(500,400);\n\n" + processingSource;
-        }
+            };        
 
         $.post(postURL, JSON.stringify(postData))
             .done(function (data) {
-                var gistID = data.id,
-                    displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#" + gistID;
-
-                $('#shareModal').attr('data-url', displayURL);
-
-                $('#shareModalLink').html($("<a/>").attr({'href': displayURL, target: "_blank"}).html(displayURL));
-                $('#shareModal').modal('show');
-
+                var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#" + data.id;                
+                helloEditor.showShare(displayURL);
             });
+
+    },
+    showShare: function(displayURL) {
+
+        $('#shareModal').attr('data-url', displayURL);
+
+        $('#shareModalLink').html($("<a/>").attr({'href': displayURL, target: "_blank"}).html(displayURL));
+        $('#shareModal').modal('show');
 
     },
     showRulers: function () {
