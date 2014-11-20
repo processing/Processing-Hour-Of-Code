@@ -1,0 +1,570 @@
+1
+00:00:00,474 --> 00:00:03,099
+Hi. How are you? My name is Dan. Welcome.
+
+2
+00:00:03,099 --> 00:00:05,618
+If you're here, which hopefully you are
+because you're watching this video,
+
+3
+00:00:05,618 --> 00:00:07,150
+you're here to learn Programming.
+
+4
+00:00:07,150 --> 00:00:09,745
+Hopefully you're here to learn Programming
+for the very first time.
+
+5
+00:00:09,745 --> 00:00:11,216
+This is going to be a tutorial.
+
+6
+00:00:11,216 --> 00:00:13,946
+It's designed for you to take about 
+an hour to complete.
+
+7
+00:00:13,946 --> 00:00:15,607
+There's going to be lots of stuff
+happening in it.
+
+8
+00:00:15,607 --> 00:00:18,139
+I'm going to talk. Hopefully not too much.
+
+9
+00:00:18,139 --> 00:00:19,399
+I'm going to draw pictures and diagrams
+
+10
+00:00:19,399 --> 00:00:20,997
+over here on this whiteboard.
+
+11
+00:00:20,997 --> 00:00:22,309
+Sometimes this video is going to
+
+12
+00:00:22,309 --> 00:00:23,594
+get a lot smaller and there's going to be
+
+13
+00:00:23,594 --> 00:00:25,195
+text below me, and things drawn
+
+14
+00:00:25,195 --> 00:00:27,073
+to the left of me over here.
+
+15
+00:00:27,073 --> 00:00:28,293
+We're going to look at Programming
+
+16
+00:00:28,293 --> 00:00:30,261
+in the context of the visual arts.
+
+17
+00:00:30,261 --> 00:00:32,137
+What does it mean to write software
+
+18
+00:00:32,137 --> 00:00:33,451
+to do the things that you often do
+
+19
+00:00:33,451 --> 00:00:35,403
+with your hands, with paper, with pencil
+
+20
+00:00:35,403 --> 00:00:37,345
+with paint? Could you use a computer to
+
+21
+00:00:37,345 --> 00:00:39,603
+create drawings? To create animations?
+
+22
+00:00:39,603 --> 00:00:42,109
+To create images? This is what we're
+going to look at.
+
+23
+00:00:42,109 --> 00:00:43,684
+So, before we get started with the actual
+
+24
+00:00:43,684 --> 00:00:45,597
+nuts and bolts of learning to code,
+
+25
+00:00:45,597 --> 00:00:47,472
+let's take a moment to look at a range of
+
+26
+00:00:47,472 --> 00:00:49,327
+projects -- things that have been made in
+
+27
+00:00:49,327 --> 00:00:50,919
+recent years with computer programming
+
+28
+00:00:50,919 --> 00:00:52,641
+for the visual arts.
+
+29
+00:00:52,641 --> 00:00:55,061
+This is Strata #3 by Quayola.
+
+30
+00:00:55,061 --> 00:00:57,068
+Quayola is an artist working in London.
+
+31
+00:00:57,068 --> 00:00:59,037
+This animation combines computer generated
+
+32
+00:00:59,037 --> 00:01:01,314
+images with video of a cathedral in Rome
+
+33
+00:01:01,314 --> 00:01:03,475
+to create a fantastic new reality.
+
+34
+00:01:03,475 --> 00:01:07,009
+In his own words, he is investigating 
+improbable relationships between
+
+35
+00:01:07,009 --> 00:01:11,840
+contemporary digital aesthetics, and 
+icons of classical art and architecture.
+
+36
+00:01:11,840 --> 00:01:14,331
+This is Oasis by Yunsil Heo.
+
+37
+00:01:14,331 --> 00:01:16,394
+She is a media artist working in Seoul.
+
+38
+00:01:16,394 --> 00:01:18,548
+Oasis is an interactive installation.
+
+39
+00:01:18,548 --> 00:01:21,111
+By moving around the sand,
+small pools are created
+
+40
+00:01:21,111 --> 00:01:24,206
+where new software creatures are born and live.
+
+41
+00:01:24,206 --> 00:01:27,112
+This is Replica by Alex Vessels and Jeff Howard.
+
+42
+00:01:27,112 --> 00:01:29,396
+Alex and Jeff are interactive artists and designers
+
+43
+00:01:29,396 --> 00:01:31,461
+working in New York. Replica is
+
+44
+00:01:31,461 --> 00:01:33,178
+an interactive dance performance that
+
+45
+00:01:33,178 --> 00:01:35,717
+uses live image processing to explore how
+
+46
+00:01:35,717 --> 00:01:37,817
+the awareness of time and captured images
+
+47
+00:01:37,817 --> 00:01:39,669
+affect self-perception.
+
+48
+00:01:39,669 --> 00:01:43,055
+It was projected onto a 120 foot
+video wall in New York.
+
+49
+00:01:44,402 --> 00:01:46,365
+This is unnamed soundsculpture by
+
+50
+00:01:46,537 --> 00:01:49,225
+Daniel Franke and Cedric Kiefer.
+
+51
+00:01:49,225 --> 00:01:52,133
+Daniel and Cedric are media artists
+working in Berlin.
+
+52
+00:01:52,133 --> 00:01:54,040
+This animation is a moving sculpture
+
+53
+00:01:54,040 --> 00:02:00,362
+created from the recorded motion data
+of a live dancer.
+
+54
+00:02:00,362 --> 00:02:02,986
+These animation and installation projects
+
+55
+00:02:02,986 --> 00:02:04,585
+are just one way that visual artists
+
+56
+00:02:04,585 --> 00:02:05,845
+are working with code.
+
+57
+00:02:05,845 --> 00:02:07,282
+More traditional design areas such as
+
+58
+00:02:07,282 --> 00:02:09,033
+map design, brand identity, and logo design
+
+59
+00:02:09,033 --> 00:02:10,828
+and illustration are transformed through
+
+60
+00:02:10,828 --> 00:02:12,984
+designers writing their own code.
+
+61
+00:02:12,984 --> 00:02:14,637
+This is the Dencity Map by
+
+62
+00:02:14,637 --> 00:02:16,296
+Fathom Information Design.
+
+63
+00:02:16,296 --> 00:02:18,161
+Fathom is a design studio in Boston.
+
+64
+00:02:18,161 --> 00:02:19,949
+This map uses circles of different sizes
+
+65
+00:02:19,949 --> 00:02:21,109
+and colors to visualize
+
+66
+00:02:21,109 --> 00:02:23,508
+population density in a unique way.
+
+67
+00:02:23,508 --> 00:02:25,517
+Larger, darker circles show areas
+
+68
+00:02:25,517 --> 00:02:27,745
+with fewer people. While smaller brighter
+
+69
+00:02:27,745 --> 00:02:29,970
+circles highlight crowded cities.
+
+70
+00:02:29,970 --> 00:02:31,661
+By glancing at this map we quickly get
+
+71
+00:02:31,661 --> 00:02:33,629
+a sense of how some cities and countries
+
+72
+00:02:33,629 --> 00:02:36,982
+are more densely populated than others.
+
+73
+00:02:36,982 --> 00:02:39,555
+This is the logo for the MIT Media Lab
+
+74
+00:02:39,555 --> 00:02:41,335
+created by the Green Eyl.
+
+75
+00:02:41,335 --> 00:02:43,933
+The Green Eyl is a studio based in Berlin.
+
+76
+00:02:43,933 --> 00:02:45,433
+The identity system can be used
+
+77
+00:02:45,433 --> 00:02:47,247
+in different ways and in many contexts
+
+78
+00:02:47,247 --> 00:02:49,323
+including the lab's website, business cards,
+
+79
+00:02:49,323 --> 00:02:51,229
+and in any other media.
+
+80
+00:02:51,229 --> 00:02:52,855
+It forms a beautiful identity that is
+
+81
+00:02:52,855 --> 00:02:54,264
+synonymous with the Media Lab's
+
+82
+00:02:54,264 --> 00:02:55,542
+approach to the ever changing
+
+83
+00:02:55,542 --> 00:02:57,012
+nature of technology.
+
+84
+00:02:57,920 --> 00:02:59,180
+In addition to the kind of work
+
+85
+00:02:59,180 --> 00:03:00,639
+we're looking at already,
+
+86
+00:03:00,639 --> 00:03:02,076
+there's sculpture, fashion design,
+
+87
+00:03:02,076 --> 00:03:03,551
+architecture, products, jewelry,
+
+88
+00:03:03,551 --> 00:03:05,712
+pottery, much much more.
+
+89
+00:03:05,712 --> 00:03:07,025
+What does writing software have
+
+90
+00:03:07,025 --> 00:03:08,807
+to do with these physical objects?
+
+91
+00:03:08,807 --> 00:03:09,837
+Everything.
+
+92
+00:03:09,837 --> 00:03:12,398
+It's an area of exciting and emerging possibility.
+
+93
+00:03:12,398 --> 00:03:13,871
+New technologies make it possible
+
+94
+00:03:13,871 --> 00:03:15,591
+to print objects. For example, it is now
+
+95
+00:03:15,591 --> 00:03:17,501
+possible to design a ring in software
+
+96
+00:03:17,501 --> 00:03:19,755
+and print it in plastic or metal.
+
+97
+00:03:19,755 --> 00:03:21,888
+Let's look at three final examples before starting
+
+98
+00:03:21,888 --> 00:03:23,743
+to learn how to code.
+
+99
+00:03:23,743 --> 00:03:25,478
+This is the D.dress software by
+
+100
+00:03:25,478 --> 00:03:27,386
+Mary Huang. Mary is an entrepreneur
+
+101
+00:03:27,386 --> 00:03:29,514
+and designer working in New York.
+
+102
+00:03:29,514 --> 00:03:31,078
+D.dress is a program written by Mary
+
+103
+00:03:31,078 --> 00:03:33,432
+that allows a user to sketch a dress and
+
+104
+00:03:33,432 --> 00:03:35,591
+it automates the pattern creation.
+
+105
+00:03:35,591 --> 00:03:37,840
+It re-imagines the classic little black dress
+
+106
+00:03:37,840 --> 00:03:39,536
+by changing the relationships between
+
+107
+00:03:39,536 --> 00:03:42,295
+manufacturing, the designer, and the wearer.
+
+108
+00:03:42,886 --> 00:03:44,384
+The Textile Room was created by the
+
+109
+00:03:44,384 --> 00:03:46,389
+architecture studio P-A-T-T-E-R-N-S,
+
+110
+00:03:46,389 --> 00:03:48,058
+founded by Georgina Huljich
+
+111
+00:03:48,058 --> 00:03:50,783
+and Marcelo Spina. Georgina and Marcelo
+
+112
+00:03:50,783 --> 00:03:52,981
+are architects working in Los Angeles,
+
+113
+00:03:52,981 --> 00:03:54,669
+The Textile Room is an experimental
+
+114
+00:03:54,669 --> 00:03:57,014
+media space where carbon fiber textiles
+
+115
+00:03:57,014 --> 00:03:59,502
+are augmented with a video colleague.
+
+116
+00:04:00,378 --> 00:04:02,563
+This is Cell Cycle by Nervous System,
+
+117
+00:04:02,563 --> 00:04:04,472
+a design studio founded by Jessica Rosenkrantz
+
+118
+00:04:04,472 --> 00:04:06,692
+and Jesse Louis-Rosenberg.
+
+119
+00:04:06,692 --> 00:04:08,350
+Jessica and Jesse are entrepreneurs
+
+120
+00:04:08,350 --> 00:04:10,421
+and designers living in Boston.
+
+121
+00:04:10,421 --> 00:04:11,952
+Cell Cycle is a program that allows
+
+122
+00:04:11,952 --> 00:04:13,765
+people to design their own jewelry
+
+123
+00:04:13,765 --> 00:04:15,956
+and then 3D print it.
+
+124
+00:04:15,956 --> 00:04:17,873
+All of these projects we just looked at
+
+125
+00:04:17,873 --> 00:04:19,661
+are created with a software environment
+
+126
+00:04:19,661 --> 00:04:21,786
+called Processing. Processing is a way
+
+127
+00:04:21,786 --> 00:04:23,598
+to program invented by artists
+
+128
+00:04:23,598 --> 00:04:24,723
+and designers to be used by
+
+129
+00:04:24,723 --> 00:04:26,098
+artists and designers.
+
+130
+00:04:26,098 --> 00:04:27,760
+Processing is for making visual media.
+
+131
+00:04:27,760 --> 00:04:29,363
+It focuses on writing programs to draw
+
+132
+00:04:29,363 --> 00:04:30,996
+create animation, and to build
+
+133
+00:04:30,996 --> 00:04:33,313
+interactive experiences like video games.
+
+134
+00:04:33,313 --> 00:04:35,002
+Hopefully you're going to have a good
+
+135
+00:04:35,002 --> 00:04:36,693
+experience learning to program
+
+136
+00:04:36,693 --> 00:04:38,286
+and I'm already having fun just talking to you
+
+137
+00:04:38,286 --> 00:04:39,569
+even though I don't really know
+
+138
+00:04:39,569 --> 00:04:41,228
+who you are yet cause you're not here.
+
+139
+00:04:41,228 --> 00:04:42,638
+There's a camera there. Okay.
+
+140
+00:04:42,638 --> 00:04:43,891
+I'll talk to you later. Bye.

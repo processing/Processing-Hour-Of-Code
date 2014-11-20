@@ -1,0 +1,271 @@
+1
+00:00:00,898 --> 00:00:02,871
+Hi so we finished the tutorial.
+
+2
+00:00:02,871 --> 00:00:04,716
+You did it! You learned the program
+
+3
+00:00:04,716 --> 00:00:06,557
+in about an hour.
+
+4
+00:00:06,557 --> 00:00:07,437
+That's pretty amazing
+
+5
+00:00:07,437 --> 00:00:08,249
+if you think about it.
+
+6
+00:00:08,249 --> 00:00:09,337
+What you have done is
+
+7
+00:00:09,337 --> 00:00:10,727
+you've written lines of code.
+
+8
+00:00:10,727 --> 00:00:11,948
+You've run that code.
+
+9
+00:00:11,948 --> 00:00:13,068
+You've made things animate.
+
+10
+00:00:13,068 --> 00:00:14,599
+You've made different colors.
+
+11
+00:00:14,599 --> 00:00:15,547
+You've taken those first
+
+12
+00:00:15,547 --> 00:00:16,516
+steps in creating your own
+
+13
+00:00:16,516 --> 00:00:18,418
+software. And now there's
+
+14
+00:00:18,418 --> 00:00:19,776
+just this huge world of
+
+15
+00:00:19,776 --> 00:00:20,780
+possibilities bursting
+
+16
+00:00:20,780 --> 00:00:21,780
+open to you.
+
+17
+00:00:21,780 --> 00:00:22,780
+When I leave you here
+
+18
+00:00:22,780 --> 00:00:23,590
+you're going to have
+
+19
+00:00:23,590 --> 00:00:24,500
+a couple of choices.
+
+20
+00:00:24,500 --> 00:00:25,499
+You can go back to
+
+21
+00:00:25,499 --> 00:00:26,249
+the code editor and
+
+22
+00:00:26,249 --> 00:00:27,060
+work on what you were
+
+23
+00:00:27,060 --> 00:00:28,059
+making more. And there
+
+24
+00:00:28,059 --> 00:00:28,968
+will actually be a new option
+
+25
+00:00:28,968 --> 00:00:30,870
+there. To share what you
+
+26
+00:00:30,870 --> 00:00:31,998
+made. You can share
+
+27
+00:00:31,998 --> 00:00:33,218
+what you made with friends
+
+28
+00:00:33,218 --> 00:00:34,281
+and save it to come back
+
+29
+00:00:34,281 --> 00:00:35,623
+and work on it more later.
+
+30
+00:00:35,623 --> 00:00:36,761
+I'm also going to leave you
+
+31
+00:00:36,761 --> 00:00:37,765
+with a bunch of hopefully
+
+32
+00:00:37,765 --> 00:00:39,795
+helpful links, places you
+
+33
+00:00:39,795 --> 00:00:41,270
+can go to to learn more about
+
+34
+00:00:41,270 --> 00:00:43,390
+programming with processing.
+
+35
+00:00:43,390 --> 00:00:44,806
+Other resources to take this
+
+36
+00:00:44,806 --> 00:00:46,278
+further. One of the things
+
+37
+00:00:46,278 --> 00:00:47,153
+you probably would most
+
+38
+00:00:47,153 --> 00:00:48,367
+want to do is go to the processing
+
+39
+00:00:48,367 --> 00:00:50,268
+website and actually download
+
+40
+00:00:50,268 --> 00:00:51,391
+processing which is an
+
+41
+00:00:51,391 --> 00:00:52,214
+application that you run
+
+42
+00:00:52,214 --> 00:00:53,729
+on your computer. It has many
+
+43
+00:00:53,729 --> 00:00:55,028
+more features. Many more
+
+44
+00:00:55,028 --> 00:00:55,835
+examples that you can
+
+45
+00:00:55,835 --> 00:00:57,183
+take a look at. So there's also
+
+46
+00:00:57,183 --> 00:00:58,498
+a link below to the processing
+
+47
+00:00:58,498 --> 00:00:59,563
+forum where you can go and
+
+48
+00:00:59,563 --> 00:01:01,439
+post and ask questions. I'll be
+
+49
+00:01:01,439 --> 00:01:02,718
+checking the forum and trying
+
+50
+00:01:02,718 --> 00:01:03,508
+to answer your questions
+
+51
+00:01:03,508 --> 00:01:04,395
+as well as many other
+
+52
+00:01:04,395 --> 00:01:05,400
+members of the processing
+
+53
+00:01:05,400 --> 00:01:06,630
+community. So hopefully we'll
+
+54
+00:01:06,630 --> 00:01:07,661
+get to make more of these
+
+55
+00:01:07,661 --> 00:01:08,442
+tutorials in the future. So
+
+56
+00:01:08,442 --> 00:01:09,412
+I'd love to hear your feedback
+
+57
+00:01:09,412 --> 00:01:10,382
+about what was helpful and
+
+58
+00:01:10,382 --> 00:01:12,408
+what was not helpful. And
+
+59
+00:01:12,408 --> 00:01:13,442
+I look forward to seeing
+
+60
+00:01:13,442 --> 00:01:14,347
+all the things that people
+
+61
+00:01:14,347 --> 00:01:16,178
+make. And more people
+
+62
+00:01:16,178 --> 00:01:17,300
+using processing and asking
+
+63
+00:01:17,300 --> 00:01:18,427
+questions and inventing stuff
+
+64
+00:01:18,427 --> 00:01:20,082
+with code. So thanks again
+
+65
+00:01:20,082 --> 00:01:20,976
+for being here. I had a
+
+66
+00:01:20,976 --> 00:01:21,918
+great time. I hope you did
+
+67
+00:01:21,918 --> 00:01:23,633
+too. And I'll talk to you soon.
+
+68
+00:01:23,633 --> 00:01:25,851
+Okay. Bye-bye.

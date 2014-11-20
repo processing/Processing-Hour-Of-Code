@@ -1,0 +1,835 @@
+1
+00:00:01,352 --> 00:00:02,490
+Welcome back!
+
+2
+00:00:02,490 --> 00:00:04,401
+We've got one more tutorial here
+
+3
+00:00:04,401 --> 00:00:06,909
+in this hour of learning to program with Processing.
+
+4
+00:00:06,909 --> 00:00:08,620
+So, one of the things you might have noticed
+
+5
+00:00:08,620 --> 00:00:11,471
+is that our programs, while they animate now,
+
+6
+00:00:11,471 --> 00:00:13,640
+they kind of just do the same thing always.
+
+7
+00:00:13,640 --> 00:00:16,243
+But what if, for example, you wanted your program
+
+8
+00:00:16,243 --> 00:00:18,118
+to sometimes draw circles on the screen
+
+9
+00:00:18,118 --> 00:00:20,409
+and other times draw squares on the screen.
+
+10
+00:00:20,409 --> 00:00:23,211
+Computer programs can take a different path.
+
+11
+00:00:23,211 --> 00:00:24,897
+They can sometimes do one thing
+
+12
+00:00:24,897 --> 00:00:26,754
+and they can sometimes do other things.
+
+13
+00:00:26,754 --> 00:00:29,519
+And the way that they do this is by answering a question.
+
+14
+00:00:29,519 --> 00:00:31,243
+If the answer to this question is "yes"
+
+15
+00:00:31,243 --> 00:00:32,460
+draw a square.
+
+16
+00:00:32,460 --> 00:00:34,071
+If the answer to this question is "no"
+
+17
+00:00:34,071 --> 00:00:35,542
+draw a circle.
+
+18
+00:00:35,542 --> 00:00:37,387
+A yes or no question is often sometimes
+
+19
+00:00:37,387 --> 00:00:40,684
+referred to as a true or false question. Right?
+
+20
+00:00:40,684 --> 00:00:42,972
+We can think of like taking a true or false test.
+
+21
+00:00:42,972 --> 00:00:45,257
+And if the answer is true, draw the square.
+
+22
+00:00:45,257 --> 00:00:47,457
+If the answer is false, draw the circle.
+
+23
+00:00:47,457 --> 00:00:49,711
+So we need to figure out how to make our programs
+
+24
+00:00:49,711 --> 00:00:51,060
+take different paths.
+
+25
+00:00:51,060 --> 00:00:52,642
+What might be a question that we would ask,
+
+26
+00:00:52,642 --> 00:00:55,300
+for example? We could say, "Hey! Is the mouse pressed?"
+
+27
+00:00:55,300 --> 00:00:58,444
+If the mouse is pressed, do draw that square.
+
+28
+00:00:58,444 --> 00:01:00,703
+If the mouse is not pressed, draw that circle.
+
+29
+00:01:00,703 --> 00:01:02,399
+And this can get more and more advanced
+
+30
+00:01:02,399 --> 00:01:03,685
+in more advanced programs.
+
+31
+00:01:03,685 --> 00:01:04,873
+And you can think of a game --
+
+32
+00:01:04,873 --> 00:01:06,746
+If these two objects run into each other,
+
+33
+00:01:06,746 --> 00:01:08,784
+make a nice little pretty heart appear.
+
+34
+00:01:08,784 --> 00:01:10,948
+I don't know. That might be a nice thing.
+
+35
+00:01:10,948 --> 00:01:11,734
+Whatever.
+
+36
+00:01:11,734 --> 00:01:13,018
+The point is, we can have,
+
+37
+00:01:13,018 --> 00:01:14,720
+based on certain things that happen,
+
+38
+00:01:14,720 --> 00:01:16,094
+based on questions that have the answer
+
+39
+00:01:16,094 --> 00:01:17,313
+yes or no,
+
+40
+00:01:17,313 --> 00:01:18,376
+other things can happen.
+
+41
+00:01:18,376 --> 00:01:20,221
+And our program can take a different path.
+
+42
+00:01:20,221 --> 00:01:21,846
+So let's look at how we do this.
+
+43
+00:01:21,846 --> 00:01:23,785
+By the way, this is known as
+
+44
+00:01:23,785 --> 00:01:28,827
+a conditional statement.
+
+45
+00:01:28,827 --> 00:01:29,861
+This is one of the fundamental
+
+46
+00:01:29,861 --> 00:01:31,368
+building blocks of programming.
+
+47
+00:01:31,368 --> 00:01:33,147
+Writing conditional statements.
+
+48
+00:01:33,147 --> 00:01:35,126
+And the syntax of what we're actually going to write,
+
+49
+00:01:35,126 --> 00:01:36,794
+it looks like this.
+
+50
+00:01:36,794 --> 00:01:41,461
+If, parentheses, some empty space,
+
+51
+00:01:41,461 --> 00:01:43,286
+another curly bracket,
+
+52
+00:01:43,286 --> 00:01:45,666
+and another closed curly bracket.
+
+53
+00:01:45,666 --> 00:01:47,549
+If, we could ask a question.
+
+54
+00:01:47,549 --> 00:01:48,954
+Is it raining outside?
+
+55
+00:01:48,954 --> 00:01:51,177
+If the answer is yes, execute some code
+
+56
+00:01:51,177 --> 00:01:52,549
+that goes here.
+
+57
+00:01:52,549 --> 00:01:54,020
+What is the code that might go here?
+
+58
+00:01:54,020 --> 00:01:55,727
+Carry your umbrella.
+
+59
+00:01:55,727 --> 00:01:57,324
+If the answer to that question is no,
+
+60
+00:01:57,324 --> 00:01:58,636
+we're not going to do this code.
+
+61
+00:01:58,636 --> 00:01:59,863
+We're going to go and find out
+
+62
+00:01:59,863 --> 00:02:00,991
+whatever code is there --
+
+63
+00:02:00,991 --> 00:02:02,465
+drawing rectangles, ellipses.
+
+64
+00:02:02,465 --> 00:02:03,808
+So, this is how we can have a program
+
+65
+00:02:03,808 --> 00:02:05,633
+answer a yes or no question.
+
+66
+00:02:05,633 --> 00:02:08,411
+A true or false question.
+
+67
+00:02:08,411 --> 00:02:10,012
+And what, one of the things we're going to look at,
+
+68
+00:02:10,012 --> 00:02:11,608
+as our example of this
+
+69
+00:02:11,608 --> 00:02:15,648
+is saying, if mousePressed.
+
+70
+00:02:15,648 --> 00:02:18,838
+mousePressed is a word that Processing knows.
+
+71
+00:02:18,838 --> 00:02:20,353
+It's like asking the question
+
+72
+00:02:20,353 --> 00:02:21,920
+"Is the mouse pressed?"
+
+73
+00:02:21,920 --> 00:02:25,367
+This word is true when the mouse is pressed
+
+74
+00:02:25,367 --> 00:02:27,923
+and it is false when the mouse is not pressed.
+
+75
+00:02:27,923 --> 00:02:31,361
+So, if I were to write
+
+76
+00:02:31,361 --> 00:02:33,325
+rectangle here
+
+77
+00:02:33,325 --> 00:02:34,764
+then only when the mouse is pressed
+
+78
+00:02:34,764 --> 00:02:36,485
+would I draw a rectangle.
+
+79
+00:02:36,485 --> 00:02:38,366
+Okay. Let's take a look at that below.
+
+80
+00:02:38,366 --> 00:02:40,102
+So I'm going to make a basic example below
+
+81
+00:02:40,102 --> 00:02:41,850
+where there is a circle on the screen.
+
+82
+00:02:41,850 --> 00:02:42,853
+It's not doing much but there's a
+
+83
+00:02:42,853 --> 00:02:44,510
+circle on the screen.
+
+84
+00:02:44,510 --> 00:02:46,543
+Now, I'm going to add to this -- the code below
+
+85
+00:02:46,543 --> 00:02:49,282
+this "if" statement, this conditional statement
+
+86
+00:02:49,282 --> 00:02:50,970
+with a rectangle drawn when
+
+87
+00:02:50,970 --> 00:02:52,757
+the mouse is pressed.
+
+88
+00:02:52,757 --> 00:02:54,605
+Now I'm going to run that code.
+
+89
+00:02:54,605 --> 00:02:56,736
+Go and click in the window over here.
+
+90
+00:02:56,736 --> 00:02:58,207
+What happens when you click?
+
+91
+00:02:58,207 --> 00:03:00,029
+Only when you hold that mouse down
+
+92
+00:03:00,029 --> 00:03:01,569
+the rectangle appears.
+
+93
+00:03:01,569 --> 00:03:03,011
+As soon as you let the mouse up,
+
+94
+00:03:03,011 --> 00:03:04,643
+the rectangle disappears.
+
+95
+00:03:04,643 --> 00:03:06,912
+This is the power of conditional statements.
+
+96
+00:03:06,912 --> 00:03:08,569
+You allow your program to sometimes
+
+97
+00:03:08,569 --> 00:03:09,881
+do something one way and
+
+98
+00:03:09,881 --> 00:03:12,047
+sometimes do something another way.
+
+99
+00:03:12,047 --> 00:03:13,957
+Okay. There's a bit more.
+
+100
+00:03:13,957 --> 00:03:15,471
+We're almost done but there's a bit more
+
+101
+00:03:15,471 --> 00:03:17,285
+to that than this.
+
+102
+00:03:17,285 --> 00:03:20,142
+What if we want the program to draw nothing?
+
+103
+00:03:20,142 --> 00:03:22,303
+But draw a rectangle when the mouse is pressed.
+
+104
+00:03:22,303 --> 00:03:24,828
+Otherwise draw an ellipse.
+
+105
+00:03:24,828 --> 00:03:26,255
+The word we use in computer programming
+
+106
+00:03:26,255 --> 00:03:29,163
+is not otherwise, it's else.
+
+107
+00:03:29,163 --> 00:03:31,387
+Else, and another curly bracket,
+
+108
+00:03:31,387 --> 00:03:33,146
+and another curly bracket
+
+109
+00:03:33,146 --> 00:03:37,266
+and we can put ellipse here.
+
+110
+00:03:37,266 --> 00:03:38,672
+So when the answer to the question
+
+111
+00:03:38,672 --> 00:03:40,991
+mousePressed is yes,
+
+112
+00:03:40,991 --> 00:03:43,218
+or true,
+
+113
+00:03:43,218 --> 00:03:44,781
+we're going to execute this code.
+
+114
+00:03:44,781 --> 00:03:46,315
+When the answer is no,
+
+115
+00:03:46,315 --> 00:03:49,286
+or false,
+
+116
+00:03:49,286 --> 00:03:51,354
+we're going to execute this code.
+
+117
+00:03:51,354 --> 00:03:54,060
+This allows us to have multiple permutations
+
+118
+00:03:54,060 --> 00:03:55,751
+of different scenarios.
+
+119
+00:03:55,751 --> 00:03:57,061
+And we can add as many of these
+
+120
+00:03:57,061 --> 00:03:58,480
+if statements to our program.
+
+121
+00:03:58,480 --> 00:04:00,455
+We can have a series of three or four of them.
+
+122
+00:04:00,455 --> 00:04:03,156
+Let's revise that example now and add an else.
+
+123
+00:04:03,156 --> 00:04:04,883
+So the ellipse is going to be drawn --
+
+124
+00:04:04,883 --> 00:04:06,475
+or the rectangle is going to be drawn
+
+125
+00:04:06,475 --> 00:04:08,514
+when the mouse is pressed, else,
+
+126
+00:04:08,514 --> 00:04:12,497
+otherwise an ellipse is going to be drawn.
+
+127
+00:04:12,497 --> 00:04:15,266
+So now try clicking in the window over there.
+
+128
+00:04:15,266 --> 00:04:17,627
+If you're clicking I see a rectangle, right?
+
+129
+00:04:17,627 --> 00:04:19,692
+If you let go I see an ellipse.
+
+130
+00:04:19,692 --> 00:04:20,628
+It's one or the other.
+
+131
+00:04:20,628 --> 00:04:21,788
+I've already forgotten.
+
+132
+00:04:21,788 --> 00:04:23,512
+But I think you get the idea.
+
+133
+00:04:23,512 --> 00:04:26,060
+So I'm going to load our painting program
+
+134
+00:04:26,060 --> 00:04:28,500
+that we finished with at the end of our
+
+135
+00:04:28,500 --> 00:04:31,476
+third video tutorial, below.
+
+136
+00:04:31,476 --> 00:04:33,237
+Now, if you paint in the window,
+
+137
+00:04:33,237 --> 00:04:34,427
+you can paint as long as you want.
+
+138
+00:04:34,427 --> 00:04:35,621
+Make all sorts of wonderful patterns
+
+139
+00:04:35,621 --> 00:04:36,713
+and draw your name,
+
+140
+00:04:36,713 --> 00:04:38,378
+and smiley faces and rainbows
+
+141
+00:04:38,378 --> 00:04:41,940
+whatever you want. It's never going to erase.
+
+142
+00:04:41,940 --> 00:04:43,664
+What if we said,
+
+143
+00:04:43,664 --> 00:04:47,380
+If the mouse is pressed, draw the background.
+
+144
+00:04:47,380 --> 00:04:49,256
+So only when you're holding down the mouse,
+
+145
+00:04:49,256 --> 00:04:50,416
+the background is drawn,
+
+146
+00:04:50,416 --> 00:04:52,302
+effectively erasing everything that you've painted.
+
+147
+00:04:52,302 --> 00:04:53,491
+We now have a program
+
+148
+00:04:53,491 --> 00:04:55,191
+that as you move the mouse in the window,
+
+149
+00:04:55,191 --> 00:04:57,413
+it draws.
+
+150
+00:04:57,413 --> 00:04:59,549
+When you click the mouse, it erases.
+
+151
+00:04:59,549 --> 00:05:01,108
+We could also do the opposite.
+
+152
+00:05:01,108 --> 00:05:02,866
+What if you only draw when you're
+
+153
+00:05:02,866 --> 00:05:04,073
+moving the mouse?
+
+154
+00:05:04,073 --> 00:05:05,021
+So you have to hold down the mouse,
+
+155
+00:05:05,021 --> 00:05:06,496
+draw, you could let go, move over here,
+
+156
+00:05:06,496 --> 00:05:07,691
+draw some more.
+
+157
+00:05:07,691 --> 00:05:09,351
+That might be something you choose
+
+158
+00:05:09,351 --> 00:05:11,527
+to try to implement as an exercise.
+
+159
+00:05:11,527 --> 00:05:14,342
+Okay. So this wraps up this last video tutorial
+
+160
+00:05:14,342 --> 00:05:15,824
+about learning to program with Processing.
+
+161
+00:05:15,824 --> 00:05:17,801
+We've done actually quite a bit of stuff.
+
+162
+00:05:17,801 --> 00:05:19,376
+We've learned about coordinate systems.
+
+163
+00:05:19,376 --> 00:05:21,354
+shapes. We've learned about color, gray-scale,
+
+164
+00:05:21,354 --> 00:05:23,670
+and RGB. We've learned about the flow of a program.
+
+165
+00:05:23,670 --> 00:05:24,982
+How it has a set-up and a draw
+
+166
+00:05:24,982 --> 00:05:26,625
+and loops over time and things can animate
+
+167
+00:05:26,625 --> 00:05:28,032
+and move with the mouse.
+
+168
+00:05:28,032 --> 00:05:29,705
+And now we've learned about how a program
+
+169
+00:05:29,705 --> 00:05:31,371
+can create different paths and do something
+
+170
+00:05:31,371 --> 00:05:33,309
+different based on whether the mouse
+
+171
+00:05:33,309 --> 00:05:34,686
+is clicked or not.
+
+172
+00:05:34,686 --> 00:05:36,131
+So this is a time where you can spend
+
+173
+00:05:36,131 --> 00:05:37,639
+a little moment to explore this idea of
+
+174
+00:05:37,639 --> 00:05:39,325
+the conditional statement.
+
+175
+00:05:39,325 --> 00:05:40,796
+If you go back to your painting program
+
+176
+00:05:40,796 --> 00:05:42,519
+you could try adding something where
+
+177
+00:05:42,519 --> 00:05:43,841
+it's painting one way when you're
+
+178
+00:05:43,841 --> 00:05:45,143
+holding down the mouse,
+
+179
+00:05:45,143 --> 00:05:46,145
+and painting a different way when you're
+
+180
+00:05:46,145 --> 00:05:47,612
+not holding down the mouse.
+
+181
+00:05:47,612 --> 00:05:48,870
+You could try clearing the background
+
+182
+00:05:48,870 --> 00:05:50,111
+in the conditional statement,
+
+183
+00:05:50,111 --> 00:05:51,993
+all sorts of possible things you could try.
+
+184
+00:05:51,993 --> 00:05:53,146
+So work with conditional statements
+
+185
+00:05:53,146 --> 00:05:54,926
+in this exercise.
+
+186
+00:05:54,926 --> 00:05:56,834
+I'm going to leave you with a simple
+
+187
+00:05:56,834 --> 00:05:57,959
+painting program that uses
+
+188
+00:05:57,959 --> 00:05:59,803
+a conditional, below.
+
+189
+00:05:59,803 --> 00:06:01,526
+But you can always revert back to your code
+
+190
+00:06:01,526 --> 00:06:02,717
+from the last time,
+
+191
+00:06:02,717 --> 00:06:03,713
+just as you always have.
+
+192
+00:06:03,713 --> 00:06:05,284
+So, take a little time to do this exercise,
+
+193
+00:06:05,284 --> 00:06:06,474
+when you're done, click next
+
+194
+00:06:06,474 --> 00:06:08,632
+and it will be one last wrap up video.
+
+195
+00:06:08,632 --> 00:06:10,659
+We'll kind of say goodbye, and I'll also
+
+196
+00:06:10,659 --> 00:06:12,416
+show you how you can share your code
+
+197
+00:06:12,416 --> 00:06:14,304
+and save it so that you can come back
+
+198
+00:06:14,304 --> 00:06:15,646
+and look at it again later,
+
+199
+00:06:15,646 --> 00:06:17,134
+as well as look for resources,
+
+200
+00:06:17,134 --> 00:06:18,228
+for how you might, hopefully
+
+201
+00:06:18,228 --> 00:06:20,088
+if you're excited and interested in this,
+
+202
+00:06:20,088 --> 00:06:21,835
+there's lots more to learn. Right?
+
+203
+00:06:21,835 --> 00:06:23,150
+This is just the beginning.
+
+204
+00:06:23,150 --> 00:06:24,526
+We've just scratched the surface.
+
+205
+00:06:24,526 --> 00:06:26,030
+And there's more resources online,
+
+206
+00:06:26,030 --> 00:06:27,601
+through books, and other websites
+
+207
+00:06:27,601 --> 00:06:29,321
+that will help you continue this process.
+
+208
+00:06:29,321 --> 00:06:30,636
+Okay? So, see you after you
+
+209
+00:06:30,636 --> 00:06:32,868
+complete this exercise.

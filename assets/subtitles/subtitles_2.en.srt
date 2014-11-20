@@ -1,0 +1,703 @@
+1
+00:00:00,939 --> 00:00:03,285
+﻿Alright, we're ready to get started.
+
+2
+00:00:03,285 --> 00:00:04,702
+This is a very exciting moment,
+
+3
+00:00:04,702 --> 00:00:08,799
+'cause we're actually going to look at writing lines of code and drawing stuff to the screen.
+
+4
+00:00:08,799 --> 00:00:10,799
+So, what does it mean to write a line of code, right?
+
+5
+00:00:10,799 --> 00:00:12,550
+A line of code is an instruction.
+
+6
+00:00:12,550 --> 00:00:14,612
+What is the instruction we're going to start with?
+
+7
+00:00:14,612 --> 00:00:17,647
+The instruction we're going to start with is "draw a rectangle."
+
+8
+00:00:18,017 --> 00:00:21,876
+So let's see, what is a rectangle? I think we all know what a rectangle is, hopefully.
+
+9
+00:00:21,876 --> 00:00:24,039
+A rectangle is something that looks like this.
+
+10
+00:00:25,978 --> 00:00:30,219
+So what does it mean, then, to have an instruction that says "draw a rectangle?"
+
+11
+00:00:30,219 --> 00:00:35,772
+Well an instruction is text, and that instruction is going to look like this "rect."
+
+12
+00:00:36,650 --> 00:00:38,999
+A function is essentially that command, that instruction.
+
+13
+00:00:38,999 --> 00:00:44,191
+It's the word we use, and the function of "rect" is to draw a rectangle in the window.
+
+14
+00:00:44,191 --> 00:00:47,634
+So now, we have this function named "rect," we have this rectangle,
+
+15
+00:00:47,634 --> 00:00:49,635
+but we can't just say "draw a rectangle,"
+
+16
+00:00:49,635 --> 00:00:50,915
+we've got to be more specific, right?
+
+17
+00:00:50,915 --> 00:00:54,276
+I can't just tell you to "walk."
+
+18
+00:00:54,276 --> 00:00:58,126
+I might want to tell you to walk left or walk right or walk fast or walk slow.
+
+19
+00:00:58,126 --> 00:01:04,525
+To make a rectangle with "rect," we've got to say how wide should the rectangle be,
+
+20
+00:01:04,525 --> 00:01:08,672
+how high, how tall should the rectangle be, and where should it be on the screen?
+
+21
+00:01:08,672 --> 00:01:11,212
+Let's actually start for a moment with where should it be on the screen.
+
+22
+00:01:11,555 --> 00:01:13,249
+First, what do I even mean by "screen?"
+
+23
+00:01:13,249 --> 00:01:16,279
+You've got this computer screen, I'm in your computer screen, right?
+
+24
+00:01:16,279 --> 00:01:17,931
+The screen is a rectangle.
+
+25
+00:01:17,931 --> 00:01:21,558
+We're going to be drawing into a smaller rectangle inside your computer screen;
+
+26
+00:01:21,558 --> 00:01:23,089
+we're going to call that a canvas.
+
+27
+00:01:23,401 --> 00:01:29,638
+So I'm gonna draw a nice big rectangle here, and this is going to be the canvas.
+
+28
+00:01:31,281 --> 00:01:33,754
+The canvas is a coordinate system, meaning we can say
+
+29
+00:01:33,754 --> 00:01:37,014
+"hey, this point is the point 12, 27,"
+
+30
+00:01:37,014 --> 00:01:40,676
+or this point is the point 3, 102, those numbers aren't right,
+
+31
+00:01:40,676 --> 00:01:46,532
+but we're going to assign places in this canvas by their x coordinate and their y coordinate.
+
+32
+00:01:47,032 --> 00:01:52,299
+This being the x axis, and this being the y axis, right?
+
+33
+00:01:52,299 --> 00:01:56,172
+OK this is 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+
+34
+00:01:56,172 --> 00:02:01,080
+so this would be at pixel number 9 the way that I drew this.
+
+35
+00:02:01,080 --> 00:02:02,609
+What do I mean by pixel?
+
+36
+00:02:02,609 --> 00:02:05,141
+We have these units of measurement in life, right?
+
+37
+00:02:05,141 --> 00:02:09,121
+In the world, we have inches and centimeters and miles and kilometers,
+
+38
+00:02:09,121 --> 00:02:12,346
+well on a computer screen, our unit of measurement is a pixel.
+
+39
+00:02:12,346 --> 00:02:16,348
+Each pixel is a little tiny dot that has a color on your screen.
+
+40
+00:02:16,348 --> 00:02:20,030
+This window has a width in pixels and a height in pixels, and in fact,
+
+41
+00:02:20,030 --> 00:02:24,517
+the ones that we are gonna work with in this tutorial are going to have
+
+42
+00:02:24,517 --> 00:02:29,701
+a width of 500 and a height of 400.
+
+43
+00:02:29,701 --> 00:02:33,838
+So if you think about it, if the width is 500 and this is the middle,
+
+44
+00:02:33,838 --> 00:02:37,562
+what would the middle pixel value be? 250.
+
+45
+00:02:37,562 --> 00:02:41,565
+I didn't really draw this terribly to scale, but if this were the middle,
+
+46
+00:02:41,565 --> 00:02:44,828
+what would the middle from 0-400 be? 200.
+
+47
+00:02:44,828 --> 00:02:50,050
+And in fact, we're going to need to plug these values into our rectangle function.
+
+48
+00:02:50,050 --> 00:02:53,210
+Now I need more space to write so I'm going to start writing rectangle down here again.
+
+49
+00:02:53,210 --> 00:02:56,178
+Rectangle, and now we're going to need parentheses.
+
+50
+00:02:56,178 --> 00:03:00,052
+Parentheses, and at the end, a semicolon.
+
+51
+00:03:00,052 --> 00:03:05,150
+Every line of code, every instruction that we write is going to end with a semicolon.
+
+52
+00:03:05,150 --> 00:03:07,370
+It's going to be the function name,
+
+53
+00:03:07,370 --> 00:03:12,039
+followed by parentheses with stuff in the middle that we'll see in a second, and a semicolon.
+
+54
+00:03:12,039 --> 00:03:15,192
+What goes in the middle? Well this is that stuff.
+
+55
+00:03:15,192 --> 00:03:17,018
+This is the parameters of the rectangle.
+
+56
+00:03:17,018 --> 00:03:21,148
+It's how wide is it, how high is it, and where is it x,y.
+
+57
+00:03:21,148 --> 00:03:25,125
+So by the way, the rectangle's coordinate is the top left of the rectangle.
+
+58
+00:03:25,125 --> 00:03:30,004
+It's x,y, which is at x = 250, y = 200.
+
+59
+00:03:30,004 --> 00:03:34,226
+250, 200.
+
+60
+00:03:34,226 --> 00:03:39,273
+So we are now adding these parameters to how we define a rectangle, with an x and a y,
+
+61
+00:03:39,273 --> 00:03:40,955
+and now let's give it a width.
+
+62
+00:03:40,955 --> 00:03:45,678
+Let's say the width of this rectangle is 150 and the height of this rectangle is 100.
+
+63
+00:03:45,678 --> 00:03:55,076
+So now we have an x, we have a y, and now we also have a width and we also have a height.
+
+64
+00:03:55,540 --> 00:03:57,237
+Whoa, big moment here!
+
+65
+00:03:57,237 --> 00:04:00,590
+This is a big moment in our computer programming lives
+
+66
+00:04:00,590 --> 00:04:05,750
+if you've never done computer programming before, this is your very first line of code.
+
+67
+00:04:05,750 --> 00:04:10,205
+We now have a function name, we have the arguments to that function,
+
+68
+00:04:10,205 --> 00:04:11,234
+where is that rectangle?
+
+69
+00:04:11,234 --> 00:04:14,967
+Where is its x, where is its y, what is its width, and what is its height?
+
+70
+00:04:14,967 --> 00:04:17,545
+As soon as we write this line of code and execute it,
+
+71
+00:04:17,545 --> 00:04:20,141
+we're going to see this rectangle on the screen.
+
+72
+00:04:20,141 --> 00:04:23,607
+OK, so now something really exciting is gonna happen, hopefully.
+
+73
+00:04:23,607 --> 00:04:27,189
+I'm gonna get much smaller, I'm suddenly in the corner of the window,
+
+74
+00:04:27,189 --> 00:04:29,064
+and below me, there's a code editor.
+
+75
+00:04:29,064 --> 00:04:32,083
+What's a code editor? A code editor is a place where you can type code.
+
+76
+00:04:32,083 --> 00:04:34,779
+It's just a text box; you can type and put stuff there.
+
+77
+00:04:34,779 --> 00:04:36,517
+What are you gonna put there? This.
+
+78
+00:04:36,517 --> 00:04:37,550
+This instruction.
+
+79
+00:04:37,550 --> 00:04:39,367
+You don't have to do the typing yet, you're gonna get your chance;
+
+80
+00:04:39,367 --> 00:04:42,113
+I'm actually gonna add that line of code for you there automatically.
+
+81
+00:04:42,113 --> 00:04:44,494
+Look, that line of code is there. Does it look the same?
+
+82
+00:04:44,494 --> 00:04:50,060
+rect (250, 200, 150, 100);
+
+83
+00:04:50,060 --> 00:04:51,399
+That's the line of code.
+
+84
+00:04:51,399 --> 00:04:55,893
+So now, where are we gonna see the results of that line of code? Right over here.
+
+85
+00:04:55,893 --> 00:04:58,068
+Right over here, that canvas is going to appear.
+
+86
+00:04:58,068 --> 00:04:59,836
+How big is that canvas going to be?
+
+87
+00:04:59,836 --> 00:05:04,087
+That canvas is going to be 500 pixels wide and 400 pixels high.
+
+88
+00:05:04,087 --> 00:05:07,207
+Notice, by the way, that there's nothing in the canvas right now,
+
+89
+00:05:07,207 --> 00:05:09,995
+but I'm going to add some rulers above and below.
+
+90
+00:05:09,995 --> 00:05:12,949
+Those rulers are going to show you where the pixels are,
+
+91
+00:05:12,949 --> 00:05:16,624
+so as you're trying to figure out where to draw stuff, those rulers will be helpful hints for you.
+
+92
+00:05:16,624 --> 00:05:19,577
+You can always toggle the rulers off with the toggle rulers button.
+
+93
+00:05:19,577 --> 00:05:22,053
+See? I toggled them off. See? I toggled them on.
+
+94
+00:05:22,053 --> 00:05:23,247
+Boy this is fun!
+
+95
+00:05:23,247 --> 00:05:25,758
+OK, now, uh, whoa, what do we gotta do?
+
+96
+00:05:25,758 --> 00:05:27,188
+OK, that code below? That rectangle?
+
+97
+00:05:27,188 --> 00:05:29,786
+It's time for us to run that code. I'm going to run it for you.
+
+98
+00:05:29,786 --> 00:05:33,856
+Do you see the rectangle there? That's the instruction, now you've got the rectangle.
+
+99
+00:05:33,856 --> 00:05:36,299
+We ran our first computer program; it's very exciting,
+
+100
+00:05:36,299 --> 00:05:39,235
+and now, now it's time for you to make a change.
+
+101
+00:05:39,235 --> 00:05:41,658
+To change the code and run your first computer program.
+
+102
+00:05:41,658 --> 00:05:45,250
+So try doing something like, just make the rectangle a little bit taller.
+
+103
+00:05:45,250 --> 00:05:48,769
+Instead of a height of 100, what if you give it a height of 200?
+
+104
+00:05:48,769 --> 00:05:51,477
+Change the number from 100 to 200.
+
+105
+00:05:51,477 --> 00:05:54,207
+Did you change that number?
+
+106
+00:05:54,611 --> 00:05:57,799
+Now look, I'm gonna add a button called "run this code,"
+
+107
+00:05:58,096 --> 00:06:02,363
+that button, if you press it, will execute the code that you've written.
+
+108
+00:06:02,363 --> 00:06:07,095
+Press that button. Do you see now that the rectangle is a little bit bigger?
+
+109
+00:06:07,343 --> 00:06:08,675
+Try making one more change.
+
+110
+00:06:08,675 --> 00:06:11,019
+Maybe move the rectangle to the left or right and run your code again.
+
+111
+00:06:15,948 --> 00:06:17,855
+You got it! Looks pretty good to me.
+
+112
+00:06:18,262 --> 00:06:21,890
+OK great, you know, you can always pause the video if you want more time to experiment.
+
+113
+00:06:21,890 --> 00:06:25,703
+So just pause the video, experiment, and hit play, and I'll keep talking.
+
+114
+00:06:25,703 --> 00:06:28,150
+You could also just pause the video if you wanted to stop listening to me talk;
+
+115
+00:06:28,150 --> 00:06:29,614
+that's quite OK with me.
+
+116
+00:06:29,614 --> 00:06:32,321
+OK, so this is really the fundamentals we've got here.
+
+117
+00:06:32,321 --> 00:06:35,247
+What I'm going to be asking you to do is make up your own design.
+
+118
+00:06:35,247 --> 00:06:37,100
+You can have more than one rectangle, right?
+
+119
+00:06:37,100 --> 00:06:39,258
+Below, I'm going to add 2 more rectangles.
+
+120
+00:06:39,258 --> 00:06:40,886
+Now there's 3 rectangles on the screen.
+
+121
+00:06:40,886 --> 00:06:44,858
+OK? So you can start to add them, put them in different places, but you know what?
+
+122
+00:06:44,858 --> 00:06:48,494
+You're probably going to feel quite limited to what kind of designs you can make
+
+123
+00:06:48,494 --> 00:06:50,778
+if all you could ever do is draw a rectangle,
+
+124
+00:06:50,778 --> 00:06:54,751
+so let's add one more shape to our set of shapes that we can draw.
+
+125
+00:06:54,751 --> 00:06:58,322
+The nice thing is we're just writing a new function, a new command,
+
+126
+00:06:58,322 --> 00:07:00,323
+and it's exactly the same thing as rectangle;
+
+127
+00:07:00,323 --> 00:07:03,239
+the only difference is we write the word ellipse,
+
+128
+00:07:04,087 --> 00:07:09,176
+and now we give the ellipse an x, the ellipse a y, the ellipse a width, and the ellipse a height.
+
+129
+00:07:09,176 --> 00:07:12,112
+With an ellipse, or at least a circle, when we think of a circle,
+
+130
+00:07:12,112 --> 00:07:14,812
+we think of a circle as having a diameter.
+
+131
+00:07:14,812 --> 00:07:20,965
+A diameter is the distance from one side of the circle to the other through the center.
+
+132
+00:07:21,714 --> 00:07:22,874
+So that's what a circle is.
+
+133
+00:07:22,874 --> 00:07:27,102
+But an ellipse can be something that's like a squashed circle that's very short,
+
+134
+00:07:27,102 --> 00:07:32,081
+or maybe very tall and thin, like this is an ellipse, or this is an ellipse.
+
+135
+00:07:32,081 --> 00:07:36,234
+And in these cases, we have a different height and a different width. Right?
+
+136
+00:07:36,584 --> 00:07:39,876
+The width and height, if they're equal, it's a circle, if they're different, it's an ellipse.
+
+137
+00:07:40,470 --> 00:07:44,785
+If you ever make these values equal, like if I say 200, 200,
+
+138
+00:07:44,785 --> 00:07:50,214
+and if I put this at the same location, 250, 200, we're going to get a circle.
+
+139
+00:07:50,522 --> 00:07:52,651
+Now where is that circle going to be?
+
+140
+00:07:52,901 --> 00:07:57,541
+When we drew our rectangle, we gave it an x, y location. 250, 200.
+
+141
+00:07:57,541 --> 00:08:02,694
+That's this point. This rectangle is drawn with that point being the corner of the rectangle.
+
+142
+00:08:02,694 --> 00:08:08,510
+A circle, an ellipse, is different. The x, y point we're defining is the center of that circle.
+
+143
+00:08:08,510 --> 00:08:15,788
+So here is our 200 pixel by, 200 pixel wide and 200 pixel tall circle.
+
+144
+00:08:15,788 --> 00:08:19,309
+It's right there. With the x, y at the center.
+
+145
+00:08:19,309 --> 00:08:21,429
+So our code editor now just has one rectangle.
+
+146
+00:08:21,429 --> 00:08:24,295
+It's that rectangle we drew below, and there it is in the canvas.
+
+147
+00:08:24,295 --> 00:08:29,059
+Let's add this line of code here, the ellipse. Let's put that ellipse there.
+
+148
+00:08:29,059 --> 00:08:30,320
+And I'm going to run it for you.
+
+149
+00:08:30,320 --> 00:08:31,582
+Look, there's the ellipse!
+
+150
+00:08:31,582 --> 00:08:33,610
+Now, notice something a bit strange here.
+
+151
+00:08:33,610 --> 00:08:35,063
+The ellipse is covering up the rectangle.
+
+152
+00:08:35,063 --> 00:08:38,688
+This brings up a very important point in terms of programming computer graphics.
+
+153
+00:08:38,688 --> 00:08:42,438
+The order that we write our lines of code is incredibly important, right?
+
+154
+00:08:42,438 --> 00:08:46,969
+Because if the rectangle is drawn first, the ellipse is drawn second, the ellipse is drawn on top of it.
+
+155
+00:08:46,969 --> 00:08:51,501
+Now, I'm going to swap those lines of code, I switch them, and run it again.
+
+156
+00:08:51,501 --> 00:08:54,128
+Notice now the rectangle is on top of the ellipse.
+
+157
+00:08:54,128 --> 00:08:57,823
+So how you choose to write the order of the shapes that you're drawing,
+
+158
+00:08:57,823 --> 00:09:00,805
+it's really an important point in creating your design.
+
+159
+00:09:00,805 --> 00:09:04,503
+Alright, I think we've really come to the end of this first tutorial,
+
+160
+00:09:04,503 --> 00:09:07,601
+and it's time now for you to do your first exercise.
+
+161
+00:09:07,601 --> 00:09:10,822
+I'm going to leave you with a code example that you can use to get started from.
+
+162
+00:09:10,822 --> 00:09:14,646
+So I'm filling in below a nice code example, you can see the design over here.
+
+163
+00:09:14,646 --> 00:09:17,360
+And what you should work on is try to make your own design.
+
+164
+00:09:17,360 --> 00:09:20,578
+You can make a self-portrait, or a creature or an alien.
+
+165
+00:09:20,578 --> 00:09:22,868
+Something friendly or scary, whatever you think.
+
+166
+00:09:22,868 --> 00:09:23,991
+You can design a building.
+
+167
+00:09:23,991 --> 00:09:28,266
+Any simple design that you can do with rectangles and ellipses.
+
+168
+00:09:28,266 --> 00:09:32,720
+You can use this example to build off of, or you can just erase it and start from scratch.
+
+169
+00:09:32,720 --> 00:09:34,726
+So take a little time to do this exercise.
+
+170
+00:09:34,726 --> 00:09:37,893
+When you're done, select that you're ready, and the next video will appear,
+
+171
+00:09:37,893 --> 00:09:40,150
+and we're gonna take the, in the next video, we're gonna do
+
+172
+00:09:40,150 --> 00:09:42,397
+what you're probably wondering about already, which is like,
+
+173
+00:09:42,397 --> 00:09:45,879
+"uh, can I make these red or blue or some color that I want?"
+
+174
+00:09:45,879 --> 00:09:48,982
+After you do your exercise we're going to introduce color.
+
+175
+00:09:48,982 --> 00:09:54,233
+So enjoy and I look forward to seeing you back, if you come back, for the next tutorial.
+
+176
+00:09:54,233 --> 00:09:55,925
+OK, bye bye.

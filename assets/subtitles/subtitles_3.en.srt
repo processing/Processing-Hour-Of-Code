@@ -1,0 +1,391 @@
+1
+00:00:01,075 --> 00:00:05,571
+Hi! Welcome back! You came back, which I'm very thankful for — thank you very much.
+
+2
+00:00:05,571 --> 00:00:09,600
+So, hopefully you enjoyed the last exercise you did, and your code is still sitting down there.
+
+3
+00:00:09,600 --> 00:00:13,628
+Now, by the way, during this section of the tutorial, I am going to start doing stuff,
+
+4
+00:00:13,814 --> 00:00:15,887
+and the code that you wrote is going to disappear.
+
+5
+00:00:15,887 --> 00:00:18,331
+But don't worry; there's going to be an option for you to restore it again later.
+
+6
+00:00:18,663 --> 00:00:23,134
+OK, so what are we missing? We've got shapes: we've got circles, we've got rectangles.
+
+7
+00:00:23,459 --> 00:00:26,714
+But obviously we're missing something really important in terms of art and design.
+
+8
+00:00:26,714 --> 00:00:27,717
+We're missing color.
+
+9
+00:00:28,146 --> 00:00:30,474
+So let's think about that rectangle again.
+
+10
+00:00:30,474 --> 00:00:32,003
+We have this rectangle.
+
+11
+00:00:34,266 --> 00:00:35,403
+We have this circle.
+
+12
+00:00:35,620 --> 00:00:42,510
+What do these shapes have? They have both an outline, which is tracing this rectangle,
+
+13
+00:00:42,510 --> 00:00:48,789
+which we're going to call — sorry — the "stroke." We also have the interior of the shape,
+
+14
+00:00:48,789 --> 00:00:51,752
+the interior of the shape which we're going to call the "fill."
+
+15
+00:00:52,418 --> 00:00:55,746
+So we have two colors that we have to set for every shape.
+
+16
+00:00:55,746 --> 00:00:59,780
+We have the stroke, which is the outline, and we have the fill, which is the interior.
+
+17
+00:01:00,147 --> 00:01:03,476
+And just like we learnd these function calls, these commands —
+
+18
+00:01:03,476 --> 00:01:08,529
+"rect" for rectangle, "ellipse" for ellipse — we're going to have functions for stroke and fill.
+
+19
+00:01:08,529 --> 00:01:10,218
+So it's going to look like this.
+
+20
+00:01:10,218 --> 00:01:15,813
+Let's say we're drawing a rectangle, and that rectangle is being drawn at some location.
+
+21
+00:01:15,813 --> 00:01:18,858
+Uh, I think this is something we had previously.
+
+22
+00:01:18,858 --> 00:01:30,255
+What we need to do now, before we say "rectangle" is we need to say "stroke" and we need to say "fill."
+
+23
+00:01:33,035 --> 00:01:35,786
+Every single time that we draw a shape, if we want to color it,
+
+24
+00:01:35,786 --> 00:01:39,194
+we need to set the stroke and fill before we call that shape function.
+
+25
+00:01:39,567 --> 00:01:41,943
+This is, again, a moment when order of operations matter.
+
+26
+00:01:41,943 --> 00:01:45,891
+We don't say, "draw a rectangle — hey it's blue, and it's red on the outside."
+
+27
+00:01:45,891 --> 00:01:48,443
+We say, "set a pen color..." (in a way it's like a pen)....
+
+28
+00:01:48,443 --> 00:01:52,224
+"Go and find my red pen and go and find my blue marker.
+
+29
+00:01:52,548 --> 00:01:56,716
+You use the red pen for the outside and the blue marker for the inside" when I draw that rectangle.
+
+30
+00:01:56,716 --> 00:02:00,902
+But there's a big question here, right? We know that when we draw a rectangle we give it an x, a y,
+
+31
+00:02:00,902 --> 00:02:04,941
+a width, and height: those are the values that define what it is to be a rectangle.
+
+32
+00:02:05,721 --> 00:02:09,890
+What values do we give a stroke or a fill? How do we tie numbers to color?
+
+33
+00:02:09,890 --> 00:02:14,829
+Let's say we have the number 0, and we say the number 0 means black.
+
+34
+00:02:15,581 --> 00:02:21,656
+And let's say we have the number 255, and the number 255 means white.
+
+35
+00:02:22,496 --> 00:02:26,054
+So any value in between, any value in between is some gray.
+
+36
+00:02:26,554 --> 00:02:30,535
+127 would be, like, half the way between white and black.
+
+37
+00:02:30,535 --> 00:02:34,399
+253 would be really white, but not all the way white.
+
+38
+00:02:34,399 --> 00:02:37,929
+Right? So can really imagine this and obviously just trying out these numbers would make much more sense.
+
+39
+00:02:37,929 --> 00:02:44,048
+So we could say something like "stroke (0)" and we would have a black outline.
+
+40
+00:02:44,048 --> 00:02:45,939
+Let's actually bring up the code editor below,
+
+41
+00:02:45,939 --> 00:02:51,979
+and let's add a stroke (0) and a fill for one of our shapes down there, for the rectangle below.
+
+42
+00:02:51,979 --> 00:02:59,571
+OK, see how the stroke and fill are placed before we call rect, and that they are setting the colors that you're seeing in the canvas on the left.
+
+43
+00:02:59,933 --> 00:03:00,595
+Great.
+
+44
+00:03:00,595 --> 00:03:04,353
+So, I want to move on quickly though, however, to … even though this is nice,
+
+45
+00:03:04,353 --> 00:03:07,703
+and we can see that we can do grayscale colors, really,
+
+46
+00:03:07,703 --> 00:03:10,805
+what you probably want to do is make all sorts of … you know, what's your favorite color?
+
+47
+00:03:10,805 --> 00:03:15,341
+Pink? Purple? Green? Blue? You want to make "color" color, how do we do that?
+
+48
+00:03:15,341 --> 00:03:21,323
+So, with one number — if we put one number here in stroke, we have a grayscale color,
+
+49
+00:03:21,323 --> 00:03:27,736
+but if we put three numbers in, like if I put numbers like this (255, 0, 0),
+
+50
+00:03:27,736 --> 00:03:32,500
+what we now have done is we've created an RGB color.
+
+51
+00:03:32,500 --> 00:03:40,409
+RGB: we have a little bit of red, we have some amount of green, and we have some amount of blue.
+
+52
+00:03:40,409 --> 00:03:42,887
+The arguments are red, green, and blue.
+
+53
+00:03:42,887 --> 00:03:46,388
+And it has the same … it follows the same scale as grayscale.
+
+54
+00:03:46,388 --> 00:03:52,804
+In the case of red, 255 is all the red you could imagine; 0 is no red.
+
+55
+00:03:52,804 --> 00:03:53,802
+So it's like mixing colors.
+
+56
+00:03:53,802 --> 00:03:57,252
+I mean, it's something you might have done, um, you know, fingerpainting, or mixing colors,
+
+57
+00:03:57,252 --> 00:04:00,005
+and you get a little red, you get a little blue, and you put them together,
+
+58
+00:04:00,005 --> 00:04:02,820
+and I think maybe you get purple, something like that.
+
+59
+00:04:02,820 --> 00:04:04,722
+Um, this same principle is happening here.
+
+60
+00:04:04,722 --> 00:04:08,671
+You're adding a variable amount of red, a variable amount of blue and mixing colors.
+
+61
+00:04:08,671 --> 00:04:11,970
+The thing that you should realize, though, is it's not like mixing paints,
+
+62
+00:04:11,970 --> 00:04:16,052
+that what color actually does on the computer is really like mixing light.
+
+63
+00:04:16,052 --> 00:04:19,935
+It's more like imagining that you had three flashlights — a red flashlight, a green flashlight,
+
+64
+00:04:19,935 --> 00:04:24,692
+and a blue flashlight — and you could turn them up or down and shine them on the same point.
+
+65
+00:04:24,692 --> 00:04:29,910
+So let's switch over again and open up the code editor below, and let's add a stroke and a fill.
+
+66
+00:04:30,303 --> 00:04:32,618
+The stroke and the fill are still there from rectangle.
+
+67
+00:04:32,618 --> 00:04:38,522
+Let's make the stroke red, which would be all red, (255, 0, 0),
+
+68
+00:04:38,522 --> 00:04:44,185
+and let's make a fill that's all blue, (0, 0, 255).
+
+69
+00:04:44,185 --> 00:04:47,436
+Let's run that, and now we see a red outline with a blue interior.
+
+70
+00:04:47,883 --> 00:04:52,173
+You probably want lots of other colors, and it might be hard to figure out what color do I want?
+
+71
+00:04:52,173 --> 00:04:57,475
+Well, if you notice, if you click on fill, and I'm going to do this for you, a wheel (a color picker)
+
+72
+00:04:57,475 --> 00:05:00,928
+pops up where you could move the mouse around and you can select the color you want,
+
+73
+00:05:00,928 --> 00:05:05,375
+and it shows you what are the red, what are the green, and what are the blue values for that color.
+
+74
+00:05:05,375 --> 00:05:11,251
+So, you can type in your values manually or you can use the color picker to set values.
+
+75
+00:05:11,678 --> 00:05:16,857
+We know now how to set the outline or the fill, the stroke or the fill of these shapes.
+
+76
+00:05:16,857 --> 00:05:20,483
+But remember, there is this canvas that we're drawing into.
+
+77
+00:05:20,483 --> 00:05:25,043
+But what if you want, actually, to fill in a color in the background?
+
+78
+00:05:25,043 --> 00:05:29,619
+So there is one more function that we are going to learn as part of this little tutorial,
+
+79
+00:05:29,619 --> 00:05:31,528
+which is "background ()".
+
+80
+00:05:31,528 --> 00:05:35,402
+So, I'm going to add that now to the code editor below, background (),
+
+81
+00:05:35,402 --> 00:05:38,606
+and I'm going to put a color in there that's a nice, soft yellow.
+
+82
+00:05:38,606 --> 00:05:40,901
+And then now we're going to run it.
+
+83
+00:05:40,901 --> 00:05:42,584
+We're going to see that yellow is the background.
+
+84
+00:05:42,584 --> 00:05:44,464
+So, why don't you take a minute, actually.
+
+85
+00:05:44,464 --> 00:05:48,197
+Try the color picker on the background, and pick a different color.
+
+86
+00:05:50,519 --> 00:05:52,619
+You're going to have to press "run your code" when you're ready.
+
+87
+00:05:54,259 --> 00:05:57,571
+Did the color you picked appear in the background? Hopefully it did.
+
+88
+00:05:57,571 --> 00:06:01,350
+OK, so this really wraps up the end of this section about color.
+
+89
+00:06:01,350 --> 00:06:05,715
+You know, what did we first do? We first learned we could put rectangles and ellipses of any size
+
+90
+00:06:05,715 --> 00:06:08,281
+anywhere on the screen.
+
+91
+00:06:08,529 --> 00:06:13,531
+Now we can assign any of them different strokes, different fills, and we can put a background color.
+
+92
+00:06:13,531 --> 00:06:16,383
+I'm going to put below an example for you to start with.
+
+93
+00:06:16,383 --> 00:06:19,459
+It's a nice design that has a bunch of shapes and a bunch of colors in it.
+
+94
+00:06:19,459 --> 00:06:24,352
+You can use this, tweak it to make your own design, or — you'll also see when this video ends —
+
+95
+00:06:24,352 --> 00:06:29,683
+there will be an option for you to revert back to your previous code that you had at the end of lesson 1.
+
+96
+00:06:29,683 --> 00:06:33,183
+So if you want to go find that creature or alien you made and start adding color to it,
+
+97
+00:06:33,183 --> 00:06:35,370
+that's what you could do for this exercise.
+
+98
+00:06:35,370 --> 00:06:37,742
+I'll talk to you later, and enjoy this exercise.
