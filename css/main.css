@@ -317,6 +317,29 @@ div#videoCommands {
 	margin: auto;
 }
 
+div#videoSubtitlesContainer {
+	position: absolute;
+	left: 0;
+	bottom: 16px;
+	width: 100%;
+}
+
+div#videoSubtitles {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	color:white;
+	font-weight: bold;
+	
+	font-size: 1.3em;
+	text-shadow: 1px 1px #000;
+}
+
+#interface.videoMode div#videoSubtitlesContainer {
+	font-size: 1.7em;
+	text-shadow: 2px 2px #000;
+}
+
 #hints {
 	display: none;
 }

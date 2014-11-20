@@ -10,6 +10,7 @@
 
 var scriptOne = {
     vimeoURL: "https://vimeo.com/80274630",
+    subtitleURL: "/assets/subtitles/subtitles_1.en.srt",
     runCache: null,
     exerciseTime: null,    
     reset: function () {
@@ -34,12 +35,7 @@ var scriptOne = {
     },
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 
@@ -101,6 +97,7 @@ var scriptOne = {
 
 var scriptTwo = {
     vimeoURL: "https://vimeo.com/79984989",
+    subtitleURL: "/assets/subtitles/subtitles_2.en.srt",
     runCache: null,
     exerciseTime: "9:01.5",
     reset: function () {
@@ -125,12 +122,7 @@ var scriptTwo = {
     },
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 
@@ -326,6 +318,7 @@ var scriptTwo = {
 
 var scriptThree = {
     vimeoURL: "https://vimeo.com/79984990",
+    subtitleURL: "/assets/subtitles/subtitles_3.en.srt",
     runCache: null,
     exerciseTime: "5:57.20",    
     reset: function () {
@@ -351,12 +344,7 @@ var scriptThree = {
     },
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 
@@ -518,6 +506,7 @@ var scriptThree = {
 
 var scriptFour = {
     vimeoURL: "https://vimeo.com/79984988",
+    subtitleURL: "/assets/subtitles/subtitles_4.en.srt",
     runCache: null,
     exerciseTime: "10:21",    
     reset: function () {
@@ -543,12 +532,7 @@ var scriptFour = {
      },
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 
@@ -700,6 +684,7 @@ var scriptFour = {
 
 var scriptFive = {
     vimeoURL: "https://vimeo.com/79984987",
+    subtitleURL: "/assets/subtitles/subtitles_5.en.srt",
     runCache: null,
     exerciseTime: "5:34",    
 
@@ -725,12 +710,7 @@ var scriptFive = {
     },
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 
@@ -863,6 +843,7 @@ var scriptFive = {
 
 var scriptSix = {
     vimeoURL: "https://vimeo.com/80275178",
+    subtitleURL: "/assets/subtitles/subtitles_6.en.srt",
     runCache: null,
     exerciseTime: "1:19",    
     reset: function () {
@@ -884,12 +865,7 @@ var scriptSix = {
 
     init: function (time) {
 
-        $("#video").html("");
-        helloEditor.popcorn = Popcorn.vimeo('#video', this.vimeoURL);
-        helloEditor.popcorn.play(time);
-        helloEditor.popcorn.unmute();
-        helloEditor.popcorn.volume(1.0);
-
+        helloEditor.refreshPopcorn(time, this.vimeoURL, this.subtitleURL);
         this.reset();
         helloEditor.refreshUI();
 

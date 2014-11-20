@@ -381,8 +381,22 @@ var helloEditor = {
         }
     },
     /**
+     * Build a new popcorn instance on video change
+     */    
+    refreshPopcorn: function (time, vimeoURL, subtitleURL) {
+
+        $("#video").html("");
+        $("#videoSubtitles").html("");
+        helloEditor.popcorn = Popcorn.vimeo('#video', vimeoURL);
+        helloEditor.popcorn.play(time);
+        helloEditor.popcorn.unmute();
+        helloEditor.popcorn.volume(1.0);
+        //helloEditor.popcorn.defaults("subtitle", {target: "videoSubtitles"});
+        //helloEditor.popcorn.parseSRT( subtitleURL );
+
+    },
+    /**
      * Try to keep a sane layout at any browser size.
-     * @return {[type]}
      */
     refreshUI: function () {
 
