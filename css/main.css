@@ -317,6 +317,18 @@ div#videoCommands {
 	margin: auto;
 }
 
+div#videoContainer:hover div#videoCommandsContainer {
+	display: initial;
+}
+
+div#videoCommands .buttonLabel {
+	display: none;
+}
+
+#interface.videoMode div#videoCommands .buttonLabel {
+	display: initial;
+}
+
 div#videoSubtitlesContainer {
 	position: absolute;
 	left: 0;
@@ -335,9 +347,13 @@ div#videoSubtitles {
 	text-shadow: 1px 1px #000;
 }
 
-#interface.videoMode div#videoSubtitlesContainer {
+#interface.videoMode div#videoSubtitles{
 	font-size: 1.7em;
 	text-shadow: 2px 2px #000;
+}
+
+div#videoContainer:hover div#videoSubtitlesContainer {
+	display: none;
 }
 
 #hints {

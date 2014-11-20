@@ -33,20 +33,23 @@ class: editor
 
     <div id="videoCommandsContainer">
       <div id="videoCommands" class="btn-group">
-        <a id="restartButton" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-refresh"></span> Restart
+        <a id="captionsButton" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Toggle Captions">
+          <span class="glyphicon glyphicon-subtitles"></span><span class="buttonLabel"> Captions</span>
+        </a>      
+        <a id="restartButton" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Restart Lesson">
+          <span class="glyphicon glyphicon-refresh"></span><span class="buttonLabel"> Restart</span>
         </a>
-        <a id="jumpBack" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-time"></span> Back 10 Sec.
+        <a id="jumpBack" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Rewind 10 Seconds">
+          <span class="glyphicon glyphicon-time"></span><span class="buttonLabel"> Back 10 Sec.</span>
         </a>    
-        <a id="jumpExercise" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-edit"></span> Jump to Exercise
+        <a id="jumpExercise" class="btn btn-default btn-sm"  data-toggle="tooltip" data-placement="top" title="Skip to Exercise">
+          <span class="glyphicon glyphicon-edit"></span><span class="buttonLabel"> Jump to Exercise</span>
         </a> 
-        <a id="jumpLesson" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-edit"></span> Jump to Lesson
+        <a id="jumpLesson" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Skip to Lesson">
+          <span class="glyphicon glyphicon-edit"></span><span class="buttonLabel"> Jump to Lesson</span>
         </a>
-        <a id="jumpEnd" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-fast-forward"></span> Jump to End
+        <a id="jumpEnd" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Skip to End">
+          <span class="glyphicon glyphicon-fast-forward"></span><span class="buttonLabel"> Jump to End</span>
         </a>           
         <!--
         <a id="pauseButton" class="btn btn-default btn-sm">

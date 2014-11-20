@@ -131,12 +131,6 @@ var helloEditor = {
         /* Video UI */
         if (Modernizr.touch) {
             $("#videoCommandsContainer").show();
-        } else {
-            $("#videoContainer").hover(function () {
-                $("#videoCommandsContainer").fadeIn();
-            }, function () {
-                $("#videoCommandsContainer").fadeOut();
-            });
         }
 
         $("#jumpBack").click(function () {
@@ -177,6 +171,10 @@ var helloEditor = {
             helloEditor.popcorn.play(0);
         });
 
+        $("#captionsButton").click(function () {
+            helloEditor.toggleCaptions();
+        });        
+
         $("#pauseButton").click(function () {
             if (helloEditor.popcorn.paused()) {
                 helloEditor.popcorn.play();
@@ -186,6 +184,10 @@ var helloEditor = {
                 $("#pauseButton").html('<span class="glyphicon glyphicon-play"></span> Play');
             }
         });
+
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip({container: 'body'})
+        })
 
         /* Editor UI */
 
@@ -396,8 +398,9 @@ var helloEditor = {
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
         helloEditor.popcorn.volume(1.0);
-        //helloEditor.popcorn.defaults("subtitle", {target: "videoSubtitles"});
-        //helloEditor.popcorn.parseSRT( subtitleURL );
+        helloEditor.popcorn.defaults("subtitle", {target: "videoSubtitles"});
+        helloEditor.popcorn.parseSRT( subtitleURL );
+        helloEditor.popcorn.disable("subtitle");
 
     },
     /**
@@ -742,5 +745,9 @@ var helloEditor = {
         $("#hint").find("a").attr("target", "_blank");
         $("#hint").show();
 
+    },
+    toggleCaptions: function() {
+        console.log("Toggle Captions");
+        helloEditor.popcorn.toggle("subtitle");
     }
 };
