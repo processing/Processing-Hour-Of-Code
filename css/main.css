@@ -511,6 +511,33 @@ div#displayEditor {
 	height: 256px;
 }
 
+/* Gallery */
+
+#galleryView {
+	margin: 24px auto;
+	width: 90%;
+	min-width: 768px;
+}
+
+#galleryImage {
+	margin: 0 12px 12px 0;
+	float: left;
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
+	background: rgba(0,0,0,.25);
+}
+
+#galleryImage img {
+	width: 240px;
+	height: 192px;	
+}
+
+#galleryFooter {
+	clear:both;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+}
+
 /* Hints Preview */
 
 .hintPreview {
