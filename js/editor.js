@@ -86,7 +86,7 @@ var helloEditor = {
 
         $(window).bind('beforeunload', function(){
             if (helloEditor.confirmExit) {
-                return "Be sure you've copied your code to a safe place or used the share button.";
+                return "Unsaved changes in the editor will be lost. Be sure you've copied your code to a safe place or used the share button.";
             }
         });
 
@@ -417,6 +417,8 @@ var helloEditor = {
 
         if (this.displayMode === VIDEO_MODE) {
 
+            helloEditor.confirmExit = false;
+
             $("#interface").addClass("videoMode");
             //console.log("Video Mode");
 
@@ -436,6 +438,8 @@ var helloEditor = {
                 }).show();
 
         } else {
+
+            helloEditor.confirmExit = true;
 
             $("#interface").removeClass("videoMode");
             //console.log("Editor Mode");
