@@ -8,8 +8,8 @@ class: gallery
 
 <script id="template" type="text/html">
 {% raw  %}
-<div id="galleryImage">
-  <a href="{{link}}"><img src="{{image}}" /></a>
+<div class="galleryImage">
+  <a href="{{link}}"><img src="{{image}}" width="240" height="192"/></a>
 </div>
 {% endraw %}
 </script>
@@ -17,6 +17,10 @@ class: gallery
 <div id="galleryView">
 
 
+</div>
+
+<div id="galleryControls">
+	<button id="loadMore" class="btn btn-default">Load More</button>
 </div>
 
 <footer id="galleryFooter">

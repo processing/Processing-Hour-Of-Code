@@ -5,19 +5,63 @@
  */
 var helloGallery = {
     pageNumber: 0,
-    itemsPerPage: 16,
+    itemsPerPage: 10,
+    totalItems: null,
     /**
      * Initialize gallery page
      */
     init: function () {
 
+
+        $("#loadMore").click(function() {
+
+          helloGallery.loadElements(function(elements){
+
+            for (var element in elements) {
+              var item = $(elements[element]);
+              
+              $('#galleryView').append(item);
+              $('#galleryView').isotope('appended', item);
+            }
+          });
+
+        });
+
         // Get the gistID from the URL and display it
 
-        if (document.URL.indexOf('#') >= 0) {
-            helloGallery.pageNumber = document.URL.split('#')[1];          
-        }
-
         Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
+
+        var GalleryObject = Parse.Object.extend("Gallery");
+        var query = new Parse.Query(GalleryObject);
+        query.count({
+          success: function(number) {
+            helloGallery.totalItems = number;
+            console.log(helloGallery.totalItems);
+          },
+          error: function(error) {
+            // error is an instance of Parse.Error.
+          }
+        });
+
+        helloGallery.loadElements( function(elements){
+
+          var container = $('#galleryView'); 
+          container.append( elements );
+
+          container.isotope({
+            itemSelector: '.galleryImage',
+              masonry: {
+                gutter: 12,
+                isFitWidth: true
+              }
+          });  
+
+       });
+
+
+    },
+
+    loadElements: function (callback) {
 
         var GalleryObject = Parse.Object.extend("Gallery");
         var query = new Parse.Query(GalleryObject);
@@ -28,7 +72,9 @@ var helloGallery = {
         query.find({
           success: function(results) {
             //alert("Successfully retrieved " + results.length + " scores.");
-            // Do something with the returned Parse.Object values
+
+            var imageTiles = [];
+
             for (var i = 0; i < results.length; i++) { 
               var object = results[i];
               //alert(object.id + ' - ' + object.get('playerName'));
@@ -41,16 +87,23 @@ var helloGallery = {
               var template = $('#template').html();
               Mustache.parse(template);
               var rendered = Mustache.render(template, data);
-              $('#galleryView').append(rendered);
-
-
+              imageTiles.push(rendered);
             }
+
+            callback(imageTiles);          
+
+            helloGallery.pageNumber++; 
+
+            console.log(helloGallery.pageNumber * helloGallery.itemsPerPage);
+
+            if (helloGallery.totalItems != null && helloGallery.pageNumber * helloGallery.itemsPerPage >= helloGallery.totalItems) {
+              $("#loadMore").hide();
+            }                       
+
           },
           error: function(error) {
-            //alert("Error: " + error.code + " " + error.message);
+            alert("Error: " + error.code + " " + error.message);
           }
-        });          
-
-
+        });  
     }
 };
