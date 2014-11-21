@@ -36,7 +36,6 @@ var helloGallery = {
         query.count({
           success: function(number) {
             helloGallery.totalItems = number;
-            console.log(helloGallery.totalItems);
           },
           error: function(error) {
             // error is an instance of Parse.Error.
@@ -62,6 +61,8 @@ var helloGallery = {
     },
 
     loadElements: function (callback) {
+
+        $("#loadMore").button('loading');
 
         var GalleryObject = Parse.Object.extend("Gallery");
         var query = new Parse.Query(GalleryObject);
@@ -94,7 +95,7 @@ var helloGallery = {
 
             helloGallery.pageNumber++; 
 
-            console.log(helloGallery.pageNumber * helloGallery.itemsPerPage);
+            $("#loadMore").button('reset');
 
             if (helloGallery.totalItems != null && helloGallery.pageNumber * helloGallery.itemsPerPage >= helloGallery.totalItems) {
               $("#loadMore").hide();
