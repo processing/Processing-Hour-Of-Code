@@ -1,3 +1,10 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+$primary-color: #4D7E9E;
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -26,9 +33,13 @@
 	font-style: normal;
 }
 
+html {
+    height: 100%;
+}
 
 body {
-	background: #5F86A3;
+    height: 100%;
+	background: #4E7E9E;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -37,7 +48,7 @@ body.splash {
 }
 
 a {
-	color: #5F86A3;
+	color: $primary-color;
 }
 
 .btn {
