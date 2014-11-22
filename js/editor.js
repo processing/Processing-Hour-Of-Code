@@ -205,8 +205,8 @@ var helloEditor = {
 
         $("#shareButton").click(function () {
             helloEditor.confirmExit = false;
-            helloEditor.createGist();
-            //helloEditor.addToGallery();
+            //helloEditor.createGist();
+            helloEditor.addToGallery();
         });
 
         $("#resetExample").click(function () {
