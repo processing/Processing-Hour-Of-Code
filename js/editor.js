@@ -391,10 +391,8 @@ var helloEditor = {
         $("#video").html("");
         $("#videoSubtitles").html("");
 
-        var video = Popcorn.HTMLVimeoVideoElement('#video');
-        video.src = vimeoURL;
+        helloEditor.popcorn = Popcorn.smart( "#video", vimeoURL );
 
-        helloEditor.popcorn = Popcorn(video);
         helloEditor.popcorn.play(time);
         helloEditor.popcorn.unmute();
         helloEditor.popcorn.volume(1.0);
