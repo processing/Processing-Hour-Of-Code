@@ -400,6 +400,12 @@ var helloEditor = {
         helloEditor.popcorn.parseSRT( subtitleURL );
         helloEditor.popcorn.disable("subtitle");
 
+        helloEditor.popcorn.on("timeupdate", function(e) {
+          var position = helloEditor.popcorn.currentTime() / helloEditor.popcorn.duration();
+          var width = position * $("#transport").width();
+          $("#progress").css('width', width);
+        });
+
     },
     /**
      * Try to keep a sane layout at any browser size.
@@ -407,7 +413,7 @@ var helloEditor = {
     refreshUI: function () {
 
         var viewportWidth = $("#interface").innerWidth(),
-            viewportHeight = $("#interface").innerHeight() - $("#header").height(),
+            viewportHeight = $("#interface").innerHeight() - $("#header").height() - $("#footer").height(),
             minVideoWidth = 320,
             maxVideoWidth = viewportWidth / 2,
             videoWidth,
@@ -424,6 +430,7 @@ var helloEditor = {
             videoHeight = videoWidth / 16 * 9;
 
             $("#header").css("width", videoWidth);
+            $("#transport").css("width", videoWidth);
 
             $("#videoContainer")
                 .css({
@@ -453,6 +460,7 @@ var helloEditor = {
             videoHeight = videoWidth / 16 * 9;
 
             $("#header").width(viewportWidth - 16);
+            $("#transport").css("width", viewportWidth - 16);
 
             $("#videoContainer")
                 .css({
@@ -541,6 +549,8 @@ var helloEditor = {
         $("a[data-index='" + index + "']").addClass("active");
 
         scripts[index].init(time);
+
+        $("#progress").css('width', 0);
 
     },
     /**

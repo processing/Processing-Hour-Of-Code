@@ -4,6 +4,8 @@
 ---
 
 $light-color: #FcFcFf;
+$mid-color: #efefef;
+
 $primary-color: #4D7E9E;
 $primary-color-dark: darken($primary-color, 20%);
 $secondary-color: #E67AC2;
@@ -62,7 +64,7 @@ a:hover {
 	color: $secondary-color-dark;
 }
 
-.btn {
+#videoCommands .btn, #editorCommands .btn {
   -webkit-border-radius: 0 !important;
      -moz-border-radius: 0 !important;
           border-radius: 0 !important;
@@ -178,7 +180,7 @@ div#title {
 	left:0;
 	border-width: 0 1px 0 1px;
 	border-style: solid;
-	border-color: #efefef;
+	border-color: $mid-color;
 	height: 40px;
 	padding: 7px 12px 0 12px;
 }
@@ -396,6 +398,41 @@ div#videoSubtitles {
 
 div#videoContainer:hover div#videoSubtitlesContainer {
 	display: none;
+}
+
+div#footer {
+	position: fixed;
+	bottom:0;
+	left: 0;
+	z-index: 1000;
+	height: 24px;
+	width: 100%;
+	min-width: 1024px;
+	background: $light-color;
+}
+
+div#transport {
+	position: relative;
+	top: 8px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+div#transport #track {
+	top: 0;
+	left: 0;	
+	background: $mid-color;
+	height: 8px;
+	width: 100%;
+}
+
+div#transport #progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: $secondary-color;
+	height: 8px;
+	width: 0%;
 }
 
 #hints {
