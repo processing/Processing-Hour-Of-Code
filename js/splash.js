@@ -17,7 +17,7 @@ var helloSplash = {
         });
 
         $("#splashNav").css({
-            "margin-top":  118,
+            "margin-top":  128,
             "margin-left":  $("#splashNav").width() / -2
         });
 

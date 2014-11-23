@@ -3,7 +3,14 @@
 # only Main files contain this front matter, not partials.
 ---
 
+$light-color: #FcFcFf;
 $primary-color: #4D7E9E;
+$primary-color-dark: darken($primary-color, 20%);
+$secondary-color: #E67AC2;
+$secondary-color-dark: darken($secondary-color, 20%);
+
+$font-serif: 'theSerif', georgia, times, serif;
+$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 /* ==========================================================================
    Author's custom styles
@@ -39,16 +46,20 @@ html {
 
 body {
     height: 100%;
-	background: #4E7E9E;
+	background: $primary-color;
 	-webkit-font-smoothing: antialiased;
 }
 
 body.splash {
-	background: #FcFcFf;
+	background: $light-color;
 }
 
 a {
 	color: $primary-color;
+}
+
+a:hover {
+	color: $secondary-color-dark;
 }
 
 .btn {
@@ -95,34 +106,38 @@ div#splashHeader {
 
 h1#splashTitle {
 	display: none;	
-	font-family: 'theSerif', georgia, times, serif; 
+	font-family: $font-serif; 
 	font-size: 6em;
 	margin: 0;
 	padding: 0;
-	color: #5E86A3;
+	color: $primary-color;
 }
 
 div#splashNav {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -1000px;
 	z-index:1000;
 }
 
 a#splashButton {
-	font-family: 'theSerif', georgia, times, serif;
-	font-size: 1.4em;
-	font-weight: bold;
+	font-family: $font-sans;
+	font-size: 1em;
+	font-weight: regular;
+	background: $secondary-color;
+	color: white;
+	padding: 6px 12px;
+	text-transform: uppercase;
 }
 
 a#splashButton:hover {
 	display: none;
 	text-decoration:none;
-	color: #E56498;
+	background: $secondary-color-dark;
 }
 
 footer#splashFooter {
+	font-family: $font-sans;
 	position:absolute;
 	bottom: 2em;
 	text-align: center;
@@ -138,28 +153,31 @@ footer#splashFooter {
 	position: relative;
 	width: 100%;
 	min-width: 1024px;
-	background: #FcFcFf;
+	background: $light-color;
 	z-index: 1000;		
-	height: 48px;
+	height: 40px;
 	box-shadow: 0px 4px 1px rgba(0,0,0,.25);		
 }
 
 #header {
 	position: relative;
 	margin: auto;
-	width: 100%;
+	width: 95%;
 	min-width: 900px;
-	height: 48px;
+	height: 40px;
 }
 
 div#title {
 	position:absolute;
 	display: inline-block;
 	font-family: 'theSerif', georgia, times, serif;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-weight: bold;
-	top:8px;
-	left:8px;
+	top:0;
+	left:0;
+	border-right: 1px solid #efefef;
+	height: 40px;
+	padding: 7px 12px 0 0;
 }
 
 div#title a:hover {
@@ -167,35 +185,42 @@ div#title a:hover {
 }
 
 nav#pageNav {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	position:absolute;
-	top:15px; 
-	right:8px;
+	height: 40px;
+	top: 0;
+	right:0;
 	font-size: .9em;
+	border-right: 1px solid #efefef;
 }
 
-nav#pageNav a {
-	margin-left: 6px;
-	font-weight: bold;
+nav#pageNav span {
+	display: inline-block;
+	font-weight: regular;
+	border-left: 1px solid #efefef;
+	height: 40px;	
+	padding: 12px 6px 0px 6px;
 }
 
 nav#pageNav a:hover {
 	text-decoration: none;
-	border-bottom: 3px solid #E67AC2;
+	color: $primary-color;
+	border-bottom: 3px solid $secondary-color;
 }
 
 div#lessonNavContainer {
 	position:absolute;
-	top:13px; 
+	top:10px; 
 	left: 158px;
 	right:222px;
 	text-align: center;	
 }
 
 .lessonButton {
-	font-size: 1.1em;
-	font-weight: bold;
+	font-size: 1em;
+	font-weight: regular;
 	font-family: 'theSerif', georgia, times, serif; 
-	color: #5F86A3;
+	color: $primary-color;
 	padding: 15px 4px;
 }
 
@@ -204,17 +229,18 @@ div#lessonNavContainer {
 }
 
 .lessonButton:hover span {
-	border-bottom: 3px solid #E67AC2;
+	border-bottom: 3px solid $secondary-color;
 }
 
 .lessonButton:hover {
+	color: $primary-color;	
 	text-decoration: none;
 } 
 
 a.active span, a.active:hover span {
-	color: #E67AC2;
+	color: $secondary-color;
 	background: transparent;
-	border-bottom: 3px solid #E67AC2;
+	border-bottom: 3px solid $secondary-color;
 	
 }
 
@@ -292,7 +318,7 @@ div#editorCanvasBox {
 	margin-top: -200px;
 	margin-left: -250px;
 
-	background: #FcFcFf;
+	background: $light-color;
 
 }
 
@@ -375,7 +401,7 @@ div#videoContainer:hover div#videoSubtitlesContainer {
 	position:absolute;
 	width: 100%;
 	height: 100%;
-	background: #FcFcFf;
+	background: $light-color;
 	z-index: 1000;
 	padding: 12px;
 	display: none;	
@@ -383,7 +409,7 @@ div#videoContainer:hover div#videoSubtitlesContainer {
 }
 
 div.hint h2{
-	color: #5E86A3;	
+	color: $primary-color;	
 	font-size: 1.3em;
 	margin-top: 0;
 }
@@ -401,7 +427,7 @@ div#editorContainer {
 
 	width: 424px;
 	height: 362px;	
-	background: #FcFcFf;
+	background: $light-color;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 }
 
@@ -488,7 +514,7 @@ div#displayInfo {
 	height: 400px;
 	z-index: 2000;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
-	background: #FcFcFf;
+	background: $light-color;
 	padding: 12px;
 }
 
@@ -504,7 +530,7 @@ footer#displayFooter {
 h1#displayTitle {
 	font-family: 'theSerif', georgia, times, serif; 
 	font-size: 1.6em;
-	color: #428BCA;
+	color: $primary-color;
 	margin: 0 0 8px 0;
 	padding: 0;
 }
@@ -529,7 +555,7 @@ canvas#displayCanvas {
 	outline: 0px;
 	width: 500px;
 	height: 400px;
-	background: #FcFcFf;
+	background: $light-color;
 	z-index: 1000;
 }
 
@@ -575,7 +601,7 @@ div#displayEditor {
 /* Hints Preview */
 
 .hintPreview {
-	background: #FcFcFf;
+	background: $light-color;
 	width: 512px;
 	overflow: auto;
 	margin: 12px;
@@ -591,7 +617,7 @@ body.about #header, body.guide #header {
 
 body.about .aboutButton,  body.guide .guideButton{
 	text-decoration: none;
-	border-bottom: 3px solid #E67AC2;
+	border-bottom: 3px solid $secondary-color;
 }
 
 body.about dl {
@@ -601,23 +627,28 @@ body.about dl {
 }
 
 body.about dl a {
-	color: #E67AC2;
+	color: $secondary-color;
+	font-weight: normal;
 }
 
 body.about h3 {
 	clear: both;
 }
 
+div#pageContainer {
+	width: 100%;
+	min-width:1024px;
+}
+
 div#page {
 
 	margin: 24px auto;
 	width: 80%;
-	min-width: 768px;
 	z-index: 2000;
-	border-bottom: 8px solid #E67AC2;
+	border-bottom: 8px solid $secondary-color;
 
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
-	background: #FcFcFf;
+	background: $light-color;
 	padding: 12px;
 	line-height: 1.5em;
 	font-size: 1.1em;
@@ -627,9 +658,14 @@ div#page {
 
 div#page h2 {
 	margin-top: 0;
+	font-size: 1.6em;
+}
+
+div#page h3 {
+	font-size: 1.4em;
 }
 
 div#page h2, div#page h3 {
 	font-family: 'theSerif', georgia, times, serif; 
-	color: #5E86A3;	
+	color: $primary-color;	
 }
