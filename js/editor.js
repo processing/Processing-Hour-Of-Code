@@ -438,7 +438,7 @@ var helloEditor = {
                     height: videoHeight,
                     left: "50%",
                     top: "50%",
-                    marginTop: videoHeight / -2 + ($("#header").height() / 2),
+                    marginTop:  (videoHeight / -2) + (($("#header").height() - $("#footer").height())/2) ,
                     marginLeft: videoWidth / -2
                 }).show();
 
