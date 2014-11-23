@@ -122,7 +122,7 @@ div#splashNav {
 
 a#splashButton {
 	font-family: $font-sans;
-	font-size: 1em;
+	font-size: .95em;
 	font-weight: regular;
 	background: $secondary-color;
 	color: white;
@@ -175,9 +175,11 @@ div#title {
 	font-weight: bold;
 	top:0;
 	left:0;
-	border-right: 1px solid #efefef;
+	border-width: 0 1px 0 1px;
+	border-style: solid;
+	border-color: #efefef;
 	height: 40px;
-	padding: 7px 12px 0 0;
+	padding: 7px 12px 0 12px;
 }
 
 div#title a:hover {
@@ -226,6 +228,8 @@ div#lessonNavContainer {
 
 .lessonButton sub {
 	font-size: .9em;
+	color: $secondary-color;
+
 }
 
 .lessonButton:hover span {
@@ -644,6 +648,7 @@ div#page {
 
 	margin: 24px auto;
 	width: 80%;
+	min-width: 900px;
 	z-index: 2000;
 	border-bottom: 8px solid $secondary-color;
 
@@ -662,7 +667,7 @@ div#page h2 {
 }
 
 div#page h3 {
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 
 div#page h2, div#page h3 {
