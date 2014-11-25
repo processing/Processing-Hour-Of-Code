@@ -16,10 +16,26 @@ class: gallery
 
 	{% include header.html %}
 
+	<div id="galleryFilter" class="text-center">
+		<div class="btn-group">
+	      <button class="filter btn btn-default btn-sm active" data-mode="0">
+	        <span class="glyphicon glyphicon-star"></span> Featured
+	      </button>
+
+	      <button class="filter btn btn-default btn-sm" data-mode="1">
+	        <span class="glyphicon glyphicon-heart"></span> Popular
+	      </a>
+
+	      <button class="filter btn btn-default btn-sm" data-mode="2">
+	        <span class="glyphicon glyphicon-time"></span> Recent
+	      </button>
+	    </div>
+    </div>
+
 	<div id="galleryView"></div>
 
 	<div id="galleryControls">
-		<button id="loadMore" class="btn btn-default" data-loading-text="Loading...">
+		<button id="loadMore" class="btn btn-default btn-sm" data-loading-text="Loading...">
 			<span class="glyphicon glyphicon-plus"></span> Load More
 		</button>
 	</div>

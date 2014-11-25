@@ -5,42 +5,48 @@
  */
 var helloGallery = {
     pageNumber: 0,
-    itemsPerPage: 10,
+    sortMode: 0,
+    itemsPerPage: 12,
     totalItems: null,
     /**
      * Initialize gallery page
      */
     init: function () {
 
+        $(".filter").click(function(e) {
+          var newMode = $(e.target).attr('data-mode');
+
+          if (newMode != helloGallery.sortMode) {
+
+            helloGallery.sortMode = parseInt(newMode);
+
+            $(".filter").removeClass("active");
+            $(e.target).addClass("active");
+            
+            helloGallery.pageNumber = 0;
+            $('#galleryView').isotope('destroy');            
+            $('#galleryView').html("");
+            $("#loadMore").show();
+
+            helloGallery.loadInitial();
+          }
+
+        });
 
         $("#loadMore").click(function() {
 
-          helloGallery.loadElements(function(elements){
-
-            for (var element in elements) {
-              var item = $(elements[element]);
-              
-              $('#galleryView').append(item);
-              $('#galleryView').isotope('appended', item);
-            }
-          });
+          helloGallery.loadMore();
 
         });
 
-        // Get the gistID from the URL and display it
+        // Get the ID from the URL and display it
 
         Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
 
-        var GalleryObject = Parse.Object.extend("Gallery");
-        var query = new Parse.Query(GalleryObject);
-        query.count({
-          success: function(number) {
-            helloGallery.totalItems = number;
-          },
-          error: function(error) {
-            // error is an instance of Parse.Error.
-          }
-        });
+        helloGallery.loadInitial();
+    },
+
+    loadInitial: function() {
 
         helloGallery.loadElements( function(elements){
 
@@ -54,9 +60,20 @@ var helloGallery = {
                 isFitWidth: true
               }
           });  
-
        });
+    },
 
+    loadMore: function() {
+
+      helloGallery.loadElements(function(elements){
+
+        for (var element in elements) {
+          var item = $(elements[element]);
+          
+          $('#galleryView').append(item);
+          $('#galleryView').isotope('appended', item);
+        }
+      });
 
     },
 
@@ -68,7 +85,32 @@ var helloGallery = {
         var query = new Parse.Query(GalleryObject);
         query.limit(helloGallery.itemsPerPage);
         query.skip(helloGallery.pageNumber * helloGallery.itemsPerPage);
-        query.descending("createdAt");
+        
+        switch (helloGallery.sortMode) {
+          case 0:
+            console.log("Featured");
+            query.descending("featureScore");
+            query.addDescending("createdAt");
+            break;
+          case 1:
+            console.log("Popular");
+            query.descending("viewCount");
+            query.addDescending("createdAt");
+            break;
+          case 2:
+            console.log("Recent");
+            query.descending("createdAt");
+            break;
+        }
+
+        query.count({
+          success: function(number) {
+            helloGallery.totalItems = number;
+          },
+          error: function(error) {
+            // error is an instance of Parse.Error.
+          }
+        });        
 
         query.find({
           success: function(results) {

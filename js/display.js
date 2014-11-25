@@ -86,13 +86,24 @@ var helloDisplay = {
 
         var GalleryObject = Parse.Object.extend("Gallery");
         var query = new Parse.Query(GalleryObject);
+        console.log("Query start.");
         query.get(parseID, {
           success: function(gallery) {
+            console.log("Query complete.");
             helloDisplay.showSketch(gallery.get("source"));
+
+            Parse.Cloud.run('incrementViewCount', {id: gallery.id}, {
+              success: function(result) {
+                // Success
+              },
+              error: function(error) {
+                console.log("View increment failed.")
+              }
+            });
+
           },
           error: function(object, error) {
-            // The object was not retrieved successfully.
-            // error is a Parse.Error with an error code and message.
+            console.log("Object retrieval failed.")
           }
         });
 
