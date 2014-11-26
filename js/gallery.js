@@ -25,7 +25,7 @@ var helloGallery = {
             
             helloGallery.pageNumber = 0;
             $('#galleryView').isotope('destroy');            
-            $('#galleryView').html("");
+            $('.galleryImage').not("#loadMore").remove();
             $("#loadMore").show();
 
             helloGallery.loadInitial();
@@ -50,30 +50,29 @@ var helloGallery = {
 
     loadInitial: function() {
 
-        helloGallery.loadElements( function(elements){
+        $('#galleryView').isotope({
+          itemSelector: '.galleryImage',
+          sortBy : 'index',
+          getSortData: {
+            index: '[data-index]'
+          }, 
+          masonry: {
+            gutter: 12,
+            isFitWidth: true
+          }
+        });  
 
-          var container = $('#galleryView'); 
-          container.append( elements );
-
-          container.isotope({
-            itemSelector: '.galleryImage',
-              masonry: {
-                gutter: 12,
-                isFitWidth: true
-              }
-          });  
-       });
+        helloGallery.loadMore();
     },
 
     loadMore: function() {
 
       helloGallery.loadElements(function(elements){
-
         for (var element in elements) {
           var item = $(elements[element]);
           
-          $('#galleryView').append(item);
-          $('#galleryView').isotope('appended', item);
+          //$('#galleryView').append(item);
+          $('#galleryView').isotope('insert', item);
         }
       });
 
@@ -90,17 +89,17 @@ var helloGallery = {
         
         switch (helloGallery.sortMode) {
           case 0:
-            console.log("Featured");
+            //console.log("Featured");
             query.descending("featureScore");
             query.addDescending("createdAt");
             break;
           case 1:
-            console.log("Popular");
+            //console.log("Popular");
             query.descending("viewCount");
             query.addDescending("createdAt");
             break;
           case 2:
-            console.log("Recent");
+            //console.log("Recent");
             query.descending("createdAt");
             break;
         }

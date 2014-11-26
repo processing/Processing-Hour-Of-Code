@@ -6,7 +6,7 @@ class: gallery
 
 <script id="template" type="text/html">
 {% raw  %}
-<div class="galleryImage">
+<div class="galleryImage" data-index="0">
   <a href="{{link}}"><img src="{{image}}" width="250" height="200"/></a>
 </div>
 {% endraw %}
@@ -34,12 +34,12 @@ class: gallery
 	      </a>
     </div>
 
-	<div id="galleryView"></div>
+	<div id="galleryView">
+		
+	<button id="loadMore" class="galleryImage btn btn-link" data-loading-text="Loading..."  data-index="1">
+		<span class="glyphicon glyphicon-plus"></span> Load More
+	</button>
 
-	<div id="galleryControls">
-		<button id="loadMore" class="btn btn-default btn-sm" data-loading-text="Loading...">
-			<span class="glyphicon glyphicon-plus"></span> Load More
-		</button>
 	</div>
 
 </div>
