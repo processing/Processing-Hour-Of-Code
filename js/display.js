@@ -70,8 +70,10 @@ var helloDisplay = {
             } else {
 
                 var featureScore = parseInt($("#featureScore").val());
+                var hidden = $('#hidden').prop('checked');
 
                 helloDisplay.parseObject.set("featureScore", featureScore);
+                helloDisplay.parseObject.set("hidden", hidden);
                 helloDisplay.parseObject.save();
             }
 
@@ -136,8 +138,9 @@ var helloDisplay = {
             helloDisplay.parseObject = gallery;
             helloDisplay.showSketch(gallery.get("source"));
 
-            $("#viewCount").val(gallery.get("viewCount"));
             $("#featureScore").val(gallery.get("featureScore"));
+
+            $('#hidden').prop('checked', gallery.get("hidden"));
 
             Parse.Cloud.run('incrementViewCount', {id: gallery.id}, {
               success: function(result) {

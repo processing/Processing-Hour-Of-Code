@@ -204,9 +204,9 @@ var helloEditor = {
         });
 
         $("#shareButton").click(function () {
-            helloEditor.confirmExit = false;
-            //helloEditor.createGist();
-            helloEditor.addToGallery();
+            //helloEditor.addToGallery();
+            
+            helloEditor.showShareConfirm();
         });
 
         $("#resetExample").click(function () {
@@ -241,6 +241,14 @@ var helloEditor = {
         });
 
         /* Share UI */
+
+        $("#modalConfirmButton").click(function () {
+
+            var hidden = !$("#modalGalleryCheckbox").prop('checked');
+
+            $('#confirmModal').modal('hide');
+            helloEditor.addToGallery(hidden);
+        });
 
         $("#modalGoogleButton").click(function () {
 
@@ -640,7 +648,7 @@ var helloEditor = {
     /**
      * Adds to the gallery hosted on Parse
      */
-    addToGallery: function() {
+    addToGallery: function(hidden) {
 
         // Post to Parse
 
@@ -665,7 +673,9 @@ var helloEditor = {
             var gallery = new Parse.Object("Gallery");
             gallery.set("source", processingSource);
             gallery.set("image", processingImage);
+            gallery.set("hidden", hidden)
             gallery.save(galleryData).then(function(object) {
+                helloEditor.parseObject = object;
                 var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#@" + object.id;                
                 helloEditor.showShare(displayURL);          
             });
@@ -685,35 +695,8 @@ var helloEditor = {
 
     },
 
-    /**
-     * Creates a new Gist with editor contents and shows the share modal
-     */
-    createGist: function () {
-
-        var processingSource = this.editor.getValue(),
-            postURL = "https://api.github.com/gists",
-            postData;
-
-        if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
-            processingSource = "size(500,400);\n\n" + processingSource;
-        }
-
-        postData = {
-                "description": "Save for Processing Hour of Code",
-                "public": true,
-                "files": {
-                    "demo.pde": {
-                        "content": processingSource
-                    }
-                }
-            };        
-
-        $.post(postURL, JSON.stringify(postData))
-            .done(function (data) {
-                var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#" + data.id;                
-                helloEditor.showShare(displayURL);
-            });
-
+    showShareConfirm: function() {
+        $('#confirmModal').modal('show');
     },
     showShare: function(displayURL) {
 

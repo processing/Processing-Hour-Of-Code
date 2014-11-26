@@ -84,6 +84,8 @@ var helloGallery = {
 
         var GalleryObject = Parse.Object.extend("Gallery");
         var query = new Parse.Query(GalleryObject);
+
+        query.notEqualTo("hidden", true);
         query.limit(helloGallery.itemsPerPage);
         query.skip(helloGallery.pageNumber * helloGallery.itemsPerPage);
         

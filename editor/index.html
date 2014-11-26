@@ -132,6 +132,44 @@ class: editor
 <!-- End Modal Error Window -->
 
 
+<!-- Modal Confirm Window -->
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="shareModalTitle" aria-hidden="true" data-url="http://hello.processing.org/">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="confirmModalTitle">Confirm</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          We'll create a custom link you can use to share your work with the world. You can also choose to have your sketch added to the gallery.
+        </p>
+      
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="modalGalleryCheckbox" checked="checked"> Share in gallery?
+          </label>
+        </div>
+
+      </div>   
+      <div class="modal-footer">
+              
+        <button class="btn btn-default btn-sm" id="modalConfirmButton">
+         <span class="glyphicon glyphicon-ok"></span> Continue
+        </button>             
+        <button class="btn btn-default btn-sm" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- End Modal Confirm Window -->
+
+
+
 <!-- Modal Share Window -->
 
 <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalTitle" aria-hidden="true" data-url="http://hello.processing.org/">
@@ -142,22 +180,26 @@ class: editor
         <h4 class="modal-title" id="shareModalTitle">Share</h4>
       </div>
       <div class="modal-body">
-        You can copy or bookmark the link below to revisit your creation at any time. You can also use any of the social buttons to share your work with the world!
-      </div>
-      <div class="modal-body" id="shareModalLink">
-        <a href="http://hello.processing.org" target="_blank">http://hello.processing.org/</a>
-      </div>      
+        <p>
+          You can copy or bookmark the link below to revisit your creation at any time. You can also use any of the social buttons to share your work with the world!
+        </p>
+      
+        <p id="shareModalLink">
+          <a href="http://hello.processing.org" target="_blank">http://hello.processing.org/</a>
+        </p>   
+
+      </div>   
       <div class="modal-footer">
-        <button class="btn btn-default" id="modalFacebookButton">
+        <button class="btn btn-default btn-sm" id="modalFacebookButton">
          <span class="glyphicon glyphicon-share-alt"></span> Facebook
         </button> 
-        <button class="btn btn-default" id="modalGoogleButton">
+        <button class="btn btn-default btn-sm" id="modalGoogleButton">
          <span class="glyphicon glyphicon-share-alt"></span> Google+
         </button>               
-        <button class="btn btn-default" id="modalTwitterButton">
+        <button class="btn btn-default btn-sm" id="modalTwitterButton">
          <span class="glyphicon glyphicon-share-alt"></span> Twitter
         </button>             
-        <button class="btn btn-default" data-dismiss="modal">
+        <button class="btn btn-default btn-sm" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
         </button>
       </div>
