@@ -246,7 +246,7 @@ div#lessonNavContainer {
 	text-decoration: none;
 } 
 
-a.active span, a.active:hover span {
+#lessonNav a.active span, #lessonNav a.active:hover span {
 	color: $secondary-color;
 	background: transparent;
 	border-bottom: 3px solid $secondary-color;
@@ -548,6 +548,17 @@ div#editorCommands {
 	display: none;
 }
 
+/* Admin Page */
+
+body.admin .container {
+	margin-top: 24px;
+	width: 480px;
+}
+
+#loginPanel, #logoutPanel, #loginFailed {
+	display: none;
+}
+
 /* Display Page */
 
 div#displayInfo {
@@ -560,6 +571,14 @@ div#displayInfo {
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
 	background: $light-color;
 	padding: 12px;
+}
+
+button#displayAdmin {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	z-index: 1000;
+	display:none;
 }
 
 footer#displayFooter {
@@ -628,23 +647,38 @@ div#displayEditor {
 }
 
 #galleryFilter {
-	margin-top: 12px;
+	background: $secondary-color;
+	height: 32px;
+	box-shadow: 0px 4px 1px rgba(0,0,0,.25);
+}
+
+#galleryFilter .filter {
+	display: inline-block;
+	color: white;
+	font-size: .9em;
+	padding: 8px;
+	height: 32px;
+	border-left: 1px solid $secondary-color-dark;
+}
+
+#galleryFilter .filter:last-child {
+	border-right: 1px solid $secondary-color-dark;
+}
+
+
+#galleryFilter .filter:hover  {
+	color: white;
+	text-decoration: none;	
+}
+
+#galleryFilter .filter:hover .text, #galleryFilter .active .text {
+	border-bottom: 2px solid white;
 }
 
 #galleryControls {
 	width: 100%;
 	text-align: center;
-	padding-bottom: 28px;
-}
-
-#galleryFooter {
-	width: 100%;
-	height: 20px;
-	color: #fff;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	text-align: center;
+	padding-bottom: 12px;
 }
 
 /* Hints Preview */

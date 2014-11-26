@@ -19,4 +19,5 @@ $(document).ready(function () {
     if (window.hasOwnProperty("helloDisplay")) { helloDisplay.init(); }
     if (window.hasOwnProperty("helloEditor")) { helloEditor.init(); }
     if (window.hasOwnProperty("helloGallery")) { helloGallery.init(); }
+    if (window.hasOwnProperty("helloAdmin")) { helloAdmin.init(); }
 });

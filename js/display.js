@@ -13,6 +13,7 @@
 var helloDisplay = {
     processingSource: "",
     editor: null,
+    parseObject: null,
     /**
      * Initialize display page
      */
@@ -36,6 +37,12 @@ var helloDisplay = {
             return false;
         });
 
+        $("#displayAdmin").click(function () {
+            $('#adminModal').modal('show');
+
+            return false;
+        });        
+
         $("#downloadCode").click(function () {
 
             var blob = new Blob([helloDisplay.processingSource], {type: "text/processing;charset=utf-8"});
@@ -43,6 +50,37 @@ var helloDisplay = {
 
             return false;
 
+        });
+
+        $("#adminForm").submit( function() {
+
+            if ($("#delete").prop('checked')) {
+
+                helloDisplay.parseObject.destroy({
+                  success: function(myObject) {
+                    console.log("Object deleted.");
+                    window.location.assign("/gallery");
+                  },
+                  error: function(myObject, error) {
+                    console.log("Delete failed.");
+                  }
+                });
+
+
+            } else {
+
+                var featureScore = parseInt($("#featureScore").val());
+
+                helloDisplay.parseObject.set("featureScore", featureScore);
+                helloDisplay.parseObject.save();
+            }
+
+            
+            
+
+            $('#adminModal').modal('hide');
+
+            return false;
         });
 
         // Initialize Editor
@@ -84,13 +122,22 @@ var helloDisplay = {
 
         Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
 
+        if (Parse.User.current() != null) {
+            $("#displayAdmin").show();
+        }
+
         var GalleryObject = Parse.Object.extend("Gallery");
         var query = new Parse.Query(GalleryObject);
-        console.log("Query start.");
+        console.log("Query start!");
         query.get(parseID, {
           success: function(gallery) {
-            console.log("Query complete.");
+            console.log("Query complete!");
+
+            helloDisplay.parseObject = gallery;
             helloDisplay.showSketch(gallery.get("source"));
+
+            $("#viewCount").val(gallery.get("viewCount"));
+            $("#featureScore").val(gallery.get("featureScore"));
 
             Parse.Cloud.run('incrementViewCount', {id: gallery.id}, {
               success: function(result) {

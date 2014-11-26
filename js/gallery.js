@@ -6,7 +6,7 @@
 var helloGallery = {
     pageNumber: 0,
     sortMode: 0,
-    itemsPerPage: 12,
+    itemsPerPage: 16,
     totalItems: null,
     /**
      * Initialize gallery page
@@ -14,14 +14,14 @@ var helloGallery = {
     init: function () {
 
         $(".filter").click(function(e) {
-          var newMode = $(e.target).attr('data-mode');
+          var newMode = $(e.delegateTarget).attr('data-mode');
 
           if (newMode != helloGallery.sortMode) {
 
             helloGallery.sortMode = parseInt(newMode);
 
             $(".filter").removeClass("active");
-            $(e.target).addClass("active");
+            $(e.delegateTarget).addClass("active");
             
             helloGallery.pageNumber = 0;
             $('#galleryView').isotope('destroy');            
@@ -30,6 +30,8 @@ var helloGallery = {
 
             helloGallery.loadInitial();
           }
+
+          return false;
 
         });
 

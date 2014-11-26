@@ -17,19 +17,21 @@ class: gallery
 	{% include header.html %}
 
 	<div id="galleryFilter" class="text-center">
-		<div class="btn-group">
-	      <button class="filter btn btn-default btn-sm active" data-mode="0">
-	        <span class="glyphicon glyphicon-star"></span> Featured
-	      </button>
 
-	      <button class="filter btn btn-default btn-sm" data-mode="1">
-	        <span class="glyphicon glyphicon-heart"></span> Popular
+	      <a class="filter active" data-mode="0" href="">
+	        <span class="glyphicon glyphicon-star"></span> 
+	        <span class="text">Featured</span>
 	      </a>
 
-	      <button class="filter btn btn-default btn-sm" data-mode="2">
-	        <span class="glyphicon glyphicon-time"></span> Recent
-	      </button>
-	    </div>
+	      <a class="filter" data-mode="1" href="">
+	        <span class="glyphicon glyphicon-heart"></span> 
+	        <span class="text">Popular</span>
+	      </a>
+
+	      <a class="filter" data-mode="2" href="">
+	        <span class="glyphicon glyphicon-time"></span> 
+	        <span class="text">Recent</span>
+	      </a>
     </div>
 
 	<div id="galleryView"></div>
@@ -39,10 +41,6 @@ class: gallery
 			<span class="glyphicon glyphicon-plus"></span> Load More
 		</button>
 	</div>
-
-	<footer id="galleryFooter">
-	  Processing Hour of Code // Computer Science Education Week // Code.org
-	</footer>
 
 </div>
 

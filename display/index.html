@@ -42,10 +42,45 @@ class: display
 
 </div>
 
-  <footer id="displayFooter">
-    Processing Hour of Code // Computer Science Education Week // Code.org
-  </footer>
+<button id="displayAdmin" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Admin</button>
 
+<footer id="displayFooter">
+  Processing Hour of Code // Computer Science Education Week // Code.org
+</footer>
+
+<!-- Modal Edit Window -->
+
+<div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="codeModalTitle" aria-hidden="true" data-url="http://hello.processing.org/">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="codeModalTitle">Admin</h4>
+      </div>
+      <div class="modal-body">
+
+        <form role="form" id="adminForm">
+          <div class="form-group">
+            <label for="featureScore">Feature Score</label>
+            <input type="text" class="form-control" id="featureScore">
+          </div>
+         <div class="checkbox">
+            <label>
+              <input type="checkbox" id="delete"> Delete Sketch
+            </label>
+          </div>
+
+          <button type="submit" id="saveButton" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Save</button>
+          <button id="cancelButton" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+        </form>
+
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- End Modal Code Window -->
 
 <!-- Modal Code Window -->
 
