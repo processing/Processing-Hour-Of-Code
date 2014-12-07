@@ -1,155 +1,160 @@
 "use strict";
 
+/*global Parse */
+/*global Mustache */
+/*global location */
+
 /**
  * Singleton for gallery page
  */
 var helloGallery = {
-    pageNumber: 0,
-    sortMode: 0,
-    itemsPerPage: 16,
-    totalItems: null,
-    /**
-     * Initialize gallery page
-     */
-    init: function () {
+  pageNumber: 0,
+  sortMode: 0,
+  itemsPerPage: 12,
+  totalItems: null,
+  /**
+   * Initialize gallery page
+   */
+  init: function () {
 
-        $(".filter").click(function(e) {
-          var newMode = $(e.delegateTarget).attr('data-mode');
+    $(".filter").click(function (e) {
+      var newMode = $(e.delegateTarget).attr('data-mode');
 
-          if (newMode != helloGallery.sortMode) {
+      if (newMode !== helloGallery.sortMode) {
 
-            helloGallery.sortMode = parseInt(newMode);
+        helloGallery.sortMode = parseInt(newMode, 10);
 
-            $(".filter").removeClass("active");
-            $(e.delegateTarget).addClass("active");
-            
-            helloGallery.pageNumber = 0;
-            $('#galleryView').isotope('destroy');            
-            $('.galleryImage').not("#loadMore").remove();
-            $("#loadMore").show();
+        $(".filter").removeClass("active");
+        $(e.delegateTarget).addClass("active");
 
-            helloGallery.loadInitial();
-          }
-
-          return false;
-
-        });
-
-        $("#loadMore").click(function() {
-
-          helloGallery.loadMore();
-
-        });
-
-        // Get the ID from the URL and display it
-
-        Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
+        helloGallery.pageNumber = 0;
+        $('#galleryView').isotope('destroy');
+        $('.galleryImage').not("#loadMore").remove();
+        $("#loadMore").show();
 
         helloGallery.loadInitial();
-    },
+      }
 
-    loadInitial: function() {
+      return false;
 
-        $('#galleryView').isotope({
-          itemSelector: '.galleryImage',
-          sortBy : 'index',
-          getSortData: {
-            index: '[data-index]'
-          }, 
-          masonry: {
-            gutter: 12,
-            isFitWidth: true
-          }
-        });  
+    });
 
-        helloGallery.loadMore();
-    },
+    $("#loadMore").click(function () {
 
-    loadMore: function() {
+      helloGallery.loadMore();
 
-      helloGallery.loadElements(function(elements){
-        for (var element in elements) {
-          var item = $(elements[element]);
-          
-          //$('#galleryView').append(item);
-          $('#galleryView').isotope('insert', item);
-        }
-      });
+    });
 
-    },
+    // Get the ID from the URL and display it
 
-    loadElements: function (callback) {
+    Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
 
-        $("#loadMore").button('loading');
+    helloGallery.loadInitial();
+  },
 
-        var GalleryObject = Parse.Object.extend("Gallery");
-        var query = new Parse.Query(GalleryObject);
+  loadInitial: function () {
 
-        query.notEqualTo("hidden", true);
-        query.limit(helloGallery.itemsPerPage);
-        query.skip(helloGallery.pageNumber * helloGallery.itemsPerPage);
-        
-        switch (helloGallery.sortMode) {
-          case 0:
-            //console.log("Featured");
-            query.descending("featureScore");
-            query.addDescending("createdAt");
-            break;
-          case 1:
-            //console.log("Popular");
-            query.descending("viewCount");
-            query.addDescending("createdAt");
-            break;
-          case 2:
-            //console.log("Recent");
-            query.descending("createdAt");
-            break;
-        }
+    $('#galleryView').isotope({
+      itemSelector: '.galleryImage',
+      sortBy: 'index',
+      getSortData: {
+        index: '[data-index]'
+      },
+      masonry: {
+        gutter: 12,
+        isFitWidth: true
+      }
+    });
 
-        query.count({
-          success: function(number) {
-            helloGallery.totalItems = number;
-          },
-          error: function(error) {
-            // error is an instance of Parse.Error.
-          }
-        });        
+    helloGallery.loadMore();
+  },
 
-        query.find({
-          success: function(results) {
-            //alert("Successfully retrieved " + results.length + " scores.");
+  loadMore: function () {
 
-            var imageTiles = [];
+    helloGallery.loadElements(function (elements) {
+      var i;
 
-            for (var i = 0; i < results.length; i++) { 
-              var object = results[i];
-              //alert(object.id + ' - ' + object.get('playerName'));
-              
-              var data = {
-                link: "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#@" + object.id,
-                image: object.get("image").url()
-              } 
+      for (i = 0; i < elements.length; i++) {
+        $('#galleryView').isotope('insert', $(elements[i]));
+      }
+    });
 
-              var template = $('#template').html();
-              Mustache.parse(template);
-              var rendered = Mustache.render(template, data);
-              imageTiles.push(rendered);
-            }
+  },
 
-            callback(imageTiles);          
+  loadElements: function (callback) {
 
-            helloGallery.pageNumber++; 
+    $("#loadMore").button('loading');
 
-            $("#loadMore").button('reset');
+    var GalleryObject = Parse.Object.extend("Gallery");
+    var query = new Parse.Query(GalleryObject);
 
-            if (helloGallery.totalItems != null && helloGallery.pageNumber * helloGallery.itemsPerPage >= helloGallery.totalItems) {
-              $("#loadMore").hide();
-            }                       
+    query.notEqualTo("hidden", true);
+    query.limit(helloGallery.itemsPerPage);
+    query.skip(helloGallery.pageNumber * helloGallery.itemsPerPage);
 
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
-        });  
+    switch (helloGallery.sortMode) {
+    case 0:
+      //console.log("Featured");
+      query.descending("featureScore");
+      query.addDescending("createdAt");
+      break;
+    case 1:
+      //console.log("Popular");
+      query.descending("viewCount");
+      query.addDescending("createdAt");
+      break;
+    case 2:
+      //console.log("Recent");
+      query.descending("createdAt");
+      break;
     }
+
+    query.count({
+      success: function (number) {
+        helloGallery.totalItems = number;
+      },
+      error: function (error) {
+        console.log(error.message);
+      }
+    });
+
+    query.find({
+      success: function (results) {
+        //alert("Successfully retrieved " + results.length + " scores.");
+
+        var i, imageTiles = [];
+
+        var object, data, template, rendered;
+
+        for (i = 0; i < results.length; i++) {
+          object = results[i];
+          //alert(object.id + ' - ' + object.get('playerName'));
+
+          data = {
+            link: "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + object.id,
+            image: object.get("image").url()
+          };
+
+          template = $('#template').html();
+          Mustache.parse(template);
+          rendered = Mustache.render(template, data);
+          imageTiles.push(rendered);
+        }
+
+        callback(imageTiles);
+
+        helloGallery.pageNumber++;
+
+        $("#loadMore").button('reset');
+
+        if (helloGallery.totalItems !== null && helloGallery.pageNumber * helloGallery.itemsPerPage >= helloGallery.totalItems) {
+          $("#loadMore").hide();
+        }
+
+      },
+      error: function (error) {
+        console.log("Error: " + error.code + " " + error.message);
+      }
+    });
+  }
 };

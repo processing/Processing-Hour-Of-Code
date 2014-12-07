@@ -1,110 +1,110 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+(function () {
+  var method;
+  var noop = function () {};
+  var methods = [
+    'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+    'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+    'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+    'timeStamp', 'trace', 'warn'
+  ];
+  var length = methods.length;
+  var console = (window.console = window.console || {});
 
-    while (length--) {
-        method = methods[length];
+  while (length--) {
+    method = methods[length];
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
+    // Only stub undefined methods.
+    if (!console[method]) {
+      console[method] = noop;
     }
+  }
 }());
 
 // Bootstrap hover plugin
 // https://github.com/CWSpear/twitter-bootstrap-hover-dropdown
 
-(function($, window, undefined) {
-    // don't do anything if touch is supported
-    // (plugin causes some issues on mobile)
-    if('ontouchstart' in document) return;
+(function ($, window, undefined) {
+  // don't do anything if touch is supported
+  // (plugin causes some issues on mobile)
+  if ('ontouchstart' in document) return;
 
-    // outside the scope of the jQuery plugin to
-    // keep track of all dropdowns
-    var $allDropdowns = $();
+  // outside the scope of the jQuery plugin to
+  // keep track of all dropdowns
+  var $allDropdowns = $();
 
-    // if instantlyCloseOthers is true, then it will instantly
-    // shut other nav items when a new one is hovered over
-    $.fn.dropdownHover = function(options) {
+  // if instantlyCloseOthers is true, then it will instantly
+  // shut other nav items when a new one is hovered over
+  $.fn.dropdownHover = function (options) {
 
-        // the element we really care about
-        // is the dropdown-toggle's parent
-        $allDropdowns = $allDropdowns.add(this.parent());
+    // the element we really care about
+    // is the dropdown-toggle's parent
+    $allDropdowns = $allDropdowns.add(this.parent());
 
-        return this.each(function() {
-            var $this = $(this),
-                $parent = $this.parent(),
-                defaults = {
-                    delay: 500,
-                    instantlyCloseOthers: true
-                },
-                data = {
-                    delay: $(this).data('delay'),
-                    instantlyCloseOthers: $(this).data('close-others')
-                },
-                settings = $.extend(true, {}, defaults, options, data),
-                timeout;
+    return this.each(function () {
+      var $this = $(this),
+        $parent = $this.parent(),
+        defaults = {
+          delay: 500,
+          instantlyCloseOthers: true
+        },
+        data = {
+          delay: $(this).data('delay'),
+          instantlyCloseOthers: $(this).data('close-others')
+        },
+        settings = $.extend(true, {}, defaults, options, data),
+        timeout;
 
-            $parent.hover(function(event) {
-                // so a neighbor can't open the dropdown
-                if(!$parent.hasClass('open') && !$this.is(event.target)) {
-                    return true;
-                }
+      $parent.hover(function (event) {
+        // so a neighbor can't open the dropdown
+        if (!$parent.hasClass('open') && !$this.is(event.target)) {
+          return true;
+        }
 
-                if(settings.instantlyCloseOthers === true)
-                    $allDropdowns.removeClass('open');
+        if (settings.instantlyCloseOthers === true)
+          $allDropdowns.removeClass('open');
 
-                window.clearTimeout(timeout);
-                $parent.addClass('open');
-                $parent.trigger($.Event('show.bs.dropdown'));
-            }, function() {
-                timeout = window.setTimeout(function() {
-                    $parent.removeClass('open');
-                    $parent.trigger('hide.bs.dropdown');
-                }, settings.delay);
-            });
+        window.clearTimeout(timeout);
+        $parent.addClass('open');
+        $parent.trigger($.Event('show.bs.dropdown'));
+      }, function () {
+        timeout = window.setTimeout(function () {
+          $parent.removeClass('open');
+          $parent.trigger('hide.bs.dropdown');
+        }, settings.delay);
+      });
 
-            // this helps with button groups!
-            $this.hover(function() {
-                if(settings.instantlyCloseOthers === true)
-                    $allDropdowns.removeClass('open');
+      // this helps with button groups!
+      $this.hover(function () {
+        if (settings.instantlyCloseOthers === true)
+          $allDropdowns.removeClass('open');
 
-                window.clearTimeout(timeout);
-                $parent.addClass('open');
-                $parent.trigger($.Event('show.bs.dropdown'));
-            });
+        window.clearTimeout(timeout);
+        $parent.addClass('open');
+        $parent.trigger($.Event('show.bs.dropdown'));
+      });
 
-            // handle submenus
-            $parent.find('.dropdown-submenu').each(function(){
-                var $this = $(this);
-                var subTimeout;
-                $this.hover(function() {
-                    window.clearTimeout(subTimeout);
-                    $this.children('.dropdown-menu').show();
-                    // always close submenu siblings instantly
-                    $this.siblings().children('.dropdown-menu').hide();
-                }, function() {
-                    var $submenu = $this.children('.dropdown-menu');
-                    subTimeout = window.setTimeout(function() {
-                        $submenu.hide();
-                    }, settings.delay);
-                });
-            });
+      // handle submenus
+      $parent.find('.dropdown-submenu').each(function () {
+        var $this = $(this);
+        var subTimeout;
+        $this.hover(function () {
+          window.clearTimeout(subTimeout);
+          $this.children('.dropdown-menu').show();
+          // always close submenu siblings instantly
+          $this.siblings().children('.dropdown-menu').hide();
+        }, function () {
+          var $submenu = $this.children('.dropdown-menu');
+          subTimeout = window.setTimeout(function () {
+            $submenu.hide();
+          }, settings.delay);
         });
-    };
-
-    $(document).ready(function() {
-        // apply dropdownHover to all elements with the data-hover="dropdown" attribute
-        $('[data-hover="dropdown"]').dropdownHover();
+      });
     });
+  };
+
+  $(document).ready(function () {
+    // apply dropdownHover to all elements with the data-hover="dropdown" attribute
+    $('[data-hover="dropdown"]').dropdownHover();
+  });
 })(jQuery, this);
