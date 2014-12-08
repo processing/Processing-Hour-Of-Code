@@ -504,15 +504,15 @@ var helloEditor = {
       $("#editorContainer")
         .css({
           top: $("#header").height() + 8 + 8 + videoHeight,
-          left: 8,          
-          width: videoWidth -8,
+          left: 8,
+          width: videoWidth - 8,
           height: viewportHeight - $("#header").height() - 8 - 8 - videoHeight - 8 - $("#footer").height()
         });
 
       $("#editor").height($("#editorContainer").height() - $("#editorCommands").height() - 8);
 
       $("#canvasContainer")
-        .height(viewportHeight)
+        .height(viewportHeight - $("#header").height() - $("#footer").height())
         .width(viewportWidth - videoWidth)
         .css({
           top: $("#header").height(),
