@@ -354,7 +354,7 @@ div#videoContainer {
 
 div#videoCommandsContainer {
 	position:absolute;
-	bottom:16px;
+	bottom:8px;
 	width: 100%;
 	text-align:center;
 	display:none;
@@ -385,7 +385,7 @@ div#videoCommands .buttonLabel {
 div#videoSubtitlesContainer {
 	position: absolute;
 	left: 0;
-	bottom: 16px;
+	bottom: 8px;
 	width: 100%;
 }
 
@@ -405,9 +405,11 @@ div#videoSubtitles {
 	text-shadow: 2px 2px #000;
 }
 
-div#videoContainer:hover div#videoSubtitlesContainer {
-	display: none;
+div#videoContainer:hover div#videoSubtitlesContainer,
+html.touch div#videoSubtitlesContainer {
+	bottom: 44px;
 }
+
 
 div#footer {
 	position: fixed;
