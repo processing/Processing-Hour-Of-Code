@@ -111,6 +111,12 @@ var helloEditor = {
           window.focus();
         }
       },
+      move: function () {
+        if (Modernizr.touch) {
+          document.activeElement.blur();
+          window.focus();
+        }
+      },
       hide: function () {
         if (!Modernizr.touch) {
           helloEditor.editor.focus();
@@ -135,9 +141,6 @@ var helloEditor = {
   setupUI: function () {
 
     /* Video UI */
-    if (Modernizr.touch) {
-      $("#videoCommandsContainer").show();
-    }
 
     $("#jumpBack").click(function () {
       var newTime = (helloEditor.popcorn.currentTime() < 10) ? 0 : helloEditor.popcorn.currentTime() - 10;
