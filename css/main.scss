@@ -5,6 +5,7 @@
 
 $light-color: #FcFcFf;
 $mid-color: #efefef;
+$dim-color: #cfcfcf;
 
 $primary-color: #4D7E9E;
 $primary-color-dark: darken($primary-color, 20%);
@@ -263,7 +264,7 @@ div#lessonNavContainer {
 	height: 100%;
 
 	min-width: 1024px;
-	min-height: 492px;
+	min-height: 704px;
 }
 
 #interface.videoMode div#canvasContainer, #interface.videoMode div#editorContainer {
@@ -411,6 +412,7 @@ div#footer {
 	width: 100%;
 	min-width: 1024px;
 	background: $light-color;
+	border-top: 1px solid $dim-color;
 }
 
 div#transport {
@@ -426,6 +428,7 @@ div#transport #track {
 	background: $mid-color;
 	height: 8px;
 	width: 100%;
+	outline: 1px solid $dim-color;
 }
 
 div#transport #progress {
@@ -465,6 +468,7 @@ div.hint h2, div.hint p {
 div#editorContainer { 
 	display: none;
 	position: absolute;
+	overflow: hidden;
 	top: 238px;
 	left: 0px;
 	padding: 8px;

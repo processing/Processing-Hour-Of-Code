@@ -448,9 +448,7 @@ var helloEditor = {
   refreshUI: function () {
 
     var viewportWidth = $("#interface").innerWidth(),
-      viewportHeight = $("#interface").innerHeight() - $("#header").height() - $("#footer").height(),
-      minVideoWidth = 320,
-      maxVideoWidth = viewportWidth / 2,
+      viewportHeight = $("#interface").innerHeight(),
       videoWidth,
       videoHeight;
 
@@ -482,15 +480,10 @@ var helloEditor = {
       helloEditor.confirmExit = true;
 
       $("#interface").removeClass("videoMode");
-      //console.log("Editor Mode");
 
-      if (viewportWidth - viewportHeight < minVideoWidth) {
-        videoWidth = minVideoWidth;
-      } else if (viewportWidth - viewportHeight > maxVideoWidth) {
-        videoWidth = maxVideoWidth;
-      } else {
-        videoWidth = viewportWidth - viewportHeight;
-      }
+      videoWidth = viewportWidth - 500;
+
+      if (videoWidth > viewportWidth / 2) { videoWidth = viewportWidth / 2; }
 
       videoHeight = videoWidth / 16 * 9;
 
@@ -499,10 +492,10 @@ var helloEditor = {
 
       $("#videoContainer")
         .css({
-          width: videoWidth,
+          width: videoWidth - 8,
           height: videoHeight,
           left: 8,
-          top: 8 + $("#header").height(),
+          top: $("#header").height() + 8,
           marginTop: 0,
           marginLeft: 0
         })
@@ -510,10 +503,10 @@ var helloEditor = {
 
       $("#editorContainer")
         .css({
-          width: videoWidth,
-          height: viewportHeight - videoHeight - 32,
-          top: videoHeight + 20 + $("#header").height(),
-          left: 8
+          top: $("#header").height() + 8 + 8 + videoHeight,
+          left: 8,          
+          width: videoWidth -8,
+          height: viewportHeight - $("#header").height() - 8 - 8 - videoHeight - 8 - $("#footer").height()
         });
 
       $("#editor").height($("#editorContainer").height() - $("#editorCommands").height() - 8);
