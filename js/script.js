@@ -43,7 +43,7 @@ var scriptOne = {
 
     // Code.org API 
 
-    var imagePath = "http://code.org/api/hour/begin_processing.png";
+    var imagePath = "http://code.org/api/hour/begin_processing_foundation.png";
     $('<img src="' + imagePath + '">').load(function () {
       console.log("CODE API BEGIN");
     });
@@ -879,7 +879,7 @@ var scriptSix = {
 
     // Code.org API
 
-    var imagePath = "http://code.org/api/hour/finish_processing.png";
+    var imagePath = "http://code.org/api/hour/finish_processing_foundation.png";
     $('<img src="' + imagePath + '">').load(function () {
       console.log("CODE API END");
     });
