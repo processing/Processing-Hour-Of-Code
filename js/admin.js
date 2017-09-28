@@ -11,43 +11,44 @@ var helloAdmin = {
    * Initialize admin page
    */
   init: function () {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user === null) {
+        $("#loginPanel").show();
+        $("#logoutPanel").hide();
+      } else {
+        firebase.database().ref('admins/' + user.uid).once('value').then(function(result) {
+          if(result.val()) {
+            $("#loginPanel").hide();
+            $("#logoutPanel").show();
 
-        if (Parse.User.current() === null) {
-      $("#loginPanel").show();
-      $("#logoutPanel").hide();
-    } else {
-      $("#loginPanel").hide();
-      $("#logoutPanel").show();
-
-      $("#userInfo").html(Parse.User.current().get("username"));
-    }
+            $("#userInfo").html(firebase.auth().currentUser.email);
+          } else {
+            firebase.auth().signOut();
+            $("#loginFailed").show();
+            $("#loginError").html("You are not an admin!");
+          }
+        }).catch(function(err) {
+          firebase.auth().signOut();
+          $("#loginFailed").show();
+          $("#loginError").html("Failed to check admin status!");
+        });
+      }
+    });
 
     $("#logoutButton").click(function () {
-      Parse.User.logOut();
+      firebase.auth().signOut();
       $("#loginPanel").show();
       $("#logoutPanel").hide();
     });
 
-    $("#loginForm").submit(function () {
-
+    $("#loginForm").submit(function (e) {
+      e.preventDefault();
       var userEmail = $("#userEmail").val();
       var userPassword = $("#userPassword").val();
 
-      Parse.User.logIn(userEmail, userPassword, {
-        success: function (user) {
-
-          $("#userInfo").html(user.get("username"));
-
-          $("#loginPanel").hide();
-          $("#logoutPanel").show();
-
-        },
-        error: function (user, error) {
-          console.log(user);
-
-          $("#loginFailed").show();
-          $("#loginError").html(error.message);
-        }
+      firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
+        $("#loginFailed").show();
+        $("#loginError").html(error.message);
       });
 
       return false;

@@ -69,13 +69,13 @@ var helloDisplay = {
         });
 
       } else {
-        // TODO
         var featureScore = parseInt($("#featureScore").val(), 10);
         var hidden = $('#hidden').prop('checked');
-        //
-        // helloDisplay.parseObject.set("featureScore", featureScore);
-        // helloDisplay.parseObject.set("hidden", hidden);
-        // helloDisplay.parseObject.save();
+
+        helloDisplay.firebaseReference.update({
+          featureScore: featureScore,
+          hidden: hidden
+        });
       }
 
 
@@ -121,11 +121,13 @@ var helloDisplay = {
    * Fetch sketch code Firebase
    */
   displayGallery: function (key) {
-
-    // TODO
-    // if (Parse.User.current() !== null) {
-    //   $("#displayAdmin").show();
-    // }
+    firebase.auth().onAuthStateChanged(function(user) {
+      if(user) {
+        $("#displayAdmin").show();
+      } else {
+        $("#displayAdmin").hide();
+      }
+    });
 
     helloDisplay.firebaseReference = firebase.database().ref('gallery/' + key);
 
