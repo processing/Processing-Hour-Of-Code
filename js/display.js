@@ -16,7 +16,7 @@
 var helloDisplay = {
   processingSource: "",
   editor: null,
-  firebaseReference: null,
+  firebaseGallery: null,
   /**
    * Initialize display page
    */
@@ -60,25 +60,26 @@ var helloDisplay = {
     $("#adminForm").submit(function () {
 
       if ($("#delete").prop('checked')) {
-
-        helloDisplay.firebaseReference.remove().then(function () {
+        helloDisplay.firebaseSketch.remove().then(function () {
           console.log("Object deleted.");
           window.location.assign("/gallery");
         }).catch(function (error) {
           console.log("Delete failed: " + error.message);
         });
-
+        helloDisplay.firebaseGallery.remove();
       } else {
-        var featureScore = parseInt($("#featureScore").val(), 10);
-        if(isNaN(featureScore)) {
-          featureScore = 0;
-        }
         var hidden = $('#hidden').prop('checked');
-
-        helloDisplay.firebaseReference.update({
-          featureScore: featureScore,
-          hidden: hidden
-        });
+        if(hidden) {
+          helloDisplay.firebaseGallery.remove();
+        } else {
+          var featureScore = parseInt($("#featureScore").val(), 10);
+          if(isNaN(featureScore)) {
+            featureScore = 0;
+          }
+          helloDisplay.firebaseGallery.update({
+            featureScore: featureScore
+          });
+        }
       }
 
 
@@ -131,21 +132,26 @@ var helloDisplay = {
         $("#displayAdmin").hide();
       }
     });
+    helloDisplay.firebaseSketch = firebase.database().ref('sketches/' + key);
 
-    helloDisplay.firebaseReference = firebase.database().ref('gallery/' + key);
-
-
-    helloDisplay.firebaseReference.once('value').then(function (query_result) {
+    helloDisplay.firebaseSketch.once('value').then(function(query_result) {
       var sketch = query_result.val();
-      console.log("Query complete!");
 
       helloDisplay.showSketch(sketch.source);
+    }).catch(function(err) {
+      console.log("Failed to fetch sketch: ", err.message);
+    });
 
-      $("#featureScore").val(sketch.featureScore);
+    helloDisplay.firebaseGallery = firebase.database().ref('gallery/' + key);
 
-      $('#hidden').prop('checked', sketch.hidden);
+    helloDisplay.firebaseGallery.once('value').then(function (query_result) {
+      var gallery_data = query_result.val();
 
-      var views = helloDisplay.firebaseReference.child('viewCount');
+      $("#featureScore").val(gallery_data.featureScore);
+
+      $('#hidden').prop('checked', false);
+
+      var views = helloDisplay.firebaseGallery.child('viewCount');
       views.transaction(function(views) {
         if (!views) {
           return 1;
@@ -154,7 +160,8 @@ var helloDisplay = {
         }
       });
     }).catch(function (error) {
-      console.log("Object retrieval failed: " + error.message);
+      $('#hidden').prop('checked', true);
+      // console.log("Object retrieval failed: " + error.message);
     });
 
   },

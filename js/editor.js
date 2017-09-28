@@ -703,14 +703,19 @@ var helloEditor = {
 
     var galleryData = {
       source: processingSource,
-      hidden: hidden,
     };
 
-    firebase.database().ref('gallery/').push(galleryData).then(function(query_result) {
+    firebase.database().ref('sketches/').push(galleryData).then(function(query_result) {
       var image = firebase.storage().ref('gallery/' + query_result.key + '.jpg');
       image.putString(uri, 'data_url');
       var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + query_result.key;
       helloEditor.showShare(displayURL);
+      if(!hidden) {
+        firebase.database().ref('gallery/').child(query_result.key).set({
+          featureScore: 0,
+          viewCount: 0
+        });
+      }
     }).catch(function(err) {
       console.log("Error pushing to gallery: ", err.message);
     });
