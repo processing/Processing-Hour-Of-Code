@@ -68,7 +68,8 @@ var helloEditor = {
         "color": 2,
         "interact": 3,
         "questions": 4,
-        "goodbye": 5
+        "goodbye": 5,
+        "editor": 6
       };
 
       if (lessonTable[lessonName]) {
@@ -81,7 +82,19 @@ var helloEditor = {
 
     }
 
+    if(this.lessonIndex >= 0) {
     this.loadLesson(this.lessonIndex, lessonTime);
+    } else {
+      this.setMode(EDITOR_MODE);
+      $("#editorContainer").fadeIn("fast");
+      $("#canvasContainer").fadeIn("fast");
+
+      helloEditor.showHint(6);
+
+      $("#resetButton").show();
+      $("#shareButton").show();
+      $("#runButton").show();
+    }
 
     // Resize callback
 
@@ -416,7 +429,7 @@ var helloEditor = {
    */
   setMode: function (newMode) {
     this.displayMode = newMode;
-    if (!helloEditor.popcorn.paused()) {
+    if (helloEditor.popcorn && !helloEditor.popcorn.paused()) {
       helloEditor.refreshUI();
     }
   },

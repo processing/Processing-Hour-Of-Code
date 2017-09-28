@@ -938,9 +938,44 @@ var scriptSix = {
 };
 
 /**
+ * Blank editor scripts
+ */
+var editor = {
+  reset: function () {
+    // Set initial State
+
+    helloEditor.setMode(VIDEO_MODE);
+    helloEditor.confirmExit = false;
+
+    $("#hint").hide();
+    $("#toggleRulers").show();
+
+    $("#shareButton").hide();
+    $("#nextButton").hide();
+
+    // Video exercise button on lessons only
+    $("#jumpExercise").hide();
+    $("#jumpLesson").hide();
+    $("#jumpEnd").hide();
+
+  },
+  init: function (time) {
+    this.reset();
+    helloEditor.setMode(EDITOR_MODE);
+    $("#editorContainer").fadeIn("fast");
+    $("#canvasContainer").fadeIn("fast");
+
+    helloEditor.showHint(6);
+
+    $("#resetButton").show();
+    $("#shareButton").show();
+    $("#runButton").show();
+  }
+}
+/**
  * Script catalog
  */
 
 var scripts = [
-  scriptOne, scriptTwo, scriptThree, scriptFour, scriptFive, scriptSix
+  scriptOne, scriptTwo, scriptThree, scriptFour, scriptFive, scriptSix, editor
 ];
