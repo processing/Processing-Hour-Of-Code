@@ -70,6 +70,9 @@ var helloDisplay = {
 
       } else {
         var featureScore = parseInt($("#featureScore").val(), 10);
+        if(isNaN(featureScore)) {
+          featureScore = 0;
+        }
         var hidden = $('#hidden').prop('checked');
 
         helloDisplay.firebaseReference.update({

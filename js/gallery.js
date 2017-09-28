@@ -103,7 +103,7 @@ var helloGallery = {
     }
 
 
-    // query.notEqualTo("hidden", true);
+    query = query.orderByChild('hidden').equalTo(false);
     query = query.limitToLast(helloGallery.itemsPerPage + 1);
     if(helloGallery.nextEnd) {
       var value = null;
