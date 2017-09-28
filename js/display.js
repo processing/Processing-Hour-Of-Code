@@ -1,10 +1,11 @@
 "use strict";
 
 /*global document */
+/*global console */
 /*global window */
 /*global $ */
 /*global Processing */
-/*global Parse */
+/*global firebase */
 /*global Blob */
 /*global saveAs */
 /*global ace */
@@ -15,7 +16,7 @@
 var helloDisplay = {
   processingSource: "",
   editor: null,
-  parseObject: null,
+  firebaseReference: null,
   /**
    * Initialize display page
    */
@@ -60,25 +61,21 @@ var helloDisplay = {
 
       if ($("#delete").prop('checked')) {
 
-        helloDisplay.parseObject.destroy({
-          success: function () {
-            console.log("Object deleted.");
-            window.location.assign("/gallery");
-          },
-          error: function (myObject, error) {
-            console.log("Delete failed: " + error.message);
-          }
+        helloDisplay.firebaseReference.remove().then(function () {
+          console.log("Object deleted.");
+          window.location.assign("/gallery");
+        }).catch(function (error) {
+          console.log("Delete failed: " + error.message);
         });
 
-
       } else {
-
+        // TODO
         var featureScore = parseInt($("#featureScore").val(), 10);
         var hidden = $('#hidden').prop('checked');
-
-        helloDisplay.parseObject.set("featureScore", featureScore);
-        helloDisplay.parseObject.set("hidden", hidden);
-        helloDisplay.parseObject.save();
+        //
+        // helloDisplay.parseObject.set("featureScore", featureScore);
+        // helloDisplay.parseObject.set("hidden", hidden);
+        // helloDisplay.parseObject.save();
       }
 
 
@@ -93,7 +90,7 @@ var helloDisplay = {
     this.editor = ace.edit("displayEditor");
     this.editor.getSession().setMode("ace/mode/processing");
     this.editor.setTheme("ace/theme/processing");
-    //this.editor.renderer.setShowGutter(false); 
+    //this.editor.renderer.setShowGutter(false);
     this.editor.setShowFoldWidgets(false);
     this.editor.setHighlightActiveLine(false);
     this.editor.renderer.setShowPrintMargin(false);
@@ -121,42 +118,38 @@ var helloDisplay = {
     });
   },
   /**
-   * Fetch sketch code Parse
+   * Fetch sketch code Firebase
    */
-  displayGallery: function (parseID) {
+  displayGallery: function (key) {
 
-    Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
+    // TODO
+    // if (Parse.User.current() !== null) {
+    //   $("#displayAdmin").show();
+    // }
 
-    if (Parse.User.current() !== null) {
-      $("#displayAdmin").show();
-    }
+    helloDisplay.firebaseReference = firebase.database().ref('gallery/' + key);
 
-    var GalleryObject = Parse.Object.extend("Gallery");
-    var query = new Parse.Query(GalleryObject);
-    console.log("Query start!");
-    query.get(parseID, {
-      success: function (gallery) {
-        console.log("Query complete!");
 
-        helloDisplay.parseObject = gallery;
-        helloDisplay.showSketch(gallery.get("source"));
+    helloDisplay.firebaseReference.once('value').then(function (query_result) {
+      var sketch = query_result.val();
+      console.log("Query complete!");
 
-        $("#featureScore").val(gallery.get("featureScore"));
+      helloDisplay.showSketch(sketch.source);
 
-        $('#hidden').prop('checked', gallery.get("hidden"));
+      $("#featureScore").val(sketch.featureScore);
 
-        Parse.Cloud.run('incrementViewCount', {
-          id: gallery.id
-        }, {
-          error: function (error) {
-            console.log("View increment failed: " + error.message);
-          }
-        });
+      $('#hidden').prop('checked', sketch.hidden);
 
-      },
-      error: function (myObject, error) {
-        console.log("Object retrieval failed: " + error.message);
-      }
+      var views = helloDisplay.firebaseReference.child('viewCount');
+      views.transaction(function(views) {
+        if (!views) {
+          return 1;
+        } else {
+          return views + 1;
+        }
+      });
+    }).catch(function (error) {
+      console.log("Object retrieval failed: " + error.message);
     });
 
   },

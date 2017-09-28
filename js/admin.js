@@ -1,6 +1,7 @@
 "use strict";
 
-/*global Parse */
+/*global firebase */
+/*global $ */
 
 /**
  * Singleton for admin page
@@ -11,9 +12,7 @@ var helloAdmin = {
    */
   init: function () {
 
-    Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
-
-    if (Parse.User.current() === null) {
+        if (Parse.User.current() === null) {
       $("#loginPanel").show();
       $("#logoutPanel").hide();
     } else {

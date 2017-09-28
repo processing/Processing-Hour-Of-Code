@@ -12,14 +12,14 @@ class: display
     <hr/>
 
     <p>
-      This image was created with the Hello Processing tutorial. 
+      This image was created with the Hello Processing tutorial.
       To learn more and explore the tutorial, click the Visit Tutorial button. You can also view or download the code used to create this image.</p>
     <hr/>
 
     <div id="displayCommands" class="btn-group-vertical btn-block">
-    
+
       <a id="visitSite" class="btn btn-default btn-primary" href="/">
-        <span class="glyphicon glyphicon-bell"></span> Visit Tutorial 
+        <span class="glyphicon glyphicon-bell"></span> Visit Tutorial
       </a>
 
       <a id="displayCode" class="btn btn-default btn-primary" href="#">
@@ -28,11 +28,11 @@ class: display
 
       <a id="downloadCode" class="btn btn-default btn-primary" href="#">
        <span class="glyphicon glyphicon-download"></span> Download Code
-      </a> 
+      </a>
 
       <a id="downloadCode" class="btn btn-default btn-primary" href="/gallery/">
        <span class="glyphicon glyphicon-th-large"></span> View Gallery
-      </a>       
+      </a>
     </div>
 
 
@@ -68,7 +68,7 @@ class: display
             <label>
               <input type="checkbox" id="hidden"> Hide Sketch
             </label>
-          </div>          
+          </div>
          <div class="checkbox">
             <label>
               <input type="checkbox" id="delete"> Delete Sketch
@@ -80,7 +80,7 @@ class: display
 
         </form>
 
-      </div>      
+      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -100,7 +100,7 @@ class: display
 
 		<div id="displayEditor"></div>
 
-      </div>      
+      </div>
       <div class="modal-footer">
         <button class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
@@ -112,7 +112,7 @@ class: display
 
 <!-- End Modal Code Window -->
 
-<script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+{% include firebase.html %}
 
 <script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="/js/vendor/FileSaver.min.js" type="text/javascript"></script>

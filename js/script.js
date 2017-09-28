@@ -1,5 +1,6 @@
 "use strict";
 
+/*global console */
 /*global helloEditor */
 /*global Popcorn */
 /*global $ */
@@ -41,7 +42,7 @@ var scriptOne = {
     this.reset();
     helloEditor.refreshUI();
 
-    // Code.org API 
+    // Code.org API
 
     var imagePath = "http://code.org/api/hour/begin_processing_foundation.png";
     $('<img src="' + imagePath + '">').load(function () {
@@ -885,7 +886,7 @@ var scriptSix = {
     });
 
     // Popcorn Events
-    // 
+    //
     helloEditor.popcorn
       // Show stuff below
       .code({

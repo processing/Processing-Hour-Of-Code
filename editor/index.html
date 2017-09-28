@@ -14,7 +14,7 @@ class: editor
       <canvas id="editorCanvas"></canvas>
 
       <div id="horizontalRuler"></div>
-      <div id="verticalRuler"></div>       
+      <div id="verticalRuler"></div>
 
       <a id="toggleRulers" class="btn btn-default btn-sm" title="Display or hide rulers.">
         <span class="glyphicon glyphicon-pencil"></span> Toggle Rulers
@@ -35,27 +35,27 @@ class: editor
       <div id="videoCommands" class="btn-group">
         <a id="captionsButton" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Toggle Captions">
           <span class="glyphicon glyphicon-subtitles"></span><span class="buttonLabel"> Captions</span>
-        </a>      
+        </a>
         <a id="restartButton" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Restart Lesson">
           <span class="glyphicon glyphicon-refresh"></span><span class="buttonLabel"> Restart</span>
         </a>
         <a id="jumpBack" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Rewind 10 Seconds">
           <span class="glyphicon glyphicon-time"></span><span class="buttonLabel"> Back 10 Sec.</span>
-        </a>    
+        </a>
         <a id="jumpExercise" class="btn btn-default btn-sm"  data-toggle="tooltip" data-placement="top" title="Skip to Exercise">
           <span class="glyphicon glyphicon-edit"></span><span class="buttonLabel"> Jump to Exercise</span>
-        </a> 
+        </a>
         <a id="jumpLesson" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Skip to Lesson">
           <span class="glyphicon glyphicon-edit"></span><span class="buttonLabel"> Jump to Lesson</span>
         </a>
         <a id="jumpEnd" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Skip to End">
           <span class="glyphicon glyphicon-fast-forward"></span><span class="buttonLabel"> Jump to End</span>
-        </a>           
+        </a>
         <!--
         <a id="pauseButton" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-pause"></span> Pause
         </a>  -->
-      </div> 
+      </div>
     </div>
 
   </div>
@@ -80,7 +80,7 @@ class: editor
 
       <button id="nextButton" class="btn btn-default btn-sm" title="Move to the next lesson.">
         <span class="glyphicon glyphicon-forward"></span> Next Lesson
-      </button>         
+      </button>
       <button id="shareButton" class="btn btn-default btn-sm" title="Share your work!">
         <span class="glyphicon glyphicon-share-alt"></span>
         Share
@@ -114,7 +114,7 @@ class: editor
       </div>
       <div class="modal-body">
       Looks like there's a problem with your code. You can reset the editor to the last working run or fix it yourself using hints below.
-      </div>      
+      </div>
       <div class="modal-body" id="errorModalText">
       </div>
       <div class="modal-footer">
@@ -123,7 +123,7 @@ class: editor
         </button>
         <button class="btn btn-default" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Continue
-        </button>      
+        </button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -145,19 +145,19 @@ class: editor
         <p>
           We'll create a custom link you can use to share your work with the world. You can also choose to have your sketch added to the gallery.
         </p>
-      
+
         <div class="checkbox">
           <label>
             <input type="checkbox" id="modalGalleryCheckbox" checked="checked"> Share in gallery?
           </label>
         </div>
 
-      </div>   
+      </div>
       <div class="modal-footer">
-              
+
         <button class="btn btn-default btn-sm btn-primary" id="modalConfirmButton">
          <span class="glyphicon glyphicon-ok"></span> Continue
-        </button>             
+        </button>
         <button class="btn btn-default btn-sm btn-primary" data-dismiss="modal">
           <span class="glyphicon glyphicon-remove"></span> Cancel
         </button>
@@ -183,22 +183,22 @@ class: editor
         <p>
           You can copy or bookmark the link below to revisit your creation at any time. You can also use any of the social buttons to share your work with the world!
         </p>
-      
+
         <p id="shareModalLink">
           <a href="http://hello.processing.org" target="_blank">http://hello.processing.org/</a>
-        </p>   
+        </p>
 
-      </div>   
+      </div>
       <div class="modal-footer">
         <button class="btn btn-default btn-sm btn-primary" id="modalFacebookButton">
          <span class="glyphicon glyphicon-share-alt"></span> Facebook
-        </button> 
+        </button>
         <button class="btn btn-default btn-sm btn-primary" id="modalGoogleButton">
          <span class="glyphicon glyphicon-share-alt"></span> Google+
-        </button>               
+        </button>
         <button class="btn btn-default btn-sm btn-primary" id="modalTwitterButton">
          <span class="glyphicon glyphicon-share-alt"></span> Twitter
-        </button>             
+        </button>
         <button class="btn btn-default btn-sm btn-primary" data-dismiss="modal">
           <span class="glyphicon glyphicon-ok"></span> Close
         </button>
@@ -235,7 +235,7 @@ class: editor
 
   <div data-index="6">
     {% include hint_6.html %}
-  </div> 
+  </div>
 
 </div>
 
@@ -275,7 +275,8 @@ class: editor
 
 <!-- End Snippets -->
 
-<script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+
+{% include firebase.html %}
 
 <script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="/js/vendor/popcorn-complete.min.js" type="text/javascript" charset="utf-8"></script>
@@ -286,4 +287,3 @@ class: editor
 <script>
   var Range = require("ace/range").Range;
 </script>
-

@@ -1,6 +1,9 @@
 "use strict";
 
-/*global Parse */
+/*global console */
+/*global Promise */
+/*global $ */
+/*global firebase */
 /*global Mustache */
 /*global location */
 
@@ -8,16 +11,16 @@
  * Singleton for gallery page
  */
 var helloGallery = {
-  pageNumber: 0,
   sortMode: 0,
+  nextEnd: null,
   itemsPerPage: 12,
-  totalItems: null,
   /**
    * Initialize gallery page
    */
   init: function () {
 
     $(".filter").click(function (e) {
+      e.preventDefault();
       var newMode = $(e.delegateTarget).attr('data-mode');
 
       if (newMode !== helloGallery.sortMode) {
@@ -27,7 +30,7 @@ var helloGallery = {
         $(".filter").removeClass("active");
         $(e.delegateTarget).addClass("active");
 
-        helloGallery.pageNumber = 0;
+        helloGallery.nextEnd = null;
         $('#galleryView').isotope('destroy');
         $('.galleryImage').not("#loadMore").remove();
         $("#loadMore").show();
@@ -46,8 +49,6 @@ var helloGallery = {
     });
 
     // Get the ID from the URL and display it
-
-    Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
 
     helloGallery.loadInitial();
   },
@@ -85,76 +86,86 @@ var helloGallery = {
 
     $("#loadMore").button('loading');
 
-    var GalleryObject = Parse.Object.extend("Gallery");
-    var query = new Parse.Query(GalleryObject);
-
-    query.notEqualTo("hidden", true);
-    query.limit(helloGallery.itemsPerPage);
-    query.skip(helloGallery.pageNumber * helloGallery.itemsPerPage);
-
+    var query = firebase.database().ref('gallery/');
+    var sortKey = null;
     switch (helloGallery.sortMode) {
     case 0:
-      //console.log("Featured");
-      query.descending("featureScore");
-      query.addDescending("createdAt");
+      sortKey = 'featureScore';
       break;
     case 1:
-      //console.log("Popular");
-      query.descending("viewCount");
-      query.addDescending("createdAt");
+      sortKey = 'viewCount';
       break;
     case 2:
-      //console.log("Recent");
-      query.descending("createdAt");
       break;
     }
+    if(sortKey !== null) {
+      query = query.orderByChild(sortKey);
+    }
 
-    query.count({
-      success: function (number) {
-        helloGallery.totalItems = number;
-      },
-      error: function (error) {
-        console.log(error.message);
+
+    // query.notEqualTo("hidden", true);
+    query = query.limitToLast(helloGallery.itemsPerPage + 1);
+    if(helloGallery.nextEnd) {
+      var value = null;
+      if(sortKey !== null) {
+        value = helloGallery.nextEnd[sortKey];
       }
-    });
+      query = query.endAt(value, helloGallery.nextEnd.key);
+    }
 
-    query.find({
-      success: function (results) {
-        //alert("Successfully retrieved " + results.length + " scores.");
+    query.once('value').then(function (results) {
+      //alert("Successfully retrieved " + results.length + " scores.");
+      var imageTiles = [];
+      // Prepare the template
+      var template = $('#template').html();
+      Mustache.parse(template);
 
-        var i, imageTiles = [];
+      helloGallery.nextEnd = null;
+      var length = results.numChildren();
 
-        var object, data, template, rendered;
+      var more_pages = false;
+      if (length > helloGallery.itemsPerPage) {
+        more_pages = true;
+        length = helloGallery.itemsPerPage;
+      }
 
-        for (i = 0; i < results.length; i++) {
-          object = results[i];
-          //alert(object.id + ' - ' + object.get('playerName'));
-
-          data = {
-            link: "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + object.id,
-            image: object.get("image").url()
+      results.forEach(function (sketch) {
+        var key = sketch.key;
+        if(more_pages && helloGallery.nextEnd === null) {
+          helloGallery.nextEnd = sketch.val();
+          helloGallery.nextEnd.key = sketch.key;
+          return;
+        }
+        imageTiles.push(new Promise(function(resolve, reject) {
+          var data = {
+            link: "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + key,
+            image: null
           };
 
-          template = $('#template').html();
-          Mustache.parse(template);
-          rendered = Mustache.render(template, data);
-          imageTiles.push(rendered);
-        }
+          firebase.storage().ref('gallery/' + key + '.jpg').getDownloadURL().then(function(url) {
+            data.image = url;
+            resolve(data);
+          }).catch(function(err) {
+            console.log("Error: Failed to load an image: ", err.message);
+            resolve(data);
+          });
+        }).then(function(data) {
+          return Mustache.render(template, data);
+        }));
+      });
 
-        callback(imageTiles);
-
-        helloGallery.pageNumber++;
+      Promise.all(imageTiles).then(function(tiles) {
+        tiles.reverse();
+        callback(tiles);
 
         $("#loadMore").button('reset');
 
-        if (helloGallery.totalItems !== null && helloGallery.pageNumber * helloGallery.itemsPerPage >= helloGallery.totalItems) {
+        if (!more_pages) {
           $("#loadMore").hide();
         }
-
-      },
-      error: function (error) {
-        console.log("Error: " + error.code + " " + error.message);
-      }
+      });
+    }).catch(function (error) {
+      console.log("Error: " + error.code + " " + error.message);
     });
   }
 };

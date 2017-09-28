@@ -2,8 +2,9 @@
 
 /*jslint unparam: true*/
 
+/*global console */
 /*global ace */
-/*global Parse */
+/*global firebase */
 /*global Popcorn */
 /*global top */
 /*global window */
@@ -42,7 +43,7 @@ var helloEditor = {
     this.editor = ace.edit("editor");
     this.editor.getSession().setMode("ace/mode/processing");
     this.editor.setTheme("ace/theme/processing");
-    //this.editor.renderer.setShowGutter(false); 
+    // this.editor.renderer.setShowGutter(false);
     this.editor.setShowFoldWidgets(false);
     this.editor.setHighlightActiveLine(false);
     this.editor.renderer.setShowPrintMargin(false);
@@ -640,7 +641,7 @@ var helloEditor = {
     //
     // Input Javascript Error:
     // Can't find variable: rectt
-    // Output Friendly Error: 
+    // Output Friendly Error:
     // I'm not sure what 'rect' means. Maybe it's a typo?
 
     var i,
@@ -679,49 +680,27 @@ var helloEditor = {
 
     // Post to Parse
 
-    Parse.initialize("x8FmMInL8BbVeBqonPzgvS8WNKbPro65Li5DzTI0", "Y7PPNnhLPhCdFMAKgw7amBxGerz67gAnG3UKb53s");
-
     var processingSource = this.editor.getValue();
     if (!(/size\(\s*\d+\s*,\s*\d+\s*\)/.test(processingSource))) {
       processingSource = "size(500,400);\n\n" + processingSource;
     }
 
-    var processingCanvas = document.getElementById("editorCanvas"),
-      uri = processingCanvas.toDataURL('image/jpeg'),
-      base64 = uri.slice(uri.indexOf(',') + 1),
-      processingImage = new Parse.File("sketch.jpg", {
-        base64: base64
-      });
+    var processingCanvas = document.getElementById("editorCanvas");
+    var uri = processingCanvas.toDataURL('image/jpeg');
 
     var galleryData = {
-      source: processingSource
+      source: processingSource,
+      hidden: hidden,
     };
 
-    processingImage.save().then(function () {
-
-      var gallery = new Parse.Object("Gallery");
-      gallery.set("source", processingSource);
-      gallery.set("image", processingImage);
-      gallery.set("hidden", hidden);
-      gallery.save(galleryData).then(function (object) {
-        helloEditor.parseObject = object;
-        var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + object.id;
-        helloEditor.showShare(displayURL);
-      });
-
-
-    }, function (error) {
-      console.log("Error saving gallery image");
+    firebase.database().ref('gallery/').push(galleryData).then(function(query_result) {
+      var image = firebase.storage().ref('gallery/' + query_result.key + '.jpg');
+      image.putString(uri, 'data_url');
+      var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ? ":" + $(location).attr('port') : "") + "/display/#@" + query_result.key;
+      helloEditor.showShare(displayURL);
+    }).catch(function(err) {
+      console.log("Error pushing to gallery: ", err.message);
     });
-
-    // var GalleryObject = Parse.Object.extend("Gallery");
-    // var gallery = new GalleryObject();
-    // gallery.save(galleryData).then(function(object) {
-    //     var displayURL = "http://" + $(location).attr('hostname') + (($(location).attr('port') !== "") ?  ":" + $(location).attr('port') : "") + "/display/#@" + object.id;                
-    //     helloEditor.showShare(displayURL);          
-    // });
-
-
   },
 
   showShareConfirm: function () {
