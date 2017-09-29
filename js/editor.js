@@ -196,15 +196,45 @@ var helloEditor = {
       }
     });
 
-    $("#footer").click(function(ev) {
-      if (helloEditor.popcorn) {
-        var pop = helloEditor.popcorn;
-        var pos = ev.pageX - $("#transport").offset().left;
-        pos /= $("#transport").width();
-        pos *= pop.duration();
-        pop.currentTime(pos);
-      }
-    });
+    (function() {
+      var seeking = false;
+
+      $("#footer").mousedown(function(ev) {
+        seeking = true;
+        seek(ev);
+      });
+
+      $("#footer").mousemove(function(ev) {
+        if (seeking) {
+          seek(ev);
+        }
+      });
+
+      $("#footer").mouseup(function(ev) {
+        seeking = false;
+      });
+      $("#footer").mouseout(function(ev) {
+        seeking = false;
+      });
+
+      function seek(ev) {
+        if (helloEditor.popcorn) {
+          var pop = helloEditor.popcorn;
+          var pos = ev.pageX - $("#transport").offset().left;
+          pos /= $("#transport").width();
+          pos = Math.min(0.999, Math.max(0, pos));
+          pos *= pop.duration();
+          if(pop.ended()) {
+            $("#hint").hide();
+            //pop.currentTime(0);
+            pop.play(pos);
+            pop.currentTime(pos);
+          } else {
+            pop.currentTime(pos);
+          }
+        }
+      };
+    })();
 
     if (!Modernizr.touch) {
       $('[data-toggle="tooltip"]').tooltip({
