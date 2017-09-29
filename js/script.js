@@ -55,31 +55,36 @@ var scriptOne = {
       // Show stuff below
       .code({
         start: "00:22",
+        end: "00:33.61",
         onStart: function () {
           helloEditor.setMode(EDITOR_MODE);
+        },
+        onEnd: function() {
+          helloEditor.setMode(VIDEO_MODE);
         }
       })
       // Quickly show editor
       .code({
         start: "00:24",
+        end: "00:33.61",
         onStart: function () {
           $("#editorContainer").fadeIn("fast");
           helloEditor.loadExample(3);
+        },
+        oneEnd: function () {
+          $("#editorContainer").hide();
         }
       })
       // Show the canvas container
       .code({
         start: "00:26",
+        end: "00:33.61",
         onStart: function () {
           helloEditor.runCode();
           $("#canvasContainer").fadeIn("fast");
-        }
-      })
-      // Back to full screen video
-      .code({
-        start: "00:33.61",
-        onStart: function () {
-          helloEditor.setMode(VIDEO_MODE);
+        },
+        onEnd: function () {
+          $("#canvasContainer").hide();
         }
       });
 
@@ -132,16 +137,23 @@ var scriptTwo = {
     // Popcorn Events
 
     helloEditor.popcorn
-      // Leave video mode to introduce other UI elements
+      // Mode switching
       .code({
-        start: "04:25",
+        ranges: [
+          { start: "04:25", end: "06:54" },
+          { start: "08:19" }
+        ],
         onStart: function () {
           helloEditor.setMode(EDITOR_MODE);
+        },
+        onEnd: function() {
+          helloEditor.setMode(VIDEO_MODE);
         }
       })
       // Show the editor, set the value to nothing
       .code({
         start: "04:28",
+        end: "06:54",
         onStart: function () {
           $("#editorContainer").fadeIn("fast");
           helloEditor.setCode("");
@@ -159,15 +171,23 @@ var scriptTwo = {
       // Show the canvas container
       .code({
         start: "04:57",
+        end: "06:54",
         onStart: function () {
           $("#canvasContainer").fadeIn("fast");
+        },
+        onEnd: function () {
+          $("#canvasContainer").hide();
         }
       })
       // Show the rulers
       .code({
         start: "5:09",
+        end: "5:20",
         onStart: function () {
           helloEditor.showRulers();
+        },
+        onEnd: function() {
+          helloEditor.hideRulers();
         }
       })
       // Show the toggle button
@@ -175,13 +195,9 @@ var scriptTwo = {
         start: "5:18",
         onStart: function () {
           $("#toggleRulers").fadeIn("fast");
-        }
-      })
-      // Hide the rulers
-      .code({
-        start: "5:20",
-        onStart: function () {
-          helloEditor.hideRulers();
+        },
+        onEnd: function () {
+          $("#toggleRulers").hide();
         }
       })
       // Show the rulers
@@ -189,11 +205,15 @@ var scriptTwo = {
         start: "5:21",
         onStart: function () {
           helloEditor.showRulers();
+        },
+        onEnd: function() {
+          helloEditor.hideRulers();
         }
       })
       // Run whatever is in the editor
       .code({
         start: "05:29",
+        end: "06:54",
         onStart: function () {
           helloEditor.runCode();
         }
@@ -203,11 +223,15 @@ var scriptTwo = {
         start: "05:57",
         onStart: function () {
           $("#runButton").show();
+        },
+        onEnd: function () {
+          $("#runButton").hide();
         }
       })
       // Add one rectangels
       .code({
         start: "06:38",
+        end: "06:39",
         onStart: function () {
           //helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);");
           helloEditor.loadSnippet("2-20");
@@ -216,6 +240,7 @@ var scriptTwo = {
       // Add another rectangels
       .code({
         start: "06:39",
+        end: "06:40",
         onStart: function () {
           //helloEditor.setCode("rect(250, 200, 150, 100);\n\nrect(50, 80, 40, 25);\n\nrect(400, 10, 15, 100);");
           helloEditor.loadSnippet("2-30");
@@ -224,25 +249,17 @@ var scriptTwo = {
       // Run whatever is in the editor
       .code({
         start: "06:40",
+        end: "06:40",
         onStart: function () {
           helloEditor.runCode();
         }
       })
 
-      // Jump back to video mode for more explainations
-      .code({
-        start: "06:54",
-        onStart: function () {
-          helloEditor.setMode(VIDEO_MODE);
-        }
-      })
       // Show the editor and canvas again and insert code
       .code({
         // TODO: This needs to be back about a half-second to align with cut
-        start: "8:19",
+        start: "08:19",
         onStart: function () {
-          helloEditor.setMode(EDITOR_MODE);
-
           $("#editorContainer").fadeIn("fast");
           $("#canvasContainer").fadeIn("fast");
 
@@ -253,6 +270,7 @@ var scriptTwo = {
       })
       .code({
         start: "08:28",
+        end: "08:49",
         onStart: function () {
           //helloEditor.setCode("rect(250, 200, 150, 100);\n\nellipse(250,200,200,200);");
           helloEditor.loadSnippet("2-50");
@@ -260,12 +278,14 @@ var scriptTwo = {
       })
       .code({
         start: "08:30",
+        end: "08:49",
         onStart: function () {
           helloEditor.runCode();
         }
       })
       .code({
         start: "08:49",
+        end: "09:11",
         onStart: function () {
           //helloEditor.setCode("ellipse(250,200,200,200);\n\nrect(250, 200, 150, 100);");
           helloEditor.loadSnippet("2-60");
@@ -273,12 +293,14 @@ var scriptTwo = {
       })
       .code({
         start: "08:51",
+        end: "09:11",
         onStart: function () {
           helloEditor.runCode();
         }
       })
       .code({
         start: "09:11",
+        end: "09:36",
         onStart: function () {
           helloEditor.loadExample(2);
         }
