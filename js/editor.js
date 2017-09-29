@@ -82,19 +82,7 @@ var helloEditor = {
 
     }
 
-    if(this.lessonIndex >= 0) {
     this.loadLesson(this.lessonIndex, lessonTime);
-    } else {
-      this.setMode(EDITOR_MODE);
-      $("#editorContainer").fadeIn("fast");
-      $("#canvasContainer").fadeIn("fast");
-
-      helloEditor.showHint(6);
-
-      $("#resetButton").show();
-      $("#shareButton").show();
-      $("#runButton").show();
-    }
 
     // Resize callback
 
@@ -490,7 +478,9 @@ var helloEditor = {
       videoHeight = videoWidth / 16 * 9;
 
       $("#header").css("width", videoWidth);
-      $("#transport").css("width", videoWidth);
+      // $("#transport").css("width", videoWidth);
+      // Don't change this so that it suits seeking more intuitively.
+      $("#transport").css("width", viewportWidth - 16);
 
       $("#videoContainer")
         .css({
