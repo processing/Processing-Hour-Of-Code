@@ -208,6 +208,16 @@ var helloEditor = {
       }
     });
 
+    $("#footer").click(function(ev) {
+      if (helloEditor.popcorn) {
+        var pop = helloEditor.popcorn;
+        var pos = ev.pageX - $("#transport").offset().left;
+        pos /= $("#transport").width();
+        pos *= pop.duration();
+        pop.currentTime(pos);
+      }
+    });
+
     if (!Modernizr.touch) {
       $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
