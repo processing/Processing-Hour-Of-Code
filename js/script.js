@@ -378,9 +378,17 @@ var scriptThree = {
     // Popcorn Events
 
     helloEditor.popcorn
+      .code({
+        start: "00:00",
+        end: "00:19",
+        onStart: function () {
+          helloEditor.setMode(EDITOR_MODE);
+        }
+      })
       // Back to full screen
       .code({
         start: "00:19",
+        end: "02:44",
         onStart: function () {
           helloEditor.setMode(VIDEO_MODE);
         }
@@ -388,12 +396,17 @@ var scriptThree = {
       // Show the editor
       .code({
         start: "02:44",
+        end: "03:00",
         onStart: function () {
           helloEditor.setMode(EDITOR_MODE);
-
           $("#editorContainer").fadeIn("fast");
           $("#canvasContainer").fadeIn("fast");
-
+        }
+      })
+      .code({
+        start: "02:44",
+        end: "02:28",
+        onStart: function() {
           //helloEditor.setCode("rect(250,200,100,75);");
           helloEditor.loadSnippet("3-10");
           helloEditor.runCode();
@@ -402,6 +415,7 @@ var scriptThree = {
       // add stroke()
       .code({
         start: "02:48",
+        end: "02:50",
         onStart: function () {
           //helloEditor.setCode("stroke(0);\nrect(250,200,100,75);");
           helloEditor.loadSnippet("3-20");
@@ -411,6 +425,7 @@ var scriptThree = {
       // add fill()
       .code({
         start: "02:50",
+        end: "03:00",
         onStart: function () {
           //helloEditor.setCode("stroke(0);\nfill(128);\nrect(250,200,100,75);");
           helloEditor.loadSnippet("3-30");
@@ -419,7 +434,8 @@ var scriptThree = {
       })
       // Back to video explanation
       .code({
-        start: "3:00",
+        start: "03:00",
+        end: "04:25",
         onStart: function () {
           helloEditor.setMode(VIDEO_MODE);
         }
@@ -429,7 +445,6 @@ var scriptThree = {
         start: "04:25",
         onStart: function () {
           helloEditor.setMode(EDITOR_MODE);
-
           $("#editorContainer").fadeIn("fast");
           $("#canvasContainer").fadeIn("fast");
         }
@@ -437,6 +452,7 @@ var scriptThree = {
       // Now add red stroke
       .code({
         start: "04:34",
+        end: "04:42",
         onStart: function () {
           //helloEditor.setCode("stroke(255,0,0);\nfill(128);\nrect(250,200,100,75);");
           helloEditor.loadSnippet("3-40");
@@ -445,6 +461,7 @@ var scriptThree = {
       // Now add red stroke
       .code({
         start: "04:42",
+        end: "04:45",
         onStart: function () {
           //helloEditor.setCode("stroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
           helloEditor.loadSnippet("3-50");
@@ -453,6 +470,7 @@ var scriptThree = {
       // Now add red stroke
       .code({
         start: "04:45",
+        end: "05:34",
         onStart: function () {
           helloEditor.runCode();
         }
@@ -460,6 +478,7 @@ var scriptThree = {
       // Show Color Picker
       .code({
         start: "04:56",
+        end: "05:05",
         onStart: function () {
 
           $("#colorPicker").spectrum("container").css({
@@ -468,20 +487,16 @@ var scriptThree = {
           });
           $("#colorPicker").spectrum("show");
 
-        }
-      })
-      // Hide color Picker
-      .code({
-        start: "05:05",
-        onStart: function () {
+        },
+        onEnd: function () {
           $("#colorPicker").spectrum("hide");
         }
       })
       // Background Code
       .code({
         start: "05:34",
+        end: "06:15",
         onStart: function () {
-
           //helloEditor.setCode("background(216,225,149);\n\nstroke(255,0,0);\nfill(0,0,255);\nrect(250,200,100,75);");
           helloEditor.loadSnippet("3-60");
         }
@@ -489,6 +504,7 @@ var scriptThree = {
       // Background Run
       .code({
         start: "05:41",
+        end: "06:15",
         onStart: function () {
           helloEditor.runCode();
         }
@@ -506,7 +522,9 @@ var scriptThree = {
         start: "06:25",
         onStart: function () {
           $("#resetButton").show();
-
+        },
+        onEnd: function () {
+          $("#resetButton").hide();
         }
       });
     // End Event
