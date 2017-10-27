@@ -79,7 +79,7 @@ a:focus, a:active, a::-moz-focus-inner {
 
 /* Splash Page */
 
-div#splashDiv {	
+div#splashDiv {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -89,9 +89,9 @@ div#splashDiv {
 }
 
 #splashCanvas {
-	display: block; 
+	display: block;
 	background: transparent;
-	outline: 0px; 
+	outline: 0px;
 	width: 700px;
 	height: 700px;
 }
@@ -108,8 +108,8 @@ div#splashHeader {
 }
 
 h1#splashTitle {
-	display: none;	
-	font-family: $font-serif; 
+	display: none;
+	font-family: $font-serif;
 	font-size: 6em;
 	margin: 0;
 	padding: 0;
@@ -160,9 +160,9 @@ footer#splashFooter {
 	width: 100%;
 	min-width: 1024px;
 	background: $light-color;
-	z-index: 1000;		
+	z-index: 1000;
 	height: 40px;
-	box-shadow: 0px 4px 1px rgba(0,0,0,.25);		
+	box-shadow: 0px 4px 1px rgba(0,0,0,.25);
 }
 
 #header {
@@ -206,7 +206,7 @@ nav#pageNav span {
 	display: inline-block;
 	font-weight: regular;
 	border-left: 1px solid #efefef;
-	height: 40px;	
+	height: 40px;
 	padding: 12px 6px 0px 6px;
 }
 
@@ -218,16 +218,16 @@ nav#pageNav a:hover {
 
 div#lessonNavContainer {
 	position:absolute;
-	top:10px; 
+	top:10px;
 	left: 160px;
 	right:294px;
-	text-align: center;	
+	text-align: center;
 }
 
 .lessonButton {
 	font-size: 1em;
 	font-weight: regular;
-	font-family: 'theSerif', georgia, times, serif; 
+	font-family: 'theSerif', georgia, times, serif;
 	color: $primary-color;
 	padding: 15px 4px;
 }
@@ -243,25 +243,25 @@ div#lessonNavContainer {
 }
 
 .lessonButton:hover {
-	color: $primary-color;	
+	color: $primary-color;
 	text-decoration: none;
-} 
+}
 
 #lessonNav a.active span, #lessonNav a.active:hover span {
 	color: $secondary-color;
 	background: transparent;
 	border-bottom: 3px solid $secondary-color;
-	
+
 }
 
 /* Editor Page */
 
 #interface {
 	position: absolute;
-	top: 0;
+	top: 40px;
+  bottom: 24px;
 	left: 0;
-	width: 100%;
-	height: 100%;
+  right: 0;
 
 	min-width: 1024px;
 	min-height: 672px;
@@ -297,7 +297,7 @@ div#canvasContainer {
 	position: absolute;
 	background: url('/assets/images/vertical.svg');
 	width: 20px;
-	height: 400px;	
+	height: 400px;
 	left: -20px;
 	top: 0;
 	display: none;
@@ -319,7 +319,7 @@ div#canvasContainer {
 }
 
 div#editorCanvasBox {
-	
+
 	position:absolute;
 	top: 50%;
 	left: 50%;
@@ -334,11 +334,11 @@ div#editorCanvasBox {
 
 canvas#editorCanvas {
 	position: relative;
-	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 	z-index: 1000;
 	outline: 0px;
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 }
 
 div#videoContainer {
@@ -395,7 +395,7 @@ div#videoSubtitles {
 	text-align: center;
 	color:white;
 	font-weight: bold;
-	
+
 	font-size: 1.3em;
 	text-shadow: 1px 1px #000;
 }
@@ -432,7 +432,7 @@ div#transport {
 
 div#transport #track {
 	top: 0;
-	left: 0;	
+	left: 0;
 	background: $mid-color;
 	height: 8px;
 	width: 100%;
@@ -459,21 +459,21 @@ div#transport #progress {
 	background: $light-color;
 	z-index: 1000;
 	padding: 12px;
-	display: none;	
+	display: none;
 	overflow: auto;
 }
 
 div.hint h2{
-	color: $primary-color;	
+	color: $primary-color;
 	font-size: 1.3em;
 	margin-top: 0;
 }
 
 div.hint h2, div.hint p {
-		font-family: 'theSerif', georgia, times, serif; 	
-} 
+		font-family: 'theSerif', georgia, times, serif;
+}
 
-div#editorContainer { 
+div#editorContainer {
 	display: none;
 	position: absolute;
 	overflow: hidden;
@@ -482,12 +482,12 @@ div#editorContainer {
 	padding: 8px;
 
 	width: 424px;
-	height: 362px;	
+  bottom: 8px;
 	background: $light-color;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 }
 
-#editor { 
+#editor {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -498,7 +498,7 @@ div#editorCommands {
 	position: absolute;
 	bottom: 12px;
 	right: 12px;
-	z-index: 1000;	
+	z-index: 1000;
 }
 
 #errorModalText {
@@ -513,7 +513,7 @@ div#editorCommands {
 
 #colorPicker {
 	position: absolute;
-	pointer-events:none;	
+	pointer-events:none;
 }
 
 .colorPicker {
@@ -526,34 +526,34 @@ div#editorCommands {
     -moz-box-sizing: content-box !important;
     box-sizing: content-box !important;
 
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	text-shadow: none;
 }
 
 .colorPicker button {
 	background: #fff;
-	border: 1px solid #cfcfcf;	
+	border: 1px solid #cfcfcf;
 
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	text-shadow: none;	
+	text-shadow: none;
 }
 
 .colorPicker button:hover {
 	background: #efefef;
 
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	text-shadow: none;		
+	text-shadow: none;
 }
 
 .colorPicker button:active {
 	background: #efefef;
 
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	text-shadow: none;		
+	text-shadow: none;
 }
 
 #snippets {
@@ -580,7 +580,7 @@ div#displayInfo {
 	width: 240px;
 	height: 400px;
 	z-index: 2000;
-	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 	background: $light-color;
 	padding: 12px;
 }
@@ -603,7 +603,7 @@ footer#displayFooter {
 }
 
 h1#displayTitle {
-	font-family: 'theSerif', georgia, times, serif; 
+	font-family: 'theSerif', georgia, times, serif;
 	font-size: 1.6em;
 	color: $primary-color;
 	margin: 0 0 8px 0;
@@ -611,7 +611,7 @@ h1#displayTitle {
 }
 
 div#displayCanvasBox {
-	
+
 	position:absolute;
 	top: 50%;
 	left: 50%;
@@ -626,7 +626,7 @@ canvas#displayCanvas {
 	position: absolute;
 	top: 0;
 	left: 250px;
-	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 	outline: 0px;
 	width: 500px;
 	height: 400px;
@@ -653,7 +653,7 @@ div#displayEditor {
 .galleryImage {
 	float: left;
 	width: 250px;
-	height: 200px;		
+	height: 200px;
 	margin-bottom: 12px;
 	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 }
@@ -689,7 +689,7 @@ div#displayEditor {
 
 #galleryFilter .filter:hover  {
 	color: white;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #galleryFilter .filter:hover .text, #galleryFilter .active .text {
@@ -746,12 +746,12 @@ div#page {
 	z-index: 2000;
 	border-bottom: 8px solid $secondary-color;
 
-	box-shadow: 4px 4px 1px rgba(0,0,0,.25);	
+	box-shadow: 4px 4px 1px rgba(0,0,0,.25);
 	background: $light-color;
 	padding: 12px;
 	line-height: 1.5em;
 	font-size: 1.1em;
-	font-family: 'theSerif', georgia, times, serif; 
+	font-family: 'theSerif', georgia, times, serif;
 
 }
 
@@ -765,6 +765,6 @@ div#page h3 {
 }
 
 div#page h2, div#page h3 {
-	font-family: 'theSerif', georgia, times, serif; 
-	color: $primary-color;	
+	font-family: 'theSerif', georgia, times, serif;
+	color: $primary-color;
 }

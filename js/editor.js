@@ -506,6 +506,10 @@ var helloEditor = {
 
       videoWidth = viewportWidth * 0.80;
       videoHeight = videoWidth / 16 * 9;
+      if(videoHeight > viewportHeight) {
+        videoHeight = viewportHeight;
+        videoWidth = videoHeight / 9 * 16;
+      }
 
       $("#header").css("width", videoWidth);
       // $("#transport").css("width", videoWidth);
@@ -518,7 +522,7 @@ var helloEditor = {
           height: videoHeight,
           left: "50%",
           top: "50%",
-          marginTop: (videoHeight / -2) + (($("#header").height() - $("#footer").height()) / 2),
+          marginTop: videoHeight / -2,
           marginLeft: videoWidth / -2
         }).show();
 
@@ -542,7 +546,7 @@ var helloEditor = {
           width: videoWidth - 8,
           height: videoHeight,
           left: 8,
-          top: $("#header").height() + 8,
+          top: 8,
           marginTop: 0,
           marginLeft: 0
         })
@@ -550,19 +554,19 @@ var helloEditor = {
 
       $("#editorContainer")
         .css({
-          top: $("#header").height() + 8 + 8 + videoHeight,
+          top: 8 + 8 + videoHeight,
           left: 8,
           width: videoWidth - 8,
-          height: viewportHeight - $("#header").height() - 8 - 8 - videoHeight - 8 - $("#footer").height()
+          bottom: 8
         });
 
       $("#editor").height($("#editorContainer").height() - $("#editorCommands").height() - 8);
 
       $("#canvasContainer")
-        .height(viewportHeight - $("#header").height() - $("#footer").height())
+        .height(viewportHeight)
         .width(viewportWidth - videoWidth)
         .css({
-          top: $("#header").height(),
+          top: 0,
           left: videoWidth,
         });
 
