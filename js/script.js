@@ -342,7 +342,7 @@ var scriptTwo = {
  */
 
 var scriptThree = {
-  vimeoURL: "https://vimeo.com/320334121/",
+  vimeoURL: "https://vimeo.com/320334121",
   subtitleURL: "/assets/subtitles/subtitles_3.en.srt",
   runCache: null,
   exerciseTime: "5:57.20",
