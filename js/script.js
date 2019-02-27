@@ -104,7 +104,7 @@ var scriptOne = {
  */
 
 var scriptTwo = {
-  vimeoURL: "https://vimeo.com/79984989",
+  vimeoURL: "https://vimeo.com/320333977",
   subtitleURL: "/assets/subtitles/subtitles_2.en.srt",
   runCache: null,
   exerciseTime: "9:01.5",
@@ -342,7 +342,7 @@ var scriptTwo = {
  */
 
 var scriptThree = {
-  vimeoURL: "https://vimeo.com/79984990",
+  vimeoURL: "https://vimeo.com/320334121",
   subtitleURL: "/assets/subtitles/subtitles_3.en.srt",
   runCache: null,
   exerciseTime: "5:57.20",
@@ -550,7 +550,7 @@ var scriptThree = {
  */
 
 var scriptFour = {
-  vimeoURL: "https://vimeo.com/79984988",
+  vimeoURL: "https://vimeo.com/320334218",
   subtitleURL: "/assets/subtitles/subtitles_4.en.srt",
   runCache: null,
   exerciseTime: "10:21",
@@ -729,7 +729,7 @@ var scriptFour = {
  */
 
 var scriptFive = {
-  vimeoURL: "https://vimeo.com/79984987",
+  vimeoURL: "https://vimeo.com/320334385",
   subtitleURL: "/assets/subtitles/subtitles_5.en.srt",
   runCache: null,
   exerciseTime: "5:34",
