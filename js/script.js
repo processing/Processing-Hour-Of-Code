@@ -12,7 +12,7 @@
  */
 
 var scriptOne = {
-  vimeoURL: "https://vimeo.com/80274630",
+  vimeoURL: "https://vimeo.com/320516594",
   subtitleURL: "/assets/subtitles/subtitles_1.en.srt",
   runCache: null,
   exerciseTime: null,
@@ -889,7 +889,7 @@ var scriptFive = {
  */
 
 var scriptSix = {
-  vimeoURL: "https://vimeo.com/80275178",
+  vimeoURL: "https://vimeo.com/320516594",
   subtitleURL: "/assets/subtitles/subtitles_6.en.srt",
   runCache: null,
   exerciseTime: "1:19",
