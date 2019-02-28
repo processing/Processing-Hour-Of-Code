@@ -12,7 +12,7 @@
  */
 
 var scriptOne = {
-  vimeoURL: "https://vimeo.com/80274630",
+  vimeoURL: "https://vimeo.com/320516594",
   subtitleURL: "/assets/subtitles/subtitles_1.en.srt",
   runCache: null,
   exerciseTime: null,
